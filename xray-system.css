@@ -1,0 +1,864 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   X-RAY GEOANALYTICS — GLOBAL DESIGN SYSTEM
+   Loaded by every page. Source of truth for typography, color, nav, footer,
+   topographic background, reusable components, and motion.
+   Production: contents merge into wordpress-deploy/customizer.css.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+/* ────────────────────────────────────────── TOKENS ─────────────────────── */
+:root {
+  /* Background scale */
+  --xr-void:   #0E141B;
+  --xr-deep:   #161D27;
+  --xr-mid:    #1F2835;
+  --xr-card:   #2C3747;
+
+  /* Text scale */
+  --xr-text:        #F1F4F8;
+  --xr-text-2:      #A8B2C0;
+  --xr-text-muted:  #6F7B8B;
+
+  /* Accents */
+  --xr-gold:        #E8B963;
+  --xr-gold-dark:   #8A6E3C;
+  --xr-sky:         #6FB5E0;
+  --xr-red:         #C13825;
+  --xr-green:       #7BC97A;   /* hex bullet accent */
+  --xr-green-deep:  #4FA34D;
+
+  /* Fonts */
+  --xr-font-display: 'Inter', system-ui, -apple-system, sans-serif;
+  --xr-font-body:    'Inter', system-ui, -apple-system, sans-serif;
+  --xr-font-mono:    'JetBrains Mono', ui-monospace, 'Cascadia Code', Menlo, monospace;
+
+  /* Layout */
+  --xr-nav-h: 80px;
+  --xr-max-w: 1280px;
+  --xr-radius: 2px;
+
+  /* Motion */
+  --xr-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ────────────────────────────────────────── RESET ──────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+/* xray-hero.js adds .xr-scroll-locked to <html> and <body> on initial
+   page load, and removes it once the hero forward animation finishes.
+   While locked the user cannot scroll the page; their first downward
+   gesture fires the animation instead. Per May 2026 "additional index
+   instructions". */
+html.xr-scroll-locked,
+body.xr-scroll-locked {
+  overflow: hidden !important;
+  overscroll-behavior: contain;
+  touch-action: none;
+  height: 100%;
+}
+body { margin: 0; background: var(--xr-void); color: var(--xr-text); font-family: var(--xr-font-body); font-weight: 400; font-size: 17px; line-height: 1.75; letter-spacing: 0; }
+img { display: block; max-width: 100%; }
+
+/* Subtle film-grain overlay */
+body::after {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23g)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 9999; mix-blend-mode: overlay;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--xr-void); }
+::-webkit-scrollbar-thumb { background: rgba(232,185,99,0.35); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(232,185,99,0.6); }
+
+::selection { background: rgba(232,185,99,0.35); color: var(--xr-text); }
+
+/* ────────────────────────────────────────── TYPOGRAPHY ─────────────────── */
+.xr-display, h1, h2, h3, .xr-h1, .xr-h2, .xr-h3 {
+  font-family: var(--xr-font-display);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--xr-text);
+  margin: 0;
+}
+.xr-h1, h1 { font-size: clamp(40px, 5.4vw, 84px); line-height: 1.02; letter-spacing: -0.03em; }
+.xr-h2, h2 { font-size: clamp(30px, 3.9vw, 56px); line-height: 1.08; letter-spacing: -0.025em; }
+.xr-h3, h3 { font-size: clamp(20px, 1.8vw, 28px); line-height: 1.2;  letter-spacing: -0.015em; }
+
+p { margin: 0 0 1em; }
+
+/* Eyebrow chrome retired (per Entire-website edits doc, May 2026):
+   the "> ⬡ SECTION LABEL" pattern was repetitive and ugly. Headlines
+   now carry every section. Class still exists as a no-op so older
+   markup validates cleanly. */
+/* Kill the yellow-hex + "01 · Section" eyebrow chrome at section heads
+   (per May 2026 "entire website edits reference" doc) while LEAVING
+   stand-alone `.xr-eyebrow` text labels visible — many in-card metric
+   labels and panel headings still use the class and need to render. */
+.xr-eyebrow-hex { display: none !important; }
+.xr-eyebrow:has(.xr-eyebrow-hex) { display: none !important; }
+
+/* Numbered-hexagon step marker retired in the same pass. */
+.xr-hex-num { display: none !important; }
+
+.xr-mono { font-family: var(--xr-font-mono); font-variant-numeric: tabular-nums; }
+.xr-num  { font-family: var(--xr-font-mono); font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+
+a { color: inherit; text-decoration: none; }
+
+/* ────────────────────────────────────────── HEX SHAPES ─────────────────── */
+/* Default .hex / .xr-hex is now POINTY-TOP (vertex at top + bottom).
+   Per the May-2026 "Entire website reference 1" doc, every small
+   yellow-hex bullet marker is rotated 90° clockwise from the previous
+   flat-top orientation. The brand mark (logo) stays flat-top via PNG,
+   so the SVG/CSS hexes — which are bullet glyphs — adopt the new
+   pointy-top form here. */
+.hex,
+.xr-hex { clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); }
+
+/* Legacy flat-top opt-in if any decorative element still needs it */
+.xr-hex-flat-top { clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); }
+.xr-hex-flat     { clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); }
+
+/* Green hex bullet — for hero info bullets and feature lists */
+.xr-bullet {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 0;
+}
+.xr-bullet-icon {
+  width: 20px; height: 23px; flex-shrink: 0;
+  background: var(--xr-green);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  margin-top: 4px;
+  box-shadow: 0 0 18px rgba(123, 201, 122, 0.35);
+  position: relative;
+}
+.xr-bullet-icon::before {
+  content: ''; position: absolute; inset: 2px;
+  background: rgba(14, 20, 27, 0.92);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+.xr-bullet-icon::after {
+  content: ''; position: absolute; inset: 6px;
+  background: var(--xr-green);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+.xr-bullet-text {
+  color: var(--xr-text);
+  font-size: 17px;
+  line-height: 1.55;
+  font-weight: 400;
+}
+.xr-bullet-text strong {
+  color: var(--xr-text);
+  font-weight: 600;
+}
+.xr-bullet-sub {
+  display: block;
+  color: var(--xr-text-2);
+  font-size: 14px;
+  margin-top: 4px;
+  font-weight: 400;
+}
+
+/* Gold hex number marker for steps */
+.xr-hex-num {
+  width: 64px; height: 56px;
+  border: 1.5px solid var(--xr-gold);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--xr-font-mono); font-weight: 700; font-size: 20px;
+  color: var(--xr-gold); flex-shrink: 0;
+  transition: background .25s var(--xr-ease), color .25s var(--xr-ease), transform .25s var(--xr-ease);
+  background: rgba(232,185,99,0.04);
+}
+.xr-hex-num:hover { background: var(--xr-gold); color: var(--xr-void); transform: rotate(-2deg) scale(1.04); }
+
+/* ────────────────────────────────────────── BUTTONS ────────────────────── */
+.xr-btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--xr-font-body); font-weight: 600; font-size: 15px; padding: 13px 26px; border-radius: var(--xr-radius); border: none; cursor: pointer; text-decoration: none; transition: background .2s var(--xr-ease), border-color .2s var(--xr-ease), color .2s var(--xr-ease), transform .18s var(--xr-ease), box-shadow .2s var(--xr-ease); letter-spacing: 0.01em; }
+.xr-btn-gold { background: var(--xr-gold); color: var(--xr-void); font-weight: 700; }
+.xr-btn-gold:hover { background: #f0c878; transform: translateY(-2px); box-shadow: 0 10px 32px rgba(232,185,99,0.32), 0 2px 8px rgba(0,0,0,0.4); }
+.xr-btn-gold:active { transform: translateY(0); }
+.xr-btn-gold:focus-visible { outline: 2px solid #f0c878; outline-offset: 3px; }
+.xr-btn-outline { background: transparent; color: var(--xr-gold); border: 1px solid rgba(232,185,99,0.45); }
+.xr-btn-outline:hover { border-color: var(--xr-gold); background: rgba(232,185,99,0.07); transform: translateY(-2px); }
+.xr-btn-outline:focus-visible { outline: 2px solid var(--xr-gold); outline-offset: 3px; }
+.xr-btn-ghost { background: transparent; color: var(--xr-text-2); padding: 8px 0; }
+.xr-btn-ghost:hover { color: var(--xr-gold); }
+
+.xr-arrow { display: inline-block; transition: transform .2s var(--xr-ease); }
+.xr-btn:hover .xr-arrow { transform: translateX(3px); }
+
+/* ────────────────────────────────────────── NAV ────────────────────────── */
+.xr-nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 100; height: var(--xr-nav-h);
+  background: rgba(14, 20, 27, 0.78);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid rgba(232,185,99,0.18);
+  transition: background .25s var(--xr-ease), border-color .25s var(--xr-ease);
+}
+.xr-nav.scrolled { background: rgba(14, 20, 27, 0.93); border-bottom-color: rgba(232,185,99,0.32); }
+.xr-nav-inner {
+  max-width: var(--xr-max-w); margin: 0 auto; padding: 0 28px;
+  height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px;
+}
+.xr-brand { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+.xr-brand img { height: 44px; width: auto; }
+.xr-brand-wordmark {
+  font-family: var(--xr-font-mono);
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: 0.04em;
+  color: var(--xr-text);
+  white-space: nowrap;
+  text-transform: none;
+}
+.xr-brand-wordmark .accent { color: var(--xr-gold); }
+
+.xr-nav-list { display: flex; align-items: center; gap: 32px; }
+.xr-nav-link, .xr-nav-btn {
+  color: var(--xr-text); font-family: var(--xr-font-body); font-weight: 500;
+  font-size: 16px; letter-spacing: 0.01em; background: none; border: none;
+  cursor: pointer; padding: 0; display: inline-flex; align-items: center; gap: 5px;
+  transition: color .18s var(--xr-ease);
+}
+.xr-nav-link:hover, .xr-nav-btn:hover { color: var(--xr-gold); }
+.xr-nav-chev { width: 12px; height: 12px; stroke: currentColor; stroke-width: 2.5; fill: none; margin-top: 2px; transition: transform .18s var(--xr-ease); }
+.xr-nav-item { position: relative; padding: 12px 0; }
+.xr-nav-item:hover .xr-nav-chev { transform: rotate(180deg); }
+.xr-nav-drop {
+  position: absolute; top: calc(100% + 8px); left: -16px;
+  min-width: 220px; padding: 8px 0;
+  background: rgba(22, 29, 39, 0.96);
+  border: 1px solid rgba(232,185,99,0.22);
+  border-radius: 3px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.6), 0 4px 16px rgba(0,0,0,0.3);
+  opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity .18s var(--xr-ease), visibility .18s var(--xr-ease), transform .18s var(--xr-ease);
+}
+.xr-nav-item:hover .xr-nav-drop,
+.xr-nav-item:focus-within .xr-nav-drop { opacity: 1; visibility: visible; transform: translateY(0); }
+.xr-nav-drop a {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 20px; font-size: 14.5px; color: var(--xr-text-2);
+  transition: color .14s var(--xr-ease), background .14s var(--xr-ease);
+}
+.xr-nav-drop a::before {
+  content: ''; width: 6px; height: 7px; background: rgba(232,185,99,0.4);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  flex-shrink: 0; transition: background .14s var(--xr-ease);
+}
+.xr-nav-drop a:hover { color: var(--xr-gold); background: rgba(232,185,99,0.06); }
+.xr-nav-drop a:hover::before { background: var(--xr-gold); }
+
+.xr-nav-cta { padding: 11px 22px; font-size: 14.5px; }
+
+/* Mobile nav toggle — hidden on desktop, surfaced via media query */
+.xr-nav-toggle { display: none; }
+.xr-nav-mobile {
+  display: none;             /* default: hidden on every viewport */
+  position: fixed; top: var(--xr-nav-h); left: 0; right: 0;
+  background: rgba(14,20,27,0.98);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(232,185,99,0.2);
+  padding: 24px; flex-direction: column; gap: 14px;
+  z-index: 99;
+}
+.xr-nav-mobile a, .xr-nav-mobile button {
+  color: var(--xr-text); font-size: 17px; text-align: left;
+  padding: 10px 0; border: none; background: none;
+  border-bottom: 1px solid rgba(232,185,99,0.1);
+}
+
+@media (max-width: 980px) {
+  :root { --xr-nav-h: 68px; }
+  .xr-brand img { height: 36px; }
+  .xr-brand-wordmark { font-size: 14px; }
+  .xr-nav-list { display: none; }
+  .xr-nav-toggle {
+    display: inline-flex; flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 8px;
+  }
+  .xr-nav-toggle span { width: 24px; height: 1.5px; background: var(--xr-text); transition: transform .2s; }
+  .xr-nav-mobile.open { display: flex; }
+}
+
+/* ────────────────────────────────────────── TOPOGRAPHIC BACKGROUND ─────── */
+/* Reusable layered background.
+   Apply .xr-topo to a SECTION to give it isolated stacking + clipping.
+   Apply .xr-topo-layer to absolutely-positioned children to fill the parent.
+   Selectors don't require a .xr-topo parent — layers work in any container. */
+.xr-topo { position: relative; overflow: hidden; isolation: isolate; }
+.xr-topo-layer { position: absolute; inset: 0; pointer-events: none; z-index: -1; }
+
+/* Topo subsystem (refined May 2026).
+   Replaced the AI-slop drifting contour lines / repeating hex lattice /
+   pulsing reticles / scattered corner hexes with a calmer system inspired
+   by KoBold Metals, Anduril, and Anthropic: just a static fine dot grid
+   plus the existing radial color washes. Less is more.
+   .xr-topo-contours / -lattice / -hex-* / -reticle still exist as
+   harmless no-op classes so older pages render correctly while the
+   new design takes effect. */
+
+.xr-topo-contours,
+.xr-topo-lattice { display: none; }
+
+.xr-topo-hex-tr, .xr-topo-hex-bl, .xr-topo-hex-tl, .xr-topo-hex-br,
+.xr-topo-reticle { display: none; }
+
+/* Subtle fixed dot grid — the only ambient texture site-wide.
+   2 px dots on a 28 px grid, 4% opacity gold. Replaces the
+   busy line/lattice patterns. */
+.xr-topo-dotgrid {
+  background-image: radial-gradient(circle at 1px 1px, rgba(232,185,99,0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Ambient radial wash — kept; this is the tasteful piece. */
+.xr-topo-wash {
+  background:
+    radial-gradient(ellipse 70% 70% at 78% 30%, rgba(232,185,99,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 60% at 12% 85%, rgba(111,181,224,0.03) 0%, transparent 55%);
+}
+
+/* Section base */
+.xr-section { padding: 112px 0; position: relative; }
+.xr-section-deep { background: var(--xr-deep); }
+.xr-section-void { background: var(--xr-void); }
+.xr-container { max-width: var(--xr-max-w); margin: 0 auto; padding: 0 28px; position: relative; }
+
+/* Edge accent rule used between sections — gold gradient, faint.
+   Default is the TOP edge; add .xr-section-rule-bottom for the
+   matching rule at the bottom of a section. */
+.xr-section-rule {
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(232,185,99,0.32), transparent);
+  z-index: 2;
+}
+.xr-section-rule.xr-section-rule-bottom {
+  top: auto; bottom: 0;
+}
+
+/* ────────────────────────────────────────── CARDS ──────────────────────── */
+.xr-card {
+  background: var(--xr-card);
+  border: 1px solid rgba(232,185,99,0.22);
+  border-radius: var(--xr-radius);
+  padding: 36px 32px;
+  position: relative;
+}
+.xr-card-accent::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--xr-gold), rgba(232,185,99,0.1));
+}
+.xr-card-sky { border-color: rgba(111,181,224,0.22); }
+.xr-card-sky.xr-card-accent::before { background: linear-gradient(90deg, var(--xr-sky), rgba(111,181,224,0.1)); }
+
+.xr-glow-card { transition: border-color .28s var(--xr-ease), box-shadow .28s var(--xr-ease), transform .28s var(--xr-ease); }
+.xr-glow-card:hover {
+  border-color: rgba(232,185,99,0.55);
+  box-shadow: 0 18px 56px rgba(232,185,99,0.14), 0 2px 12px rgba(0,0,0,0.55);
+  transform: translateY(-3px);
+}
+.xr-glow-card.xr-card-sky:hover { border-color: rgba(111,181,224,0.45); box-shadow: 0 18px 56px rgba(111,181,224,0.12), 0 2px 12px rgba(0,0,0,0.55); }
+
+/* Utility: prevent break inside (e.g. "X-Ray" in headlines on narrow viewports) */
+.xr-nobreak { white-space: nowrap; }
+
+/* Screen-reader-only — used for headings that satisfy hierarchy semantics
+   but should be invisible to sighted users (e.g. FAQ category h2s that
+   live alongside the design's gold eyebrow labels we have hidden). */
+.xr-sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%);
+  white-space: nowrap; border: 0;
+}
+
+/* ────────────────────────────────────────── REVEAL ANIM ────────────────── */
+.xr-reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s var(--xr-ease), transform .8s var(--xr-ease); }
+.xr-reveal.in { opacity: 1; transform: translateY(0); }
+.xr-d1 { transition-delay: 0.08s; }
+.xr-d2 { transition-delay: 0.16s; }
+.xr-d3 { transition-delay: 0.24s; }
+.xr-d4 { transition-delay: 0.32s; }
+.xr-d5 { transition-delay: 0.4s; }
+.xr-d6 { transition-delay: 0.48s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .xr-reveal, .xr-topo-contours, .xr-topo-reticle, .pulse-dot { animation: none !important; transition: none !important; opacity: 1 !important; transform: none !important; }
+}
+
+/* ────────────────────────────────────────── DOTS / TAGS ────────────────── */
+.xr-pulse-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--xr-green); animation: xr-pulse 2.4s ease-in-out infinite; }
+@keyframes xr-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(123,201,122,0.5); }
+  50%      { opacity: 0.7; transform: scale(0.88); box-shadow: 0 0 0 6px rgba(123,201,122,0); }
+}
+
+.xr-tag {
+  display: inline-block; padding: 5px 11px; border-radius: 2px;
+  font-family: var(--xr-font-mono); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+.xr-tag-gold { background: rgba(232,185,99,0.09); border: 1px solid rgba(232,185,99,0.3); color: var(--xr-gold); }
+.xr-tag-sky  { background: rgba(111,181,224,0.09); border: 1px solid rgba(111,181,224,0.3); color: var(--xr-sky); }
+.xr-tag-green{ background: rgba(123,201,122,0.09); border: 1px solid rgba(123,201,122,0.3); color: var(--xr-green); }
+.xr-tag-muted{ background: rgba(168,178,192,0.05); border: 1px solid rgba(168,178,192,0.18); color: var(--xr-text-muted); }
+
+/* ────────────────────────────────────────── HERO (index.html) ──────────── */
+/* Video-as-background hero. Pure black surround. Hero is now 300vh tall
+   (doubled from 150vh) so the scroll-scrub plays at ~50 % of the previous
+   rate. Video uses object-fit:contain inside the pinned viewport so the
+   full frame (including ALL of the green hexagons) stays on screen at
+   the final frame. */
+.xr-hero {
+  position: relative;
+  /* 720 px of extra height gives .xr-hero-pin (position:sticky) exactly
+     720 px of scroll-room without needing GSAP's pin spacer. */
+  min-height: calc(100vh + 720px);
+  background: var(--xr-void);
+  padding-top: var(--xr-nav-h);
+  isolation: isolate;
+}
+.xr-hero-pin {
+  position: sticky;
+  top: var(--xr-nav-h);
+  height: calc(100vh - var(--xr-nav-h));
+  overflow: hidden;
+  z-index: 1;
+}
+/* Video is `contain` so the full frame (with every green hexagon)
+   stays visible, and `object-position: right` pins it to the right
+   edge of the viewport. Any letterbox column lands on the LEFT,
+   blending with the .xr-hero-fade gradient. No black column on
+   the right side anymore. */
+.xr-hero-video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: contain;
+  object-position: right center;
+  background: #000;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Left-side fade — keeps the headline readable on the void column. */
+.xr-hero-fade {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(
+    to right,
+    #000 0%,
+    rgba(0,0,0,0.92) 18%,
+    rgba(0,0,0,0.6) 32%,
+    rgba(0,0,0,0.2) 46%,
+    rgba(0,0,0,0) 60%
+  );
+}
+.xr-hero-fade-v {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 22%;
+  pointer-events: none; z-index: 1;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, #000 100%);
+}
+
+/* LEFT column — eyebrow, headline, paragraph, CTAs.
+   Lifts upward and fades out as scroll progresses past --text-out-start.
+   The JS sets --text-progress (0..1) on the hero element. */
+.xr-hero-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex; align-items: center;
+  will-change: transform, opacity;
+  transform: translateY(calc(var(--text-progress, 0) * -80px));
+  opacity: calc(1 - var(--text-progress, 0));
+  transition: transform 0.05s linear, opacity 0.05s linear;
+}
+.xr-hero-content-inner {
+  width: 100%;
+  max-width: var(--xr-max-w);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+.xr-hero-text { max-width: 520px; }
+.xr-hero-headline {
+  font-family: var(--xr-font-display);
+  font-weight: 800;
+  font-size: clamp(40px, 5.4vw, 80px);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  color: #FFFFFF;
+  margin: 0 0 24px;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.6);
+}
+.xr-hero-headline .accent { color: var(--xr-gold); }
+.xr-hero-sub {
+  color: rgba(241,244,248,0.85);
+  font-size: 17px; line-height: 1.65;
+  margin: 0 0 28px;
+  max-width: 440px;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.55);
+}
+.xr-hero-cta { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+
+/* Reveal lines — positioned ABSOLUTELY across the hero pin to overlay
+   the green hexagons in the video's final frame. Each bullet sits at a
+   percentage coordinate that maps to a hexagon position. Adjust the
+   --x and --y on each .xr-hero-bullet to fine-tune alignment.
+   The whole group fades/slides in once scroll passes BULLETS_THRESHOLD. */
+.xr-hero-bullets {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .8s var(--xr-ease);
+}
+.xr-hero-bullets.in { opacity: 1; }
+.xr-hero-bullets.in .xr-hero-bullet { transform: translate(-50%, -50%) translateY(0); opacity: 1; }
+
+/* ── Reveal lines (hover-driven, "updated landing page" doc, May 2026) ──
+   Each bullet has three logical parts:
+     1. A large headline (`.xr-hero-bullet-head`) — ALWAYS visible,
+        positioned to the LEFT of its green hexagon.
+     2. A hidden body (`.xr-hero-bullet-body`) — slides OUTWARD to the
+        LEFT of the hexagon on hover, sitting just under/next to the
+        heading. The user's latest doc explicitly asked for the panel
+        to live LEFT of the hex (not right).
+     3. An invisible hit-zone (`.xr-hero-bullet-hit`) over the hex
+        center, since the hexagon itself is rendered by the video.
+   Coordinates --x / --y are percentages of the hero pin (the green
+   hex centre in the final video frame). */
+
+.xr-hero-bullet {
+  position: absolute;
+  top: var(--y, 50%);
+  left: var(--x, 50%);
+  transform: translate(-50%, -50%);
+  width: 1px; height: 1px;          /* anchor point only */
+  pointer-events: none;
+}
+
+/* Always-visible heading — sits left of its hex. EVERY heading uses
+   the same fixed width and the same `right` offset so all four
+   blocks are exactly equidistant from their respective hexagons
+   (their right edge, left edge AND visual centre are all the same
+   distance from the hex centre — only the hex Y differs). */
+.xr-hero-bullet-head {
+  position: absolute;
+  right: 90px;                  /* uniform px gap from each hex centre */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 220px;                 /* fixed width → uniform left edge for every bullet */
+  font-family: var(--xr-font-display);
+  font-weight: 700;
+  font-size: clamp(20px, 2.4vw, 32px);
+  line-height: 1.04;
+  letter-spacing: -0.024em;
+  color: #FFFFFF;
+  text-align: right;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.85), 0 0 28px rgba(0,0,0,0.55);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .5s var(--xr-ease), transform .5s var(--xr-ease);
+}
+.xr-hero-bullets.in .xr-hero-bullet-head { opacity: 1; transform: translateY(-50%) translateX(0); }
+
+/* Hover/focus hit-zone — centred on the hex, but actual proximity
+   detection (20 px radius around the hex centre) is done in JS so
+   the body panel reveals before the cursor crosses the hex edge. */
+.xr-hero-bullet-hit {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 62px; height: 72px;
+  pointer-events: auto;
+  cursor: help;
+  z-index: 4;
+}
+
+/* Body panel — anchored RIGHT of the hex (at the "yellow star" position
+   in the May-2026 instructions) and animating in from the hex centre.
+   Visual: dense card with a gold tick along the top, green-edge accent
+   on the left, deep amber glow so it reads on any background. */
+.xr-hero-bullet-body {
+  position: absolute;
+  left: 72px;            /* past the right edge of the hex (hit zone is 80px wide, ±40px from centre) */
+  top: 50%;
+  width: clamp(240px, 22vw, 320px);
+  padding: 16px 20px 16px 18px;
+  background:
+    linear-gradient(180deg, rgba(232,185,99,0.05) 0%, rgba(8,12,18,0) 55%),
+    rgba(8, 12, 18, 0.96);
+  border: 1px solid rgba(232, 185, 99, 0.45);
+  border-left: 3px solid var(--xr-green);
+  border-radius: 3px;
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  box-shadow:
+    0 18px 56px rgba(0,0,0,0.8),
+    0 0 0 1px rgba(232,185,99,0.06),
+    0 0 36px rgba(232,185,99,0.14);
+  font-family: var(--xr-font-body);
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(241,244,248,0.96);
+  text-align: left;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+  transform-origin: left center;
+  transform: translate(-12px, -50%) scaleX(0.55);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity      .32s var(--xr-ease),
+    transform    .4s  var(--xr-ease),
+    visibility   0s   linear .32s;
+}
+/* Gold rule along the panel top — adds visual polish without crowding the body. */
+.xr-hero-bullet-body::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, var(--xr-gold), rgba(232,185,99,0.15));
+}
+.xr-hero-bullet-body strong { color: #FFFFFF; font-weight: 700; }
+
+/* Hover OR keyboard focus on the hit-zone reveals the body.
+   `.locked` is added by xray-hero.js on first hover/focus/touch and
+   keeps the body open even after the pointer leaves — the sticky-hover
+   behaviour the user asked for. It's cleared when the hero animation
+   reverses (i.e. the user scrolls back up past the trigger). */
+.xr-hero-bullet:hover                  .xr-hero-bullet-body,
+.xr-hero-bullet:focus-within           .xr-hero-bullet-body,
+.xr-hero-bullet.locked                 .xr-hero-bullet-body,
+.xr-hero-bullet-hit:hover ~ .xr-hero-bullet-body {
+  transform: translate(0, -50%) scaleX(1);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition:
+    opacity      .38s var(--xr-ease),
+    transform    .44s var(--xr-ease),
+    visibility   0s linear 0s;
+}
+
+/* Per-bullet positions — coordinates target the centre of each
+   green hexagon in the video's final frame. */
+/* Bullet anchor centres — each must sit at the centre of its matching
+   green hexagon in the video's final frame so the heading (which
+   absolute-positions LEFT of the anchor at top:50%) reads at the same
+   Y as the hex. Measured off the user's 2026-05-15 screenshot at
+   scroll ~95 %, viewport 1923 × 866. */
+.xr-hero-bullet:nth-child(1) { --x: 43%; --y: 18%; }
+.xr-hero-bullet:nth-child(2) { --x: 55%; --y: 34%; }
+.xr-hero-bullet:nth-child(3) { --x: 60%; --y: 58%; }
+.xr-hero-bullet:nth-child(4) { --x: 64%; --y: 82%; }
+
+/* Stagger the reveal */
+.xr-hero-bullets.in .xr-hero-bullet:nth-child(1) { transition-delay: 0.05s; }
+.xr-hero-bullets.in .xr-hero-bullet:nth-child(2) { transition-delay: 0.15s; }
+.xr-hero-bullets.in .xr-hero-bullet:nth-child(3) { transition-delay: 0.25s; }
+.xr-hero-bullets.in .xr-hero-bullet:nth-child(4) { transition-delay: 0.35s; }
+
+.xr-hero-progress {
+  position: absolute;
+  left: 28px; bottom: 28px;
+  display: flex; align-items: center; gap: 12px;
+  font-family: var(--xr-font-mono);
+  font-size: 11px;
+  color: rgba(241,244,248,0.7);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  z-index: 4;
+}
+.xr-hero-progress-bar {
+  width: 140px; height: 2px;
+  background: rgba(255,255,255,0.14);
+  position: relative; overflow: hidden;
+}
+.xr-hero-progress-fill {
+  position: absolute; top: 0; left: 0; bottom: 0;
+  width: 0%;
+  background: linear-gradient(90deg, var(--xr-gold), var(--xr-green));
+  transition: width .12s linear;
+}
+
+@media (max-width: 980px) {
+  .xr-hero { min-height: calc(100vh + 720px); }
+  .xr-hero-content-inner { padding: 0 22px; }
+  .xr-hero-text { max-width: 100%; }
+  .xr-hero-fade {
+    background: linear-gradient(to bottom, #000 0%, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0) 85%);
+  }
+  /* Mobile: stack bullets in a column at the bottom instead of overlaying */
+  .xr-hero-bullets { position: relative; display: flex; flex-direction: column; gap: 10px; padding: 24px 22px; pointer-events: auto; }
+  .xr-hero-bullet { position: relative; top: auto; left: auto; transform: translateY(0); width: 100%; }
+  .xr-hero-progress { left: 22px; bottom: 22px; }
+}
+
+/* ────────────────────────────────────────── FOOTER ─────────────────────── */
+/* Footer carries the same mountain landscape so there is no visual
+   seam between the parallax-strip section above and the directory
+   block below (per May-2026 "new index instructions"). The dark
+   gradient keeps directory text readable. */
+.xr-footer {
+  position: relative;
+  padding: 72px 0 36px;
+  overflow: hidden;
+  border-top: 1px solid rgba(232,185,99,0.18);
+  /* Lighter top gradient — the mountain reads through so there's
+     visual continuity from the parallax section. Heavier toward the
+     bottom so the directory text stays sharp. */
+  background:
+    linear-gradient(180deg, rgba(14,20,27,0.78) 0%, rgba(14,20,27,0.92) 55%, rgba(14,20,27,0.98) 100%),
+    url("brand_assets/mj-landscape-sharp.jpg") center bottom / cover no-repeat,
+    var(--xr-deep);
+}
+.xr-footer::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(232,185,99,0.4), transparent);
+}
+.xr-footer-strip {
+  position: absolute; top: 0; left: 0; right: 0; height: 6px;
+  background-image:
+    linear-gradient(to right, rgba(14,20,27,0.95), transparent 12%, transparent 88%, rgba(14,20,27,0.95)),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 6'%3E%3Cpath d='M0 3 Q60 1 120 3 T240 3 T360 3 T480 3 T600 3 T720 3 T800 3' fill='none' stroke='%23E8B963' stroke-opacity='0.45' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: cover, 800px 6px;
+  opacity: 0.7;
+}
+.xr-footer-inner {
+  max-width: var(--xr-max-w); margin: 0 auto; padding: 0 28px;
+  position: relative; z-index: 1;
+}
+.xr-footer-grid {
+  display: grid;
+  grid-template-columns: 2.4fr 1fr 1fr 1fr 1fr;
+  gap: 56px;
+  margin-bottom: 56px;
+}
+.xr-footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.xr-footer-brand img { height: 36px; }
+.xr-footer-brand span {
+  font-family: var(--xr-font-mono); font-weight: 600; font-size: 15px;
+  letter-spacing: 0.04em; color: var(--xr-text);
+}
+.xr-footer-tagline {
+  color: var(--xr-text-2); font-size: 15px; line-height: 1.75;
+  margin: 0 0 22px; max-width: 320px;
+}
+.xr-footer-contact { display: flex; flex-direction: column; gap: 10px; }
+.xr-footer-contact a {
+  color: var(--xr-text-2);
+  font-family: var(--xr-font-mono);
+  font-size: 13.5px;
+  letter-spacing: 0.04em;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: color .15s var(--xr-ease);
+}
+.xr-footer-contact a:hover { color: var(--xr-gold); }
+.xr-footer-contact a svg { width: 14px; height: 14px; stroke: currentColor; stroke-width: 1.6; fill: none; flex-shrink: 0; }
+
+.xr-footer h3, .xr-footer h4 {
+  font-family: var(--xr-font-mono); color: var(--xr-gold);
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  margin: 0 0 24px;
+}
+.xr-footer-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
+.xr-footer-list a {
+  color: var(--xr-text-2); font-size: 15.5px;
+  transition: color .14s var(--xr-ease);
+  position: relative; padding-left: 0;
+}
+.xr-footer-list a:hover { color: var(--xr-gold); padding-left: 4px; }
+
+.xr-footer-bottom {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(232,185,99,0.12);
+}
+/* Use --xr-text-2 (rather than the more-muted --xr-text-muted) so 13.5 px
+   small text still clears WCAG AA 4.5:1 against the --xr-void background. */
+.xr-footer-bottom p { color: var(--xr-text-2); font-size: 13.5px; margin: 0; font-family: var(--xr-font-mono); letter-spacing: 0.03em; }
+.xr-footer-social { display: flex; align-items: center; gap: 12px; }
+.xr-footer-social a {
+  width: 36px; height: 36px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(232,185,99,0.24);
+  border-radius: 2px;
+  color: var(--xr-text-2);
+  transition: color .15s, border-color .15s, background .15s;
+}
+.xr-footer-social a:hover { color: var(--xr-gold); border-color: var(--xr-gold); background: rgba(232,185,99,0.06); }
+.xr-footer-social svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 1.6; fill: none; }
+
+@media (max-width: 980px) {
+  .xr-footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+  .xr-footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 560px) {
+  .xr-footer-grid { grid-template-columns: 1fr; }
+}
+
+/* ────────────────────────────────────────── PAGE HERO ─────────────────── */
+/* Universal page hero — every secondary page lands here. Carries the
+   new mountain-landscape MJ background by default, with a dark wash
+   so text remains readable. Individual pages can override .xr-page-hero
+   if they want a specific image (e.g. product.html uses the heatmap art). */
+.xr-page-hero {
+  position: relative;
+  padding: calc(var(--xr-nav-h) + 96px) 0 96px;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    linear-gradient(180deg, rgba(14,20,27,0.88) 0%, rgba(14,20,27,0.65) 35%, rgba(14,20,27,0.92) 100%),
+    url("brand_assets/mj-landscape-sharp.jpg") center/cover no-repeat,
+    var(--xr-void);
+}
+.xr-page-hero::before {
+  content: '';
+  position: absolute; inset: 0; z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 55% at 15% 35%, rgba(0,0,0,0.55) 0%, transparent 60%),
+    radial-gradient(ellipse 90% 70% at 50% 100%, rgba(14,20,27,0.85) 0%, rgba(14,20,27,0) 70%);
+}
+.xr-page-hero > * { position: relative; z-index: 1; }
+.xr-page-hero h1 { max-width: 900px; margin: 0 0 24px; }
+.xr-page-hero .xr-lede { color: var(--xr-text-2); font-size: 19px; line-height: 1.7; max-width: 640px; }
+
+/* ────────────────────────────────────────── UTIL ──────────────────────── */
+.xr-divider { border: none; border-top: 1px solid rgba(232,185,99,0.12); margin: 0; }
+.xr-quote {
+  border-left: 3px solid rgba(232,185,99,0.7);
+  padding: 8px 0 8px 28px;
+  font-family: var(--xr-font-display);
+  font-weight: 500;
+  font-style: italic;
+  color: var(--xr-text);
+  font-size: clamp(20px, 2.1vw, 26px);
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+.xr-scroll-cue {
+  position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+  width: 1px; height: 44px;
+  background: linear-gradient(to bottom, transparent, var(--xr-gold), transparent);
+  opacity: 0.6;
+  animation: xr-scroll-cue 2.2s ease-in-out infinite;
+}
+@keyframes xr-scroll-cue {
+  0%, 100% { opacity: 0.3; transform: translateX(-50%) scaleY(0.65); }
+  50%      { opacity: 0.85; transform: translateX(-50%) scaleY(1); }
+}
