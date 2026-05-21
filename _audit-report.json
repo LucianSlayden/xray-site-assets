@@ -1,0 +1,3604 @@
+{
+  "generatedAt": "2026-05-15T10:47:52.347Z",
+  "pages": {
+    "index.html": {
+      "url": "http://localhost:3000/",
+      "meta": {
+        "title": "X-Ray Geoanalytics — Advanced ML for Mining Site Discovery",
+        "h1Count": 1,
+        "langAttr": "en",
+        "hasViewportMeta": true,
+        "hasDescriptionMeta": true,
+        "internalLinks": [
+          {
+            "href": "index.html",
+            "text": "X-Ray Geoanalytics"
+          },
+          {
+            "href": "product.html",
+            "text": "Product Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "about-us.html",
+            "text": "About Us"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "product.html",
+            "text": "Product"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "about-us.html",
+            "text": "About Us"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works →"
+          },
+          {
+            "href": "our-models.html",
+            "text": "View Our Models →"
+          },
+          {
+            "href": "our-models.html",
+            "text": "View the full roadmap →"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Full competitive analysis →"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "pricing.html",
+            "text": "View Pricing →"
+          },
+          {
+            "href": "product.html",
+            "text": "Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources Library"
+          },
+          {
+            "href": "investors.html",
+            "text": "For Investors"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Book a Demo"
+          }
+        ],
+        "externalLinks": [
+          {
+            "href": "https://www.linkedin.com/company/xray-geoanalytics",
+            "text": ""
+          },
+          {
+            "href": "https://x.com/xraygeoanalytic",
+            "text": ""
+          }
+        ],
+        "emptyHrefs": [],
+        "mailtos": [
+          "mailto:info@xraygeoanalytics.com",
+          "mailto:info@xraygeoanalytics.com"
+        ],
+        "imgs": [
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          },
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          }
+        ],
+        "bgImages": [
+          "http://localhost:3000/brand_assets/mj-landscape-sharp.jpg"
+        ],
+        "docHeight": 900
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    "about-us.html": {
+      "url": "http://localhost:3000/about-us.html",
+      "meta": {
+        "title": "About Us | X-Ray Geoanalytics",
+        "h1Count": 1,
+        "langAttr": "en",
+        "hasViewportMeta": true,
+        "hasDescriptionMeta": true,
+        "internalLinks": [
+          {
+            "href": "index.html",
+            "text": "X-Ray Geoanalytics"
+          },
+          {
+            "href": "product.html",
+            "text": "Product Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "about-us.html",
+            "text": "About Us"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "product.html",
+            "text": "Product"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "about-us.html",
+            "text": "About Us"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request a Demo"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Meet the Team →"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team\n              \n              Meet the founders\n    "
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray\n              \n              The competitive diffe"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates\n              \n              Company mileston"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs\n              \n              Common questions\n         "
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request a Demo"
+          },
+          {
+            "href": "product.html",
+            "text": "Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources Library"
+          },
+          {
+            "href": "investors.html",
+            "text": "For Investors"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Book a Demo"
+          }
+        ],
+        "externalLinks": [
+          {
+            "href": "https://www.linkedin.com/company/xray-geoanalytics",
+            "text": ""
+          },
+          {
+            "href": "https://x.com/xraygeoanalytic",
+            "text": ""
+          }
+        ],
+        "emptyHrefs": [],
+        "mailtos": [
+          "mailto:info@xraygeoanalytics.com",
+          "mailto:info@xraygeoanalytics.com",
+          "mailto:info@xraygeoanalytics.com"
+        ],
+        "imgs": [
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          },
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          }
+        ],
+        "bgImages": [
+          "http://localhost:3000/brand_assets/mj-landscape-sharp.jpg"
+        ],
+        "docHeight": 4601
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    "our-team.html": {
+      "url": "http://localhost:3000/our-team.html",
+      "meta": {
+        "title": "Our Team | X-Ray Geoanalytics",
+        "h1Count": 1,
+        "langAttr": "en",
+        "hasViewportMeta": true,
+        "hasDescriptionMeta": true,
+        "internalLinks": [
+          {
+            "href": "index.html",
+            "text": "X-Ray Geoanalytics"
+          },
+          {
+            "href": "product.html",
+            "text": "Product Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "product.html",
+            "text": "Product"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "about-us.html",
+            "text": "About Us"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request a Demo →"
+          },
+          {
+            "href": "product.html",
+            "text": "Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources Library"
+          },
+          {
+            "href": "investors.html",
+            "text": "For Investors"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Book a Demo"
+          }
+        ],
+        "externalLinks": [
+          {
+            "href": "https://www.linkedin.com/company/xray-geoanalytics",
+            "text": ""
+          },
+          {
+            "href": "https://x.com/xraygeoanalytic",
+            "text": ""
+          }
+        ],
+        "emptyHrefs": [],
+        "mailtos": [
+          "mailto:lucian@xraygeoanalytics.com",
+          "mailto:info@xraygeoanalytics.com",
+          "mailto:info@xraygeoanalytics.com"
+        ],
+        "imgs": [
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          },
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          }
+        ],
+        "bgImages": [
+          "http://localhost:3000/brand_assets/mj-landscape-sharp.jpg"
+        ],
+        "docHeight": 2662
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    "product.html": {
+      "url": "http://localhost:3000/product.html",
+      "meta": {
+        "title": "Product | X-Ray Geoanalytics",
+        "h1Count": 1,
+        "langAttr": "en",
+        "hasViewportMeta": true,
+        "hasDescriptionMeta": true,
+        "internalLinks": [
+          {
+            "href": "index.html",
+            "text": "X-Ray Geoanalytics"
+          },
+          {
+            "href": "product.html",
+            "text": "Product Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "about-us.html",
+            "text": "About Us"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "product.html",
+            "text": "Product"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "about-us.html",
+            "text": "About Us"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works →"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Full Competitive Analysis →"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "See How It Works →"
+          },
+          {
+            "href": "product.html",
+            "text": "Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources Library"
+          },
+          {
+            "href": "investors.html",
+            "text": "For Investors"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Book a Demo"
+          }
+        ],
+        "externalLinks": [
+          {
+            "href": "https://www.linkedin.com/company/xray-geoanalytics",
+            "text": ""
+          },
+          {
+            "href": "https://x.com/xraygeoanalytic",
+            "text": ""
+          }
+        ],
+        "emptyHrefs": [],
+        "mailtos": [
+          "mailto:info@xraygeoanalytics.com",
+          "mailto:info@xraygeoanalytics.com"
+        ],
+        "imgs": [
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          },
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          }
+        ],
+        "bgImages": [
+          "http://localhost:3000/brand_assets/product-bg.jpg",
+          "http://localhost:3000/brand_assets/mj-landscape-sharp.jpg"
+        ],
+        "docHeight": 5119
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    "our-models.html": {
+      "url": "http://localhost:3000/our-models.html",
+      "meta": {
+        "title": "Our Models | X-Ray Geoanalytics",
+        "h1Count": 1,
+        "langAttr": "en",
+        "hasViewportMeta": true,
+        "hasDescriptionMeta": true,
+        "internalLinks": [
+          {
+            "href": "index.html",
+            "text": "X-Ray Geoanalytics"
+          },
+          {
+            "href": "product.html",
+            "text": "Product Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "about-us.html",
+            "text": "About Us"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "product.html",
+            "text": "Product"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "about-us.html",
+            "text": "About Us"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Pilot Access"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "pricing.html",
+            "text": "View Pricing →"
+          },
+          {
+            "href": "product.html",
+            "text": "Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources Library"
+          },
+          {
+            "href": "investors.html",
+            "text": "For Investors"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Book a Demo"
+          }
+        ],
+        "externalLinks": [
+          {
+            "href": "https://www.linkedin.com/company/xray-geoanalytics",
+            "text": ""
+          },
+          {
+            "href": "https://x.com/xraygeoanalytic",
+            "text": ""
+          }
+        ],
+        "emptyHrefs": [],
+        "mailtos": [
+          "mailto:info@xraygeoanalytics.com",
+          "mailto:info@xraygeoanalytics.com"
+        ],
+        "imgs": [
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          },
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          }
+        ],
+        "bgImages": [
+          "http://localhost:3000/brand_assets/our-models-bg.jpg",
+          "http://localhost:3000/brand_assets/mj-landscape-sharp.jpg"
+        ],
+        "docHeight": 4208
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    "industries.html": {
+      "url": "http://localhost:3000/industries.html",
+      "meta": {
+        "title": "Industries | X-Ray Geoanalytics",
+        "h1Count": 1,
+        "langAttr": "en",
+        "hasViewportMeta": true,
+        "hasDescriptionMeta": true,
+        "internalLinks": [
+          {
+            "href": "index.html",
+            "text": "X-Ray Geoanalytics"
+          },
+          {
+            "href": "product.html",
+            "text": "Product Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "about-us.html",
+            "text": "About Us"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "product.html",
+            "text": "Product"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "about-us.html",
+            "text": "About Us"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "pricing.html",
+            "text": "View Explorer Pricing →"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Join the Operator Waitlist"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Contact Sales"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Talk to our enterprise team →"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "pricing.html",
+            "text": "View Pricing →"
+          },
+          {
+            "href": "product.html",
+            "text": "Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources Library"
+          },
+          {
+            "href": "investors.html",
+            "text": "For Investors"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Book a Demo"
+          }
+        ],
+        "externalLinks": [
+          {
+            "href": "https://www.linkedin.com/company/xray-geoanalytics",
+            "text": ""
+          },
+          {
+            "href": "https://x.com/xraygeoanalytic",
+            "text": ""
+          }
+        ],
+        "emptyHrefs": [],
+        "mailtos": [
+          "mailto:info@xraygeoanalytics.com",
+          "mailto:info@xraygeoanalytics.com"
+        ],
+        "imgs": [
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          },
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          }
+        ],
+        "bgImages": [
+          "http://localhost:3000/brand_assets/mj-landscape-sharp.jpg"
+        ],
+        "docHeight": 4895
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    "platform.html": {
+      "url": "http://localhost:3000/platform.html",
+      "meta": {
+        "title": "Platform | X-Ray Geoanalytics",
+        "h1Count": 1,
+        "langAttr": "en",
+        "hasViewportMeta": true,
+        "hasDescriptionMeta": true,
+        "internalLinks": [
+          {
+            "href": "index.html",
+            "text": "X-Ray Geoanalytics"
+          },
+          {
+            "href": "product.html",
+            "text": "Product Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "about-us.html",
+            "text": "About Us"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "product.html",
+            "text": "Product"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "about-us.html",
+            "text": "About Us"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works →"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Talk to us about security"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request a Demo"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works →"
+          },
+          {
+            "href": "product.html",
+            "text": "Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources Library"
+          },
+          {
+            "href": "investors.html",
+            "text": "For Investors"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Book a Demo"
+          }
+        ],
+        "externalLinks": [
+          {
+            "href": "https://www.linkedin.com/company/xray-geoanalytics",
+            "text": ""
+          },
+          {
+            "href": "https://x.com/xraygeoanalytic",
+            "text": ""
+          }
+        ],
+        "emptyHrefs": [],
+        "mailtos": [
+          "mailto:info@xraygeoanalytics.com",
+          "mailto:info@xraygeoanalytics.com"
+        ],
+        "imgs": [
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          },
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          }
+        ],
+        "bgImages": [
+          "http://localhost:3000/brand_assets/mj-landscape-sharp.jpg"
+        ],
+        "docHeight": 4865
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    "how-it-works.html": {
+      "url": "http://localhost:3000/how-it-works.html",
+      "meta": {
+        "title": "How It Works | X-Ray Geoanalytics",
+        "h1Count": 1,
+        "langAttr": "en",
+        "hasViewportMeta": true,
+        "hasDescriptionMeta": true,
+        "internalLinks": [
+          {
+            "href": "index.html",
+            "text": "X-Ray Geoanalytics"
+          },
+          {
+            "href": "product.html",
+            "text": "Product Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "about-us.html",
+            "text": "About Us"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "product.html",
+            "text": "Product"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "about-us.html",
+            "text": "About Us"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "See it in a live demo"
+          },
+          {
+            "href": "pricing.html",
+            "text": "See pricing plans →"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request a Demo"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform details →"
+          },
+          {
+            "href": "product.html",
+            "text": "Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources Library"
+          },
+          {
+            "href": "investors.html",
+            "text": "For Investors"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Book a Demo"
+          }
+        ],
+        "externalLinks": [
+          {
+            "href": "https://www.linkedin.com/company/xray-geoanalytics",
+            "text": ""
+          },
+          {
+            "href": "https://x.com/xraygeoanalytic",
+            "text": ""
+          }
+        ],
+        "emptyHrefs": [],
+        "mailtos": [
+          "mailto:info@xraygeoanalytics.com",
+          "mailto:info@xraygeoanalytics.com"
+        ],
+        "imgs": [
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          },
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          }
+        ],
+        "bgImages": [
+          "http://localhost:3000/brand_assets/mj-landscape-sharp.jpg"
+        ],
+        "docHeight": 4415
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    "pricing.html": {
+      "url": "http://localhost:3000/pricing.html",
+      "meta": {
+        "title": "Pricing | X-Ray Geoanalytics",
+        "h1Count": 1,
+        "langAttr": "en",
+        "hasViewportMeta": true,
+        "hasDescriptionMeta": true,
+        "internalLinks": [
+          {
+            "href": "index.html",
+            "text": "X-Ray Geoanalytics"
+          },
+          {
+            "href": "product.html",
+            "text": "Product Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "about-us.html",
+            "text": "About Us"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "product.html",
+            "text": "Product"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "about-us.html",
+            "text": "About Us"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Get Started with Explorer"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Contact Sales"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Join the Pilot"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray →"
+          },
+          {
+            "href": "product.html",
+            "text": "Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources Library"
+          },
+          {
+            "href": "investors.html",
+            "text": "For Investors"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Book a Demo"
+          }
+        ],
+        "externalLinks": [
+          {
+            "href": "https://www.linkedin.com/company/xray-geoanalytics",
+            "text": ""
+          },
+          {
+            "href": "https://x.com/xraygeoanalytic",
+            "text": ""
+          }
+        ],
+        "emptyHrefs": [],
+        "mailtos": [
+          "mailto:info@xraygeoanalytics.com?subject=Operator%20Waitlist",
+          "mailto:info@xraygeoanalytics.com",
+          "mailto:info@xraygeoanalytics.com"
+        ],
+        "imgs": [
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          },
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          }
+        ],
+        "bgImages": [
+          "http://localhost:3000/brand_assets/pricing-bg.jpg",
+          "http://localhost:3000/brand_assets/mj-landscape-sharp.jpg"
+        ],
+        "docHeight": 3608
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    "resources.html": {
+      "url": "http://localhost:3000/resources.html",
+      "meta": {
+        "title": "Resources | X-Ray Geoanalytics",
+        "h1Count": 1,
+        "langAttr": "en",
+        "hasViewportMeta": true,
+        "hasDescriptionMeta": true,
+        "internalLinks": [
+          {
+            "href": "index.html",
+            "text": "X-Ray Geoanalytics"
+          },
+          {
+            "href": "product.html",
+            "text": "Product Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "about-us.html",
+            "text": "About Us"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "product.html",
+            "text": "Product"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "about-us.html",
+            "text": "About Us"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request full report"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request document →"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request document →"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request document →"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Available at onboarding →"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Available at onboarding →"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Available at onboarding →"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request a Demo"
+          },
+          {
+            "href": "product.html",
+            "text": "Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources Library"
+          },
+          {
+            "href": "investors.html",
+            "text": "For Investors"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Book a Demo"
+          }
+        ],
+        "externalLinks": [
+          {
+            "href": "https://www.linkedin.com/company/xray-geoanalytics",
+            "text": ""
+          },
+          {
+            "href": "https://x.com/xraygeoanalytic",
+            "text": ""
+          }
+        ],
+        "emptyHrefs": [],
+        "mailtos": [
+          "mailto:info@xraygeoanalytics.com",
+          "mailto:info@xraygeoanalytics.com",
+          "mailto:info@xraygeoanalytics.com"
+        ],
+        "imgs": [
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          },
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          }
+        ],
+        "bgImages": [
+          "http://localhost:3000/brand_assets/mj-landscape-sharp.jpg"
+        ],
+        "docHeight": 4276
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    "investors.html": {
+      "url": "http://localhost:3000/investors.html",
+      "meta": {
+        "title": "For Investors | X-Ray Geoanalytics",
+        "h1Count": 1,
+        "langAttr": "en",
+        "hasViewportMeta": true,
+        "hasDescriptionMeta": true,
+        "internalLinks": [
+          {
+            "href": "index.html",
+            "text": "X-Ray Geoanalytics"
+          },
+          {
+            "href": "product.html",
+            "text": "Product Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "about-us.html",
+            "text": "About Us"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "product.html",
+            "text": "Product"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "about-us.html",
+            "text": "About Us"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Full team bios →"
+          },
+          {
+            "href": "product.html",
+            "text": "Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources Library"
+          },
+          {
+            "href": "investors.html",
+            "text": "For Investors"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Book a Demo"
+          }
+        ],
+        "externalLinks": [
+          {
+            "href": "https://www.linkedin.com/company/xray-geoanalytics",
+            "text": ""
+          },
+          {
+            "href": "https://x.com/xraygeoanalytic",
+            "text": ""
+          }
+        ],
+        "emptyHrefs": [],
+        "mailtos": [
+          "mailto:lucian@xraygeoanalytics.com",
+          "mailto:lucian@xraygeoanalytics.com",
+          "mailto:info@xraygeoanalytics.com",
+          "mailto:info@xraygeoanalytics.com"
+        ],
+        "imgs": [
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          },
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          }
+        ],
+        "bgImages": [
+          "http://localhost:3000/brand_assets/mj-landscape-sharp.jpg"
+        ],
+        "docHeight": 7010
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    "why-xray.html": {
+      "url": "http://localhost:3000/why-xray.html",
+      "meta": {
+        "title": "Why X-Ray | X-Ray Geoanalytics",
+        "h1Count": 1,
+        "langAttr": "en",
+        "hasViewportMeta": true,
+        "hasDescriptionMeta": true,
+        "internalLinks": [
+          {
+            "href": "index.html",
+            "text": "X-Ray Geoanalytics"
+          },
+          {
+            "href": "product.html",
+            "text": "Product Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "about-us.html",
+            "text": "About Us"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "product.html",
+            "text": "Product"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "about-us.html",
+            "text": "About Us"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request a Demo"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works →"
+          },
+          {
+            "href": "product.html",
+            "text": "Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources Library"
+          },
+          {
+            "href": "investors.html",
+            "text": "For Investors"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Book a Demo"
+          }
+        ],
+        "externalLinks": [
+          {
+            "href": "https://www.linkedin.com/company/xray-geoanalytics",
+            "text": ""
+          },
+          {
+            "href": "https://x.com/xraygeoanalytic",
+            "text": ""
+          }
+        ],
+        "emptyHrefs": [],
+        "mailtos": [
+          "mailto:info@xraygeoanalytics.com",
+          "mailto:info@xraygeoanalytics.com"
+        ],
+        "imgs": [
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          },
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          }
+        ],
+        "bgImages": [
+          "http://localhost:3000/brand_assets/mj-landscape-sharp.jpg"
+        ],
+        "docHeight": 4381
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    "faqs.html": {
+      "url": "http://localhost:3000/faqs.html",
+      "meta": {
+        "title": "FAQs | X-Ray Geoanalytics",
+        "h1Count": 1,
+        "langAttr": "en",
+        "hasViewportMeta": true,
+        "hasDescriptionMeta": true,
+        "internalLinks": [
+          {
+            "href": "index.html",
+            "text": "X-Ray Geoanalytics"
+          },
+          {
+            "href": "product.html",
+            "text": "Product Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "about-us.html",
+            "text": "About Us"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "product.html",
+            "text": "Product"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "about-us.html",
+            "text": "About Us"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request a demo"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "→ How it works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "→ Pricing plans"
+          },
+          {
+            "href": "platform.html",
+            "text": "→ Platform details"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "→ Why X-Ray"
+          },
+          {
+            "href": "product.html",
+            "text": "Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources Library"
+          },
+          {
+            "href": "investors.html",
+            "text": "For Investors"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Book a Demo"
+          }
+        ],
+        "externalLinks": [
+          {
+            "href": "https://www.linkedin.com/company/xray-geoanalytics",
+            "text": ""
+          },
+          {
+            "href": "https://x.com/xraygeoanalytic",
+            "text": ""
+          }
+        ],
+        "emptyHrefs": [],
+        "mailtos": [
+          "mailto:info@xraygeoanalytics.com",
+          "mailto:info@xraygeoanalytics.com",
+          "mailto:info@xraygeoanalytics.com"
+        ],
+        "imgs": [
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          },
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          }
+        ],
+        "bgImages": [
+          "http://localhost:3000/brand_assets/mj-landscape-sharp.jpg"
+        ],
+        "docHeight": 2922
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    "news-updates.html": {
+      "url": "http://localhost:3000/news-updates.html",
+      "meta": {
+        "title": "News & Updates | X-Ray Geoanalytics",
+        "h1Count": 1,
+        "langAttr": "en",
+        "hasViewportMeta": true,
+        "hasDescriptionMeta": true,
+        "internalLinks": [
+          {
+            "href": "index.html",
+            "text": "X-Ray Geoanalytics"
+          },
+          {
+            "href": "product.html",
+            "text": "Product Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "about-us.html",
+            "text": "About Us"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "product.html",
+            "text": "Product"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "about-us.html",
+            "text": "About Us"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request early access →"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "product.html",
+            "text": "Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources Library"
+          },
+          {
+            "href": "investors.html",
+            "text": "For Investors"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Book a Demo"
+          }
+        ],
+        "externalLinks": [
+          {
+            "href": "https://www.linkedin.com/company/xray-geoanalytics",
+            "text": ""
+          },
+          {
+            "href": "https://x.com/xraygeoanalytic",
+            "text": ""
+          }
+        ],
+        "emptyHrefs": [],
+        "mailtos": [
+          "mailto:info@xraygeoanalytics.com",
+          "mailto:info@xraygeoanalytics.com"
+        ],
+        "imgs": [
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          },
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          }
+        ],
+        "bgImages": [
+          "http://localhost:3000/brand_assets/mj-landscape-sharp.jpg"
+        ],
+        "docHeight": 3133
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    "request-demo.html": {
+      "url": "http://localhost:3000/request-demo.html",
+      "meta": {
+        "title": "Request a Demo | X-Ray Geoanalytics",
+        "h1Count": 1,
+        "langAttr": "en",
+        "hasViewportMeta": true,
+        "hasDescriptionMeta": true,
+        "internalLinks": [
+          {
+            "href": "index.html",
+            "text": "X-Ray Geoanalytics"
+          },
+          {
+            "href": "product.html",
+            "text": "Product Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "about-us.html",
+            "text": "About Us"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "product.html",
+            "text": "Product"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources"
+          },
+          {
+            "href": "investors.html",
+            "text": "Investors"
+          },
+          {
+            "href": "about-us.html",
+            "text": "About Us"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "product.html",
+            "text": "Overview"
+          },
+          {
+            "href": "our-models.html",
+            "text": "Our Models"
+          },
+          {
+            "href": "platform.html",
+            "text": "Platform"
+          },
+          {
+            "href": "industries.html",
+            "text": "Industries"
+          },
+          {
+            "href": "how-it-works.html",
+            "text": "How it Works"
+          },
+          {
+            "href": "pricing.html",
+            "text": "Pricing"
+          },
+          {
+            "href": "our-team.html",
+            "text": "Our Team"
+          },
+          {
+            "href": "why-xray.html",
+            "text": "Why X-Ray"
+          },
+          {
+            "href": "news-updates.html",
+            "text": "News & Updates"
+          },
+          {
+            "href": "faqs.html",
+            "text": "FAQs"
+          },
+          {
+            "href": "resources.html",
+            "text": "Resources Library"
+          },
+          {
+            "href": "investors.html",
+            "text": "For Investors"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Request Demo"
+          },
+          {
+            "href": "request-demo.html",
+            "text": "Book a Demo"
+          }
+        ],
+        "externalLinks": [
+          {
+            "href": "https://www.linkedin.com/company/xray-geoanalytics",
+            "text": ""
+          },
+          {
+            "href": "https://x.com/xraygeoanalytic",
+            "text": ""
+          }
+        ],
+        "emptyHrefs": [],
+        "mailtos": [
+          "mailto:info@xraygeoanalytics.com",
+          "mailto:info@xraygeoanalytics.com"
+        ],
+        "imgs": [
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          },
+          {
+            "src": "http://localhost:3000/brand_assets/hex_logo_clean.png",
+            "alt": "X-Ray Geoanalytics",
+            "hasNaturalSize": true,
+            "w": 800,
+            "h": 800
+          }
+        ],
+        "bgImages": [
+          "http://localhost:3000/brand_assets/mj-landscape-sharp.jpg"
+        ],
+        "docHeight": 1641
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": []
+    }
+  }
+}

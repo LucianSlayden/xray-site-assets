@@ -1,0 +1,1275 @@
+{
+  "generatedAt": "2026-05-15T10:48:20.245Z",
+  "pages": {
+    "index.html": {
+      "buttonsNoName": [],
+      "linksNoName": [],
+      "inputsNoLabel": [],
+      "hierarchyJumps": [],
+      "lowContrast": [
+        {
+          "tag": "span",
+          "fontSize": 17,
+          "isLarge": false,
+          "contrast": "1.82",
+          "required": 4.5,
+          "fg": "rgb(241, 244, 248)",
+          "bg": "rgb(123,201,122)",
+          "text": ""
+        },
+        {
+          "tag": "span",
+          "fontSize": 10.5,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": ""
+        },
+        {
+          "tag": "span",
+          "fontSize": 10.5,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(111, 181, 224)",
+          "bg": "rgb(111,181,224)",
+          "text": ""
+        },
+        {
+          "tag": "span",
+          "fontSize": 10.5,
+          "isLarge": false,
+          "contrast": "4.30",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(14,20,27)",
+          "text": "Roadmap"
+        },
+        {
+          "tag": "span",
+          "fontSize": 10.5,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(111,123,139)",
+          "text": ""
+        },
+        {
+          "tag": "span",
+          "fontSize": 10.5,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgba(168, 178, 192, 0.85)",
+          "bg": "rgb(168,178,192)",
+          "text": ""
+        },
+        {
+          "tag": "span",
+          "fontSize": 11,
+          "isLarge": false,
+          "contrast": "3.94",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(22,29,39)",
+          "text": "Traditional"
+        }
+      ]
+    },
+    "about-us.html": {
+      "buttonsNoName": [],
+      "linksNoName": [],
+      "inputsNoLabel": [],
+      "hierarchyJumps": [],
+      "lowContrast": [
+        {
+          "tag": "span",
+          "fontSize": 11,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "2 founders"
+        },
+        {
+          "tag": "span",
+          "fontSize": 11,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(111, 181, 224)",
+          "bg": "rgb(111,181,224)",
+          "text": "2 founders"
+        },
+        {
+          "tag": "span",
+          "fontSize": 11,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "1 founder"
+        }
+      ]
+    },
+    "our-team.html": {
+      "buttonsNoName": [],
+      "linksNoName": [],
+      "inputsNoLabel": [],
+      "hierarchyJumps": [],
+      "lowContrast": [
+        {
+          "tag": "span",
+          "fontSize": 9.5,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "Primary Contact"
+        },
+        {
+          "tag": "span",
+          "fontSize": 10,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "Strategy"
+        },
+        {
+          "tag": "span",
+          "fontSize": 10,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "GTM"
+        },
+        {
+          "tag": "span",
+          "fontSize": 10,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "Investor Relations"
+        },
+        {
+          "tag": "span",
+          "fontSize": 10,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "ML Architecture"
+        },
+        {
+          "tag": "span",
+          "fontSize": 10,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "Data Fusion"
+        },
+        {
+          "tag": "span",
+          "fontSize": 10,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "Models"
+        },
+        {
+          "tag": "span",
+          "fontSize": 10,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(111, 181, 224)",
+          "bg": "rgb(111,181,224)",
+          "text": "Geoscience Data"
+        },
+        {
+          "tag": "span",
+          "fontSize": 10,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(111, 181, 224)",
+          "bg": "rgb(111,181,224)",
+          "text": "Partnerships"
+        },
+        {
+          "tag": "span",
+          "fontSize": 10,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(111, 181, 224)",
+          "bg": "rgb(111,181,224)",
+          "text": "Curation"
+        },
+        {
+          "tag": "span",
+          "fontSize": 10,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "Legal"
+        },
+        {
+          "tag": "span",
+          "fontSize": 10,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "IP Protection"
+        },
+        {
+          "tag": "span",
+          "fontSize": 10,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "Compliance"
+        },
+        {
+          "tag": "span",
+          "fontSize": 10,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(111, 181, 224)",
+          "bg": "rgb(111,181,224)",
+          "text": "Platform"
+        },
+        {
+          "tag": "span",
+          "fontSize": 10,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(111, 181, 224)",
+          "bg": "rgb(111,181,224)",
+          "text": "Infra"
+        },
+        {
+          "tag": "span",
+          "fontSize": 10,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(111, 181, 224)",
+          "bg": "rgb(111,181,224)",
+          "text": "DevOps"
+        }
+      ]
+    },
+    "product.html": {
+      "buttonsNoName": [],
+      "linksNoName": [],
+      "inputsNoLabel": [],
+      "hierarchyJumps": [],
+      "lowContrast": [
+        {
+          "tag": "span",
+          "fontSize": 11,
+          "isLarge": false,
+          "contrast": "4.30",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(14,20,27)",
+          "text": "Traditional"
+        },
+        {
+          "tag": "span",
+          "fontSize": 10.5,
+          "isLarge": false,
+          "contrast": "3.94",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(22,29,39)",
+          "text": "Long-term"
+        }
+      ]
+    },
+    "our-models.html": {
+      "buttonsNoName": [],
+      "linksNoName": [],
+      "inputsNoLabel": [],
+      "hierarchyJumps": [],
+      "lowContrast": [
+        {
+          "tag": "span",
+          "fontSize": 11,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": ""
+        },
+        {
+          "tag": "span",
+          "fontSize": 12.5,
+          "isLarge": false,
+          "contrast": "4.30",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(14,20,27)",
+          "text": "(target metric, in development)"
+        },
+        {
+          "tag": "span",
+          "fontSize": 10.5,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(111, 181, 224)",
+          "bg": "rgb(111,181,224)",
+          "text": ""
+        },
+        {
+          "tag": "span",
+          "fontSize": 10.5,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgba(168, 178, 192, 0.85)",
+          "bg": "rgb(168,178,192)",
+          "text": ""
+        }
+      ]
+    },
+    "industries.html": {
+      "buttonsNoName": [],
+      "linksNoName": [],
+      "inputsNoLabel": [],
+      "hierarchyJumps": [],
+      "lowContrast": [
+        {
+          "tag": "span",
+          "fontSize": 11.5,
+          "isLarge": false,
+          "contrast": "4.30",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(14,20,27)",
+          "text": "on the in-development lithium model"
+        },
+        {
+          "tag": "span",
+          "fontSize": 11.5,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": ""
+        },
+        {
+          "tag": "span",
+          "fontSize": 11.5,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "Explorer Tier"
+        },
+        {
+          "tag": "span",
+          "fontSize": 14.5,
+          "isLarge": false,
+          "contrast": "1.18",
+          "required": 4.5,
+          "fg": "rgb(168, 178, 192)",
+          "bg": "rgb(232,185,99)",
+          "text": ""
+        },
+        {
+          "tag": "span",
+          "fontSize": 17,
+          "isLarge": false,
+          "contrast": "2.03",
+          "required": 4.5,
+          "fg": "rgb(241, 244, 248)",
+          "bg": "rgb(111,181,224)",
+          "text": ""
+        },
+        {
+          "tag": "span",
+          "fontSize": 11.5,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(111, 181, 224)",
+          "bg": "rgb(111,181,224)",
+          "text": ""
+        },
+        {
+          "tag": "span",
+          "fontSize": 11.5,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(111, 181, 224)",
+          "bg": "rgb(111,181,224)",
+          "text": "Operator Tier"
+        },
+        {
+          "tag": "span",
+          "fontSize": 11.5,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "Enterprise Tier"
+        }
+      ]
+    },
+    "platform.html": {
+      "buttonsNoName": [],
+      "linksNoName": [],
+      "inputsNoLabel": [],
+      "hierarchyJumps": [],
+      "lowContrast": [
+        {
+          "tag": "span",
+          "fontSize": 10.5,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "L1"
+        },
+        {
+          "tag": "span",
+          "fontSize": 11,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "Ground truth"
+        },
+        {
+          "tag": "span",
+          "fontSize": 10.5,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "L2"
+        },
+        {
+          "tag": "span",
+          "fontSize": 11,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "Transformer"
+        },
+        {
+          "tag": "span",
+          "fontSize": 10.5,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(111, 181, 224)",
+          "bg": "rgb(111,181,224)",
+          "text": "L3"
+        },
+        {
+          "tag": "span",
+          "fontSize": 11,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(111, 181, 224)",
+          "bg": "rgb(111,181,224)",
+          "text": "GBM + NN"
+        },
+        {
+          "tag": "span",
+          "fontSize": 10.5,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(111, 181, 224)",
+          "bg": "rgb(111,181,224)",
+          "text": "L4"
+        },
+        {
+          "tag": "span",
+          "fontSize": 11,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(111, 181, 224)",
+          "bg": "rgb(111,181,224)",
+          "text": "Plain English"
+        },
+        {
+          "tag": "span",
+          "fontSize": 10.5,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(123, 201, 122)",
+          "bg": "rgb(123,201,122)",
+          "text": "L5"
+        },
+        {
+          "tag": "span",
+          "fontSize": 11,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(123, 201, 122)",
+          "bg": "rgb(123,201,122)",
+          "text": "Compounds"
+        },
+        {
+          "tag": "span",
+          "fontSize": 11,
+          "isLarge": false,
+          "contrast": "4.30",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(14,20,27)",
+          "text": "Target accuracy · Lithium (in dev)"
+        },
+        {
+          "tag": "span",
+          "fontSize": 11,
+          "isLarge": false,
+          "contrast": "4.30",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(14,20,27)",
+          "text": "Modalities fused"
+        },
+        {
+          "tag": "span",
+          "fontSize": 11,
+          "isLarge": false,
+          "contrast": "4.30",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(14,20,27)",
+          "text": "vs. months manually"
+        },
+        {
+          "tag": "span",
+          "fontSize": 11,
+          "isLarge": false,
+          "contrast": "4.30",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(14,20,27)",
+          "text": "Cross-client data leakage"
+        },
+        {
+          "tag": "span",
+          "fontSize": 12,
+          "isLarge": false,
+          "contrast": "3.94",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(22,29,39)",
+          "text": "(In Progress)"
+        }
+      ]
+    },
+    "how-it-works.html": {
+      "buttonsNoName": [],
+      "linksNoName": [],
+      "inputsNoLabel": [],
+      "hierarchyJumps": [],
+      "lowContrast": [
+        {
+          "tag": "span",
+          "fontSize": 17,
+          "isLarge": false,
+          "contrast": "1.65",
+          "required": 4.5,
+          "fg": "rgb(241, 244, 248)",
+          "bg": "rgb(232,185,99)",
+          "text": ""
+        },
+        {
+          "tag": "span",
+          "fontSize": 15,
+          "isLarge": false,
+          "contrast": "3.94",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(22,29,39)",
+          "text": "USGS geochemistry, aeromagnetics, gravit"
+        },
+        {
+          "tag": "span",
+          "fontSize": 15,
+          "isLarge": false,
+          "contrast": "3.94",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(22,29,39)",
+          "text": "Sentinel-2 + ASTER satellite imagery"
+        },
+        {
+          "tag": "span",
+          "fontSize": 15,
+          "isLarge": false,
+          "contrast": "3.94",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(22,29,39)",
+          "text": "SRTM terrain + GTOPO30 elevation"
+        },
+        {
+          "tag": "span",
+          "fontSize": 12,
+          "isLarge": false,
+          "contrast": "3.94",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(22,29,39)",
+          "text": "Geochemistry signal"
+        },
+        {
+          "tag": "span",
+          "fontSize": 12,
+          "isLarge": false,
+          "contrast": "3.94",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(22,29,39)",
+          "text": "Geophysics signal"
+        },
+        {
+          "tag": "span",
+          "fontSize": 12,
+          "isLarge": false,
+          "contrast": "3.94",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(22,29,39)",
+          "text": "Remote sensing"
+        }
+      ]
+    },
+    "pricing.html": {
+      "buttonsNoName": [],
+      "linksNoName": [],
+      "inputsNoLabel": [],
+      "hierarchyJumps": [],
+      "lowContrast": [
+        {
+          "tag": "span",
+          "fontSize": 10.5,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(111, 181, 224)",
+          "bg": "rgb(111,181,224)",
+          "text": "Coming Later"
+        },
+        {
+          "tag": "span",
+          "fontSize": 14.5,
+          "isLarge": false,
+          "contrast": "4.30",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(14,20,27)",
+          "text": "Everything in Explorer"
+        },
+        {
+          "tag": "span",
+          "fontSize": 14.5,
+          "isLarge": false,
+          "contrast": "4.30",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(14,20,27)",
+          "text": "Up to three mineral models"
+        },
+        {
+          "tag": "span",
+          "fontSize": 14.5,
+          "isLarge": false,
+          "contrast": "4.30",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(14,20,27)",
+          "text": "Unlimited analysis runs"
+        },
+        {
+          "tag": "span",
+          "fontSize": 14.5,
+          "isLarge": false,
+          "contrast": "4.30",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(14,20,27)",
+          "text": "Priority processing queue"
+        },
+        {
+          "tag": "span",
+          "fontSize": 14.5,
+          "isLarge": false,
+          "contrast": "4.30",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(14,20,27)",
+          "text": "Dedicated onboarding"
+        },
+        {
+          "tag": "span",
+          "fontSize": 14.5,
+          "isLarge": false,
+          "contrast": "4.30",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(14,20,27)",
+          "text": "Everything in Operator"
+        },
+        {
+          "tag": "span",
+          "fontSize": 14.5,
+          "isLarge": false,
+          "contrast": "4.30",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(14,20,27)",
+          "text": "API access + GIS integration"
+        },
+        {
+          "tag": "span",
+          "fontSize": 14.5,
+          "isLarge": false,
+          "contrast": "4.30",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(14,20,27)",
+          "text": "Dedicated technical account team"
+        },
+        {
+          "tag": "span",
+          "fontSize": 14.5,
+          "isLarge": false,
+          "contrast": "4.30",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(14,20,27)",
+          "text": "Custom SLAs & security review"
+        }
+      ]
+    },
+    "resources.html": {
+      "buttonsNoName": [],
+      "linksNoName": [],
+      "inputsNoLabel": [],
+      "hierarchyJumps": [],
+      "lowContrast": [
+        {
+          "tag": "span",
+          "fontSize": 13,
+          "isLarge": false,
+          "contrast": "3.94",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(22,29,39)",
+          "text": "Case Study · February 2026"
+        },
+        {
+          "tag": "span",
+          "fontSize": 10.5,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "White Paper"
+        },
+        {
+          "tag": "span",
+          "fontSize": 17,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": ""
+        },
+        {
+          "tag": "span",
+          "fontSize": 17,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(111, 181, 224)",
+          "bg": "rgb(111,181,224)",
+          "text": ""
+        },
+        {
+          "tag": "span",
+          "fontSize": 17,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(123, 201, 122)",
+          "bg": "rgb(123,201,122)",
+          "text": ""
+        },
+        {
+          "tag": "span",
+          "fontSize": 10.5,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(111, 181, 224)",
+          "bg": "rgb(111,181,224)",
+          "text": "Guide"
+        }
+      ]
+    },
+    "investors.html": {
+      "buttonsNoName": [],
+      "linksNoName": [],
+      "inputsNoLabel": [],
+      "hierarchyJumps": [],
+      "lowContrast": [
+        {
+          "tag": "span",
+          "fontSize": 11,
+          "isLarge": false,
+          "contrast": "3.94",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(22,29,39)",
+          "text": "S&P Global · 2024"
+        },
+        {
+          "tag": "span",
+          "fontSize": 11,
+          "isLarge": false,
+          "contrast": "3.94",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(22,29,39)",
+          "text": "22% of total"
+        },
+        {
+          "tag": "span",
+          "fontSize": 11,
+          "isLarge": false,
+          "contrast": "3.94",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(22,29,39)",
+          "text": "McKinsey · 2023"
+        },
+        {
+          "tag": "span",
+          "fontSize": 11,
+          "isLarge": false,
+          "contrast": "3.94",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(22,29,39)",
+          "text": "$25K / yr vs. $150-200K"
+        },
+        {
+          "tag": "span",
+          "fontSize": 17,
+          "isLarge": false,
+          "contrast": "1.65",
+          "required": 4.5,
+          "fg": "rgb(241, 244, 248)",
+          "bg": "rgb(232,185,99)",
+          "text": ""
+        },
+        {
+          "tag": "span",
+          "fontSize": 11,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "In Development · Nevada Lithium"
+        },
+        {
+          "tag": "span",
+          "fontSize": 11,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(111, 181, 224)",
+          "bg": "rgb(111,181,224)",
+          "text": "Roadmap · Cu & REE"
+        },
+        {
+          "tag": "span",
+          "fontSize": 11,
+          "isLarge": false,
+          "contrast": "2.01",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(168,178,192)",
+          "text": "Pilot pipeline opens at launch"
+        },
+        {
+          "tag": "span",
+          "fontSize": 12,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "01"
+        },
+        {
+          "tag": "span",
+          "fontSize": 12,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "02"
+        },
+        {
+          "tag": "span",
+          "fontSize": 12,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(111, 181, 224)",
+          "bg": "rgb(111,181,224)",
+          "text": "03"
+        },
+        {
+          "tag": "span",
+          "fontSize": 12,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(123, 201, 122)",
+          "bg": "rgb(123,201,122)",
+          "text": "04"
+        },
+        {
+          "tag": "span",
+          "fontSize": 12,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "05"
+        },
+        {
+          "tag": "span",
+          "fontSize": 14,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": ""
+        },
+        {
+          "tag": "span",
+          "fontSize": 14,
+          "isLarge": false,
+          "contrast": "2.01",
+          "required": 4.5,
+          "fg": "rgb(168, 178, 192)",
+          "bg": "rgb(111,123,139)",
+          "text": ""
+        },
+        {
+          "tag": "p",
+          "fontSize": 14,
+          "isLarge": false,
+          "contrast": "1.18",
+          "required": 4.5,
+          "fg": "rgb(168, 178, 192)",
+          "bg": "rgb(232,185,99)",
+          "text": "Investor materials (deck, model, referen"
+        },
+        {
+          "tag": "span",
+          "fontSize": 11,
+          "isLarge": false,
+          "contrast": "2.80",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(44,55,71)",
+          "text": "(optional)"
+        },
+        {
+          "tag": "span",
+          "fontSize": 12,
+          "isLarge": false,
+          "contrast": "2.80",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(44,55,71)",
+          "text": "Replies within 5 business days."
+        }
+      ]
+    },
+    "why-xray.html": {
+      "buttonsNoName": [],
+      "linksNoName": [],
+      "inputsNoLabel": [],
+      "hierarchyJumps": [],
+      "lowContrast": [
+        {
+          "tag": "span",
+          "fontSize": 14.5,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "Hours"
+        },
+        {
+          "tag": "span",
+          "fontSize": 14.5,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "$25K-$140K / yr"
+        },
+        {
+          "tag": "span",
+          "fontSize": 14.5,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "✓ Built-in"
+        },
+        {
+          "tag": "span",
+          "fontSize": 14.5,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "✓ Per mineral"
+        },
+        {
+          "tag": "span",
+          "fontSize": 14.5,
+          "isLarge": false,
+          "contrast": "3.94",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(22,29,39)",
+          "text": "✗ Not included"
+        },
+        {
+          "tag": "span",
+          "fontSize": 14.5,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "✓ Automatic"
+        },
+        {
+          "tag": "span",
+          "fontSize": 14.5,
+          "isLarge": false,
+          "contrast": "3.94",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(22,29,39)",
+          "text": "✗ Static"
+        },
+        {
+          "tag": "span",
+          "fontSize": 14.5,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "✓ Full attribution"
+        },
+        {
+          "tag": "span",
+          "fontSize": 14.5,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "✓ Unlimited"
+        },
+        {
+          "tag": "span",
+          "fontSize": 14.5,
+          "isLarge": false,
+          "contrast": "1.00",
+          "required": 4.5,
+          "fg": "rgb(232, 185, 99)",
+          "bg": "rgb(232,185,99)",
+          "text": "✓ Contractual + technical"
+        },
+        {
+          "tag": "p",
+          "fontSize": 13,
+          "isLarge": false,
+          "contrast": "3.94",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(22,29,39)",
+          "text": "Accuracy figure validated against USGS M"
+        }
+      ]
+    },
+    "faqs.html": {
+      "buttonsNoName": [],
+      "linksNoName": [],
+      "inputsNoLabel": [],
+      "hierarchyJumps": [],
+      "lowContrast": [
+        {
+          "tag": "span",
+          "fontSize": 15.5,
+          "isLarge": false,
+          "contrast": "1.65",
+          "required": 4.5,
+          "fg": "rgb(241, 244, 248)",
+          "bg": "rgb(232,185,99)",
+          "text": ""
+        }
+      ]
+    },
+    "news-updates.html": {
+      "buttonsNoName": [],
+      "linksNoName": [],
+      "inputsNoLabel": [],
+      "hierarchyJumps": [],
+      "lowContrast": [
+        {
+          "tag": "span",
+          "fontSize": 13,
+          "isLarge": false,
+          "contrast": "3.94",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(22,29,39)",
+          "text": "May 2026"
+        },
+        {
+          "tag": "span",
+          "fontSize": 13,
+          "isLarge": false,
+          "contrast": "3.94",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(22,29,39)",
+          "text": "April 2026"
+        },
+        {
+          "tag": "span",
+          "fontSize": 13,
+          "isLarge": false,
+          "contrast": "3.94",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(22,29,39)",
+          "text": "February 2026"
+        },
+        {
+          "tag": "span",
+          "fontSize": 13,
+          "isLarge": false,
+          "contrast": "3.94",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(22,29,39)",
+          "text": "January 2026"
+        },
+        {
+          "tag": "span",
+          "fontSize": 13,
+          "isLarge": false,
+          "contrast": "3.94",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(22,29,39)",
+          "text": "Q4 2025"
+        }
+      ]
+    },
+    "request-demo.html": {
+      "buttonsNoName": [],
+      "linksNoName": [],
+      "inputsNoLabel": [],
+      "hierarchyJumps": [],
+      "lowContrast": [
+        {
+          "tag": "span",
+          "fontSize": 17,
+          "isLarge": false,
+          "contrast": "1.82",
+          "required": 4.5,
+          "fg": "rgb(241, 244, 248)",
+          "bg": "rgb(123,201,122)",
+          "text": ""
+        },
+        {
+          "tag": "p",
+          "fontSize": 12,
+          "isLarge": false,
+          "contrast": "3.94",
+          "required": 4.5,
+          "fg": "rgb(111, 123, 139)",
+          "bg": "rgb(22,29,39)",
+          "text": "By submitting this form you agree to be "
+        }
+      ]
+    }
+  }
+}
