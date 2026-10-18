@@ -13,7 +13,7 @@
  * otherwise every page renders its nav, content and footer twice.
  * Switch-over: deactivate the X-Ray snippets, then set this to true.
  */
-define( 'XRAY_THEME_LIVE', true );
+define( 'XRAY_THEME_LIVE', false );
 
 if ( XRAY_THEME_LIVE ) {
 	// Same order the snippets ran in (by snippet ID), so script
