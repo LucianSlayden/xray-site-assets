@@ -19,7 +19,9 @@ wp_register_script(
         wp_enqueue_script( 'xray-product', 'https://cdn.jsdelivr.net/gh/LucianSlayden/xray-site-assets@main/product-page.js', array('gsap-st'), '1.0', true );
     }
     if ( is_front_page() ) {
-        wp_enqueue_script( 'xray-hero', 'https://cdn.jsdelivr.net/gh/LucianSlayden/xray-site-assets@main/xray-hero.js', array('xray-anim'), '1.0', true );
+        // Served from the theme (not jsDelivr) so a deploy takes effect at once.
+        $hero_js = get_stylesheet_directory() . '/assets/xray-hero.js';
+        wp_enqueue_script( 'xray-hero', get_stylesheet_directory_uri() . '/assets/xray-hero.js', array('gsap'), filemtime( $hero_js ), true );
     }
 	if ( is_page(283) ) {
     wp_enqueue_script( 'xray-platform', 'https://cdn.jsdelivr.net/gh/LucianSlayden/xray-site-assets@main/platform-page.js', array('gsap-st'), '1.0', true );

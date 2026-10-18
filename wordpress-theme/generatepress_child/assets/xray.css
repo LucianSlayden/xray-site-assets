@@ -46,22 +46,17 @@
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
-/* xray-hero.js adds .xr-scroll-locked to html and body on initial
-   page load, and removes it once the hero forward animation finishes.
-   While locked the user cannot scroll the page; their first downward
-   gesture fires the animation instead. Per May 2026 "additional index
-   instructions". */
-html.xr-scroll-locked,
-body.xr-scroll-locked {
-  overflow: hidden !important;
-  overscroll-behavior: contain;
-  touch-action: none;
-  height: 100%;
-}
+/* xray-hero.js adds .xr-hero-held to <html> while the home hero video
+   plays and the page is held in place. The JS cancels the scroll
+   gestures; this only stops overscroll bounce. No overflow:hidden, so
+   the scrollbar never disappears and nothing shifts on release. */
+html.xr-hero-held,
+html.xr-hero-held body { overscroll-behavior: none; }
 body { margin: 0; background: var(--xr-void); color: var(--xr-text); font-family: var(--xr-font-body); font-weight: 400; font-size: 17px; line-height: 1.75; letter-spacing: 0; }
 img { display: block; max-width: 100%; }
 
-/* Subtle film-grain overlay */
+/* Subtle film-grain overlay (off on the home page: blending a full-screen
+   layer over the playing hero video costs a repaint every frame) */
 body::after {
   content: '';
   position: fixed; inset: 0;
@@ -412,6 +407,7 @@ a { color: inherit; text-decoration: none; }
 .xr-tag-gold { background: rgba(232,185,99,0.09); border: 1px solid rgba(232,185,99,0.3); color: var(--xr-gold); }
 .xr-tag-sky  { background: rgba(111,181,224,0.09); border: 1px solid rgba(111,181,224,0.3); color: var(--xr-sky); }
 .xr-tag-green{ background: rgba(123,201,122,0.09); border: 1px solid rgba(123,201,122,0.3); color: var(--xr-green); }
+body:has(.xr-hero)::after { display: none; }
 .xr-tag-muted{ background: rgba(168,178,192,0.05); border: 1px solid rgba(168,178,192,0.18); color: var(--xr-text-muted); }
 
 /* ────────────────────────────────────────── HERO (index) ──────────── */
@@ -422,9 +418,9 @@ a { color: inherit; text-decoration: none; }
    the final frame. */
 .xr-hero {
   position: relative;
-  /* 720 px of extra height gives .xr-hero-pin (position:sticky) exactly
-     720 px of scroll-room without needing GSAP's pin spacer. */
-  min-height: calc(100vh + 720px);
+  /* The extra 300 px is how far the user scrolls after the animation
+     before the hero starts moving up (.xr-hero-pin is position:sticky). */
+  min-height: calc(100vh + 300px);
   background: var(--xr-void);
   padding-top: var(--xr-nav-h);
   isolation: isolate;
@@ -450,6 +446,9 @@ a { color: inherit; text-decoration: none; }
   pointer-events: none;
   z-index: 0;
 }
+/* Back-to-front copy of the clip used for reverse playback (xray-hero.js). */
+.xr-hero-video-rev { visibility: hidden; }
+.xr-hero-video-rev.is-active { visibility: visible; }
 /* Left-side fade — keeps the headline readable on the void column. */
 .xr-hero-fade {
   position: absolute; inset: 0;
@@ -472,16 +471,15 @@ a { color: inherit; text-decoration: none; }
 
 /* LEFT column — eyebrow, headline, paragraph, CTAs.
    Lifts upward and fades out as scroll progresses past --text-out-start.
-   The JS sets --text-progress (0..1) on the hero element. */
+   xray-hero.js animates it with GSAP; no CSS transition, so the two
+   never fight. */
 .xr-hero-content {
   position: absolute;
   inset: 0;
   z-index: 2;
   display: flex; align-items: center;
   will-change: transform, opacity;
-  transform: translateY(calc(var(--text-progress, 0) * -80px));
-  opacity: calc(1 - var(--text-progress, 0));
-  transition: transform 0.05s linear, opacity 0.05s linear;
+  transition: none;
 }
 .xr-hero-content-inner {
   width: 100%;
@@ -555,13 +553,13 @@ a { color: inherit; text-decoration: none; }
    distance from the hex centre — only the hex Y differs). */
 .xr-hero-bullet-head {
   position: absolute;
-  right: 90px;                  /* uniform px gap from each hex centre */
+  right: 104px;                 /* uniform px gap from each hex centre, room for the arrow */
   top: 50%;
   transform: translateY(-50%);
-  width: 220px;                 /* fixed width → uniform left edge for every bullet */
+  width: 380px;                 /* fixed width → uniform left edge for every bullet */
   font-family: var(--xr-font-display);
   font-weight: 700;
-  font-size: clamp(20px, 2.4vw, 32px);
+  font-size: clamp(26px, 3.1vw, 44px);
   line-height: 1.04;
   letter-spacing: -0.024em;
   color: #FFFFFF;
@@ -582,8 +580,63 @@ a { color: inherit; text-decoration: none; }
   transform: translate(-50%, -50%);
   width: 62px; height: 72px;
   pointer-events: auto;
-  cursor: help;
+  cursor: inherit;
   z-index: 4;
+}
+
+/* Hover cues: an arrow from each label toward its hexagon and a pulsing
+   ring on the hexagon. Each cue goes away once that hexagon has been
+   opened (.locked). */
+.xr-hero-bullet::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 46px;
+  width: 34px; height: 2px;
+  background: linear-gradient(90deg, rgba(123,201,122,0), var(--xr-green));
+  transform: translateY(-50%);
+  opacity: 0;
+  pointer-events: none;
+}
+.xr-hero-bullet::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 44px;
+  width: 9px; height: 9px;
+  border-top: 2px solid var(--xr-green);
+  border-right: 2px solid var(--xr-green);
+  transform: translateY(-50%) rotate(45deg);
+  opacity: 0;
+  pointer-events: none;
+}
+.xr-hero-bullets.in .xr-hero-bullet:not(.locked)::before,
+.xr-hero-bullets.in .xr-hero-bullet:not(.locked)::after {
+  animation: xr-hero-cue 1.6s var(--xr-ease) 0.8s infinite;
+}
+@keyframes xr-hero-cue {
+  0%   { opacity: 0;   margin-right: 14px; }
+  30%  { opacity: 1; }
+  70%  { opacity: 1;   margin-right: 0; }
+  100% { opacity: 0;   margin-right: 0; }
+}
+.xr-hero-bullet-hit::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 58px; height: 58px;
+  margin: -29px 0 0 -29px;
+  border: 2px solid var(--xr-green);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+}
+.xr-hero-bullets.in .xr-hero-bullet:not(.locked) .xr-hero-bullet-hit::after {
+  animation: xr-hero-pulse 1.6s ease-out 0.8s infinite;
+}
+@keyframes xr-hero-pulse {
+  0%   { opacity: 0.85; transform: scale(0.7); }
+  100% { opacity: 0;    transform: scale(1.5); }
 }
 
 /* Body panel — anchored RIGHT of the hex (at the "yellow star" position
@@ -670,31 +723,8 @@ a { color: inherit; text-decoration: none; }
 .xr-hero-bullets.in .xr-hero-bullet:nth-child(3) { transition-delay: 0.25s; }
 .xr-hero-bullets.in .xr-hero-bullet:nth-child(4) { transition-delay: 0.35s; }
 
-.xr-hero-progress {
-  position: absolute;
-  left: 28px; bottom: 28px;
-  display: flex; align-items: center; gap: 12px;
-  font-family: var(--xr-font-mono);
-  font-size: 11px;
-  color: rgba(241,244,248,0.7);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  z-index: 4;
-}
-.xr-hero-progress-bar {
-  width: 140px; height: 2px;
-  background: rgba(255,255,255,0.14);
-  position: relative; overflow: hidden;
-}
-.xr-hero-progress-fill {
-  position: absolute; top: 0; left: 0; bottom: 0;
-  width: 0%;
-  background: linear-gradient(90deg, var(--xr-gold), var(--xr-green));
-  transition: width .12s linear;
-}
-
 @media (max-width: 980px) {
-  .xr-hero { min-height: calc(100vh + 720px); }
+  .xr-hero { min-height: calc(100vh + 300px); }
   .xr-hero-content-inner { padding: 0 22px; }
   .xr-hero-text { max-width: 100%; }
   .xr-hero-fade {
@@ -703,7 +733,7 @@ a { color: inherit; text-decoration: none; }
   /* Mobile: stack bullets in a column at the bottom instead of overlaying */
   .xr-hero-bullets { position: relative; display: flex; flex-direction: column; gap: 10px; padding: 24px 22px; pointer-events: auto; }
   .xr-hero-bullet { position: relative; top: auto; left: auto; transform: translateY(0); width: 100%; }
-  .xr-hero-progress { left: 22px; bottom: 22px; }
+  .xr-hero-bullet::before, .xr-hero-bullet::after, .xr-hero-bullet-hit::after { display: none; }
 }
 
 /* ────────────────────────────────────────── FOOTER ─────────────────────── */

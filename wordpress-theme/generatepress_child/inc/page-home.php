@@ -160,12 +160,6 @@ add_action( 'generate_before_content', function() {
 
       </div>
 
-      <!-- Scroll progress meter (bottom-left of pinned hero) -->
-      <div class="xr-hero-progress" aria-hidden="true">
-        <span>Scroll</span>
-        <div class="xr-hero-progress-bar"><div class="xr-hero-progress-fill"></div></div>
-        <span class="xr-hero-progress-label xr-mono">00%</span>
-      </div>
     </div>
   </section>
 

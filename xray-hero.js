@@ -1,3 +1,4 @@
+/* SUPERSEDED: the live home page now loads wordpress-theme/generatepress_child/assets/xray-hero.js from the theme. Edit that file instead. */
 /* X-Ray Geoanalytics — Hero Animation Controller (GSAP ScrollTrigger v3)
 
    Behavior:
