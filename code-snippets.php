@@ -1,5 +1,10 @@
 <?php
 /**
+ * SUPERSEDED (October 2026): this file is an early draft and is NOT what
+ * runs on xraygeoanalytics.com. The live site code now lives in
+ * wordpress-theme/generatepress_child/ (moved from the Code Snippets plugin).
+ */
+/**
  * X-RAY GEOANALYTICS — WORDPRESS CODE SNIPPETS
  * ─────────────────────────────────────────────────────────────────
  * Paste each snippet block separately into the Code Snippets plugin
@@ -12,10 +17,8 @@
  *   C. XRay — Hide default GP header/footer + body class
  *   D. XRay — Inject custom navigation (with Investors in Resources)
  *   E. XRay — Inject custom footer (with five columns + social)
- *   F. XRay — Load GSAP + page scripts (OPTIONAL: only if the page
- *      HTML blocks don't already include these <script> tags)
  *
- * Last updated: October 2026
+ * Last updated: May 2026 (post site-wide revamp)
  * ─────────────────────────────────────────────────────────────────
  */
 
@@ -34,18 +37,23 @@ add_action( 'wp_head', function () {
 /* ══════════════════════════════════════════════════════════════
    SNIPPET B — Enqueue scroll-animation.js
    Code Snippets title: "XRay — Scroll Animation JS"
-   Served from GitHub (LucianSlayden/xray-site-assets) via jsDelivr.
-   After pushing a change, purge the cache at
-   https://www.jsdelivr.com/tools/purge or it can take up to 12 h.
+   Replace the placeholder URL with your jsDelivr CDN URL once
+   scroll-animation.js is uploaded to GitHub.
    ══════════════════════════════════════════════════════════════ */
 add_action( 'wp_enqueue_scripts', function () {
-    wp_enqueue_script(
-        'xray-scroll-animation',
-        'https://cdn.jsdelivr.net/gh/LucianSlayden/xray-site-assets@main/scroll-animation.js',
-        array(),
-        '2.0.0',
-        true
-    );
+    // Example after upload:
+    // https://cdn.jsdelivr.net/gh/YOUR-ORG/xray-assets@main/scroll-animation.js
+    $scroll_js_url = 'PLACEHOLDER — insert jsDelivr URL for scroll-animation.js';
+
+    if ( 'PLACEHOLDER — insert jsDelivr URL for scroll-animation.js' !== $scroll_js_url ) {
+        wp_enqueue_script(
+            'xray-scroll-animation',
+            $scroll_js_url,
+            array(),
+            '2.0.0',
+            true
+        );
+    }
 } );
 
 
@@ -81,8 +89,9 @@ add_action( 'wp_head', function () {
    Outputs the X-Ray nav at wp_body_open (just inside <body>).
    ══════════════════════════════════════════════════════════════ */
 add_action( 'wp_body_open', function () {
-    // Hex logo from the Media Library.
-    $logo = content_url( '/uploads/2026/05/hex_logo_clean.png' );
+    // Build the logo URL. If you upload the hex logo to the Media
+    // Library, replace this with the Media Library URL.
+    $logo = get_stylesheet_directory_uri() . '/brand_assets/hex_logo_clean.png';
     $home = esc_url( home_url( '/' ) );
     ?>
     <nav class="xr-nav">
@@ -161,7 +170,7 @@ add_action( 'wp_body_open', function () {
    Hook: generate_before_footer (GeneratePress).
    ══════════════════════════════════════════════════════════════ */
 add_action( 'generate_before_footer', function () {
-    $logo = content_url( '/uploads/2026/05/hex_logo_clean.png' );
+    $logo = get_stylesheet_directory_uri() . '/brand_assets/hex_logo_clean.png';
     $year = esc_html( date( 'Y' ) );
     ?>
     <footer class="xr-footer">
@@ -177,12 +186,12 @@ add_action( 'generate_before_footer', function () {
             <p class="xr-footer-tagline">Advanced machine learning for mining site discovery. Nevada lithium. Every mineral. Every continent. Every drill result makes us smarter.</p>
             <div class="xr-footer-contact">
               <a href="mailto:info@xraygeoanalytics.com"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M4 6l8 7 8-7"/></svg>info@xraygeoanalytics.com</a>
-              <a href="mailto:lucian@xraygeoanalytics.com"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9-9 9z"/></svg>lucian@xraygeoanalytics.com</a>
+              <a href="mailto:investors@xraygeoanalytics.com"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9-9 9z"/></svg>investors@xraygeoanalytics.com</a>
             </div>
           </div>
 
           <div>
-            <h3>Product</h3>
+            <h4>Product</h4>
             <ul class="xr-footer-list">
               <li><a href="<?php echo esc_url( home_url( '/product' ) ); ?>">Overview</a></li>
               <li><a href="<?php echo esc_url( home_url( '/our-models' ) ); ?>">Our Models</a></li>
@@ -194,7 +203,7 @@ add_action( 'generate_before_footer', function () {
           </div>
 
           <div>
-            <h3>Company</h3>
+            <h4>Company</h4>
             <ul class="xr-footer-list">
               <li><a href="<?php echo esc_url( home_url( '/our-team' ) ); ?>">Our Team</a></li>
               <li><a href="<?php echo esc_url( home_url( '/why-xray' ) ); ?>">Why X-Ray</a></li>
@@ -204,7 +213,7 @@ add_action( 'generate_before_footer', function () {
           </div>
 
           <div>
-            <h3>Resources</h3>
+            <h4>Resources</h4>
             <ul class="xr-footer-list">
               <li><a href="<?php echo esc_url( home_url( '/resources' ) ); ?>">Resources Library</a></li>
               <li><a href="<?php echo esc_url( home_url( '/investors' ) ); ?>">For Investors</a></li>
@@ -213,12 +222,12 @@ add_action( 'generate_before_footer', function () {
           </div>
 
           <div>
-            <h3>Get in Touch</h3>
+            <h4>Get in Touch</h4>
             <ul class="xr-footer-list">
               <li><a href="<?php echo esc_url( home_url( '/request-demo' ) ); ?>">Book a Demo</a></li>
-              <li><a href="mailto:info@xraygeoanalytics.com">Partnerships</a></li>
-              <li><a href="mailto:info@xraygeoanalytics.com">Press</a></li>
-              <li><a href="mailto:info@xraygeoanalytics.com">Careers</a></li>
+              <li><a href="mailto:partnerships@xraygeoanalytics.com">Partnerships</a></li>
+              <li><a href="mailto:press@xraygeoanalytics.com">Press</a></li>
+              <li><a href="mailto:careers@xraygeoanalytics.com">Careers</a></li>
             </ul>
           </div>
         </div>
@@ -240,52 +249,6 @@ add_action( 'generate_before_footer', function () {
 
 
 /* ══════════════════════════════════════════════════════════════
-   SNIPPET F — Load GSAP + per-page scripts (OPTIONAL)
-   Code Snippets title: "XRay — GSAP + Page Scripts"
-   Every *-page.js (and xray-hero.js) expects GSAP + ScrollTrigger
-   under the handle 'gsap-st'. Only activate this snippet if the
-   page HTML blocks do NOT already include these <script> tags,
-   otherwise the canvases and animations will run twice.
-   ══════════════════════════════════════════════════════════════ */
-add_action( 'wp_enqueue_scripts', function () {
-    $cdn = 'https://cdn.jsdelivr.net/gh/LucianSlayden/xray-site-assets@main/';
-
-    wp_register_script( 'gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js', array(), '3.12.5', true );
-    wp_register_script( 'gsap-st', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js', array( 'gsap' ), '3.12.5', true );
-
-    // Shared hex-grid background (no-ops on pages without #xr-anim-canvas).
-    wp_enqueue_script( 'xray-hex-bg', $cdn . 'xray-hex-bg.js', array(), '1.0.0', true );
-
-    if ( is_front_page() ) {
-        wp_enqueue_script( 'xray-hero', $cdn . 'xray-hero.js', array( 'gsap-st' ), '1.0.0', true );
-        return;
-    }
-
-    // Page slug => script file. resources-page.js has no GSAP dependency.
-    $page_scripts = array(
-        'about-us'     => array( 'about-us-page.js', array( 'gsap-st' ) ),
-        'faqs'         => array( 'faqs-page.js', array( 'gsap-st' ) ),
-        'how-it-works' => array( 'how-it-works-page.js', array( 'gsap-st' ) ),
-        'investors'    => array( 'investors-page.js', array( 'gsap-st' ) ),
-        'news-updates' => array( 'news-updates-page.js', array( 'gsap-st' ) ),
-        'our-team'     => array( 'our-team-page.js', array( 'gsap-st' ) ),
-        'platform'     => array( 'platform-page.js', array( 'gsap-st' ) ),
-        'pricing'      => array( 'pricing-page.js', array( 'gsap-st' ) ),
-        'product'      => array( 'product-page.js', array( 'gsap-st' ) ),
-        'resources'    => array( 'resources-page.js', array() ),
-        'why-xray'     => array( 'why-xray-page.js', array( 'gsap-st' ) ),
-    );
-
-    foreach ( $page_scripts as $slug => $script ) {
-        if ( is_page( $slug ) ) {
-            wp_enqueue_script( 'xray-page-' . $slug, $cdn . $script[0], $script[1], '1.0.0', true );
-            break;
-        }
-    }
-} );
-
-
-/* ══════════════════════════════════════════════════════════════
    DEPLOYMENT NOTES
    ──────────────────────────────────────────────────────────────
    1. Pages to create in WordPress (slugs must match):
@@ -296,8 +259,11 @@ add_action( 'wp_enqueue_scripts', function () {
       homepage with the scroll-scrub hero embedded in the page content).
 
    2. Hex logo:
-        Loaded from the Media Library:
-        content_url( '/uploads/2026/05/hex_logo_clean.png' )
+        get_stylesheet_directory_uri() . '/brand_assets/hex_logo_clean.png'
+      WordPress.com Business doesn't expose the theme folder for upload.
+      Upload the logo to Media Library and hardcode the resulting URL,
+      e.g.:
+        $logo = 'https://YOUR-SITE.com/wp-content/uploads/2026/05/hex_logo_clean.png';
 
    3. Hero video (website_hero_scrub.mp4):
         IMPORTANT — use website_hero_scrub.mp4 (the keyframe-per-frame
@@ -310,8 +276,10 @@ add_action( 'wp_enqueue_scripts', function () {
         Reference it directly in the homepage hero <video src=...> tag.
 
    4. Scroll animation JS:
-        Snippet B loads scroll-animation.js from this repo:
-          https://cdn.jsdelivr.net/gh/LucianSlayden/xray-site-assets@main/scroll-animation.js
+        Upload wordpress-deploy/scroll-animation.js to a public GitHub
+        repo. Get the jsDelivr URL:
+          https://cdn.jsdelivr.net/gh/USER/REPO@main/scroll-animation.js
+        Replace the PLACEHOLDER in Snippet B with that URL.
 
    5. Homepage hero block:
         In your homepage's Block Editor, add an HTML block with the
@@ -324,5 +292,5 @@ add_action( 'wp_enqueue_scripts', function () {
         paste the body content from investors.html. The contact form
         uses a plain mailto: action — for production, consider swapping
         to a managed form (WPForms, Forminator, etc.) targeting
-        info@xraygeoanalytics.com (only info@ and lucian@ are valid).
+        investors@xraygeoanalytics.com.
    ══════════════════════════════════════════════════════════════ */
