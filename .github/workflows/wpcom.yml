@@ -1,0 +1,31 @@
+# Builds the package that WordPress.com GitHub Deployments copies to the server.
+# In the site's Deployments tab: branch main, destination
+# /wp-content/themes/generatepress_child, mode Advanced, this workflow.
+# Only the child theme folder is shipped; the rest of the repo stays on GitHub.
+name: Deploy theme to WordPress.com
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build theme artifact
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check PHP syntax
+        run: |
+          for f in $(find wordpress-theme/generatepress_child -name '*.php'); do
+            php -l "$f"
+          done
+
+      - name: Upload the artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: wpcom
+          path: wordpress-theme/generatepress_child/
