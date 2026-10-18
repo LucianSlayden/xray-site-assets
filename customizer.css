@@ -2,7 +2,8 @@
    X-RAY GEOANALYTICS — GLOBAL DESIGN SYSTEM
    Loaded by every page. Source of truth for typography, color, nav, footer,
    topographic background, reusable components, and motion.
-   Production: contents merge into wordpress-deploy/customizer.css.
+   Production copy for Appearance → Customize → Additional CSS
+   (same as xray-system.css, but image URLs point at the Media Library).
    ═══════════════════════════════════════════════════════════════════════ */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
@@ -721,7 +722,7 @@ a { color: inherit; text-decoration: none; }
      bottom so the directory text stays sharp. */
   background:
     linear-gradient(180deg, rgba(14,20,27,0.78) 0%, rgba(14,20,27,0.92) 55%, rgba(14,20,27,0.98) 100%),
-    url("brand_assets/mj-landscape-sharp.jpg") center bottom / cover no-repeat,
+    url("/wp-content/uploads/2026/05/mj-landscape-sharp.jpg") center bottom / cover no-repeat,
     var(--xr-deep);
 }
 .xr-footer::before {
@@ -822,7 +823,7 @@ a { color: inherit; text-decoration: none; }
   isolation: isolate;
   background:
     linear-gradient(180deg, rgba(14,20,27,0.88) 0%, rgba(14,20,27,0.65) 35%, rgba(14,20,27,0.92) 100%),
-    url("brand_assets/mj-landscape-sharp.jpg") center/cover no-repeat,
+    url("/wp-content/uploads/2026/05/mj-landscape-sharp.jpg") center/cover no-repeat,
     var(--xr-void);
 }
 .xr-page-hero::before {
