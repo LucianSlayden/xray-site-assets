@@ -1,5 +1,10 @@
 <?php
 /**
+ * SUPERSEDED (October 2026): this file is an early draft and is NOT what
+ * runs on xraygeoanalytics.com. The live site code now lives in
+ * wordpress-theme/generatepress_child/ (moved from the Code Snippets plugin).
+ */
+/**
  * X-RAY GEOANALYTICS — WORDPRESS CODE SNIPPETS
  * ─────────────────────────────────────────────────────────────────
  * Paste each snippet block separately into the Code Snippets plugin

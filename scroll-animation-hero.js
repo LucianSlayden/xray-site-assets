@@ -98,6 +98,9 @@
     let reverseRafId = null;
     let reverseTween = null;
     let negativeRateSupported = null; // unknown until tested
+    // True during the brief unlock/scrollTo/refresh window after forward
+    // completion. Blocks playReverse() from firing on a spurious onLeaveBack
+    // that ScrollTrigger fires when it recalculates positions with scrollY=0.
     let settlingAfterComplete = false;
 
     function stopReverse() {
@@ -367,7 +370,7 @@
     video.addEventListener('ended', () => {
       if (state !== 'forward') return;
       state = 'completed';
-      settlingAfterComplete = true;
+      settlingAfterComplete = true; // block reverse until unlock+scroll settle is done
       log('video ended → completed');
       try {
         video.currentTime = Math.max(0, (video.duration || 0) - 0.03);
@@ -380,6 +383,10 @@
         ease: 'power2.out',
         overwrite: 'auto',
         onComplete: () => {
+          // Unlock scroll first, then land the user just past the trigger
+          // threshold so the hero is still visible with bullets showing.
+          // settlingAfterComplete stays true until after scrollTo so the
+          // reverse listener cannot fire during the jump.
           unlockScroll();
           requestAnimationFrame(() => {
             window.scrollTo(0, PIN_SCROLL_PX + 24);
@@ -432,7 +439,9 @@
     }
     window.addEventListener('pointermove', onPointerMoveHero, { passive: true });
 
-    /* Progress bar driven by actual video playback. */
+    /* Progress bar — driven by actual video playback, not scroll position.
+       This works correctly during scroll-lock (scrollY stays at 0) and
+       during the reverse (currentTime decreases). */
     video.addEventListener('timeupdate', () => {
       if (!Number.isFinite(video.duration) || !video.duration) return;
       const p = video.currentTime / video.duration;
@@ -441,8 +450,11 @@
     });
 
     /* Single scroll listener drives ALL state transitions.
-       CSS min-height on .xr-hero gives .xr-hero-pin (position:sticky)
-       720 px of scroll room — no GSAP ScrollTrigger pin needed. */
+       The hero section's CSS gives .xr-hero-pin (position:sticky) 720 px
+       of scroll room — no GSAP ScrollTrigger pin needed.
+       Forward trigger: subsequent plays after a reverse (the first play
+         is handled by maybeFireForward above while scroll-locked).
+       Reverse trigger: user scrolls back up past the trigger threshold. */
     window.addEventListener('scroll', () => {
       const sy = window.scrollY;
       if (state === 'idle' && !scrollLocked && sy >= TRIGGER_SCROLL_PX) {
