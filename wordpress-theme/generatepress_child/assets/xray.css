@@ -5725,51 +5725,7 @@ body.page-id-298 { animation: none; }
 .iv-hexpie { animation: none; }
 .iv-heatmap-title { white-space: nowrap; }
 
-/* ── Hexagon-angle line accents ─────────────────────────────────────────
-   Straight rules get a small half-hexagon notch where the line breaks and
-   rises at 120°, echoing the hexagon in the logo. Kept to dividers, the
-   footer edge and short accent rules so it stays subtle. */
-:root {
-  --xr-hexnotch: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 10'%3E%3Cpath d='M0 9.5 L5.2 0.5 H34.8 L40 9.5' fill='none' stroke='%23E8B963' stroke-width='1' stroke-opacity='0.75' stroke-linejoin='round'/%3E%3C/svg%3E");
-}
-.xr-section-rule,
-.iv-divider,
-.xr-footer-strip { overflow: visible; }
-
-/* Home section rules: centred notch sitting on the line. */
-.xr-section-rule::after {
-  content: ''; position: absolute; left: calc(50% - 20px); top: 0; width: 40px; height: 10px;
-  background: var(--xr-hexnotch) no-repeat center / 40px 10px; opacity: .8;
-  transform: scaleY(-1); /* hangs down into the section, which clips anything above */
-}
-.xr-section-rule-bottom::after { top: auto; bottom: 0; transform: none; }
-
-/* Investors dividers: notch near the left, where the gold line is strongest. */
-.iv-divider { position: relative; }
-.iv-divider::before {
-  content: ''; position: absolute; left: 72px; bottom: 0; width: 40px; height: 10px;
-  background: var(--xr-hexnotch) no-repeat center / 40px 10px; opacity: 1;
-}
-
-/* Footer top edge: a straight rule with one centred notch. */
-.xr-footer-strip {
-  height: 10px; opacity: 1;
-  background-image:
-    linear-gradient(90deg, transparent, rgba(232,185,99,.35) 20%, rgba(232,185,99,.35) calc(50% - 20px), transparent calc(50% - 20px), transparent calc(50% + 20px), rgba(232,185,99,.35) calc(50% + 20px), rgba(232,185,99,.35) 80%, transparent),
-    var(--xr-hexnotch);
-  background-size: 100% 1px, 40px 10px;
-  background-position: 0 9px, center 0;
-  background-repeat: no-repeat;
-  transform: scaleY(-1); /* line on top, notch hanging below it */
-}
-
-/* About Us CTA accent: the short bar becomes a small notch. */
-body .ab-cta-divider {
-  width: 40px; height: 10px; background: var(--xr-hexnotch) no-repeat center / 40px 10px;
-}
-
-/* Home "Software economics" comparison: three cards, old way above, X-Ray below,
-   joined by a hexagon-angle connector. */
+/* Home "Software economics" comparison: three cards, old way above, X-Ray below. */
 .vs2-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1120px; margin: 0 auto; }
 @media (max-width: 900px) { .vs2-grid { grid-template-columns: 1fr; max-width: 560px; } }
 .vs2-card {
@@ -5851,9 +5807,6 @@ body .ab-cta-divider {
 }
 @media (prefers-reduced-motion: reduce) { .lift-fill { transition: none; } }
 
-/* Home problem section: the stats panel sits as far below the headline's
-   letters as it sits beside the lede (56px). 0.11em covers the descenders. */
-@media (min-width: 981px) { .problem-headline { margin-bottom: calc(56px + 0.11em); } }
 
 /* vs2: numbered heads instead of icons*/
 .vs2-num { font: 700 13px/1 "JetBrains Mono", monospace; color: var(--xr-gold); letter-spacing: .08em; padding: 7px 8px; border: 1px solid rgba(232,185,99,.35); }
@@ -5867,11 +5820,6 @@ body .ab-cta-divider {
   position: relative; padding: 26px 26px 28px; margin: 0;
   background: rgba(10,16,24,.78); border: 1px solid rgba(232,185,99,.2);
   -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
-}
-/* 120° joint between steps */
-.pipe2-step + .pipe2-step::before {
-  content: ""; position: absolute; left: -29px; top: 50%; width: 28px; height: 18px; margin-top: -9px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 18'%3E%3Cpath d='M0 9 H9 L14 0.5 M9 9 L14 17.5 M14 0.5 H28 M14 17.5 H28' fill='none' stroke='%23E8B963' stroke-opacity='.55' stroke-width='1'/%3E%3C/svg%3E") no-repeat center / contain;
 }
 .pipe2-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 18px; }
 .pipe2-num { font: 700 12px/1 "JetBrains Mono", monospace; color: var(--xr-gold); letter-spacing: .1em; }
@@ -5892,7 +5840,6 @@ body .ab-cta-divider {
 }
 @media (max-width: 900px) {
   .pipe2 { grid-template-columns: 1fr; gap: 22px; max-width: 460px; margin: 0 auto; }
-  .pipe2-step + .pipe2-step::before { left: 50%; top: -22px; margin: 0 0 0 -9px; width: 18px; height: 22px; transform: rotate(90deg); }
 }
 
 /* ── Home: roadmap timeline ── */
@@ -5924,3 +5871,10 @@ body .ab-cta-divider {
 }
 .pipe2-art figcaption span { white-space: nowrap; }
 @media (max-width: 420px) { .pipe2-art figcaption { font-size: 9px; letter-spacing: .04em; padding: 8px 8px 10px; } }
+
+/* Home problem section: raise the stats panel beside the headline's last line,
+   so it sits 56px below the "lottery" line, the same as the 56px gap beside the lede.
+   0.87em of the headline size = last line box minus the descender overhang. */
+@media (min-width: 981px) {
+  .lottery-diagram { margin-top: calc(20px - 0.87 * clamp(40px, 5.4vw, 80px)); }
+}
