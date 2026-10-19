@@ -5603,3 +5603,7 @@ body.page-id-298 {
   .pdt-flow-arrow { transform: rotate(90deg); padding: 0; justify-self: start; }
   .pdt-flow { padding: 24px; }
 }
+
+/* Investors: the contour canvas is the moving background now; the drifting
+   body grid repainted the whole page every frame and caused frame drops. */
+body.page-id-298 { animation: none; }
