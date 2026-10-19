@@ -1725,6 +1725,8 @@ body:has(.xr-hero)::after { display: none; }
       opacity:0;
       max-width:520px; margin-left:auto;
     }
+    /* Stacked (tablet and phone): line the panel up with the copy above it. */
+    @media(max-width:1024px){ .pdt-output-panel { margin-left:0; max-width:620px; } }
     .pdt-op-header {
       display:flex; align-items:center; justify-content:space-between;
       padding:14px 18px;
@@ -1853,6 +1855,13 @@ body:has(.xr-hero)::after { display: none; }
     .pdt-cmp-col {
       background:rgba(22,29,39,.88); padding:0;
     }
+    /* Share row heights between the two columns, so each X-Ray value sits
+       level with the traditional value it answers (header + six rows). */
+    @supports (grid-template-rows: subgrid) {
+      .pdt-cmp-grid { grid-template-rows: repeat(7, auto); row-gap: 0; }
+      .pdt-cmp-col { display:grid; grid-row: span 7; grid-template-rows: subgrid; }
+      @media(max-width:768px){ .pdt-cmp-grid { grid-template-rows: none; row-gap: 2px; } .pdt-cmp-col { grid-row: auto; grid-template-rows: none; } }
+    }
     .pdt-cmp-col.gold-col { background:rgba(44,55,71,.55); }
 
     .pdt-cmp-head {
@@ -1896,6 +1905,12 @@ body:has(.xr-hero)::after { display: none; }
       font-family:var(--xr-font-display); font-weight:700;
       font-size:clamp(15px,1.4vw,18px); letter-spacing:-.01em;
       text-align:right;
+    }
+    /* Phones: label above value, both left-aligned, instead of a narrow right-aligned stack. */
+    @media(max-width:560px){
+      .pdt-cmp-row { flex-direction:column; align-items:flex-start; gap:6px; padding:16px 22px; }
+      .pdt-cmp-val { text-align:left; font-size:16px; }
+      .pdt-cmp-head { padding:20px 22px; }
     }
     .pdt-cmp-col.gold-col .pdt-cmp-val { color:var(--xr-text); }
     .pdt-cmp-col:not(.gold-col) .pdt-cmp-val {
@@ -5799,12 +5814,11 @@ body.page-id-298 {
 .pdt-gets-model p { margin: 0; font-size: 14px; line-height: 1.6; color: var(--xr-text-2); }
 .pdt-gets-item { display: flex; gap: 14px; align-items: flex-start; padding: 8px 0; }
 .pdt-gets-item + .pdt-gets-item { border-top: 1px solid rgba(255,255,255,.04); }
+/* Small data drawings (heat map, 3D block, ranked list), not line icons. */
 .pdt-gets-item svg {
-  flex: 0 0 34px; width: 34px; height: 34px; padding: 6px;
-  fill: none; stroke: var(--xr-gold); stroke-width: 1.6; stroke-linejoin: round;
-  border: 1px solid rgba(232,185,99,.3); background: rgba(232,185,99,.06);
+  flex: 0 0 52px; width: 52px; height: 52px;
+  border: 1px solid rgba(232,185,99,.3); background: #0B121A;
 }
-.pdt-gets-item svg .hot { fill: var(--xr-gold); }
 .pdt-gets-item strong { display: block; font-size: 15px; color: var(--xr-text); margin-bottom: 3px; }
 .pdt-gets-item small { display: block; font-size: 13px; line-height: 1.55; color: var(--xr-text-2); }
 
