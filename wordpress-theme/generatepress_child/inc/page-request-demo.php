@@ -97,6 +97,27 @@ body { background: #0E141B !important; }
 .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 22px; }
 .form-row { margin-bottom: 22px; }
 @media (max-width: 600px) { .form-grid-2 { grid-template-columns: 1fr; } .demo-form { padding: 32px 28px; } }
+
+/* Questions section between the hero and the footer */
+.lm-faq-sec { position: relative; z-index: 2; background: #0E141B; padding: 120px 0 140px; border-top: 1px solid rgba(232,185,99,0.12); }
+.lm-faq-head { max-width: 640px; margin-bottom: 48px; }
+.lm-faq-head h2 { margin: 16px 0 12px; }
+.lm-faq-head p { color: var(--xr-text-2); font-size: 16px; line-height: 1.75; margin: 0; }
+.lm-faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px; align-items: start; }
+@media (max-width: 860px) { .lm-faq-grid { grid-template-columns: 1fr; } .lm-faq-sec { padding: 88px 0 100px; } }
+.lm-faq { border: 1px solid rgba(232,185,99,0.18); background: rgba(20,28,38,0.6); border-radius: 2px; }
+.lm-faq[open] { border-color: rgba(232,185,99,0.4); }
+.lm-faq summary {
+    list-style: none; cursor: pointer; padding: 20px 52px 20px 22px; position: relative;
+    color: var(--xr-text); font-weight: 600; font-size: 16px; line-height: 1.45;
+}
+.lm-faq summary::-webkit-details-marker { display: none; }
+.lm-faq summary::after {
+    content: '+'; position: absolute; right: 22px; top: 50%; transform: translateY(-50%);
+    color: var(--xr-gold); font-family: var(--xr-font-mono); font-size: 20px;
+}
+.lm-faq[open] summary::after { content: '−'; }
+.lm-faq p { margin: 0; padding: 0 22px 22px; color: var(--xr-text-2); font-size: 15px; line-height: 1.75; }
 </style>
 <?php xray_site_nav(); ?>
 
@@ -191,6 +212,42 @@ body { background: #0E141B !important; }
 
         <p style="color:var(--xr-text-muted);font-size:12px;text-align:center;margin:0;font-family:var(--xr-font-mono);letter-spacing:0.02em;line-height:1.6;">Your message goes straight to our team. We don't share your information.</p>
       </form>
+    </div>
+  </div>
+</section>
+
+<section class="lm-faq-sec">
+  <div class="xr-container">
+    <div class="lm-faq-head xr-reveal">
+      <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>Common Questions</span>
+      <h2>Before you <span style="color:var(--xr-gold);">write to us</span></h2>
+      <p>Quick answers to what mining companies and investors ask us most. Anything else, send it through the form above and a co-founder will reply.</p>
+    </div>
+    <div class="lm-faq-grid xr-reveal xr-d1">
+      <details class="lm-faq">
+        <summary>What does X-Ray give my team?</summary>
+        <p>Your geologists get a prospectivity heat map of your area, a 3D view of the target area and a ranked list of drill targets, so they can decide where to drill first.</p>
+      </details>
+      <details class="lm-faq">
+        <summary>Which minerals do you cover?</summary>
+        <p>We started with lithium across the Great Basin. Nickel is next on our roadmap, and we plan to add more minerals after that.</p>
+      </details>
+      <details class="lm-faq">
+        <summary>How accurate are the models?</summary>
+        <p>Our Great Basin lithium model reaches 95% recall and 80% precision at 1x1 km cells. The models are not commercially viable yet, and we are working toward 1x1 m precision, fine enough to place individual boreholes.</p>
+      </details>
+      <details class="lm-faq">
+        <summary>What data do I need to share?</summary>
+        <p>Whatever exploration data you have, such as geochemistry, structure, lithology, geophysics, geothermal and topography. Our models already draw on decades of cleaned geological data, so you don't need a complete set to start the conversation.</p>
+      </details>
+      <details class="lm-faq">
+        <summary>Who sees my data?</summary>
+        <p>Your data is only used for your own predictions. It is never used to train anyone else's model.</p>
+      </details>
+      <details class="lm-faq">
+        <summary>How is X-Ray priced?</summary>
+        <p>X-Ray will be a software subscription. We're still setting pricing, so tell us about your project and we'll talk it through with you.</p>
+      </details>
     </div>
   </div>
 </section>
