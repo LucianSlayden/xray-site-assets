@@ -98,23 +98,16 @@ body { background: #0E141B !important; }
 .form-row { margin-bottom: 22px; }
 @media (max-width: 600px) { .form-grid-2 { grid-template-columns: 1fr; } .demo-form { padding: 32px 28px; } }
 
-/* Founders section between the hero and the footer */
-.lm-team-sec { position: relative; z-index: 2; background: #0E141B; padding: 120px 0 140px; border-top: 1px solid rgba(232,185,99,0.12); }
-.lm-team-head { max-width: 640px; margin-bottom: 56px; }
-.lm-team-head h2 { margin: 16px 0 12px; }
-.lm-team-head p { color: var(--xr-text-2); font-size: 16px; line-height: 1.75; margin: 0; }
-.lm-team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-@media (max-width: 980px) { .lm-team-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 520px) { .lm-team-grid { grid-template-columns: 1fr; } .lm-team-sec { padding: 88px 0 100px; } }
-.lm-founder { text-align: center; padding: 28px 20px 26px; border: 1px solid rgba(232,185,99,0.18); background: rgba(20,28,38,0.6); border-radius: 2px; }
-.lm-founder-hex { width: 120px; height: 138px; padding: 3px; box-sizing: border-box; margin: 0 auto 18px; background: var(--xr-gold);
-    clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%); }
-.lm-founder.sky .lm-founder-hex { background: var(--xr-sky); }
-.lm-founder-hex img { width: 100%; height: 100%; object-fit: cover; display: block; clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%); }
-.lm-founder-name { color: var(--xr-text); font-weight: 700; font-size: 17px; }
-.lm-founder-role { font-family: var(--xr-font-mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--xr-gold); margin: 6px 0 14px; }
-.lm-founder.sky .lm-founder-role { color: var(--xr-sky); }
-.lm-founder p { margin: 0; color: var(--xr-text-2); font-size: 14px; line-height: 1.65; }
+/* Mission statement between the hero and the footer */
+.lm-mission-sec { position: relative; z-index: 2; background: #0E141B; padding: 150px 0 170px; border-top: 1px solid rgba(232,185,99,0.12); text-align: center; }
+.lm-mission-sec .xr-eyebrow { justify-content: center; }
+.lm-mission-line {
+    font-size: clamp(34px, 4.6vw, 64px); line-height: 1.12; letter-spacing: -0.02em; font-weight: 800;
+    color: var(--xr-text); max-width: 18ch; margin: 22px auto 30px;
+}
+.lm-mission-line span { color: var(--xr-gold); }
+.lm-mission-body { max-width: 640px; margin: 0 auto; color: var(--xr-text-2); font-size: 17px; line-height: 1.85; }
+@media (max-width: 600px) { .lm-mission-sec { padding: 100px 0 120px; } .lm-mission-body { font-size: 16px; } }
 </style>
 <?php xray_site_nav(); ?>
 
@@ -213,39 +206,11 @@ body { background: #0E141B !important; }
   </div>
 </section>
 
-<section class="lm-team-sec">
+<section class="lm-mission-sec">
   <div class="xr-container">
-    <div class="lm-team-head xr-reveal">
-      <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>Who You'll Hear From</span>
-      <h2>Four co-founders, <span style="color:var(--xr-gold);">no sales team</span></h2>
-      <p>We're a small founding team, so your message is read by one of us. Here's who that is and what each of us can talk you through.</p>
-    </div>
-    <div class="lm-team-grid xr-reveal xr-d1">
-      <div class="lm-founder">
-        <div class="lm-founder-hex"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/founder-lucian.webp' ); ?>" alt="Lucian Slayden" width="320" height="320" loading="lazy"></div>
-        <div class="lm-founder-name">Lucian Slayden</div>
-        <div class="lm-founder-role">Chief Executive Officer</div>
-        <p>The company, partnerships and investment.</p>
-      </div>
-      <div class="lm-founder">
-        <div class="lm-founder-hex"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/founder-ethan.webp' ); ?>" alt="Ethan Lopez" width="320" height="320" loading="lazy"></div>
-        <div class="lm-founder-name">Ethan Lopez</div>
-        <div class="lm-founder-role">Chief Technical Officer</div>
-        <p>The models and the platform your geologists would use.</p>
-      </div>
-      <div class="lm-founder sky">
-        <div class="lm-founder-hex"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/founder-jack.webp' ); ?>" alt="Jack Hilbert" width="320" height="320" loading="lazy"></div>
-        <div class="lm-founder-name">Jack Hilbert</div>
-        <div class="lm-founder-role">Chief Data Officer</div>
-        <p>The geological data behind the predictions.</p>
-      </div>
-      <div class="lm-founder">
-        <div class="lm-founder-hex"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/founder-nick.webp' ); ?>" alt="Nick Lopez, J.D." width="320" height="320" loading="lazy"></div>
-        <div class="lm-founder-name">Nick Lopez, J.D.</div>
-        <div class="lm-founder-role">Chief Legal Officer</div>
-        <p>Data agreements and how your data is protected.</p>
-      </div>
-    </div>
+    <div class="xr-reveal"><span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>Our Mission</span></div>
+    <h2 class="lm-mission-line xr-reveal xr-d1">Find the minerals the world needs, <span>with fewer holes drilled.</span></h2>
+    <p class="lm-mission-body xr-reveal xr-d2">New mineral discoveries fell from 202 in 2009 to about 80 in 2023, and every miss costs a mining company time and money. We're building machine learning models that weigh more geological data than any team can by hand, so geologists know where to drill before they commit a rig. We're starting with lithium in the Great Basin.</p>
   </div>
 </section>
 
