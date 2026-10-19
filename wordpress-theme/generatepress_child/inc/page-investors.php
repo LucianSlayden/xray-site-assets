@@ -54,6 +54,14 @@ body { background: #060c12 !important; }
     <div class="iv-hero-fog-left"></div>
     <div class="iv-hero-fog-edges"></div>
 
+    <figure class="iv-heatmap" aria-label="Prospectivity heat map from a recent model run">
+      <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/model-run-heatmap.webp?ver=' . filemtime( get_stylesheet_directory() . '/assets/img/model-run-heatmap.webp' ) ); ?>" alt="Prospectivity heat map from a recent X-Ray model run, with high-scoring areas in gold" width="1168" height="1128">
+      <figcaption>
+        <span class="iv-heatmap-title">From a recent model run</span>
+        <span class="iv-heatmap-legend"><span>Low</span><i></i><span>High</span></span>
+      </figcaption>
+    </figure>
+
     <div class="iv-hero-inner">
       <h1 class="iv-headline" id="iv-headline" aria-label="The data layer for the next era of resource discovery.">
         <span class="iv-hw"><span class="iv-hw-inner">The</span></span>
