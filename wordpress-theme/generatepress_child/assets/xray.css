@@ -5967,3 +5967,20 @@ body.page-id-298 { animation: none; }
 .pdt-cmp-head-logo { display: flex; align-items: center; }
 .pdt-cmp-head-logo .xr-brand-logo { height: 32px; width: auto; display: block; }
 .pdt-cmp-col:not(.gold-col) .pdt-cmp-head-title { font-size: 13px; font-family: "JetBrains Mono", monospace; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; }
+
+/* Product development tracker: an illustration for each stage (same art as the Home roadmap). */
+.ps2-item { grid-template-columns: 120px 60px 112px 1fr; }
+.ps2-item .ps2-body { padding-left: 28px; }
+.ps2-art { width: 112px; height: 112px; margin: 0; padding: 6px; background: rgba(10,16,24,.82); border: 1px solid rgba(232,185,99,.18); box-sizing: border-box; }
+.is-now .ps2-art { border-color: rgba(232,185,99,.6); }
+.is-active .ps2-art { border-color: rgba(111,181,224,.55); }
+.ps2-art svg { width: 100%; height: 100%; display: block; }
+.ps2-item { padding-bottom: 44px; }
+.ps2 { max-width: 1080px; }
+@media (max-width: 700px) {
+  .ps2-item { grid-template-columns: 18px 84px 1fr; column-gap: 16px; }
+  .ps2-when { grid-column: 2 / -1; }
+  .ps2-art { grid-column: 2; grid-row: 2; width: 84px; height: 84px; margin: 0; }
+  .ps2-body { grid-column: 3; grid-row: 2; }
+  .ps2-item .ps2-body { padding-left: 0; }
+}
