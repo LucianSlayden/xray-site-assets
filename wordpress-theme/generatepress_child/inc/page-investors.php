@@ -56,8 +56,9 @@ body { background: #060c12 !important; }
 
     <figure class="iv-heatmap" aria-label="Prospectivity heat map from a recent model run">
       <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/model-run-heatmap.webp?ver=' . filemtime( get_stylesheet_directory() . '/assets/img/model-run-heatmap.webp' ) ); ?>" alt="Prospectivity heat map from a recent X-Ray model run, with high-scoring areas in gold" width="1168" height="1128">
+      <div class="iv-heatmap-tag"><strong>Great Basin</strong><span>Western United States</span></div>
       <figcaption>
-        <span class="iv-heatmap-title">From a recent model run</span>
+        <span class="iv-heatmap-title">Lithium prospectivity · recent run</span>
         <span class="iv-heatmap-legend"><span>Low</span><i></i><span>High</span></span>
       </figcaption>
     </figure>

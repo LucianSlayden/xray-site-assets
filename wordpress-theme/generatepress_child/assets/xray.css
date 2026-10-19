@@ -5611,9 +5611,9 @@ body.page-id-298 { animation: none; }
 /* Investors hero: heat map from a recent model run, where the radar used to be. */
 .iv-heatmap {
   position: absolute; z-index: 2; margin: 0; pointer-events: none;
-  right: 3%; top: 45%; width: min(37vw, 560px);
-  transform: translateY(-50%);
-  animation: iv-heatmap-in 2.4s cubic-bezier(.22,1,.36,1) both, iv-heatmap-float 14s ease-in-out 2.4s infinite;
+  right: 7.5%; top: 45%; width: min(34vw, 520px);
+  transform: translate3d(0, -50%, 0); will-change: transform; backface-visibility: hidden;
+  animation: iv-heatmap-in 2.4s cubic-bezier(.22,1,.36,1) both, iv-heatmap-float 12s ease-in-out 2.4s infinite;
 }
 .iv-heatmap img {
   display: block; width: 100%; height: auto;
@@ -5631,8 +5631,8 @@ body.page-id-298 { animation: none; }
   display: inline-block; width: 90px; height: 6px; border-radius: 1px;
   background: linear-gradient(90deg, #12243A, #6FB5E0 45%, #E8B963 75%, #FFECBE);
 }
-@keyframes iv-heatmap-in { from { opacity: 0; transform: translateY(-46%) scale(.97); } to { opacity: 1; transform: translateY(-50%) scale(1); } }
-@keyframes iv-heatmap-float { 0%,100% { transform: translateY(-50%); } 50% { transform: translateY(-51.5%); } }
+@keyframes iv-heatmap-in { from { opacity: 0; transform: translate3d(0, -47%, 0); } to { opacity: 1; transform: translate3d(0, -50%, 0); } }
+@keyframes iv-heatmap-float { 0%,100% { transform: translate3d(0, -50%, 0); } 50% { transform: translate3d(0, -52%, 0); } }
 @keyframes iv-heatmap-glow {
   0%,100% { filter: drop-shadow(0 0 24px rgba(111,181,224,.18)); }
   50%     { filter: drop-shadow(0 0 34px rgba(232,185,99,.22)); }
@@ -5699,3 +5699,28 @@ body.page-id-298 { animation: none; }
 .pp-check strong { display: block; color: var(--xr-text); font-size: 16px; margin-bottom: 6px; }
 .pp-check small { display: block; color: var(--xr-text-2); font-size: 14px; line-height: 1.7; }
 .pp-checks-note { margin: 24px 0 0; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.06); color: var(--xr-text-muted); font-size: 13.5px; }
+
+/* Investors hero: one top-to-bottom shade (solid at the top, clear at the stat
+   strip, height set in investors-page.js) instead of the side and edge fogs. */
+.iv-hero-fog-left { display: none; }
+.iv-hero .iv-hero-fog-edges {
+  bottom: auto; height: 78%;
+  background: linear-gradient(180deg, #060c12 0%, rgba(6,12,18,.92) 30%, rgba(6,12,18,.55) 65%, rgba(6,12,18,0) 100%);
+}
+.iv-stat-strip { border-top: 0; }
+
+/* Heat map region label */
+.iv-heatmap-tag {
+  position: absolute; left: 0; top: -46px;
+  display: flex; flex-direction: column; gap: 4px;
+  font-family: var(--xr-font-mono); text-transform: uppercase;
+}
+.iv-heatmap-tag strong { font-size: 13px; letter-spacing: .18em; color: var(--xr-text); font-weight: 700; }
+.iv-heatmap-tag span { font-size: 10px; letter-spacing: .16em; color: var(--xr-sky); }
+@media (max-width: 1100px) { .iv-heatmap-tag { display: none; } }
+
+/* Animated drop-shadow filters repaint every frame and made scrolling stutter;
+   keep the glows but hold them still. */
+.iv-heatmap img { animation: none; }
+.iv-hexpie { animation: none; }
+.iv-heatmap-title { white-space: nowrap; }
