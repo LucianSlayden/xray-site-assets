@@ -24,6 +24,10 @@ wp_register_script(
     if ( is_front_page() ) {
         xray_theme_script( 'xray-hero', 'xray-hero.js', array('gsap') );
     }
+    // Contact forms: Learn More and Investors.
+    if ( is_page( array( 'learn-more', 'request-demo', 298 ) ) ) {
+        xray_theme_script( 'xray-contact', 'contact-form.js' );
+    }
 	if ( is_page(283) ) {
     wp_enqueue_script( 'xray-platform', 'https://cdn.jsdelivr.net/gh/LucianSlayden/xray-site-assets@main/platform-page.js', array('gsap-st'), '1.0', true );
 }

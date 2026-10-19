@@ -12,8 +12,8 @@ define( 'XRAY_CONTACT_TO', 'lucian@xraygeoanalytics.com' );
 // Pages a form may send the visitor back to, with the anchor of their form.
 function xray_contact_return( $source ) {
 	$pages = array(
-		'learn-more' => array( '/learn-more/', '#contact' ),
-		'investors'  => array( '/investors/', '#iv-contact' ),
+		'learn-more' => array( '/learn-more/', '#contact-form' ),
+		'investors'  => array( '/investors/', '#iv-contact-form' ),
 	);
 	return isset( $pages[ $source ] ) ? $pages[ $source ] : $pages['learn-more'];
 }
@@ -31,7 +31,7 @@ function xray_contact_notice() {
 	if ( ! isset( $messages[ $sent ] ) ) {
 		return '';
 	}
-	return '<div class="lm-notice lm-notice-' . esc_attr( $messages[ $sent ][0] ) . '" role="status">' . esc_html( $messages[ $sent ][1] ) . '</div>';
+	return '<div class="lm-notice lm-notice-' . esc_attr( $messages[ $sent ][0] ) . '" role="status" tabindex="-1" data-sent="' . esc_attr( $sent ) . '">' . esc_html( $messages[ $sent ][1] ) . '</div>';
 }
 
 function xray_contact_handle() {
@@ -89,7 +89,9 @@ function xray_contact_handle() {
 		. 'Interested as: ' . ( $interest ? $interest : '-' ) . "\n\n"
 		. "Message:\n{$message}\n\n"
 		. 'Sent from the ' . ( 'investors' === $source ? 'Investors' : 'Learn More' ) . " form on xraygeoanalytics.com.\n";
-	$headers = array( 'Reply-To: ' . $name . ' <' . $email . '>' );
+	// wp_mail splits Reply-To on commas, so keep the display name free of address punctuation.
+	$reply_name = trim( str_replace( array( ',', ';', '<', '>', '"' ), ' ', $name ) );
+	$headers    = array( 'Reply-To: ' . ( '' !== $reply_name ? $reply_name . ' ' : '' ) . '<' . $email . '>' );
 
 	$ok = wp_mail( XRAY_CONTACT_TO, $subject, $body, $headers );
 

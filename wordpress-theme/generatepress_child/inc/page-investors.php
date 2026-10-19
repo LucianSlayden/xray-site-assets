@@ -443,7 +443,7 @@ body { background: #060c12 !important; }
           </div>
         </div>
 
-        <form class="iv-form xr-reveal xr-d1" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" method="post">
+        <form class="iv-form xr-reveal xr-d1 xr-contact-form" id="iv-contact-form" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" method="post">
           <input type="hidden" name="action" value="xray_contact">
           <input type="hidden" name="source" value="investors">
           <input type="hidden" name="interest" value="Investor">
@@ -453,16 +453,16 @@ body { background: #060c12 !important; }
           <div class="iv-form-grid">
             <div class="iv-form-row">
               <label for="iv-name">Name</label>
-              <input type="text" id="iv-name" name="name" required placeholder="Full name">
+              <input type="text" id="iv-name" name="name" required placeholder="Full name" autocomplete="name">
             </div>
             <div class="iv-form-row">
               <label for="iv-firm">Firm</label>
-              <input type="text" id="iv-firm" name="company" placeholder="Fund / institution">
+              <input type="text" id="iv-firm" name="company" placeholder="Fund / institution" autocomplete="organization">
             </div>
           </div>
           <div class="iv-form-row">
             <label for="iv-email">Email</label>
-            <input type="email" id="iv-email" name="email" required placeholder="you@example.com">
+            <input type="email" id="iv-email" name="email" required placeholder="you@example.com" autocomplete="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="An email address like you@example.com">
           </div>
           <div class="iv-form-row">
             <label for="iv-msg">Message <span style="text-transform:none;letter-spacing:0;opacity:0.6;">(optional)</span></label>

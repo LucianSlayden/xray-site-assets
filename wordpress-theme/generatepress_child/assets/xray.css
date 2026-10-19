@@ -5649,6 +5649,9 @@ body.page-id-298 {
 /* Shared by the Learn More and Investors forms (inc/contact-form.php). */
 .xr-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .lm-notice { padding: 14px 16px; margin-bottom: 22px; border-radius: 2px; font-size: 14.5px; line-height: 1.6; }
+.lm-notice:focus { outline: none; }
+.xr-contact-form { scroll-margin-top: 104px; }
+.xr-contact-form button[disabled] { opacity: 0.6; cursor: progress; }
 .lm-notice-ok { background: rgba(80,200,120,0.10); border: 1px solid rgba(80,200,120,0.45); color: var(--xr-text); }
 .lm-notice-err { background: rgba(232,99,99,0.10); border: 1px solid rgba(232,99,99,0.45); color: var(--xr-text); }
 

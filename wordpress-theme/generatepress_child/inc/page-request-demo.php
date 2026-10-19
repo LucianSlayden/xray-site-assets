@@ -158,7 +158,7 @@ body { background: #0E141B !important; }
       </div>
 
       <h2 class="xr-sr-only">Contact form</h2>
-      <form class="xr-reveal xr-d1 demo-form" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" method="post">
+      <form class="xr-reveal xr-d1 demo-form xr-contact-form" id="contact-form" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" method="post">
         <input type="hidden" name="action" value="xray_contact">
         <input type="hidden" name="source" value="learn-more">
         <?php wp_nonce_field( 'xray_contact', 'xray_contact_nonce', false ); ?>
@@ -173,7 +173,7 @@ body { background: #0E141B !important; }
           </div>
           <div>
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="you@company.com" autocomplete="email" required>
+            <input type="email" id="email" name="email" placeholder="you@company.com" autocomplete="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="An email address like you@company.com" required>
           </div>
         </div>
 
@@ -185,7 +185,7 @@ body { background: #0E141B !important; }
           <div>
             <label for="interest">I'm interested as</label>
             <select id="interest" name="interest">
-              <option value="Exploration company">An exploration company</option>
+              <option value="Mining or exploration company">A mining or exploration company</option>
               <option value="Investor">An investor</option>
               <option value="Partner or researcher">A partner or researcher</option>
               <option value="Other">Something else</option>
