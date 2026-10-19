@@ -221,61 +221,7 @@ body { background: #060c12 !important; }
 .ab-section-p       { opacity: 0; transform: translateY(16px); }
 </style>
 
-<nav class="xr-nav">
-  <div class="xr-nav-inner">
-    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="xr-brand">
-      <img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180">
-    </a>
-    <div class="xr-nav-list">
-      <div class="xr-nav-item">
-        <button class="xr-nav-btn">Product<svg aria-hidden="true" class="xr-nav-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
-        <div class="xr-nav-drop">
-          <a href="<?php echo esc_url( home_url( '/product/' ) ); ?>">Product Overview</a>
-          <a href="<?php echo esc_url( home_url( '/our-models/' ) ); ?>">Our Models</a>
-          <a href="<?php echo esc_url( home_url( '/industries/' ) ); ?>">Industries</a>
-          <a href="<?php echo esc_url( home_url( '/platform/' ) ); ?>">Platform</a>
-          <a href="<?php echo esc_url( home_url( '/how-it-works/' ) ); ?>">How it Works</a>
-          <a href="<?php echo esc_url( home_url( '/pricing/' ) ); ?>">Pricing</a>
-        </div>
-      </div>
-      <div class="xr-nav-item">
-        <button class="xr-nav-btn">Resources<svg aria-hidden="true" class="xr-nav-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
-        <div class="xr-nav-drop">
-          <a href="<?php echo esc_url( home_url( '/resources/' ) ); ?>">Resources</a>
-          <a href="<?php echo esc_url( home_url( '/investors/' ) ); ?>">Investors</a>
-        </div>
-      </div>
-      <div class="xr-nav-item">
-        <button class="xr-nav-btn" style="color:var(--xr-gold);">About Us<svg aria-hidden="true" class="xr-nav-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
-        <div class="xr-nav-drop">
-          <a href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>" style="color:var(--xr-gold);">About Us</a>
-          <a href="<?php echo esc_url( home_url( '/our-team/' ) ); ?>">Our Team</a>
-          <a href="<?php echo esc_url( home_url( '/why-xray/' ) ); ?>">Why X-Ray</a>
-          <a href="<?php echo esc_url( home_url( '/news-updates/' ) ); ?>">News &amp; Updates</a>
-          <a href="<?php echo esc_url( home_url( '/faqs/' ) ); ?>">FAQs</a>
-        </div>
-      </div>
-      <a href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>" class="xr-btn xr-btn-gold xr-nav-cta">Request Demo</a>
-    </div>
-    <button class="xr-nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-  </div>
-  <div class="xr-nav-mobile">
-    <a href="<?php echo esc_url( home_url( '/product/' ) ); ?>">Product</a>
-    <a href="<?php echo esc_url( home_url( '/our-models/' ) ); ?>">Our Models</a>
-    <a href="<?php echo esc_url( home_url( '/industries/' ) ); ?>">Industries</a>
-    <a href="<?php echo esc_url( home_url( '/platform/' ) ); ?>">Platform</a>
-    <a href="<?php echo esc_url( home_url( '/how-it-works/' ) ); ?>">How it Works</a>
-    <a href="<?php echo esc_url( home_url( '/pricing/' ) ); ?>">Pricing</a>
-    <a href="<?php echo esc_url( home_url( '/resources/' ) ); ?>">Resources</a>
-    <a href="<?php echo esc_url( home_url( '/investors/' ) ); ?>">Investors</a>
-    <a href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>" style="color:var(--xr-gold);">About Us</a>
-    <a href="<?php echo esc_url( home_url( '/our-team/' ) ); ?>">Our Team</a>
-    <a href="<?php echo esc_url( home_url( '/why-xray/' ) ); ?>">Why X-Ray</a>
-    <a href="<?php echo esc_url( home_url( '/news-updates/' ) ); ?>">News &amp; Updates</a>
-    <a href="<?php echo esc_url( home_url( '/faqs/' ) ); ?>">FAQs</a>
-    <a href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>" class="xr-btn xr-btn-gold">Request Demo</a>
-  </div>
-</nav>
+<?php xray_site_nav(); ?>
 
 <canvas id="ab-canvas"></canvas>
 <div id="ab-veil"></div>
@@ -296,8 +242,8 @@ body { background: #060c12 !important; }
         X-Ray Geoanalytics finds mineral deposits for mining companies using machine learning. Our models process more data and consider more factors than any human can, so explorers spend less time and money drilling in the wrong places. We started with lithium in the Great Basin.
       </p>
       <div id="ab-ctas" style="display:flex;gap:14px;flex-wrap:wrap;">
-        <a href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>" class="xr-btn xr-btn-gold">Request a Demo</a>
-        <a href="<?php echo esc_url( home_url( '/our-team/' ) ); ?>" class="xr-btn xr-btn-outline">Meet the Team <span class="xr-arrow">→</span></a>
+        <a href="<?php echo esc_url( home_url( '/learn-more/' ) ); ?>" class="xr-btn xr-btn-gold">Learn More</a>
+        <a href="<?php echo esc_url( home_url( '/investors/#iv-founders' ) ); ?>" class="xr-btn xr-btn-outline">Meet the Team <span class="xr-arrow">→</span></a>
       </div>
     </div>
     <div id="ab-snapshot">
@@ -426,54 +372,54 @@ body { background: #060c12 !important; }
       <h2 class="ab-section-h2" style="font-family:var(--xr-font-display);font-size:clamp(24px,2.5vw,34px);font-weight:700;letter-spacing:-0.02em;margin:14px 0 0;color:#F1F4F8;">More about X-Ray.</h2>
     </div>
     <div class="ab-nav-grid">
-      <a class="ab-nav-card" href="<?php echo esc_url( home_url( '/our-team/' ) ); ?>">
+      <a class="ab-nav-card" href="<?php echo esc_url( home_url( '/investors/' ) ); ?>">
         <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px;">
           <div style="flex:1;">
             <div style="display:flex;align-items:center;gap:10px;margin-bottom:13px;">
               <div class="ab-nav-card-icon"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E8B963" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
-              <span class="xr-eyebrow" style="margin:0;">Our Team</span>
+              <span class="xr-eyebrow" style="margin:0;">Investors</span>
             </div>
-            <h3>Meet the founders</h3>
-            <p>Four co-founders with equal ownership, covering geology, finance, model development, machine learning, and law.</p>
+            <h3>Team and roadmap</h3>
+            <p>Our four co-founders, the market we serve, and where we go after lithium in the Great Basin.</p>
           </div>
           <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8B963" stroke-width="2" style="flex-shrink:0;margin-top:4px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </div>
       </a>
-      <a class="ab-nav-card" href="<?php echo esc_url( home_url( '/why-xray/' ) ); ?>">
+      <a class="ab-nav-card" href="<?php echo esc_url( home_url( '/product/' ) ); ?>">
         <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px;">
           <div style="flex:1;">
             <div style="display:flex;align-items:center;gap:10px;margin-bottom:13px;">
               <div class="ab-nav-card-icon"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E8B963" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-              <span class="xr-eyebrow" style="margin:0;">Why X-Ray</span>
+              <span class="xr-eyebrow" style="margin:0;">Product</span>
             </div>
-            <h3>The competitive difference</h3>
-            <p>How X-Ray compares to traditional exploration methods and to other companies applying machine learning to mineral exploration.</p>
+            <h3>How the platform works</h3>
+            <p>What goes in, what comes out, and how X-Ray compares to traditional exploration and other machine learning companies.</p>
           </div>
           <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8B963" stroke-width="2" style="flex-shrink:0;margin-top:4px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </div>
       </a>
-      <a class="ab-nav-card sky" href="<?php echo esc_url( home_url( '/news-updates/' ) ); ?>">
+      <a class="ab-nav-card sky" href="<?php echo esc_url( home_url( '/learn-more/' ) ); ?>">
         <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px;">
           <div style="flex:1;">
             <div style="display:flex;align-items:center;gap:10px;margin-bottom:13px;">
               <div class="ab-nav-card-icon sky"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6FB5E0" stroke-width="2"><path d="M4 22h16a2 2 0 002-2V4a2 2 0 00-2-2H8a2 2 0 00-2 2v16a2 2 0 01-2 2zm0 0a2 2 0 01-2-2v-9c0-1.1.9-2 2-2h2"/></svg></div>
-              <span class="xr-eyebrow" style="margin:0;color:#6FB5E0;">News &amp; Updates</span>
+              <span class="xr-eyebrow" style="margin:0;color:#6FB5E0;">Learn More</span>
             </div>
-            <h3>Company milestones</h3>
-            <p>Model milestones, customer discovery progress, and company announcements.</p>
+            <h3>Talk with us</h3>
+            <p>Explorers, investors and partners can send us a note, and a co-founder will reply directly.</p>
           </div>
           <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6FB5E0" stroke-width="2" style="flex-shrink:0;margin-top:4px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </div>
       </a>
-      <a class="ab-nav-card sky" href="<?php echo esc_url( home_url( '/faqs/' ) ); ?>">
+      <a class="ab-nav-card sky" href="mailto:info@xraygeoanalytics.com">
         <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px;">
           <div style="flex:1;">
             <div style="display:flex;align-items:center;gap:10px;margin-bottom:13px;">
               <div class="ab-nav-card-icon sky"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6FB5E0" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
-              <span class="xr-eyebrow" style="margin:0;color:#6FB5E0;">FAQs</span>
+              <span class="xr-eyebrow" style="margin:0;color:#6FB5E0;">Email</span>
             </div>
-            <h3>Common questions</h3>
-            <p>Answers about accuracy, data security, pricing, minimum project size, and how the technology works.</p>
+            <h3>info@xraygeoanalytics.com</h3>
+            <p>Prefer email? Write to us any time and we'll get back to you.</p>
           </div>
           <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6FB5E0" stroke-width="2" style="flex-shrink:0;margin-top:4px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </div>
@@ -491,80 +437,13 @@ body { background: #060c12 !important; }
     <div class="ab-cta-divider"></div>
     <p class="ab-section-p" style="color:#A8B2C0;font-size:16px;line-height:1.85;margin:0 0 36px;">If you're a junior explorer in the Great Basin or American Southwest, we want to hear how you decide where to drill. We're starting customer discovery interviews and looking for pilot customers.</p>
     <div class="ab-section-p" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-      <a href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>" class="xr-btn xr-btn-gold">Request a Demo</a>
+      <a href="<?php echo esc_url( home_url( '/learn-more/' ) ); ?>" class="xr-btn xr-btn-gold">Learn More</a>
       <a href="mailto:info@xraygeoanalytics.com" class="xr-btn xr-btn-outline">Email us directly <span class="xr-arrow">→</span></a>
     </div>
   </div>
 </section>
 
-<footer class="xr-footer">
-  <div class="xr-footer-strip"></div>
-  <div class="xr-footer-inner">
-    <div class="xr-footer-grid">
-      <div>
-        <div class="xr-footer-brand">
-          <img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180">
-        </div>
-        <p class="xr-footer-tagline">Advanced machine learning for mining site discovery. Nevada lithium. Every mineral. Every continent. Every drill result makes us smarter.</p>
-        <div class="xr-footer-contact">
-          <a href="mailto:info@xraygeoanalytics.com">
-            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M4 6l8 7 8-7"/></svg>
-            info@xraygeoanalytics.com
-          </a>
-        </div>
-      </div>
-      <div>
-        <h3>Product</h3>
-        <ul class="xr-footer-list">
-          <li><a href="<?php echo esc_url( home_url( '/product/' ) ); ?>">Overview</a></li>
-          <li><a href="<?php echo esc_url( home_url( '/our-models/' ) ); ?>">Our Models</a></li>
-          <li><a href="<?php echo esc_url( home_url( '/platform/' ) ); ?>">Platform</a></li>
-          <li><a href="<?php echo esc_url( home_url( '/industries/' ) ); ?>">Industries</a></li>
-          <li><a href="<?php echo esc_url( home_url( '/how-it-works/' ) ); ?>">How it Works</a></li>
-          <li><a href="<?php echo esc_url( home_url( '/pricing/' ) ); ?>">Pricing</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Company</h3>
-        <ul class="xr-footer-list">
-          <li><a href="<?php echo esc_url( home_url( '/our-team/' ) ); ?>">Our Team</a></li>
-          <li><a href="<?php echo esc_url( home_url( '/why-xray/' ) ); ?>">Why X-Ray</a></li>
-          <li><a href="<?php echo esc_url( home_url( '/news-updates/' ) ); ?>">News &amp; Updates</a></li>
-          <li><a href="<?php echo esc_url( home_url( '/faqs/' ) ); ?>">FAQs</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Resources</h3>
-        <ul class="xr-footer-list">
-          <li><a href="<?php echo esc_url( home_url( '/resources/' ) ); ?>">Resources Library</a></li>
-          <li><a href="<?php echo esc_url( home_url( '/investors/' ) ); ?>">For Investors</a></li>
-          <li><a href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>">Request Demo</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Get in Touch</h3>
-        <ul class="xr-footer-list">
-          <li><a href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>">Book a Demo</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="xr-footer-bottom">
-      <p>&copy; 2026 X-Ray Geoanalytics, Inc. All rights reserved.</p>
-      <div class="xr-footer-social">
-        <a href="https://www.linkedin.com/company/xray-geoanalytics" aria-label="LinkedIn" target="_blank" rel="noopener">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="2" y="9" width="4" height="13"/><circle cx="4" cy="4" r="2" fill="currentColor"/><path d="M22 22V13.5a3.5 3.5 0 0 0-7 0V22M10 22V9"/></svg>
-        </a>
-        <a href="https://x.com/xraygeoanalytic" aria-label="X" target="_blank" rel="noopener">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20"/></svg>
-        </a>
-        <a href="mailto:info@xraygeoanalytics.com" aria-label="Email">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M4 6l8 7 8-7"/></svg>
-        </a>
-      </div>
-      <p>xraygeoanalytics.com</p>
-    </div>
-  </div>
-</footer>
+<?php xray_site_footer(); ?>
 	<?php
 } );
 

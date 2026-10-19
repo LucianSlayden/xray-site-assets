@@ -257,6 +257,13 @@ a { color: inherit; text-decoration: none; }
 
 .xr-nav-cta { padding: 11px 22px; font-size: 14.5px; }
 
+/* Flat nav (five-page site): one link per page, larger text, no dropdowns. */
+.xr-nav-list { gap: 40px; }
+.xr-nav-list .xr-nav-link { font-size: 19px; font-weight: 500; letter-spacing: 0.01em; }
+.xr-nav-list .xr-nav-link.is-current { color: var(--xr-gold); }
+.xr-nav-list .xr-nav-cta { padding: 13px 28px; font-size: 17px; }
+.xr-nav-mobile a { font-size: 19px; }
+
 /* Mobile nav toggle — hidden on desktop, surfaced via media query */
 .xr-nav-toggle { display: none; }
 .xr-nav-mobile {
@@ -525,6 +532,7 @@ body:has(.xr-hero)::after { display: none; }
    --x and --y on each .xr-hero-bullet to fine-tune alignment.
    The whole group fades/slides in once scroll passes BULLETS_THRESHOLD. */
 .xr-hero-bullets {
+  --hex-r: 40px;                /* hexagon half-width, set by xray-hero.js */
   position: absolute;
   inset: 0;
   z-index: 3;
@@ -564,7 +572,7 @@ body:has(.xr-hero)::after { display: none; }
    distance from the hex centre — only the hex Y differs). */
 .xr-hero-bullet-head {
   position: absolute;
-  right: 104px;                 /* uniform px gap from each hex centre, room for the arrow */
+  right: calc(var(--hex-r) + 58px);  /* same gap from every hexagon, room for the arrow */
   top: 50%;
   transform: translateY(-50%);
   width: 380px;                 /* fixed width → uniform left edge for every bullet */
@@ -589,7 +597,7 @@ body:has(.xr-hero)::after { display: none; }
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  width: 62px; height: 72px;
+  width: calc(var(--hex-r) * 2); height: calc(var(--hex-r) * 2.2);
   pointer-events: auto;
   cursor: inherit;
   z-index: 4;
@@ -602,7 +610,7 @@ body:has(.xr-hero)::after { display: none; }
   content: '';
   position: absolute;
   top: 50%;
-  right: 46px;
+  right: calc(var(--hex-r) + 8px);
   width: 34px; height: 2px;
   background: linear-gradient(90deg, rgba(123,201,122,0), var(--xr-green));
   transform: translateY(-50%);
@@ -613,7 +621,7 @@ body:has(.xr-hero)::after { display: none; }
   content: '';
   position: absolute;
   top: 50%;
-  right: 44px;
+  right: calc(var(--hex-r) + 6px);
   width: 9px; height: 9px;
   border-top: 2px solid var(--xr-green);
   border-right: 2px solid var(--xr-green);
@@ -635,8 +643,8 @@ body:has(.xr-hero)::after { display: none; }
   content: '';
   position: absolute;
   top: 50%; left: 50%;
-  width: 58px; height: 58px;
-  margin: -29px 0 0 -29px;
+  width: calc(var(--hex-r) * 2.3); height: calc(var(--hex-r) * 2.3);
+  margin: calc(var(--hex-r) * -1.15) 0 0 calc(var(--hex-r) * -1.15);
   border: 2px solid var(--xr-green);
   border-radius: 50%;
   opacity: 0;
@@ -656,7 +664,7 @@ body:has(.xr-hero)::after { display: none; }
    on the left, deep amber glow so it reads on any background. */
 .xr-hero-bullet-body {
   position: absolute;
-  left: 50%;             /* centred on the hexagon */
+  left: calc(var(--hex-r) + 14px);  /* just right of the hexagon's edge */
   top: 50%;
   z-index: 5;
   width: clamp(240px, 22vw, 320px);
@@ -679,8 +687,8 @@ body:has(.xr-hero)::after { display: none; }
   color: rgba(241,244,248,0.96);
   text-align: left;
   text-shadow: 0 1px 4px rgba(0,0,0,0.7);
-  transform-origin: center center;
-  transform: translate(-50%, -50%) scale(0.85);
+  transform-origin: left center;
+  transform: translate(-12px, -50%) scaleX(0.55);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -707,7 +715,7 @@ body:has(.xr-hero)::after { display: none; }
 .xr-hero-bullet:focus-within           .xr-hero-bullet-body,
 .xr-hero-bullet.locked                 .xr-hero-bullet-body,
 .xr-hero-bullet-hit:hover ~ .xr-hero-bullet-body {
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(0, -50%) scaleX(1);
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -844,13 +852,17 @@ body:has(.xr-hero)::after { display: none; }
 }
 .xr-footer-social a:hover { color: var(--xr-gold); border-color: var(--xr-gold); background: rgba(232,185,99,0.06); }
 .xr-footer-social svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 1.6; fill: none; }
+.xr-footer-social svg.xr-brand-icon { width: 17px; height: 17px; fill: currentColor; stroke: none; }
+.xr-footer-grid.xr-footer-grid-slim { grid-template-columns: 2.4fr 1fr 1fr; }
+.xr-footer-grid-slim .xr-footer-tagline { max-width: 52ch; }
 
 @media (max-width: 980px) {
-  .xr-footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+  .xr-footer-grid, .xr-footer-grid.xr-footer-grid-slim { grid-template-columns: 1fr 1fr; gap: 36px; }
+  .xr-footer-grid-slim > div:first-child { grid-column: 1 / -1; }
   .xr-footer-bottom { flex-direction: column; align-items: flex-start; }
 }
 @media (max-width: 560px) {
-  .xr-footer-grid { grid-template-columns: 1fr; }
+  .xr-footer-grid, .xr-footer-grid.xr-footer-grid-slim { grid-template-columns: 1fr; }
 }
 
 /* ────────────────────────────────────────── PAGE HERO ─────────────────── */
