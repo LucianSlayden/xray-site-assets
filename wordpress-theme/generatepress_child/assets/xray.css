@@ -5899,3 +5899,65 @@ body.page-id-298 { animation: none; }
 @keyframes iv-heatmap-fade { from { opacity: 0; } to { opacity: 1; } }
 .iv-heatmap img { filter: none; image-rendering: auto; }
 @media (max-width: 1100px) { .iv-heatmap { animation: none; } }
+
+/* ── Product: How it works (three illustrated steps) ── */
+.pa2 { list-style: none; margin: 56px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; counter-reset: none; }
+.pa2-step { margin: 0; display: flex; flex-direction: column; padding: 28px 28px 30px; background: rgba(10,16,24,.82); border: 1px solid rgba(255,255,255,.07); border-top: 2px solid rgba(232,185,99,.7); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.pa2-step:nth-child(2) { border-top-color: rgba(232,185,99,.45); }
+.pa2-step:nth-child(3) { border-top-color: var(--xr-sky); }
+.pa2-top { display: flex; align-items: baseline; gap: 12px; margin-bottom: 18px; }
+.pa2-num { font: 700 30px/1 "JetBrains Mono", monospace; color: var(--xr-gold); letter-spacing: -.02em; }
+.pa2-step:nth-child(3) .pa2-num { color: var(--xr-sky); }
+.pa2-kind { font: 600 11px/1 "JetBrains Mono", monospace; letter-spacing: .18em; text-transform: uppercase; color: rgba(168,178,192,.8); }
+.pa2-art { margin: 0 0 22px; aspect-ratio: 17 / 15; background: rgba(4,8,12,.6); border: 1px solid rgba(255,255,255,.06); display: flex; align-items: center; justify-content: center; padding: 10px; }
+.pa2-art svg { width: 100%; height: 100%; display: block; }
+.pa2-art-out { display: grid; grid-template-columns: 1.15fr 1fr; gap: 12px; align-items: center; }
+.pa2-art-out img { width: 100%; height: auto; display: block; }
+.pa2-rank { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; }
+.pa2-rank li { display: grid; grid-template-columns: 34px 1fr; align-items: center; gap: 8px; font: 700 10px/1 "JetBrains Mono", monospace; color: rgba(241,244,248,.8); }
+.pa2-rank li:first-child b { color: var(--xr-gold); }
+.pa2-rank i { display: block; height: 6px; width: var(--w); background: linear-gradient(90deg, #B98A3E, var(--xr-gold)); }
+.pa2-step h3 { margin: 0 0 12px; font-size: 21px; line-height: 1.25; letter-spacing: -.01em; }
+.pa2-step p { margin: 0 0 22px; color: var(--xr-text-2); font-size: 15px; line-height: 1.7; }
+.pa2-chips { list-style: none; margin: auto 0 0; padding: 18px 0 0; border-top: 1px solid rgba(255,255,255,.07); display: flex; flex-wrap: wrap; gap: 8px; }
+.pa2-chips li { margin: 0; padding: 7px 10px; font: 500 11.5px/1.2 "JetBrains Mono", monospace; color: var(--xr-text); background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); }
+@media (max-width: 980px) { .pa2 { grid-template-columns: 1fr; max-width: 560px; margin-left: auto; margin-right: auto; } }
+
+/* ── Product: development stages (vertical tracker) ── */
+.ps2 { list-style: none; margin: 56px 0 0; padding: 0; position: relative; max-width: 980px; }
+.ps2::before { content: ""; position: absolute; left: 150px; top: 14px; bottom: 14px; width: 1px; background: linear-gradient(180deg, var(--xr-gold) 0%, var(--xr-sky) 30%, rgba(255,255,255,.12) 45%, rgba(255,255,255,.08) 100%); }
+.ps2-item { position: relative; display: grid; grid-template-columns: 120px 60px 1fr; align-items: start; margin: 0; padding: 0 0 38px; }
+.ps2-item:last-child { padding-bottom: 0; }
+.ps2-when { padding-top: 6px; text-align: right; font: 600 11px/1.2 "JetBrains Mono", monospace; letter-spacing: .14em; text-transform: uppercase; color: rgba(168,178,192,.7); }
+.ps2-node { justify-self: center; margin-top: 3px; width: 18px; height: 20px; position: relative; background: #0E141B; clip-path: polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%); }
+.ps2-node::after { content: ""; position: absolute; inset: 2px; clip-path: inherit; background: rgba(255,255,255,.18); }
+.is-now .ps2-node::after { background: var(--xr-gold); }
+.is-active .ps2-node::after { background: var(--xr-sky); }
+.is-now .ps2-when { color: var(--xr-gold); }
+.is-active .ps2-when { color: var(--xr-sky); }
+.ps2-head { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 8px; }
+.ps2-head h3 { margin: 0; font-size: 22px; letter-spacing: -.01em; }
+.ps2-pill { font: 600 10px/1 "JetBrains Mono", monospace; letter-spacing: .14em; text-transform: uppercase; padding: 6px 9px; border: 1px solid rgba(255,255,255,.18); color: rgba(168,178,192,.85); }
+.is-now .ps2-pill { color: var(--xr-gold); border-color: rgba(232,185,99,.5); background: rgba(232,185,99,.08); }
+.is-active .ps2-pill { color: var(--xr-sky); border-color: rgba(111,181,224,.5); background: rgba(111,181,224,.08); }
+.ps2-body p { margin: 0; max-width: 64ch; color: var(--xr-text-2); font-size: 15.5px; line-height: 1.7; }
+.is-future .ps2-head h3, .is-future .ps2-body p { opacity: .75; }
+@media (max-width: 700px) {
+  .ps2::before { left: 9px; }
+  .ps2-item { grid-template-columns: 18px 1fr; column-gap: 18px; }
+  .ps2-when { grid-column: 2; grid-row: 1; text-align: left; padding: 0 0 8px; }
+  .ps2-node { grid-column: 1; grid-row: 1; margin-top: 0; }
+  .ps2-body { grid-column: 2; }
+}
+
+/* ── Product: how it will work ── */
+.ph2 { margin-top: 88px; padding-top: 48px; border-top: 1px solid rgba(255,255,255,.08); }
+.ph2-head { font: 600 11px/1 "JetBrains Mono", monospace; letter-spacing: .18em; text-transform: uppercase; color: var(--xr-gold); margin-bottom: 30px; }
+.ph2-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; position: relative; }
+.ph2-steps li { margin: 0; position: relative; }
+.ph2-n { display: block; font: 700 56px/1 "JetBrains Mono", monospace; letter-spacing: -.04em; color: transparent; -webkit-text-stroke: 1px rgba(232,185,99,.75); margin-bottom: 18px; }
+.ph2-steps li:not(:last-child)::after { content: ""; position: absolute; top: 28px; left: 96px; right: -28px; height: 1px; background: linear-gradient(90deg, rgba(232,185,99,.5), rgba(232,185,99,.05)); }
+.ph2-steps strong { display: block; font-size: 19px; margin-bottom: 8px; color: var(--xr-text); }
+.ph2-steps p { margin: 0; color: var(--xr-text-2); font-size: 15px; line-height: 1.65; }
+.ph2-cta { margin-top: 40px; }
+@media (max-width: 860px) { .ph2-steps { grid-template-columns: 1fr; gap: 28px; } .ph2-steps li::after { display: none; } }
