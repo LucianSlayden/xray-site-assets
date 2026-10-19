@@ -96,24 +96,10 @@ body { background: #0E141B !important; }
 .demo-form textarea { resize: vertical; min-height: 120px; font-family: var(--xr-font-body); }
 .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 22px; }
 .form-row { margin-bottom: 22px; }
-.xr-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-.lm-notice { padding: 14px 16px; margin-bottom: 22px; border-radius: 2px; font-size: 14.5px; line-height: 1.6; }
-.lm-notice-ok { background: rgba(80,200,120,0.10); border: 1px solid rgba(80,200,120,0.45); color: var(--xr-text); }
-.lm-notice-err { background: rgba(232,99,99,0.10); border: 1px solid rgba(232,99,99,0.45); color: var(--xr-text); }
 @media (max-width: 600px) { .form-grid-2 { grid-template-columns: 1fr; } .demo-form { padding: 32px 28px; } }
 </style>
 <?php xray_site_nav(); ?>
 
-<?php
-$xr_sent   = isset( $_GET['sent'] ) ? sanitize_key( wp_unslash( $_GET['sent'] ) ) : '';
-$xr_notice = array(
-  '1'       => array( 'ok', 'Thanks, your message is on its way. We\'ll get back to you soon.' ),
-  'invalid' => array( 'err', 'Please add your name, a valid email and a message, then send again.' ),
-  'expired' => array( 'err', 'The form timed out. Please send it again.' ),
-  'limit'   => array( 'err', 'You\'ve sent several messages already. Please email info@xraygeoanalytics.com instead.' ),
-  'error'   => array( 'err', 'Something went wrong sending your message. Please email info@xraygeoanalytics.com instead.' ),
-);
-?>
 <section class="xr-page-hero xr-topo" id="contact">
   <div class="xr-topo-layer xr-topo-contours"></div>
   <div class="xr-topo-layer xr-topo-wash"></div>
@@ -163,12 +149,11 @@ $xr_notice = array(
       <h2 class="xr-sr-only">Contact form</h2>
       <form class="xr-reveal xr-d1 demo-form" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" method="post">
         <input type="hidden" name="action" value="xray_contact">
+        <input type="hidden" name="source" value="learn-more">
         <?php wp_nonce_field( 'xray_contact', 'xray_contact_nonce', false ); ?>
         <div class="xr-hp" aria-hidden="true"><label for="website">Website</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
 
-        <?php if ( isset( $xr_notice[ $xr_sent ] ) ) : ?>
-        <div class="lm-notice lm-notice-<?php echo esc_attr( $xr_notice[ $xr_sent ][0] ); ?>" role="status"><?php echo esc_html( $xr_notice[ $xr_sent ][1] ); ?></div>
-        <?php endif; ?>
+        <?php echo xray_contact_notice(); ?>
 
         <div class="form-grid-2">
           <div>

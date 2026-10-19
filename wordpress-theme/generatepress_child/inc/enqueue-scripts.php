@@ -34,11 +34,13 @@ wp_register_script(
 }
 	// Investors page
 if ( is_page( 298 ) ) {
+    // Served from the theme (not jsDelivr) so a deploy takes effect at once.
+    $iv_js = get_stylesheet_directory() . '/assets/investors-page.js';
     wp_enqueue_script(
         'xray-investors',
-        'https://cdn.jsdelivr.net/gh/LucianSlayden/xray-site-assets@main/investors-page.js',
+        get_stylesheet_directory_uri() . '/assets/investors-page.js',
         array( 'gsap-st' ),
-        null,
+        filemtime( $iv_js ),
         true
     );
 }

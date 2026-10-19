@@ -1,24 +1,52 @@
 <?php
 /**
- * Learn More contact form: emails each submission to Lucian.
+ * Contact forms (Learn More and Investors): email each submission to Lucian.
  *
- * The form on /learn-more/ posts to admin-post.php?action=xray_contact.
+ * Both forms post to admin-post.php?action=xray_contact; a hidden "source"
+ * field says which page to send the visitor back to.
  * The old /request-demo/ address redirects to /learn-more/.
  */
 
 define( 'XRAY_CONTACT_TO', 'lucian@xraygeoanalytics.com' );
 
+// Pages a form may send the visitor back to, with the anchor of their form.
+function xray_contact_return( $source ) {
+	$pages = array(
+		'learn-more' => array( '/learn-more/', '#contact' ),
+		'investors'  => array( '/investors/', '#iv-contact' ),
+	);
+	return isset( $pages[ $source ] ) ? $pages[ $source ] : $pages['learn-more'];
+}
+
+// Result message shown above a form after it redirects back with ?sent=.
+function xray_contact_notice() {
+	$sent     = isset( $_GET['sent'] ) ? sanitize_key( wp_unslash( $_GET['sent'] ) ) : '';
+	$messages = array(
+		'1'       => array( 'ok', 'Thanks, your message is on its way. We\'ll get back to you soon.' ),
+		'invalid' => array( 'err', 'Please add your name and a valid email (and a message on the Learn More form), then send again.' ),
+		'expired' => array( 'err', 'The form timed out. Please send it again.' ),
+		'limit'   => array( 'err', 'You\'ve sent several messages already. Please email info@xraygeoanalytics.com instead.' ),
+		'error'   => array( 'err', 'Something went wrong sending your message. Please email info@xraygeoanalytics.com instead.' ),
+	);
+	if ( ! isset( $messages[ $sent ] ) ) {
+		return '';
+	}
+	return '<div class="lm-notice lm-notice-' . esc_attr( $messages[ $sent ][0] ) . '" role="status">' . esc_html( $messages[ $sent ][1] ) . '</div>';
+}
+
 function xray_contact_handle() {
-	$back = home_url( '/learn-more/' );
+	$source = isset( $_POST['source'] ) ? sanitize_key( wp_unslash( $_POST['source'] ) ) : 'learn-more';
+	list( $path, $anchor ) = xray_contact_return( $source );
+	$back = home_url( $path );
 
 	if ( ! isset( $_POST['xray_contact_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['xray_contact_nonce'] ) ), 'xray_contact' ) ) {
-		wp_safe_redirect( add_query_arg( 'sent', 'expired', $back ) . '#contact' );
+		wp_safe_redirect( add_query_arg( 'sent', 'expired', $back ) . $anchor );
 		exit;
 	}
 
 	// Honeypot: real visitors never see or fill this field.
 	if ( ! empty( $_POST['website'] ) ) {
-		wp_safe_redirect( add_query_arg( 'sent', '1', $back ) . '#contact' );
+		wp_safe_redirect( add_query_arg( 'sent', '1', $back ) . $anchor );
 		exit;
 	}
 
@@ -26,7 +54,7 @@ function xray_contact_handle() {
 	$ip_key = 'xray_contact_' . md5( isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : '' );
 	$count  = (int) get_transient( $ip_key );
 	if ( $count >= 5 ) {
-		wp_safe_redirect( add_query_arg( 'sent', 'limit', $back ) . '#contact' );
+		wp_safe_redirect( add_query_arg( 'sent', 'limit', $back ) . $anchor );
 		exit;
 	}
 
@@ -44,8 +72,13 @@ function xray_contact_handle() {
 	$interest = $field( 'interest' );
 	$message  = $field( 'message', true );
 
+	// The investor form's message is optional; Learn More needs one.
+	if ( '' === $message && 'investors' === $source ) {
+		$message = 'Requested investor materials.';
+	}
+
 	if ( '' === $name || ! is_email( $email ) || '' === $message ) {
-		wp_safe_redirect( add_query_arg( 'sent', 'invalid', $back ) . '#contact' );
+		wp_safe_redirect( add_query_arg( 'sent', 'invalid', $back ) . $anchor );
 		exit;
 	}
 
@@ -55,13 +88,13 @@ function xray_contact_handle() {
 		. 'Company: ' . ( $company ? $company : '-' ) . "\n"
 		. 'Interested as: ' . ( $interest ? $interest : '-' ) . "\n\n"
 		. "Message:\n{$message}\n\n"
-		. "Sent from the Learn More form on xraygeoanalytics.com.\n";
+		. 'Sent from the ' . ( 'investors' === $source ? 'Investors' : 'Learn More' ) . " form on xraygeoanalytics.com.\n";
 	$headers = array( 'Reply-To: ' . $name . ' <' . $email . '>' );
 
 	$ok = wp_mail( XRAY_CONTACT_TO, $subject, $body, $headers );
 
 	set_transient( $ip_key, $count + 1, 10 * MINUTE_IN_SECONDS );
-	wp_safe_redirect( add_query_arg( 'sent', $ok ? '1' : 'error', $back ) . '#contact' );
+	wp_safe_redirect( add_query_arg( 'sent', $ok ? '1' : 'error', $back ) . $anchor );
 	exit;
 }
 add_action( 'admin_post_nopriv_xray_contact', 'xray_contact_handle' );
