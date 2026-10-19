@@ -81,7 +81,7 @@ body { background: #060c12 !important; }
       <div class="iv-stat-strip" id="iv-stats">
         <div class="iv-stat-item">
           <div class="iv-stat-n">$2.5B</div>
-          <div class="iv-stat-label">Annual target-generation spend</div>
+          <div class="iv-stat-label">Global annual target generation spend</div>
         </div>
         <div class="iv-stat-item">
           <div class="iv-stat-n sky">95%</div>
