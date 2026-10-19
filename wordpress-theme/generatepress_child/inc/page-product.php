@@ -114,9 +114,6 @@ add_action( 'generate_before_content', function() {
         <!-- Traditional column -->
         <div class="pdt-cmp-col">
           <div class="pdt-cmp-head">
-            <div class="pdt-cmp-head-icon">
-              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
             <span class="pdt-cmp-head-title">Traditional Exploration</span>
           </div>
           <div class="pdt-cmp-row">
@@ -148,10 +145,7 @@ add_action( 'generate_before_content', function() {
         <!-- X-Ray column -->
         <div class="pdt-cmp-col gold-col">
           <div class="pdt-cmp-head">
-            <div class="pdt-cmp-head-icon">
-              <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-            </div>
-            <span class="pdt-cmp-head-title">X-Ray Platform</span>
+            <span class="pdt-cmp-head-logo"><?php echo xray_logo_img(); ?></span>
           </div>
           <div class="pdt-cmp-row">
             <span class="pdt-cmp-label">Success rate</span>

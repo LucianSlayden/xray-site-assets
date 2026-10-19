@@ -5961,3 +5961,9 @@ body.page-id-298 { animation: none; }
 .ph2-steps p { margin: 0; color: var(--xr-text-2); font-size: 15px; line-height: 1.65; }
 .ph2-cta { margin-top: 40px; }
 @media (max-width: 860px) { .ph2-steps { grid-template-columns: 1fr; gap: 28px; } .ph2-steps li::after { display: none; } }
+
+/* Product comparison headers: plain label on the traditional side, X-Ray logo on ours. */
+.pdt-cmp-head { min-height: 82px; }
+.pdt-cmp-head-logo { display: flex; align-items: center; }
+.pdt-cmp-head-logo .xr-brand-logo { height: 32px; width: auto; display: block; }
+.pdt-cmp-col:not(.gold-col) .pdt-cmp-head-title { font-size: 13px; font-family: "JetBrains Mono", monospace; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; }
