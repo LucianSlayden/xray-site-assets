@@ -98,26 +98,23 @@ body { background: #0E141B !important; }
 .form-row { margin-bottom: 22px; }
 @media (max-width: 600px) { .form-grid-2 { grid-template-columns: 1fr; } .demo-form { padding: 32px 28px; } }
 
-/* Questions section between the hero and the footer */
-.lm-faq-sec { position: relative; z-index: 2; background: #0E141B; padding: 120px 0 140px; border-top: 1px solid rgba(232,185,99,0.12); }
-.lm-faq-head { max-width: 640px; margin-bottom: 48px; }
-.lm-faq-head h2 { margin: 16px 0 12px; }
-.lm-faq-head p { color: var(--xr-text-2); font-size: 16px; line-height: 1.75; margin: 0; }
-.lm-faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px; align-items: start; }
-@media (max-width: 860px) { .lm-faq-grid { grid-template-columns: 1fr; } .lm-faq-sec { padding: 88px 0 100px; } }
-.lm-faq { border: 1px solid rgba(232,185,99,0.18); background: rgba(20,28,38,0.6); border-radius: 2px; }
-.lm-faq[open] { border-color: rgba(232,185,99,0.4); }
-.lm-faq summary {
-    list-style: none; cursor: pointer; padding: 20px 52px 20px 22px; position: relative;
-    color: var(--xr-text); font-weight: 600; font-size: 16px; line-height: 1.45;
-}
-.lm-faq summary::-webkit-details-marker { display: none; }
-.lm-faq summary::after {
-    content: '+'; position: absolute; right: 22px; top: 50%; transform: translateY(-50%);
-    color: var(--xr-gold); font-family: var(--xr-font-mono); font-size: 20px;
-}
-.lm-faq[open] summary::after { content: '−'; }
-.lm-faq p { margin: 0; padding: 0 22px 22px; color: var(--xr-text-2); font-size: 15px; line-height: 1.75; }
+/* Founders section between the hero and the footer */
+.lm-team-sec { position: relative; z-index: 2; background: #0E141B; padding: 120px 0 140px; border-top: 1px solid rgba(232,185,99,0.12); }
+.lm-team-head { max-width: 640px; margin-bottom: 56px; }
+.lm-team-head h2 { margin: 16px 0 12px; }
+.lm-team-head p { color: var(--xr-text-2); font-size: 16px; line-height: 1.75; margin: 0; }
+.lm-team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+@media (max-width: 980px) { .lm-team-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .lm-team-grid { grid-template-columns: 1fr; } .lm-team-sec { padding: 88px 0 100px; } }
+.lm-founder { text-align: center; padding: 28px 20px 26px; border: 1px solid rgba(232,185,99,0.18); background: rgba(20,28,38,0.6); border-radius: 2px; }
+.lm-founder-hex { width: 120px; height: 138px; padding: 3px; box-sizing: border-box; margin: 0 auto 18px; background: var(--xr-gold);
+    clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%); }
+.lm-founder.sky .lm-founder-hex { background: var(--xr-sky); }
+.lm-founder-hex img { width: 100%; height: 100%; object-fit: cover; display: block; clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%); }
+.lm-founder-name { color: var(--xr-text); font-weight: 700; font-size: 17px; }
+.lm-founder-role { font-family: var(--xr-font-mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--xr-gold); margin: 6px 0 14px; }
+.lm-founder.sky .lm-founder-role { color: var(--xr-sky); }
+.lm-founder p { margin: 0; color: var(--xr-text-2); font-size: 14px; line-height: 1.65; }
 </style>
 <?php xray_site_nav(); ?>
 
@@ -216,38 +213,38 @@ body { background: #0E141B !important; }
   </div>
 </section>
 
-<section class="lm-faq-sec">
+<section class="lm-team-sec">
   <div class="xr-container">
-    <div class="lm-faq-head xr-reveal">
-      <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>Common Questions</span>
-      <h2>Before you <span style="color:var(--xr-gold);">write to us</span></h2>
-      <p>Quick answers to what mining companies and investors ask us most. Anything else, send it through the form above and a co-founder will reply.</p>
+    <div class="lm-team-head xr-reveal">
+      <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>Who You'll Hear From</span>
+      <h2>Four co-founders, <span style="color:var(--xr-gold);">no sales team</span></h2>
+      <p>We're a small founding team, so your message is read by one of us. Here's who that is and what each of us can talk you through.</p>
     </div>
-    <div class="lm-faq-grid xr-reveal xr-d1">
-      <details class="lm-faq">
-        <summary>What does X-Ray give my team?</summary>
-        <p>Your geologists get a prospectivity heat map of your area, a 3D view of the target area and a ranked list of drill targets, so they can decide where to drill first.</p>
-      </details>
-      <details class="lm-faq">
-        <summary>Which minerals do you cover?</summary>
-        <p>We started with lithium across the Great Basin. Nickel is next on our roadmap, and we plan to add more minerals after that.</p>
-      </details>
-      <details class="lm-faq">
-        <summary>How accurate are the models?</summary>
-        <p>Our Great Basin lithium model reaches 95% recall and 80% precision at 1x1 km cells. The models are not commercially viable yet, and we are working toward 1x1 m precision, fine enough to place individual boreholes.</p>
-      </details>
-      <details class="lm-faq">
-        <summary>What data do I need to share?</summary>
-        <p>Whatever exploration data you have, such as geochemistry, structure, lithology, geophysics, geothermal and topography. Our models already draw on decades of cleaned geological data, so you don't need a complete set to start the conversation.</p>
-      </details>
-      <details class="lm-faq">
-        <summary>Who sees my data?</summary>
-        <p>Your data is only used for your own predictions. It is never used to train anyone else's model.</p>
-      </details>
-      <details class="lm-faq">
-        <summary>How is X-Ray priced?</summary>
-        <p>X-Ray will be a software subscription. We're still setting pricing, so tell us about your project and we'll talk it through with you.</p>
-      </details>
+    <div class="lm-team-grid xr-reveal xr-d1">
+      <div class="lm-founder">
+        <div class="lm-founder-hex"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/founder-lucian.webp' ); ?>" alt="Lucian Slayden" width="320" height="320" loading="lazy"></div>
+        <div class="lm-founder-name">Lucian Slayden</div>
+        <div class="lm-founder-role">Chief Executive Officer</div>
+        <p>The company, partnerships and investment.</p>
+      </div>
+      <div class="lm-founder">
+        <div class="lm-founder-hex"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/founder-ethan.webp' ); ?>" alt="Ethan Lopez" width="320" height="320" loading="lazy"></div>
+        <div class="lm-founder-name">Ethan Lopez</div>
+        <div class="lm-founder-role">Chief Technical Officer</div>
+        <p>The models and the platform your geologists would use.</p>
+      </div>
+      <div class="lm-founder sky">
+        <div class="lm-founder-hex"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/founder-jack.webp' ); ?>" alt="Jack Hilbert" width="320" height="320" loading="lazy"></div>
+        <div class="lm-founder-name">Jack Hilbert</div>
+        <div class="lm-founder-role">Chief Data Officer</div>
+        <p>The geological data behind the predictions.</p>
+      </div>
+      <div class="lm-founder">
+        <div class="lm-founder-hex"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/founder-nick.webp' ); ?>" alt="Nick Lopez, J.D." width="320" height="320" loading="lazy"></div>
+        <div class="lm-founder-name">Nick Lopez, J.D.</div>
+        <div class="lm-founder-role">Chief Legal Officer</div>
+        <p>Data agreements and how your data is protected.</p>
+      </div>
     </div>
   </div>
 </section>
