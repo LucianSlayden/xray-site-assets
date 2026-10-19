@@ -18,30 +18,35 @@ function xray_site_links() {
 
 function xray_logo_img() {
 	// Versioned by file time so browsers fetch a replaced logo straight away.
-	$file = get_stylesheet_directory() . '/assets/img/logo-wordmark.png';
-	$src  = get_stylesheet_directory_uri() . '/assets/img/logo-wordmark.png?ver=' . filemtime( $file );
-	return '<img class="xr-brand-logo" src="' . esc_url( $src ) . '" alt="X-Ray Geoanalytics" width="601" height="120">';
+	// 2x/3x copies (from logo-wordmark-full.png) keep the contour emblem sharp on retina phones.
+	$dir  = get_stylesheet_directory() . '/assets/img/';
+	$uri  = get_stylesheet_directory_uri() . '/assets/img/';
+	$ver  = '?ver=' . filemtime( $dir . 'logo-wordmark.png' );
+	$src  = $uri . 'logo-wordmark.png' . $ver;
+	$set  = $src . ' 1x, ' . $uri . 'logo-wordmark-2x.webp' . $ver . ' 2x, ' . $uri . 'logo-wordmark-3x.webp' . $ver . ' 3x';
+	return '<img class="xr-brand-logo" src="' . esc_url( $src ) . '" srcset="' . esc_attr( $set ) . '" alt="X-Ray Geoanalytics" width="601" height="120">';
 }
 
 function xray_site_nav() {
 	$links = xray_site_links();
+	$learn = is_page( array( 'learn-more', 'request-demo' ) );
 	?>
 <nav class="xr-nav">
   <div class="xr-nav-inner">
     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="xr-brand"><?php echo xray_logo_img(); ?></a>
     <div class="xr-nav-list">
       <?php foreach ( $links as $slug => $label ) : ?>
-      <a href="<?php echo esc_url( home_url( '/' . $slug . '/' ) ); ?>" class="xr-nav-link<?php echo is_page( $slug ) ? ' is-current' : ''; ?>"><?php echo esc_html( $label ); ?></a>
+      <a href="<?php echo esc_url( home_url( '/' . $slug . '/' ) ); ?>" class="xr-nav-link<?php echo is_page( $slug ) ? ' is-current" aria-current="page' : ''; ?>"><?php echo esc_html( $label ); ?></a>
       <?php endforeach; ?>
-      <a href="<?php echo esc_url( home_url( '/learn-more/' ) ); ?>" class="xr-btn xr-btn-gold xr-nav-cta">Learn More</a>
+      <a href="<?php echo esc_url( home_url( '/learn-more/' ) ); ?>" class="xr-btn xr-btn-gold xr-nav-cta<?php echo $learn ? ' is-current" aria-current="page' : ''; ?>">Learn More</a>
     </div>
-    <button class="xr-nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <button class="xr-nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="xr-nav-mobile"><span></span><span></span><span></span></button>
   </div>
-  <div class="xr-nav-mobile">
+  <div class="xr-nav-mobile" id="xr-nav-mobile">
     <?php foreach ( $links as $slug => $label ) : ?>
-    <a href="<?php echo esc_url( home_url( '/' . $slug . '/' ) ); ?>"><?php echo esc_html( $label ); ?></a>
+    <a href="<?php echo esc_url( home_url( '/' . $slug . '/' ) ); ?>"<?php echo is_page( $slug ) ? ' class="is-current" aria-current="page"' : ''; ?>><?php echo esc_html( $label ); ?></a>
     <?php endforeach; ?>
-    <a href="<?php echo esc_url( home_url( '/learn-more/' ) ); ?>" class="xr-btn xr-btn-gold">Learn More</a>
+    <a href="<?php echo esc_url( home_url( '/learn-more/' ) ); ?>" class="xr-btn xr-btn-gold"<?php echo $learn ? ' aria-current="page"' : ''; ?>>Learn More</a>
   </div>
 </nav>
 	<?php

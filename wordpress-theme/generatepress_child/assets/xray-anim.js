@@ -86,8 +86,23 @@
   const toggle = document.querySelector('.xr-nav-toggle');
   const mobile = document.querySelector('.xr-nav-mobile');
   if (toggle && mobile) {
-    toggle.addEventListener('click', () => mobile.classList.toggle('open'));
-    mobile.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => mobile.classList.remove('open')));
+    const setOpen = (open, returnFocus) => {
+      mobile.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.documentElement.classList.toggle('xr-menu-open', open);
+      if (!open && returnFocus) toggle.focus();
+    };
+    toggle.addEventListener('click', () => setOpen(!mobile.classList.contains('open')));
+    mobile.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobile.classList.contains('open')) setOpen(false, true);
+    });
+    document.addEventListener('click', (e) => {
+      if (mobile.classList.contains('open') && !mobile.contains(e.target) && !toggle.contains(e.target)) setOpen(false);
+    });
+    const desktop = window.matchMedia('(min-width: 981px)');
+    const onBp = () => { if (desktop.matches) setOpen(false); };
+    if (desktop.addEventListener) desktop.addEventListener('change', onBp); else if (desktop.addListener) desktop.addListener(onBp);
   }
 
   // ─── 6. HEX PROBABILITY GRID (canvas demo) ───────────────────────────

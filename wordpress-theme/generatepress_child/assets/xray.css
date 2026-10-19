@@ -261,6 +261,8 @@ a { color: inherit; text-decoration: none; }
 .xr-nav-list { gap: 40px; }
 .xr-nav-list .xr-nav-link { font-size: 19px; font-weight: 500; letter-spacing: 0.01em; }
 .xr-nav-list .xr-nav-link.is-current { color: var(--xr-gold); }
+.xr-nav-link:focus-visible { outline: 2px solid var(--xr-gold); outline-offset: 5px; border-radius: 2px; }
+.xr-nav-list .xr-nav-cta.is-current { background: #f0c878; box-shadow: inset 0 -2px 0 rgba(14,20,27,0.35); }
 .xr-nav-list .xr-nav-cta { padding: 13px 28px; font-size: 17px; }
 .xr-nav-mobile a { font-size: 19px; }
 
@@ -288,11 +290,24 @@ a { color: inherit; text-decoration: none; }
   .xr-brand-wordmark { font-size: 14px; }
   .xr-nav-list { display: none; }
   .xr-nav-toggle {
-    display: inline-flex; flex-direction: column; gap: 5px;
-    background: none; border: none; cursor: pointer; padding: 8px;
+    display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+    width: 44px; height: 44px; margin-right: -10px;
+    background: none; border: none; cursor: pointer; padding: 0;
   }
-  .xr-nav-toggle span { width: 24px; height: 1.5px; background: var(--xr-text); transition: transform .2s; }
+  .xr-nav-toggle span { width: 24px; height: 2px; border-radius: 1px; background: var(--xr-text); transition: transform .22s var(--xr-ease), opacity .18s var(--xr-ease); }
+  .xr-nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .xr-nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .xr-nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .xr-nav-toggle:focus-visible { outline: 2px solid var(--xr-gold); outline-offset: 2px; }
   .xr-nav-mobile.open { display: flex; }
+  /* Opaque panel (a nested backdrop blur doesn't render inside the blurred nav). */
+  .xr-nav-mobile { background: #0E141B; -webkit-backdrop-filter: none; backdrop-filter: none; box-shadow: 0 24px 48px rgba(0,0,0,0.55); max-height: calc(100vh - var(--xr-nav-h)); overflow-y: auto; }
+  .xr-nav-mobile a.is-current { color: var(--xr-gold); }
+  .xr-nav-mobile a.xr-btn-gold {
+    justify-content: center; margin-top: 10px; padding: 14px 24px; border-bottom: 0;
+    background: var(--xr-gold); color: var(--xr-void); font-weight: 700; text-align: center;
+  }
+  html.xr-menu-open, html.xr-menu-open body { overflow: hidden; }
 }
 
 /* ────────────────────────────────────────── TOPOGRAPHIC BACKGROUND ─────── */
