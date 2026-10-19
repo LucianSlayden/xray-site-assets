@@ -1626,7 +1626,7 @@ body:has(.xr-hero)::after { display: none; }
 
     .pdt-cmp-intro { max-width:60ch; margin-bottom:64px; }
     .pdt-cmp-intro h2 {
-      font-size:clamp(32px,3.8vw,52px); letter-spacing:-.028em;
+      font-size:clamp(44px,5.6vw,80px); letter-spacing:-.035em;
       margin:16px 0 18px; line-height:1.07;
     }
     .pdt-cmp-intro p { color:var(--xr-text-2); font-size:17px; line-height:1.72; margin:0; }
@@ -5705,7 +5705,7 @@ body.page-id-298 { animation: none; }
 .iv-hero-fog-left { display: none; }
 .iv-hero .iv-hero-fog-edges {
   bottom: auto; height: 78%;
-  background: linear-gradient(180deg, #060c12 0%, rgba(6,12,18,.92) 30%, rgba(6,12,18,.55) 65%, rgba(6,12,18,0) 100%);
+  background: linear-gradient(180deg, #060c12 0%, rgba(6,12,18,.97) 30%, rgba(6,12,18,.9) 55%, rgba(6,12,18,.7) 75%, rgba(6,12,18,.35) 90%, rgba(6,12,18,0) 100%);
 }
 .iv-stat-strip { border-top: 0; }
 
@@ -5892,3 +5892,10 @@ body.page-id-298 { animation: none; }
   .rm2-when { text-align: left; }
 }
 .pipe2-art figcaption .k-train::before { background: rgba(232,185,99,.45); border: 1px solid rgba(232,185,99,.6); }
+
+/* Investors heat map: hold it still. The float re-rasterised the image at
+   fractional offsets every frame, which made it look soft and grainy. */
+.iv-heatmap { animation: iv-heatmap-fade 1.6s ease-out both; will-change: auto; transform: translateY(-50%); }
+@keyframes iv-heatmap-fade { from { opacity: 0; } to { opacity: 1; } }
+.iv-heatmap img { filter: none; image-rendering: auto; }
+@media (max-width: 1100px) { .iv-heatmap { animation: none; } }

@@ -133,7 +133,7 @@ add_action( 'generate_before_content', function() {
           </div>
           <div class="pdt-cmp-row">
             <span class="pdt-cmp-label">Method</span>
-            <span class="pdt-cmp-val">Geologist teams, GIS, prospectivity studies, surface mapping</span>
+            <span class="pdt-cmp-val">Geologists, GIS and prospectivity studies</span>
           </div>
           <div class="pdt-cmp-row">
             <span class="pdt-cmp-label">Targets tested</span>
@@ -155,7 +155,7 @@ add_action( 'generate_before_content', function() {
           </div>
           <div class="pdt-cmp-row">
             <span class="pdt-cmp-label">Success rate</span>
-            <span class="pdt-cmp-val">Great Basin lithium model: 95% recall, 80% precision</span>
+            <span class="pdt-cmp-val">Prototype: 95% recall, 80% precision</span>
           </div>
           <div class="pdt-cmp-row">
             <span class="pdt-cmp-label">Target generation</span>
@@ -167,7 +167,7 @@ add_action( 'generate_before_content', function() {
           </div>
           <div class="pdt-cmp-row">
             <span class="pdt-cmp-label">Method</span>
-            <span class="pdt-cmp-val">Machine learning on decades of cleaned geological data</span>
+            <span class="pdt-cmp-val">Machine learning on cleaned geological data</span>
           </div>
           <div class="pdt-cmp-row">
             <span class="pdt-cmp-label">Targets tested</span>
@@ -175,7 +175,7 @@ add_action( 'generate_before_content', function() {
           </div>
           <div class="pdt-cmp-row">
             <span class="pdt-cmp-label">Data processed</span>
-            <span class="pdt-cmp-val">More data and more factors than any human can weigh</span>
+            <span class="pdt-cmp-val">More data and factors than any team can weigh</span>
           </div>
         </div>
 
