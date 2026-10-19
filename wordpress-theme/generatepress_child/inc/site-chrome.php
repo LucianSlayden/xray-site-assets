@@ -17,7 +17,9 @@ function xray_site_links() {
 }
 
 function xray_logo_img() {
-	$src = get_stylesheet_directory_uri() . '/assets/img/logo-wordmark.png';
+	// Versioned by file time so browsers fetch a replaced logo straight away.
+	$file = get_stylesheet_directory() . '/assets/img/logo-wordmark.png';
+	$src  = get_stylesheet_directory_uri() . '/assets/img/logo-wordmark.png?ver=' . filemtime( $file );
 	return '<img class="xr-brand-logo" src="' . esc_url( $src ) . '" alt="X-Ray Geoanalytics" width="601" height="120">';
 }
 
