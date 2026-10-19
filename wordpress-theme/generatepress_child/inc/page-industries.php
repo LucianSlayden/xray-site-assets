@@ -6,40 +6,7 @@
 add_action( 'generate_before_content', function () {
     if ( ! is_page('industries') ) return;
     echo <<<'HTML'
-<nav class="xr-nav">
-  <div class="xr-nav-inner">
-    <a href="/" class="xr-brand"><img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180"></a>
-    <div class="xr-nav-list">
-      <div class="xr-nav-item"><button class="xr-nav-btn" style="color:var(--xr-gold);">Product<svg aria-hidden="true" class="xr-nav-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
-        <div class="xr-nav-drop"><a href="/product/">Product Overview</a><a href="/our-models/">Our Models</a><a href="/industries/" style="color:var(--xr-gold);">Industries</a><a href="/platform/">Platform</a><a href="/how-it-works/">How it Works</a><a href="/pricing/">Pricing</a></div>
-      </div>
-      <div class="xr-nav-item"><button class="xr-nav-btn">Resources<svg aria-hidden="true" class="xr-nav-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
-        <div class="xr-nav-drop"><a href="/resources/">Resources</a><a href="/investors/">Investors</a></div>
-      </div>
-      <div class="xr-nav-item"><button class="xr-nav-btn">About Us<svg aria-hidden="true" class="xr-nav-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
-        <div class="xr-nav-drop"><a href="/about-us/">About Us</a><a href="/our-team/">Our Team</a><a href="/why-xray/">Why X-Ray</a><a href="/news-updates/">News &amp; Updates</a><a href="/faqs/">FAQs</a></div>
-      </div>
-      <a href="/request-demo/" class="xr-btn xr-btn-gold xr-nav-cta">Request Demo</a>
-    </div>
-    <button class="xr-nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-  </div>
-  <div class="xr-nav-mobile">
-    <a href="/product/">Product</a>
-    <a href="/our-models/">Our Models</a>
-    <a href="/industries/">Industries</a>
-    <a href="/platform/">Platform</a>
-    <a href="/how-it-works/">How it Works</a>
-    <a href="/pricing/">Pricing</a>
-    <a href="/resources/">Resources</a>
-    <a href="/investors/">Investors</a>
-    <a href="/about-us/">About Us</a>
-    <a href="/our-team/">Our Team</a>
-    <a href="/why-xray/">Why X-Ray</a>
-    <a href="/news-updates/">News &amp; Updates</a>
-    <a href="/faqs/">FAQs</a>
-    <a href="/request-demo/" class="xr-btn xr-btn-gold">Request Demo</a>
-  </div>
-</nav>
+<?php xray_site_nav(); ?>
 
 <section id="ind-hero" class="xr-page-hero xr-topo">
   <div class="xr-topo-layer xr-topo-contours"></div>
@@ -215,30 +182,6 @@ add_action( 'generate_before_content', function () {
   </div>
 </section>
 
-<footer class="xr-footer">
-  <div class="xr-footer-strip"></div>
-  <div class="xr-footer-inner">
-    <div class="xr-footer-grid">
-      <div>
-        <div class="xr-footer-brand"><img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180"></div>
-        <p class="xr-footer-tagline">Advanced machine learning for mining site discovery. Nevada lithium. Every mineral. Every continent. Every drill result makes us smarter.</p>
-        <div class="xr-footer-contact"><a href="mailto:info@xraygeoanalytics.com"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M4 6l8 7 8-7"/></svg>info@xraygeoanalytics.com</a></div>
-      </div>
-      <div><h3>Product</h3><ul class="xr-footer-list"><li><a href="/product/">Overview</a></li><li><a href="/our-models/">Our Models</a></li><li><a href="/platform/">Platform</a></li><li><a href="/industries/">Industries</a></li><li><a href="/how-it-works/">How it Works</a></li><li><a href="/pricing/">Pricing</a></li></ul></div>
-      <div><h3>Company</h3><ul class="xr-footer-list"><li><a href="/our-team/">Our Team</a></li><li><a href="/why-xray/">Why X-Ray</a></li><li><a href="/news-updates/">News &amp; Updates</a></li><li><a href="/faqs/">FAQs</a></li></ul></div>
-      <div><h3>Resources</h3><ul class="xr-footer-list"><li><a href="/resources/">Resources Library</a></li><li><a href="/investors/">For Investors</a></li><li><a href="/request-demo/">Request Demo</a></li></ul></div>
-      <div><h3>Get in Touch</h3><ul class="xr-footer-list"><li><a href="/request-demo/">Book a Demo</a></li></ul></div>
-    </div>
-    <div class="xr-footer-bottom">
-      <p>© 2026 X-Ray Geoanalytics, Inc. All rights reserved.</p>
-      <div class="xr-footer-social">
-        <a href="https://www.linkedin.com/company/xray-geoanalytics" aria-label="LinkedIn" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="2" y="9" width="4" height="13"/><circle cx="4" cy="4" r="2" fill="currentColor"/><path d="M22 22V13.5a3.5 3.5 0 0 0-7 0V22M10 22V9"/></svg></a>
-        <a href="https://x.com/xraygeoanalytic" aria-label="X" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
-        <a href="mailto:info@xraygeoanalytics.com" aria-label="Email"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M4 6l8 7 8-7"/></svg></a>
-      </div>
-      <p>xraygeoanalytics.com</p>
-    </div>
-  </div>
-</footer>
+<?php xray_site_footer(); ?>
 HTML;
 } );

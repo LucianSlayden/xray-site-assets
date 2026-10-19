@@ -19,6 +19,7 @@ if ( XRAY_THEME_LIVE ) {
 	// Same order the snippets ran in (by snippet ID), so script
 	// registration and hook order stay identical.
 	$xray_includes = array(
+		'site-chrome',
 		'global-scripts',
 		'page-home',
 		'enqueue-scripts',
@@ -35,6 +36,7 @@ if ( XRAY_THEME_LIVE ) {
 		'page-news-updates',
 		'page-faqs',
 		'page-request-demo',
+		'contact-form',
 		'hide-gp-chrome',
 		'page-resources',
 	);

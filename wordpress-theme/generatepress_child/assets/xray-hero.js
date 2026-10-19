@@ -346,18 +346,21 @@
     const bulletEls = bullets.querySelectorAll('.xr-hero-bullet');
 
     // Pin each label to its hexagon. Centres are fractions of the video
-    // frame (measured on the final frame), mapped onto where the frame is
-    // actually drawn: object-fit: contain, anchored right, centred vertically.
-    const HEX_CENTRES = [[0.3454, 0.2750], [0.4461, 0.4000], [0.5117, 0.5687], [0.5638, 0.7979]];
+    // frame on its LAST frame (taken from the 1923x866 end-state screenshot;
+    // the poster image is an earlier, less zoomed frame), mapped onto where
+    // the frame is drawn: object-fit: contain, anchored right, centred vertically.
+    const HEX_CENTRES = [[0.2886, 0.1800], [0.4384, 0.3400], [0.5008, 0.5800], [0.5507, 0.8200]];
     const mobile = window.matchMedia('(max-width: 980px)');
     function placeBullets() {
-      if (mobile.matches) { bulletEls.forEach((el) => { el.style.left = ''; el.style.top = ''; }); return; }
+      if (mobile.matches) { bullets.style.removeProperty('--hex-r'); bulletEls.forEach((el) => { el.style.left = ''; el.style.top = ''; }); return; }
       const bw = fwd.clientWidth, bh = fwd.clientHeight;
       const vw = fwd.videoWidth || 16, vh = fwd.videoHeight || 9;
       if (!bw || !bh) return;
       const scale = Math.min(bw / vw, bh / vh);
       const cw = vw * scale, ch = vh * scale;
       const x0 = bw - cw, y0 = (bh - ch) / 2;
+      // Hexagon half-width on the last frame is about 3.2% of the frame width.
+      bullets.style.setProperty('--hex-r', (cw * 0.032).toFixed(1) + 'px');
       bulletEls.forEach((el, i) => {
         const c = HEX_CENTRES[i];
         if (!c) return;
@@ -369,7 +372,7 @@
     fwd.addEventListener('loadedmetadata', placeBullets);
     window.addEventListener('resize', placeBullets, { passive: true });
 
-    // One panel open at a time now that panels sit over the hexagons.
+    // One panel open at a time so neighbouring panels never stack.
     function lockBullet(el) {
       bulletEls.forEach((other) => { if (other !== el) other.classList.remove('locked'); });
       el.classList.add('locked', 'seen');

@@ -1,10 +1,11 @@
 <?php
 /**
  * Moved from Code Snippets #23 "XRay — Request Demo Page Content".
+ * Now the Learn More contact page (slug learn-more); the form is handled in contact-form.php.
  */
 
 add_action( 'generate_before_content', function () {
-  if ( ! is_page( 'request-demo' ) ) return;
+  if ( ! is_page( array( 'request-demo', 'learn-more' ) ) ) return;
   ?>
 <style>
 /* Request Demo — GeneratePress wrapper resets */
@@ -95,65 +96,25 @@ body { background: #0E141B !important; }
 .demo-form textarea { resize: vertical; min-height: 120px; font-family: var(--xr-font-body); }
 .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 22px; }
 .form-row { margin-bottom: 22px; }
+.xr-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.lm-notice { padding: 14px 16px; margin-bottom: 22px; border-radius: 2px; font-size: 14.5px; line-height: 1.6; }
+.lm-notice-ok { background: rgba(80,200,120,0.10); border: 1px solid rgba(80,200,120,0.45); color: var(--xr-text); }
+.lm-notice-err { background: rgba(232,99,99,0.10); border: 1px solid rgba(232,99,99,0.45); color: var(--xr-text); }
 @media (max-width: 600px) { .form-grid-2 { grid-template-columns: 1fr; } .demo-form { padding: 32px 28px; } }
 </style>
-<nav class="xr-nav">
-  <div class="xr-nav-inner">
-    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="xr-brand">
-      <img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180">
-    </a>
-    <div class="xr-nav-list">
-      <div class="xr-nav-item">
-        <button class="xr-nav-btn">Product<svg aria-hidden="true" class="xr-nav-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
-        <div class="xr-nav-drop">
-          <a href="<?php echo esc_url( home_url( '/product/' ) ); ?>">Product Overview</a>
-          <a href="<?php echo esc_url( home_url( '/our-models/' ) ); ?>">Our Models</a>
-          <a href="<?php echo esc_url( home_url( '/industries/' ) ); ?>">Industries</a>
-          <a href="<?php echo esc_url( home_url( '/platform/' ) ); ?>">Platform</a>
-          <a href="<?php echo esc_url( home_url( '/how-it-works/' ) ); ?>">How it Works</a>
-          <a href="<?php echo esc_url( home_url( '/pricing/' ) ); ?>">Pricing</a>
-        </div>
-      </div>
-      <div class="xr-nav-item">
-        <button class="xr-nav-btn">Resources<svg aria-hidden="true" class="xr-nav-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
-        <div class="xr-nav-drop">
-          <a href="<?php echo esc_url( home_url( '/resources/' ) ); ?>">Resources</a>
-          <a href="<?php echo esc_url( home_url( '/investors/' ) ); ?>">Investors</a>
-        </div>
-      </div>
-      <div class="xr-nav-item">
-        <button class="xr-nav-btn">About Us<svg aria-hidden="true" class="xr-nav-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
-        <div class="xr-nav-drop">
-          <a href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>">About Us</a>
-          <a href="<?php echo esc_url( home_url( '/our-team/' ) ); ?>">Our Team</a>
-          <a href="<?php echo esc_url( home_url( '/why-xray/' ) ); ?>">Why X-Ray</a>
-          <a href="<?php echo esc_url( home_url( '/news-updates/' ) ); ?>">News &amp; Updates</a>
-          <a href="<?php echo esc_url( home_url( '/faqs/' ) ); ?>">FAQs</a>
-        </div>
-      </div>
-      <a href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>" class="xr-btn xr-btn-gold xr-nav-cta">Request Demo</a>
-    </div>
-    <button class="xr-nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-  </div>
-  <div class="xr-nav-mobile">
-    <a href="<?php echo esc_url( home_url( '/product/' ) ); ?>">Product</a>
-    <a href="<?php echo esc_url( home_url( '/our-models/' ) ); ?>">Our Models</a>
-    <a href="<?php echo esc_url( home_url( '/industries/' ) ); ?>">Industries</a>
-    <a href="<?php echo esc_url( home_url( '/platform/' ) ); ?>">Platform</a>
-    <a href="<?php echo esc_url( home_url( '/how-it-works/' ) ); ?>">How it Works</a>
-    <a href="<?php echo esc_url( home_url( '/pricing/' ) ); ?>">Pricing</a>
-    <a href="<?php echo esc_url( home_url( '/resources/' ) ); ?>">Resources</a>
-    <a href="<?php echo esc_url( home_url( '/investors/' ) ); ?>">Investors</a>
-    <a href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>">About Us</a>
-    <a href="<?php echo esc_url( home_url( '/our-team/' ) ); ?>">Our Team</a>
-    <a href="<?php echo esc_url( home_url( '/why-xray/' ) ); ?>">Why X-Ray</a>
-    <a href="<?php echo esc_url( home_url( '/news-updates/' ) ); ?>">News &amp; Updates</a>
-    <a href="<?php echo esc_url( home_url( '/faqs/' ) ); ?>">FAQs</a>
-    <a href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>" class="xr-btn xr-btn-gold">Request Demo</a>
-  </div>
-</nav>
+<?php xray_site_nav(); ?>
 
-<section class="xr-page-hero xr-topo">
+<?php
+$xr_sent   = isset( $_GET['sent'] ) ? sanitize_key( wp_unslash( $_GET['sent'] ) ) : '';
+$xr_notice = array(
+  '1'       => array( 'ok', 'Thanks, your message is on its way. We\'ll get back to you soon.' ),
+  'invalid' => array( 'err', 'Please add your name, a valid email and a message, then send again.' ),
+  'expired' => array( 'err', 'The form timed out. Please send it again.' ),
+  'limit'   => array( 'err', 'You\'ve sent several messages already. Please email info@xraygeoanalytics.com instead.' ),
+  'error'   => array( 'err', 'Something went wrong sending your message. Please email info@xraygeoanalytics.com instead.' ),
+);
+?>
+<section class="xr-page-hero xr-topo" id="contact">
   <div class="xr-topo-layer xr-topo-contours"></div>
   <div class="xr-topo-layer xr-topo-wash"></div>
   <div class="xr-topo-hex-tr"></div>
@@ -162,30 +123,30 @@ body { background: #0E141B !important; }
   <div class="xr-container">
     <div class="demo-grid">
       <div>
-        <div class="xr-reveal"><span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>Get Early Access</span></div>
-        <h1 class="xr-reveal xr-d1" style="margin-top:18px;">Request<br><span style="color:var(--xr-gold);">a Demo</span></h1>
-        <p class="xr-reveal xr-d2 xr-lede" style="margin-top:14px;max-width:480px;">We're talking with junior exploration teams across the Great Basin and the American Southwest. Tell us about your project and we'll reach out to schedule a walkthrough.</p>
+        <div class="xr-reveal"><span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>Get in Touch</span></div>
+        <h1 class="xr-reveal xr-d1" style="margin-top:18px;">Learn More<br><span style="color:var(--xr-gold);">About X-Ray</span></h1>
+        <p class="xr-reveal xr-d2 xr-lede" style="margin-top:14px;max-width:480px;">We're early, and we want to hear from you. Whether you explore for minerals, invest in the space or want to work with us, send us a note and a co-founder will reply directly.</p>
 
         <div class="xr-reveal xr-d3 step-list" style="margin-top:42px;margin-bottom:36px;">
           <div class="step-item">
             <div class="step-hex">01</div>
             <div>
-              <div class="title">Submit your request</div>
-              <div class="desc">Fill out the form and tell us about your exploration focus, geography, and target minerals.</div>
+              <div class="title">Exploration teams</div>
+              <div class="desc">Tell us where you're exploring and what you're looking for. We'll show you how your data becomes a prospectivity heat map and a ranked list of drill targets.</div>
             </div>
           </div>
           <div class="step-item">
             <div class="step-hex">02</div>
             <div>
-              <div class="title">We'll be in touch</div>
-              <div class="desc">Lucian or Ethan will reach out directly to set up a walkthrough.</div>
+              <div class="title">Investors</div>
+              <div class="desc">Ask about our models, our roadmap and where we're headed after lithium in the Great Basin.</div>
             </div>
           </div>
           <div class="step-item">
             <div class="step-hex">03</div>
             <div>
-              <div class="title">See what the platform delivers</div>
-              <div class="desc">We'll show you how uploaded exploration data becomes a prospectivity heat map, a ranked list of drill targets and a 3D view. Your data is never used to train other customers' models.</div>
+              <div class="title">Partners and researchers</div>
+              <div class="desc">If you hold geological data or work on mineral exploration, we'd like to talk about working together.</div>
             </div>
           </div>
         </div>
@@ -199,103 +160,57 @@ body { background: #0E141B !important; }
         </div>
       </div>
 
-      <h2 class="xr-sr-only">Demo request form</h2>
-      <form class="xr-reveal xr-d1 demo-form" action="mailto:info@xraygeoanalytics.com" method="post" enctype="text/plain">
-        <div class="form-grid-2">
-          <div>
-            <label for="first-name">First Name</label>
-            <input type="text" id="first-name" name="first-name" placeholder="Jane" required>
-          </div>
-          <div>
-            <label for="last-name">Last Name</label>
-            <input type="text" id="last-name" name="last-name" placeholder="Smith" required>
-          </div>
-        </div>
+      <h2 class="xr-sr-only">Contact form</h2>
+      <form class="xr-reveal xr-d1 demo-form" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" method="post">
+        <input type="hidden" name="action" value="xray_contact">
+        <?php wp_nonce_field( 'xray_contact', 'xray_contact_nonce', false ); ?>
+        <div class="xr-hp" aria-hidden="true"><label for="website">Website</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
 
-        <div class="form-row">
-          <label for="company">Company</label>
-          <input type="text" id="company" name="company" placeholder="Acme Exploration Inc." required>
-        </div>
-
-        <div class="form-row">
-          <label for="email">Company Email</label>
-          <input type="email" id="email" name="email" placeholder="Your work email" required>
-        </div>
+        <?php if ( isset( $xr_notice[ $xr_sent ] ) ) : ?>
+        <div class="lm-notice lm-notice-<?php echo esc_attr( $xr_notice[ $xr_sent ][0] ); ?>" role="status"><?php echo esc_html( $xr_notice[ $xr_sent ][1] ); ?></div>
+        <?php endif; ?>
 
         <div class="form-grid-2">
           <div>
-            <label for="mineral">Target Mineral</label>
-            <select id="mineral" name="mineral">
-              <option value="lithium">Lithium</option>
-              <option value="nickel">Nickel</option>
-              <option value="cobalt">Cobalt</option>
-              <option value="gold">Gold</option>
-              <option value="silver">Silver</option>
-              <option value="other">Other</option>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Smith" autocomplete="name" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@company.com" autocomplete="email" required>
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div>
+            <label for="company">Company <span style="text-transform:none;letter-spacing:0;">(optional)</span></label>
+            <input type="text" id="company" name="company" placeholder="Acme Exploration Inc." autocomplete="organization">
+          </div>
+          <div>
+            <label for="interest">I'm interested as</label>
+            <select id="interest" name="interest">
+              <option value="Exploration company">An exploration company</option>
+              <option value="Investor">An investor</option>
+              <option value="Partner or researcher">A partner or researcher</option>
+              <option value="Other">Something else</option>
             </select>
           </div>
-          <div>
-            <label for="region">Geography</label>
-            <input type="text" id="region" name="region" placeholder="e.g., Nevada, Great Basin">
-          </div>
         </div>
 
         <div class="form-row">
-          <label for="comments">Additional Comments</label>
-          <textarea id="comments" name="comments" placeholder="Tell us about your project: target mineral, geography, current stage of exploration, and what you're trying to solve..."></textarea>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="What would you like to know? If you're exploring, tell us the mineral, the area and your stage of exploration." required></textarea>
         </div>
 
-        <button type="submit" class="xr-btn xr-btn-gold" style="width:100%;text-align:center;justify-content:center;font-size:16px;padding:15px 24px;margin-bottom:14px;">Submit Request <span class="xr-arrow">→</span></button>
+        <button type="submit" class="xr-btn xr-btn-gold" style="width:100%;text-align:center;justify-content:center;font-size:16px;padding:15px 24px;margin-bottom:14px;">Send Message <span class="xr-arrow">→</span></button>
 
-        <p style="color:var(--xr-text-muted);font-size:12px;text-align:center;margin:0;font-family:var(--xr-font-mono);letter-spacing:0.02em;line-height:1.6;">By submitting this form you agree to be contacted by X-Ray Geoanalytics regarding your request. We don't share your information.</p>
+        <p style="color:var(--xr-text-muted);font-size:12px;text-align:center;margin:0;font-family:var(--xr-font-mono);letter-spacing:0.02em;line-height:1.6;">Your message goes straight to our team. We don't share your information.</p>
       </form>
     </div>
   </div>
 </section>
 
-<footer class="xr-footer">
-  <div class="xr-footer-strip"></div>
-  <div class="xr-footer-inner">
-    <div class="xr-footer-grid">
-      <div>
-        <div class="xr-footer-brand"><img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180"></div>
-        <p class="xr-footer-tagline">Advanced machine learning for mining site discovery. Nevada lithium. Every mineral. Every continent. Every drill result makes us smarter.</p>
-        <div class="xr-footer-contact"><a href="mailto:info@xraygeoanalytics.com"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M4 6l8 7 8-7"/></svg>info@xraygeoanalytics.com</a></div>
-      </div>
-      <div><h3>Product</h3><ul class="xr-footer-list">
-        <li><a href="<?php echo esc_url( home_url( '/product/' ) ); ?>">Overview</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/our-models/' ) ); ?>">Our Models</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/platform/' ) ); ?>">Platform</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/industries/' ) ); ?>">Industries</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/how-it-works/' ) ); ?>">How it Works</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/pricing/' ) ); ?>">Pricing</a></li>
-      </ul></div>
-      <div><h3>Company</h3><ul class="xr-footer-list">
-        <li><a href="<?php echo esc_url( home_url( '/our-team/' ) ); ?>">Our Team</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/why-xray/' ) ); ?>">Why X-Ray</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/news-updates/' ) ); ?>">News &amp; Updates</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/faqs/' ) ); ?>">FAQs</a></li>
-      </ul></div>
-      <div><h3>Resources</h3><ul class="xr-footer-list">
-        <li><a href="<?php echo esc_url( home_url( '/resources/' ) ); ?>">Resources Library</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/investors/' ) ); ?>">For Investors</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>">Request Demo</a></li>
-      </ul></div>
-      <div><h3>Get in Touch</h3><ul class="xr-footer-list">
-        <li><a href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>">Book a Demo</a></li>
-      </ul></div>
-    </div>
-    <div class="xr-footer-bottom">
-      <p>© 2026 X-Ray Geoanalytics, Inc. All rights reserved.</p>
-      <div class="xr-footer-social">
-        <a href="https://www.linkedin.com/company/xray-geoanalytics" aria-label="LinkedIn" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="2" y="9" width="4" height="13"/><circle cx="4" cy="4" r="2" fill="currentColor"/><path d="M22 22V13.5a3.5 3.5 0 0 0-7 0V22M10 22V9"/></svg></a>
-        <a href="https://x.com/xraygeoanalytic" aria-label="X" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
-        <a href="mailto:info@xraygeoanalytics.com" aria-label="Email"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M4 6l8 7 8-7"/></svg></a>
-      </div>
-      <p>xraygeoanalytics.com</p>
-    </div>
-  </div>
-</footer>
+<?php xray_site_footer(); ?>
 
   <?php
 } );
