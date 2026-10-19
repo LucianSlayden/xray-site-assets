@@ -130,6 +130,14 @@ body { background: #060c12 !important; }
           <div class="iv-bar-cite">Total addressable</div>
         </div>
         <div class="iv-bar-row">
+          <div class="iv-bar-track">
+            <div class="iv-bar-fill sky" data-target-w="13.2"></div>
+            <span class="iv-bar-text">US target-generation spend</span>
+            <span class="iv-bar-val">$330M / yr</span>
+          </div>
+          <div class="iv-bar-cite">Serviceable available</div>
+        </div>
+        <div class="iv-bar-row">
           <div class="iv-bar-track featured">
             <div class="iv-bar-fill bright" data-target-w="4.4"></div>
             <span class="iv-bar-text featured">
@@ -139,14 +147,6 @@ body { background: #060c12 !important; }
             <span class="iv-bar-val">$110M / yr</span>
           </div>
           <div class="iv-bar-cite">Serviceable obtainable</div>
-        </div>
-        <div class="iv-bar-row">
-          <div class="iv-bar-track">
-            <div class="iv-bar-fill sky" data-target-w="13.2"></div>
-            <span class="iv-bar-text">US target-generation spend</span>
-            <span class="iv-bar-val">$330M / yr</span>
-          </div>
-          <div class="iv-bar-cite">Serviceable available</div>
         </div>
       </div>
 

@@ -263,6 +263,14 @@
     }
   }
 
+  /* Without GSAP, or with reduced motion, draw the market bars at full length. */
+  if (typeof gsap === 'undefined' || reducedMotion) {
+    document.querySelectorAll('.iv-bar-fill[data-target-w]').forEach(function (fill) {
+      fill.style.transition = 'none';
+      fill.style.width = fill.getAttribute('data-target-w') + '%';
+    });
+  }
+
   /* Hero shade: fades from solid at the top to clear at the stat strip. */
   (function ivHeroShade() {
     var shade = document.querySelector('.iv-hero-fog-edges');

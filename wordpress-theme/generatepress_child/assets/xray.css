@@ -814,7 +814,7 @@ body:has(.xr-hero)::after { display: none; }
 
 @media (max-width: 980px) {
   .xr-hero-pin { background: #000; }
-  .xr-hero-content-inner { padding: 0 22px; }
+  .xr-hero-content-inner { padding: 0 28px; }
   .xr-hero-text { max-width: 100%; }
   /* The full frame sits as a 16:9 band at the bottom of the pinned hero;
      the headline (and, once the clip ends, the label list) fills the
@@ -1128,7 +1128,7 @@ body:has(.xr-hero)::after { display: none; }
        on the left, the "lottery diagram" on the right. The diagram
        is one cohesive visual presenting all three statistics with
        their sources directly underneath each. */
-    .problem-narrative { max-width: 1240px; }
+    .problem-narrative { max-width: var(--xr-max-w); }   /* same left edge as the nav logo and other sections */
     .problem-headline {
       font-size: clamp(40px, 5.4vw, 80px);
       line-height: 0.98;
@@ -5328,7 +5328,7 @@ body.page-id-298 {
 .iv-hero-inner {
   position: relative; z-index: 3;
   max-width: 1280px; margin: 0 auto;
-  padding: 140px 64px 80px; width: 100%;
+  padding: 140px 28px 80px; width: 100%;   /* 28px: lines up with the nav logo */
 }
 .iv-eyebrow {
   display: inline-flex; align-items: center; gap: 10px;
@@ -5392,7 +5392,7 @@ body.page-id-298 {
 
 /* SECTIONS SHARED */
 .iv-section { position: relative; padding: 120px 0; overflow: hidden; }
-.iv-container { max-width: 1280px; margin: 0 auto; padding: 0 64px; }
+.iv-container { max-width: var(--xr-max-w, 1280px); margin: 0 auto; padding: 0 28px; }   /* same gutter as .xr-container and the nav */
 .iv-section-label {
   font-family: var(--xr-font-mono); font-size: 11px; font-weight: 600;
   letter-spacing: 0.18em; text-transform: uppercase;
@@ -5460,6 +5460,14 @@ body.page-id-298 {
   min-width: 210px; justify-content: flex-end; letter-spacing: -0.01em;
 }
 .iv-bar-track.featured .iv-bar-val { color: var(--xr-gold); }
+/* Phones: the label wraps on the left and the value keeps its own column,
+   so nothing is clipped (the old fixed 64px row cut off both). */
+@media (max-width: 720px) {
+  .iv-bars { margin-top: 44px; gap: 16px; }
+  .iv-bar-track { height: auto; min-height: 64px; display: grid; grid-template-columns: minmax(0, 1fr) auto; }
+  .iv-bar-text { padding: 12px 14px; font-size: 11px; letter-spacing: 0.06em; line-height: 1.45; flex-wrap: wrap; row-gap: 6px; }
+  .iv-bar-val { min-width: 0; padding: 0 14px; font-size: 17px; white-space: nowrap; }
+}
 .iv-bar-cite {
   margin-top: 5px; font-family: var(--xr-font-mono); font-size: 10.5px;
   letter-spacing: 0.08em; color: var(--xr-text-muted);
