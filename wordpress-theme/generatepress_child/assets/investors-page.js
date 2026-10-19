@@ -179,15 +179,13 @@
     gsap.registerPlugin(ScrollTrigger);
 
     if (!reducedMotion) {
-      gsap.set('#iv-eyebrow',     { opacity: 0, y: 16 });
       gsap.set('.iv-hw-inner',    { y: '110%' });
       gsap.set('#iv-sub',         { opacity: 0, y: 20 });
       gsap.set('#iv-cta',         { opacity: 0, y: 16 });
       gsap.set('#iv-stats',       { opacity: 0, y: 24 });
 
       gsap.timeline({ delay: 0.15 })
-        .to('#iv-eyebrow',   { opacity: 1, y: 0, duration: 0.55, ease: 'power2.out' })
-        .to('.iv-hw-inner',  { y: '0%', duration: 1.0, ease: 'power4.out', stagger: 0.07 }, '-=0.30')
+        .to('.iv-hw-inner',  { y: '0%', duration: 1.0, ease: 'power4.out', stagger: 0.07 })
         .to('#iv-sub',       { opacity: 1, y: 0, duration: 0.7,  ease: 'power2.out' }, '-=0.55')
         .to('#iv-cta',       { opacity: 1, y: 0, duration: 0.55, ease: 'power2.out' }, '-=0.50')
         .to('#iv-stats',     { opacity: 1, y: 0, duration: 0.6,  ease: 'power2.out' }, '-=0.40');
