@@ -370,7 +370,7 @@
   var gaugeWrap = document.getElementById('iv-gauge-wrap');
   var gaugeArc  = document.getElementById('iv-gauge-arc');
   if (gaugeWrap && gaugeArc) {
-    var ARC_LEN = 282.7;
+    var ARC_LEN = 2 * Math.PI * 80; // hexagon pie: circle r=80 drawn with a 160 stroke
     gaugeArc.style.strokeDasharray  = ARC_LEN;
     gaugeArc.style.strokeDashoffset = ARC_LEN;
 

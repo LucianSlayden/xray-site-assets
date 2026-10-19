@@ -184,26 +184,21 @@ body { background: #060c12 !important; }
 
         <div class="xr-reveal xr-d2">
           <div class="iv-gauge-wrap" id="iv-gauge-wrap">
-            <svg class="iv-gauge-svg" viewBox="0 0 240 140" aria-hidden="true">
+            <svg class="iv-gauge-svg iv-hexpie" viewBox="0 0 320 320" role="img" aria-label="95% recall">
               <defs>
-                <linearGradient id="iv-gauge-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#E8B963"/>
-                  <stop offset="100%" stop-color="#6FB5E0"/>
-                </linearGradient>
+                <clipPath id="iv-hexpie-clip"><polygon points="160.0,10.0 289.9,85.0 289.9,235.0 160.0,310.0 30.1,235.0 30.1,85.0"/></clipPath>
               </defs>
-              <path d="M 30,125 A 90,90 0 0,1 210,125"
-                    fill="none" stroke="rgba(232,185,99,0.1)" stroke-width="12" stroke-linecap="round"
-                    class="iv-gauge-track"/>
-              <path id="iv-gauge-arc" d="M 30,125 A 90,90 0 0,1 210,125"
-                    fill="none" stroke="url(#iv-gauge-grad)" stroke-width="12" stroke-linecap="round"
-                    class="iv-gauge-arc"/>
-              <text x="120" y="108" class="iv-gauge-label-text" font-size="38" font-weight="800">95%</text>
-              <text x="120" y="130" font-family="JetBrains Mono, monospace" font-size="11"
+              <g clip-path="url(#iv-hexpie-clip)">
+                <polygon points="160.0,10.0 289.9,85.0 289.9,235.0 160.0,310.0 30.1,235.0 30.1,85.0" class="iv-hexpie-rest"/>
+                <g transform="rotate(-90 160 160)">
+                  <circle id="iv-gauge-arc" class="iv-hexpie-fill" cx="160" cy="160" r="80" stroke-width="160" fill="none"/>
+                </g>
+              </g>
+              <polygon points="160.0,10.0 289.9,85.0 289.9,235.0 160.0,310.0 30.1,235.0 30.1,85.0" class="iv-hexpie-edge"/>
+              <polygon points="160.0,82.0 227.5,121.0 227.5,199.0 160.0,238.0 92.5,199.0 92.5,121.0" class="iv-hexpie-core"/>
+              <text x="160" y="168" class="iv-gauge-label-text" font-size="44" font-weight="800">95%</text>
+              <text x="160" y="192" font-family="JetBrains Mono, monospace" font-size="11"
                     fill="#6F7B8B" text-anchor="middle" letter-spacing="2">RECALL</text>
-              <line x1="30" y1="125" x2="22" y2="125" stroke="rgba(232,185,99,0.3)" stroke-width="1.5"/>
-              <line x1="210" y1="125" x2="218" y2="125" stroke="rgba(111,181,224,0.3)" stroke-width="1.5"/>
-              <text x="18" y="130" font-family="JetBrains Mono, monospace" font-size="9" fill="#6F7B8B" text-anchor="middle">0%</text>
-              <text x="222" y="130" font-family="JetBrains Mono, monospace" font-size="9" fill="#6F7B8B" text-anchor="middle">100%</text>
             </svg>
             <p class="iv-gauge-sub">Great Basin lithium model · 80% precision</p>
           </div>
