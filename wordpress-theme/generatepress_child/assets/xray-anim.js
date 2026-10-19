@@ -6,6 +6,7 @@
 
 (function () {
   'use strict';
+  window.__xrAnimReady = true;
 
   // ─── 1. REVEAL ON SCROLL ─────────────────────────────────────────────
   const revealEls = document.querySelectorAll('.xr-reveal');

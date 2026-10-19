@@ -202,14 +202,6 @@
         },
       });
 
-      gsap.set('.iv-divider', { scaleX: 0 });
-      ScrollTrigger.batch('.iv-divider', {
-        start: 'top 92%',
-        onEnter: function (batch) {
-          gsap.to(batch, { scaleX: 1, duration: 1.2, ease: 'power3.out', stagger: 0.12, overwrite: true });
-        },
-      });
-
       gsap.set('.iv-bar-row', { opacity: 0, x: -44 });
       ScrollTrigger.create({
         trigger: '#iv-bars',
