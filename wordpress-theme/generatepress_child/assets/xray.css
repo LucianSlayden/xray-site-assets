@@ -771,7 +771,7 @@ body:has(.xr-hero)::after { display: none; }
      bottom so the directory text stays sharp. */
   background:
     linear-gradient(180deg, rgba(14,20,27,0.78) 0%, rgba(14,20,27,0.92) 55%, rgba(14,20,27,0.98) 100%),
-    url("https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/bg-landscape-2560.webp") center bottom / cover no-repeat,
+    url("https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/bg-landscape-4k.webp") center bottom / cover no-repeat,
     var(--xr-deep);
 }
 .xr-footer::before {
@@ -877,7 +877,7 @@ body:has(.xr-hero)::after { display: none; }
   isolation: isolate;
   background:
     linear-gradient(180deg, rgba(14,20,27,0.88) 0%, rgba(14,20,27,0.65) 35%, rgba(14,20,27,0.92) 100%),
-    url("https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/bg-landscape-2560.webp") center/cover no-repeat,
+    url("https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/bg-landscape-4k.webp") center/cover no-repeat,
     var(--xr-void);
 }
 .xr-page-hero::before {
@@ -937,7 +937,7 @@ body:has(.xr-hero)::after { display: none; }
          Lanczos-upscaled and saved as quality-92 progressive JPEG so
          large displays show no compression or scaling fuzziness.
          Per the May-2026 "new index instructions" doc. */
-      background-image: url("https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/bg-landscape-2560.webp");
+      background-image: url("https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/bg-landscape-4k.webp");
       background-size: cover;
       background-position: center bottom;
       background-repeat: no-repeat;
@@ -1157,7 +1157,7 @@ body:has(.xr-hero)::after { display: none; }
          ::before bridges the seam above the strip. */
       top: 0; left: 0; right: 0;
       height: 155%;
-      background-image: url("https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/bg-landscape-2560.webp");
+      background-image: url("https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/bg-landscape-4k.webp");
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
@@ -5767,3 +5767,96 @@ body.page-id-298 { animation: none; }
 body .ab-cta-divider {
   width: 40px; height: 10px; background: var(--xr-hexnotch) no-repeat center / 40px 10px;
 }
+
+/* Home "Software economics" comparison: three cards, old way above, X-Ray below,
+   joined by a hexagon-angle connector. */
+.vs2-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1120px; margin: 0 auto; }
+@media (max-width: 900px) { .vs2-grid { grid-template-columns: 1fr; max-width: 560px; } }
+.vs2-card {
+  position: relative; padding: 28px 26px 26px; border-radius: 2px;
+  background: rgba(14,20,27,.82); border: 1px solid rgba(232,185,99,.2);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  transition: border-color .25s, transform .25s;
+}
+.vs2-card:hover { border-color: rgba(232,185,99,.45); transform: translateY(-3px); }
+.vs2-head { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+.vs2-head h3 { margin: 0; font-size: 17px; line-height: 1.3; }
+.vs2-row span {
+  display: block; margin-bottom: 6px; font-family: var(--xr-font-mono); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase;
+}
+.vs2-row p { margin: 0; font-size: 15px; line-height: 1.65; }
+.vs2-old span { color: var(--xr-text-muted); }
+.vs2-old p { color: var(--xr-text-muted); }
+.vs2-new { padding: 14px 16px; background: rgba(232,185,99,.07); border-left: 2px solid var(--xr-gold); }
+.vs2-new span { color: var(--xr-gold); }
+.vs2-new p { color: var(--xr-text); }
+
+/* ── Home proof: lift panel (replaces the old accuracy dial) ── */
+.lift-panel {
+  position: relative; overflow: hidden; padding: 34px 34px 28px;
+  background: linear-gradient(160deg, rgba(20,34,48,.92), rgba(12,22,32,.88));
+  border: 1px solid rgba(232,185,99,.22);
+  box-shadow: 0 30px 60px -30px rgba(0,0,0,.6);
+}
+.lift-panel::before {
+  content: ""; position: absolute; inset: -40% -20% auto auto; width: 70%; height: 90%;
+  background: radial-gradient(closest-side, rgba(232,185,99,.16), transparent 70%); pointer-events: none;
+}
+.lift-head { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.lift-tag {
+  font: 600 10.5px/1 "JetBrains Mono", monospace; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--xr-gold); padding: 7px 10px; border: 1px solid rgba(232,185,99,.35); background: rgba(232,185,99,.06);
+}
+.lift-tag-dim { color: var(--xr-sky); border-color: rgba(111,181,224,.35); background: rgba(111,181,224,.06); }
+.lift-big { display: flex; align-items: center; gap: 22px; margin-bottom: 30px; position: relative; }
+.lift-num {
+  font: 700 clamp(64px, 7vw, 92px)/.9 "JetBrains Mono", monospace; color: var(--xr-gold);
+  text-shadow: 0 0 34px rgba(232,185,99,.35); letter-spacing: -.03em; flex-shrink: 0;
+}
+.lift-num span { font-size: .55em; margin-left: 2px; opacity: .85; }
+.lift-big p { margin: 0; color: var(--xr-text-2); font-size: 15.5px; line-height: 1.6; }
+.lift-big strong { color: var(--xr-text); }
+.lift-compare { position: relative; padding: 20px 0 6px; border-top: 1px solid rgba(255,255,255,.08); }
+.lift-compare-title { font: 600 11px/1.4 "JetBrains Mono", monospace; letter-spacing: .1em; text-transform: uppercase; color: var(--xr-text-3, #8A96A6); margin-bottom: 16px; }
+.lift-row { display: grid; grid-template-columns: 118px 1fr 44px; align-items: center; gap: 14px; margin-bottom: 14px; }
+.lift-label { font-size: 13.5px; color: var(--xr-text-2); }
+.lift-row-new .lift-label { color: var(--xr-text); font-weight: 600; }
+.lift-track {
+  position: relative; height: 18px; background: rgba(255,255,255,.06);
+  background-image: repeating-linear-gradient(90deg, transparent 0 calc(25% - 1px), rgba(255,255,255,.08) calc(25% - 1px) 25%);
+  clip-path: polygon(9px 0, calc(100% - 9px) 0, 100% 50%, calc(100% - 9px) 100%, 9px 100%, 0 50%);
+}
+.lift-fill {
+  position: absolute; inset: 0 auto 0 0; width: 0; min-width: 0;
+  clip-path: polygon(9px 0, calc(100% - 9px) 0, 100% 50%, calc(100% - 9px) 100%, 9px 100%, 0 50%);
+  transition: width 1.6s cubic-bezier(.22,1,.36,1) .35s;
+}
+.lift-row-old .lift-fill { background: rgba(168,178,192,.55); }
+.lift-row-new .lift-fill { background: linear-gradient(90deg, #B98A3E, var(--xr-gold) 70%, #FFE3A8); }
+.lift-panel.in .lift-fill { width: max(var(--w), 18px); }
+.lift-val { font: 700 14px/1 "JetBrains Mono", monospace; color: var(--xr-text-2); text-align: right; }
+.lift-row-new .lift-val { color: var(--xr-gold); }
+.lift-scale { display: flex; justify-content: space-between; margin-left: 132px; margin-right: 58px; font: 10px/1 "JetBrains Mono", monospace; color: rgba(168,178,192,.55); }
+.lift-facts { display: grid; grid-template-columns: repeat(3, 1fr); margin: 22px 0 0; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.08); }
+.lift-facts div { padding: 0 12px; border-left: 1px solid rgba(255,255,255,.08); }
+.lift-facts div:first-child { padding-left: 0; border-left: 0; }
+.lift-facts dt { font: 700 20px/1.1 "JetBrains Mono", monospace; color: var(--xr-text); }
+.lift-facts dd { margin: 4px 0 0; font-size: 12px; color: var(--xr-text-2); text-transform: uppercase; letter-spacing: .08em; }
+@media (max-width: 600px) {
+  .lift-panel { padding: 26px 20px 22px; }
+  .lift-big { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .lift-row { grid-template-columns: 96px 1fr 38px; gap: 10px; }
+  .lift-scale { margin-left: 106px; margin-right: 48px; }
+  .lift-facts dt { font-size: 17px; }
+}
+@media (prefers-reduced-motion: reduce) { .lift-fill { transition: none; } }
+
+/* Home problem section: the stats panel sits as far below the headline's
+   letters as it sits beside the lede (56px). 0.11em covers the descenders. */
+@media (min-width: 981px) { .problem-headline { margin-bottom: calc(56px + 0.11em); } }
+
+/* vs2: numbered heads instead of icons*/
+.vs2-num { font: 700 13px/1 "JetBrains Mono", monospace; color: var(--xr-gold); letter-spacing: .08em; padding: 7px 8px; border: 1px solid rgba(232,185,99,.35); }
+.vs2-new { margin-top: 18px; }
+.proof-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+@media (max-width: 900px) { .proof-grid { grid-template-columns: 1fr; gap: 44px; } }

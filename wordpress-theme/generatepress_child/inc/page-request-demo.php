@@ -31,7 +31,7 @@ body { background: #0E141B !important; }
 .xr-page-hero {
     background:
         linear-gradient(180deg, rgba(14,20,27,0.88) 0%, rgba(14,20,27,0.65) 35%, rgba(14,20,27,0.92) 100%),
-        url('https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/bg-landscape-2560.webp') center/cover no-repeat,
+        url('https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/bg-landscape-4k.webp') center/cover no-repeat,
         #0E141B !important;
 }
 
