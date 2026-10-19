@@ -36,7 +36,9 @@
   const TOP_EPS         = 2;     // px from the top that counts as "at the top"
   const STALL_MS        = 8000;  // give up if the video never starts playing
 
-  const log = (...a) => { try { console.log('[xray-hero]', ...a); } catch (e) {} };
+  // State changes are logged only when the URL has ?xray-debug.
+  const DEBUG = /[?&]xray-debug\b/.test(location.search);
+  const log = (...a) => { if (DEBUG) try { console.log('[xray-hero]', ...a); } catch (e) {} };
 
   function init() {
     const hero = document.querySelector('.xr-hero');

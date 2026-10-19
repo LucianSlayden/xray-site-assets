@@ -101,7 +101,7 @@ body { background: #060c12 !important; }
   line-height: 1; color: #E8B963; margin-bottom: 6px; letter-spacing: -0.02em;
 }
 .ab-stat-cell.sky .ab-stat-num { color: #6FB5E0; }
-.ab-stat-lbl { color: #6F7B8B; font-size: 10px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; }
+.ab-stat-lbl { color: var(--xr-text-muted); font-size: 10px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; }
 .ab-stat-cell.sky .ab-stat-lbl { color: #6FB5E0; opacity: 0.7; }
 .ab-quote {
   position: relative; padding: 18px 0 0 20px;
@@ -229,7 +229,7 @@ body { background: #060c12 !important; }
 
 <?php xray_site_nav(); ?>
 
-<canvas id="ab-canvas"></canvas>
+<canvas id="ab-canvas" aria-hidden="true"></canvas>
 <div id="ab-veil"></div>
 
 <!-- ══════════════════ HERO ══════════════════ -->
@@ -271,7 +271,7 @@ body { background: #060c12 !important; }
               <div class="ab-stat-lbl">Precision</div>
             </div>
             <div class="ab-stat-cell sky">
-              <div class="ab-stat-num">1x1 km</div>
+              <div class="ab-stat-num">1×1 km</div>
               <div class="ab-stat-lbl">Great Basin lithium</div>
             </div>
           </div>
@@ -287,7 +287,7 @@ body { background: #060c12 !important; }
 
 <!-- ══════════════════ MISSION ══════════════════ -->
 <section id="ab-mission">
-  <canvas id="ab-mission-canvas"></canvas>
+  <canvas id="ab-mission-canvas" aria-hidden="true"></canvas>
   <div class="ab-mission-bg"></div>
   <div class="ab-mission-inner xr-container">
     <div class="ab-mission-grid">
@@ -328,7 +328,7 @@ body { background: #060c12 !important; }
 
 <!-- ══════════════════ PRINCIPLES ══════════════════ -->
 <section id="ab-principles">
-  <canvas id="ab-prin-canvas"></canvas>
+  <canvas id="ab-prin-canvas" aria-hidden="true"></canvas>
   <div class="ab-prin-inner xr-container">
     <div style="text-align:center;margin-bottom:56px;">
       <span class="xr-eyebrow ab-section-eyebrow" style="justify-content:center;"><span class="xr-eyebrow-hex"></span>What We Stand For</span>

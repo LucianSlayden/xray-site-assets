@@ -87,7 +87,7 @@ function xray_site_footer() {
     </div>
 
     <div class="xr-footer-bottom">
-      <p>© <?php echo esc_html( gmdate( 'Y' ) ); ?> X-Ray Geoanalytics, Inc. All rights reserved.</p>
+      <p>© <?php echo esc_html( gmdate( 'Y' ) ); ?> X-Ray Geoanalytics, Inc. <span class="xr-nobreak">All rights reserved.</span></p>
       <div class="xr-footer-social">
         <a href="https://www.linkedin.com/company/xray-geoanalytics" aria-label="LinkedIn" target="_blank" rel="noopener">
           <svg class="xr-brand-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -96,7 +96,7 @@ function xray_site_footer() {
           <svg class="xr-brand-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
         </a>
         <a href="mailto:info@xraygeoanalytics.com" aria-label="Email">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M4 6l8 7 8-7"/></svg>
+          <svg class="xr-brand-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M3.6 4h16.8A2.6 2.6 0 0 1 23 6.6v.35l-11 6.9L1 6.95V6.6A2.6 2.6 0 0 1 3.6 4Z"/><path d="M1 9.3l10.36 6.5a1.2 1.2 0 0 0 1.28 0L23 9.3v8.1a2.6 2.6 0 0 1-2.6 2.6H3.6A2.6 2.6 0 0 1 1 17.4Z"/></svg>
         </a>
       </div>
       <p>xraygeoanalytics.com</p>

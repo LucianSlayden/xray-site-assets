@@ -169,18 +169,18 @@ body { background: #060c12 !important; }
       <div class="iv-traction-inner">
         <div class="xr-reveal xr-d1">
           <p style="color:var(--xr-text-2);font-size:17px;line-height:1.85;margin:0 0 22px;">
-            We have <strong style="color:var(--xr-text);">a prototype lithium model</strong> that covers the entire Great Basin at 1x1 km cells. It reaches <strong style="color:var(--xr-gold);">95% recall</strong>: out of every 100 known deposits, it finds 95 on average. Its 80% precision means roughly 80% of its predictions are lithium deposits.
+            We have <strong style="color:var(--xr-text);">a prototype lithium model</strong> that covers the entire Great Basin at 1×1 km cells. It reaches <strong style="color:var(--xr-gold);">95% recall</strong>: out of every 100 known deposits, it finds 95 on average. Its 80% precision means roughly 80% of its predictions are lithium deposits.
           </p>
           <p style="color:var(--xr-text-2);font-size:17px;line-height:1.85;margin:0 0 22px;">
             The moat is our <em>data and proprietary featuresets</em>. We collected decades of cluttered geological data, cleaned and sorted it, and designed features in-house that indicate lithium mineralization. The same raw data would be useless to most AI models, and it would be costly and slow for competitors to replicate.
           </p>
           <p style="color:var(--xr-text-2);font-size:17px;line-height:1.85;margin:0 0 28px;">
-            The models are <strong style="color:var(--xr-text);">not commercially viable yet</strong>. We are raising funding to develop them down to <strong style="color:var(--xr-gold);">1x1 m precision</strong>, fine enough to place individual boreholes, alongside customer discovery with mining companies and field validation against real boreholes.
+            The models are <strong style="color:var(--xr-text);">not commercially viable yet</strong>. We are raising funding to develop them down to <strong style="color:var(--xr-gold);">1×1 m precision</strong>, fine enough to place individual boreholes, alongside customer discovery with mining companies and field validation against real boreholes.
           </p>
           <div class="iv-tags">
             <span class="iv-tag iv-tag-gold">Prototype · Great Basin Lithium</span>
             <span class="iv-tag iv-tag-sky">Next · Finer models</span>
-            <span class="iv-tag iv-tag-dim">Goal · 1x1 m precision</span>
+            <span class="iv-tag iv-tag-dim">Goal · 1×1 m precision</span>
           </div>
         </div>
 
@@ -200,7 +200,7 @@ body { background: #060c12 !important; }
               <polygon points="160.0,82.0 227.5,121.0 227.5,199.0 160.0,238.0 92.5,199.0 92.5,121.0" class="iv-hexpie-core"/>
               <text x="160" y="168" class="iv-gauge-label-text" font-size="44" font-weight="800">95%</text>
               <text x="160" y="192" font-family="JetBrains Mono, monospace" font-size="11"
-                    fill="#6F7B8B" text-anchor="middle" letter-spacing="2">RECALL</text>
+                    fill="#808C9C" text-anchor="middle" letter-spacing="2">RECALL</text>
             </svg>
             <p class="iv-gauge-sub">Great Basin lithium model · 80% precision</p>
           </div>
@@ -298,14 +298,14 @@ body { background: #060c12 !important; }
           <div class="iv-tl-icon" aria-hidden="true"><?php echo xray_roadmap_art( 'prototype' ); ?></div>
           <div class="iv-tl-meta">Now · Prototype · Customer discovery</div>
           <h3 class="iv-tl-h3">Great Basin Lithium</h3>
-          <p class="iv-tl-p">Our lithium model covers the Great Basin at 1x1 km cells with 95% recall and 80% precision. Next is two rounds of customer interviews: first to validate the problem and how explorers decide where to drill today, then to learn what they want in the software.</p>
+          <p class="iv-tl-p">Our lithium model covers the Great Basin at 1×1 km cells with 95% recall and 80% precision. Next is two rounds of customer interviews: first to validate the problem and how explorers decide where to drill today, then to learn what they want in the software.</p>
         </div>
 
         <div class="iv-tl-step dev">
           <div class="iv-tl-icon" aria-hidden="true"><?php echo xray_roadmap_art( 'finer' ); ?></div>
           <div class="iv-tl-meta">Next · Within a year</div>
           <h3 class="iv-tl-h3">Finer Models &amp; Federal Grants</h3>
-          <p class="iv-tl-p">Development toward 1x1 m precision for individual boreholes, and applications for SBIR and STTR grants to fund the work.</p>
+          <p class="iv-tl-p">Development toward 1×1 m precision for individual boreholes, and applications for SBIR and STTR grants to fund the work.</p>
         </div>
 
         <div class="iv-tl-step dev">

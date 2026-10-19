@@ -31,7 +31,7 @@ body { background: #0E141B !important; }
 .xr-page-hero {
     background:
         linear-gradient(180deg, rgba(14,20,27,0.88) 0%, rgba(14,20,27,0.65) 35%, rgba(14,20,27,0.92) 100%),
-        url('https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/bg-landscape-4k.webp') center/cover no-repeat,
+        url('<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/bg-landscape-4k.webp' ); ?>') center/cover no-repeat,
         #0E141B !important;
 }
 
@@ -153,7 +153,7 @@ body { background: #0E141B !important; }
             <span class="xr-pulse-dot"></span>
             <div class="xr-eyebrow" style="margin:0;">Current Status</div>
           </div>
-          <p style="color:var(--xr-text-2);font-size:14.5px;line-height:1.7;margin:0;">Our Great Basin lithium model is a prototype that reaches 95% recall and 80% precision at 1x1 km cells. Next on our roadmap: customer discovery with mining companies, finer models, and field validation against real boreholes.</p>
+          <p style="color:var(--xr-text-2);font-size:14.5px;line-height:1.7;margin:0;">Our Great Basin lithium model is a prototype that reaches 95% recall and 80% precision at 1×1 km cells. Next on our roadmap: customer discovery with mining companies, finer models, and field validation against real boreholes.</p>
         </div>
       </div>
 

@@ -38,7 +38,7 @@ add_action( 'generate_before_content', function() {
               <span class="pdt-stat-label">Precision</span>
             </div>
             <div class="pdt-stat-item">
-              <span class="pdt-stat-num">1x1 km</span>
+              <span class="pdt-stat-num">1×1 km</span>
               <span class="pdt-stat-label">Prediction cells</span>
             </div>
           </div>
@@ -63,7 +63,7 @@ add_action( 'generate_before_content', function() {
 
           <div class="pdt-gets-block pdt-gets-model">
             <div class="pdt-gets-label"><span>02</span>The model scores</div>
-            <p>Every 1x1 km cell in your area, weighing more factors together than a team can review by hand.</p>
+            <p>Every 1×1 km cell in your area, weighing more factors together than a team can review by hand.</p>
           </div>
 
           <div class="pdt-gets-block">
@@ -721,7 +721,9 @@ add_action( 'generate_before_content', function() {
         <li class="pa2-step">
           <div class="pa2-top"><span class="pa2-num">03</span><span class="pa2-kind">Output</span></div>
           <figure class="pa2-art pa2-art-out">
-            <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/model-run-heatmap.webp?ver=' . filemtime( get_stylesheet_directory() . '/assets/img/model-run-heatmap.webp' ) ); ?>" alt="" loading="lazy" width="1168" height="1128">
+            <?php // A 4x nearest-neighbour crop of the model-run heat map (southwest Great Basin), so single cells stay sharp. ?>
+            <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/heatmap-zoom.webp?ver=' . filemtime( get_stylesheet_directory() . '/assets/img/heatmap-zoom.webp' ) ); ?>" alt="" loading="lazy" width="1360" height="1200">
+            <span class="pa2-pins" aria-hidden="true"><span class="pa2-pin is-top" style="--x:24.1%;--y:43.7%">01</span><span class="pa2-pin" style="--x:92.1%;--y:27.7%">02</span><span class="pa2-pin" style="--x:15%;--y:26.3%">03</span><span class="pa2-pin" style="--x:37.4%;--y:75%">04</span><span class="pa2-pin" style="--x:28.2%;--y:30%">05</span></span>
             <ol class="pa2-rank" aria-hidden="true"><li><b>T-01</b><i style="--w:92%"></i></li><li><b>T-02</b><i style="--w:81%"></i></li><li><b>T-03</b><i style="--w:74%"></i></li><li><b>T-04</b><i style="--w:63%"></i></li><li><b>T-05</b><i style="--w:55%"></i></li></ol>
           </figure>
           <h3>Ranked targets, ready to review</h3>
@@ -738,7 +740,7 @@ add_action( 'generate_before_content', function() {
       <div class="pdt-proof-intro xr-reveal">
         <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>Proof of Concept</span>
         <h2>The Great Basin<br>lithium prototype.</h2>
-        <p>Our first model scores every 1x1 km cell across the Great Basin region of the United States for lithium. It is a prototype and the base for the finer models we are building, but its early results show the approach works.</p>
+        <p>Our first model scores every 1×1 km cell across the Great Basin region of the United States for lithium. It is a prototype and the base for the finer models we are building, but its early results show the approach works.</p>
       </div>
 
       <div class="pp-grid">
@@ -748,7 +750,7 @@ add_action( 'generate_before_content', function() {
             <span>Heat map from a recent model run</span>
             <span class="pp-legend"><em>Low</em><i></i><em>High</em></span>
           </figcaption>
-          <p class="pp-map-note">Each cell is 1x1 km. Gold cells are where the model sees the strongest signs of lithium, and they are where a geologist would look first.</p>
+          <p class="pp-map-note">Each cell is 1×1 km; the faint lines are a coarser reference grid. Gold cells are where the model sees the strongest signs of lithium, and they are where a geologist would look first.</p>
         </figure>
 
         <div class="pp-metrics">
@@ -783,7 +785,7 @@ add_action( 'generate_before_content', function() {
           <div class="pp-check"><span>02</span><strong>Tested on unseen ground</strong><small>Spatial block cross-validation holds out whole areas of the map, so the model can't score well just by memorising neighbouring cells.</small></div>
           <div class="pp-check"><span>03</span><strong>Stress-tested</strong><small>Repeated stratified k-fold and leave-one-out cross-validation check that the results hold across many different splits of the data.</small></div>
         </div>
-        <p class="pp-checks-note">Measured at 1x1 km against known deposits. Finer models and field testing against real boreholes come next.</p>
+        <p class="pp-checks-note">Measured at 1×1 km against known deposits. Finer models and field testing against real boreholes come next.</p>
       </div>
     </div>
   </section>
@@ -804,7 +806,7 @@ add_action( 'generate_before_content', function() {
       <div class="pdt-status-intro xr-reveal">
         <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>Development Status</span>
         <h2>Where we are today.</h2>
-        <p>We are pre-launch. Our Great Basin lithium model is a prototype that predicts to within 1x1 km, and mining companies need 1x1 m to place a borehole. We are using the prototype to build a series of finer models that will get there.</p>
+        <p>We are pre-launch. Our Great Basin lithium model is a prototype that predicts to within 1×1 km, and mining companies need 1×1 m to place a borehole. We are using the prototype to build a series of finer models that will get there.</p>
       </div>
 
       <ol class="ps2 xr-reveal">
