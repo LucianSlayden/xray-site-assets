@@ -287,113 +287,146 @@
   })();
 
   /* ── 3. PAGE CONTOURS ───────────────────────────────────────────────── */
-  /* Drifting topographic contour lines across the whole page. A light pool
-     wanders over the map and brightens the contours under it. Drawn at half
-     resolution and paused while the page is scrolling so scrolling stays smooth. */
+  /* Drifting topographic contour lines behind the whole page. A light pool
+     wanders over the map and brightens the contours under it. The drawing
+     runs in a Web Worker on an OffscreenCanvas, so it never competes with
+     scrolling; browsers without OffscreenCanvas draw on the main thread. */
   (function ivPageContours() {
     var pc = document.getElementById('iv-page-canvas');
     if (!pc) return;
-    var cx = pc.getContext('2d');
-    var dpr = 0.5; // soft lines look the same at half resolution and cost a quarter as much
-    var CELL = 28, W, H, cols, rows, field;
-    var LEVELS = [];
-    for (var lvl = -1.2; lvl <= 1.21; lvl += 0.2) LEVELS.push(lvl);
 
-    function resize() {
-      W = pc.offsetWidth; H = pc.offsetHeight;
-      pc.width = W * dpr; pc.height = H * dpr;
-      cx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      cols = Math.ceil(W / CELL) + 2;
-      rows = Math.ceil(H / CELL) + 2;
-      field = new Float32Array(cols * rows);
-    }
-    resize();
-    window.addEventListener('resize', resize);
+    // Shared drawing code: runs inside the worker, or here as a fallback.
+    function contourRenderer(canvas, reduced) {
+      var cx = canvas.getContext('2d');
+      var CELL = 26, W = 0, H = 0, dpr = 1, cols, rows, field, running = true;
+      var LEVELS = [];
+      for (var lvl = -1.2; lvl <= 1.21; lvl += 0.2) LEVELS.push(lvl);
+      var raf = (typeof requestAnimationFrame === 'function')
+        ? function (f) { return requestAnimationFrame(f); }
+        : function (f) { return setTimeout(function () { f(performance.now()); }, 16); };
 
-    // Smooth terrain from a few layered sine waves.
-    function height(x, y, t) {
-      return 0.55 * Math.sin(x * 0.0052 + t * 0.21) * Math.cos(y * 0.0047 - t * 0.17)
-           + 0.35 * Math.sin((x + y) * 0.0074 - t * 0.29)
-           + 0.25 * Math.cos(x * 0.0113 - y * 0.0063 + t * 0.37)
-           + 0.15 * Math.sin(y * 0.014 + Math.sin(x * 0.005 + t * 0.2) * 2.0);
-    }
-
-    function lerp(a, b, lv) { return (lv - a) / (b - a); }
-
-    // Skip redraws while the visitor scrolls; the drift is slow enough that a pause is invisible.
-    var scrolling = false, scrollTimer = 0;
-    window.addEventListener('scroll', function () {
-      scrolling = true;
-      clearTimeout(scrollTimer);
-      scrollTimer = setTimeout(function () { scrolling = false; }, 180);
-    }, { passive: true });
-
-    var last = 0;
-    function draw(ts) {
-      if ((ts - last < 33 || scrolling || document.hidden) && !reducedMotion && last) { requestAnimationFrame(draw); return; } // ~30 fps
-      last = ts;
-      var t = ts / 1000 * 0.33; // a third of the original drift speed
-      var sy = 0;
-
-      for (var r = 0; r < rows; r++) {
-        for (var c = 0; c < cols; c++) {
-          field[r * cols + c] = height(c * CELL, r * CELL + sy, t);
-        }
+      function size(w, h, ratio) {
+        W = w; H = h; dpr = ratio;
+        canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
+        cx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        cx.lineJoin = 'round'; cx.lineCap = 'round';
+        cols = Math.ceil(W / CELL) + 2; rows = Math.ceil(H / CELL) + 2;
+        field = new Float32Array(cols * rows);
       }
+      function height(x, y, t) {
+        return 0.55 * Math.sin(x * 0.0052 + t * 0.21) * Math.cos(y * 0.0047 - t * 0.17)
+             + 0.35 * Math.sin((x + y) * 0.0074 - t * 0.29)
+             + 0.25 * Math.cos(x * 0.0113 - y * 0.0063 + t * 0.37)
+             + 0.15 * Math.sin(y * 0.014 + Math.sin(x * 0.005 + t * 0.2) * 2.0);
+      }
+      function lerp(a, b, lv) { return (lv - a) / (b - a); }
 
-      cx.clearRect(0, 0, W, H);
+      var last = 0;
+      function draw(ts) {
+        if (!running) return;
+        if (ts - last < 33 && last) { raf(draw); return; } // ~30 fps is plenty for this drift
+        last = ts;
+        var t = ts / 1000 * 0.33;
+        for (var r = 0; r < rows; r++)
+          for (var c = 0; c < cols; c++) field[r * cols + c] = height(c * CELL, r * CELL, t);
 
-      // Wandering light pool that brightens the lines it passes over.
-      var lx = W * (0.5 + 0.38 * Math.sin(t * 0.13));
-      var ly = H * (0.5 + 0.32 * Math.sin(t * 0.09 + 1.3));
-      var glow = cx.createRadialGradient(lx, ly, 0, lx, ly, Math.max(W, H) * 0.55);
-      glow.addColorStop(0, 'rgba(232,185,99,1)');
-      glow.addColorStop(0.45, 'rgba(232,185,99,0.6)');
-      glow.addColorStop(1, 'rgba(232,185,99,0.3)');
+        cx.clearRect(0, 0, W, H);
+        var lx = W * (0.5 + 0.38 * Math.sin(t * 0.13));
+        var ly = H * (0.5 + 0.32 * Math.sin(t * 0.09 + 1.3));
+        var glow = cx.createRadialGradient(lx, ly, 0, lx, ly, Math.max(W, H) * 0.55);
+        glow.addColorStop(0, 'rgba(232,185,99,1)');
+        glow.addColorStop(0.45, 'rgba(232,185,99,0.6)');
+        glow.addColorStop(1, 'rgba(232,185,99,0.3)');
 
-      for (var li = 0; li < LEVELS.length; li++) {
-        var lv = LEVELS[li];
-        cx.beginPath();
-        for (var r2 = 0; r2 < rows - 1; r2++) {
-          for (var c2 = 0; c2 < cols - 1; c2++) {
-            var i0 = r2 * cols + c2;
-            var a = field[i0], b = field[i0 + 1], d = field[i0 + cols], e = field[i0 + cols + 1];
-            var code = (a > lv ? 8 : 0) | (b > lv ? 4 : 0) | (e > lv ? 2 : 0) | (d > lv ? 1 : 0);
-            if (code === 0 || code === 15) continue;
-            var x0 = c2 * CELL, y0 = r2 * CELL;
-            var top = [x0 + CELL * lerp(a, b, lv), y0];
-            var rgt = [x0 + CELL, y0 + CELL * lerp(b, e, lv)];
-            var bot = [x0 + CELL * lerp(d, e, lv), y0 + CELL];
-            var lft = [x0, y0 + CELL * lerp(a, d, lv)];
-            var segs;
-            switch (code) {
-              case 1: case 14: segs = [lft, bot]; break;
-              case 2: case 13: segs = [bot, rgt]; break;
-              case 3: case 12: segs = [lft, rgt]; break;
-              case 4: case 11: segs = [top, rgt]; break;
-              case 6: case 9:  segs = [top, bot]; break;
-              case 7: case 8:  segs = [lft, top]; break;
-              case 5:  segs = [lft, top, bot, rgt]; break;
-              case 10: segs = [lft, bot, top, rgt]; break;
-            }
-            for (var s = 0; s < segs.length; s += 2) {
-              cx.moveTo(segs[s][0], segs[s][1]);
-              cx.lineTo(segs[s + 1][0], segs[s + 1][1]);
+        for (var li = 0; li < LEVELS.length; li++) {
+          var lv = LEVELS[li];
+          cx.beginPath();
+          for (var r2 = 0; r2 < rows - 1; r2++) {
+            for (var c2 = 0; c2 < cols - 1; c2++) {
+              var i0 = r2 * cols + c2;
+              var a = field[i0], b = field[i0 + 1], d = field[i0 + cols], e = field[i0 + cols + 1];
+              var code = (a > lv ? 8 : 0) | (b > lv ? 4 : 0) | (e > lv ? 2 : 0) | (d > lv ? 1 : 0);
+              if (code === 0 || code === 15) continue;
+              var x0 = c2 * CELL, y0 = r2 * CELL;
+              var top = [x0 + CELL * lerp(a, b, lv), y0];
+              var rgt = [x0 + CELL, y0 + CELL * lerp(b, e, lv)];
+              var bot = [x0 + CELL * lerp(d, e, lv), y0 + CELL];
+              var lft = [x0, y0 + CELL * lerp(a, d, lv)];
+              var segs;
+              switch (code) {
+                case 1: case 14: segs = [lft, bot]; break;
+                case 2: case 13: segs = [bot, rgt]; break;
+                case 3: case 12: segs = [lft, rgt]; break;
+                case 4: case 11: segs = [top, rgt]; break;
+                case 6: case 9:  segs = [top, bot]; break;
+                case 7: case 8:  segs = [lft, top]; break;
+                case 5:  segs = [lft, top, bot, rgt]; break;
+                case 10: segs = [lft, bot, top, rgt]; break;
+              }
+              for (var s = 0; s < segs.length; s += 2) {
+                cx.moveTo(segs[s][0], segs[s][1]);
+                cx.lineTo(segs[s + 1][0], segs[s + 1][1]);
+              }
             }
           }
+          // Index contours (every fourth level) are brighter and sky blue.
+          var index = li % 4 === 2;
+          cx.globalAlpha = index ? 0.42 : 0.34;
+          cx.strokeStyle = index ? 'rgba(111,181,224,0.9)' : glow;
+          cx.lineWidth = index ? 1.2 : 0.9;
+          cx.stroke();
         }
-        // Index contours (every fourth level) are brighter and sky blue.
-        var index = li % 4 === 2;
-        cx.globalAlpha = index ? 0.42 : 0.34;
-        cx.strokeStyle = index ? 'rgba(111,181,224,0.9)' : glow;
-        cx.lineWidth = index ? 1.2 : 0.9;
-        cx.stroke();
+        cx.globalAlpha = 1;
+        if (!reduced) raf(draw);
       }
-      cx.globalAlpha = 1;
-
-      if (!reducedMotion) requestAnimationFrame(draw);
+      return {
+        size: size,
+        start: function () { if (!running) { running = true; last = 0; } raf(draw); },
+        stop: function () { running = false; }
+      };
     }
-    requestAnimationFrame(draw);
+
+    function viewport() {
+      return { w: pc.offsetWidth, h: pc.offsetHeight, dpr: Math.min(1.5, window.devicePixelRatio || 1) };
+    }
+
+    var worker = null;
+    if (pc.transferControlToOffscreen && window.Worker && window.Blob) {
+      try {
+        var src = 'var R=null;var mk=' + contourRenderer.toString() + ';' +
+          'onmessage=function(e){var m=e.data;' +
+          'if(m.type==="init"){R=mk(m.canvas,m.reduced);R.size(m.w,m.h,m.dpr);R.start();}' +
+          'else if(m.type==="size"&&R){R.size(m.w,m.h,m.dpr);if(m.reduced)R.start();}' +
+          'else if(m.type==="pause"&&R){R.stop();}' +
+          'else if(m.type==="resume"&&R){R.start();}};';
+        var url = URL.createObjectURL(new Blob([src], { type: 'text/javascript' }));
+        worker = new Worker(url);
+        var off = pc.transferControlToOffscreen();
+        var v = viewport();
+        worker.postMessage({ type: 'init', canvas: off, w: v.w, h: v.h, dpr: v.dpr, reduced: reducedMotion }, [off]);
+      } catch (err) { worker = null; }
+    }
+
+    if (worker) {
+      window.addEventListener('resize', function () {
+        var v = viewport();
+        worker.postMessage({ type: 'size', w: v.w, h: v.h, dpr: v.dpr, reduced: reducedMotion });
+      });
+      document.addEventListener('visibilitychange', function () {
+        worker.postMessage({ type: document.hidden ? 'pause' : 'resume' });
+      });
+      return;
+    }
+
+    // Fallback: same drawing on the main thread.
+    var R = contourRenderer(pc, reducedMotion);
+    var v0 = viewport();
+    R.size(v0.w, v0.h, v0.dpr);
+    R.start();
+    window.addEventListener('resize', function () {
+      var v = viewport(); R.size(v.w, v.h, v.dpr); if (reducedMotion) R.start();
+    });
+    document.addEventListener('visibilitychange', function () { document.hidden ? R.stop() : R.start(); });
   })();
 
   /* ── 4. ACCURACY GAUGE ──────────────────────────────────────────────── */
