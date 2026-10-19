@@ -1,5 +1,4 @@
 /* X-Ray Geoanalytics — Investors Page
-   Canvas 1: Radar sweep with mineral blips (#iv-canvas, hero)
    Canvas 2: Page-wide drifting contour lines (#iv-page-canvas, fixed)
    GSAP:     hero reveal + extensive ScrollTrigger batches
    Enqueue with dependency: ['gsap-st']
@@ -280,8 +279,8 @@
     var pc = document.getElementById('iv-page-canvas');
     if (!pc) return;
     var cx = pc.getContext('2d');
-    var dpr = Math.min(2, window.devicePixelRatio || 1);
-    var CELL = 22, W, H, cols, rows, field;
+    var dpr = 1; // soft lines don't need retina resolution; keeps frames smooth
+    var CELL = 28, W, H, cols, rows, field;
     var LEVELS = [];
     for (var lvl = -1.2; lvl <= 1.21; lvl += 0.2) LEVELS.push(lvl);
 
@@ -310,7 +309,7 @@
     function draw(ts) {
       if (ts - last < 33 && !reducedMotion) { requestAnimationFrame(draw); return; } // ~30 fps
       last = ts;
-      var t = ts / 1000;
+      var t = ts / 1000 * 0.33; // a third of the original drift speed
       var sy = (window.scrollY || 0) * 0.35;
 
       for (var r = 0; r < rows; r++) {

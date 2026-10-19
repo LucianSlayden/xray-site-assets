@@ -53,7 +53,6 @@ body { background: #060c12 !important; }
     <div class="iv-hero-photo"></div>
     <div class="iv-hero-fog-left"></div>
     <div class="iv-hero-fog-edges"></div>
-    <canvas id="iv-canvas" aria-hidden="true"></canvas>
 
     <div class="iv-hero-inner">
       <h1 class="iv-headline" id="iv-headline" aria-label="The data layer for the next era of resource discovery.">
@@ -98,10 +97,6 @@ body { background: #060c12 !important; }
       </div>
     </div>
 
-    <div class="iv-radar-label" aria-hidden="true">
-      <span class="iv-radar-tick"></span>
-      Deposit scan · Live
-    </div>
   </section>
 
   <div class="iv-divider"></div>
