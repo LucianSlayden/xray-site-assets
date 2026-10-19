@@ -189,7 +189,7 @@ add_action( 'generate_before_content', function() {
       <div class="pdt-arch-intro xr-reveal">
         <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>How It Works</span>
         <h2>Your data. Our models.<br>Ranked drill targets.</h2>
-        <p>The X-Ray platform is a software subscription for geologists. Your exploration data goes in, and a prospectivity heat map and ranked drill targets come out. Keep uploading drill data as you go and make quick, informed decisions on where to drill next.</p>
+        <p>The X-Ray platform is being built for geoscientist teams at mining companies. Your team imports its survey data, and the model outputs ranked drill targets with a 3D visualization, a heat map and other geoanalysis tools. Keep adding drill data as you go to make quick, informed decisions on where to drill next.</p>
       </div>
 
       <div class="pdt-arch-flow">
@@ -290,48 +290,63 @@ add_action( 'generate_before_content', function() {
       <div class="pdt-status-intro xr-reveal">
         <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>Development Status</span>
         <h2>Where we are today.</h2>
-        <p>We are pre-launch. The Great Basin lithium model is built. The software platform is being designed around it, shaped by what geologists at junior explorers tell us they need.</p>
+        <p>We are pre-launch. Our Great Basin lithium model is a prototype that predicts to within 1x1 km, and mining companies need 1x1 m to place a borehole. We are using the prototype to build a series of finer models that will get there.</p>
       </div>
 
       <div class="pdt-status-board">
 
         <div class="pdt-status-row">
           <div class="pdt-status-dot live"></div>
-          <div class="pdt-status-mineral">Great Basin Lithium Model</div>
-          <div class="pdt-status-desc">Predicts lithium across the Great Basin at 1x1 km cells. 95% recall and 80% precision on known deposits.</div>
-          <div class="pdt-status-timeline">Built</div>
-          <div class="pdt-status-badge live">Active</div>
+          <div class="pdt-status-mineral">Great Basin Lithium Prototype</div>
+          <div class="pdt-status-desc">Our first model predicts lithium across the Great Basin, but only to within 1x1 km cells. It is not finished and not precise enough for mining companies to use yet. It is the base the finer models build on.</div>
+          <div class="pdt-status-timeline">Now</div>
+          <div class="pdt-status-badge live">Prototype</div>
         </div>
 
         <div class="pdt-status-row">
           <div class="pdt-status-dot active"></div>
-          <div class="pdt-status-mineral">Finer Models · 100–500 m</div>
-          <div class="pdt-status-desc">A hierarchy of models, each finer than the last, working toward exact drill coordinates. Adds borehole logs from water wells, oil and gas wells and lithium drilling, plus customer data.</div>
+          <div class="pdt-status-mineral">Finer Models · Down to 1x1 m</div>
+          <div class="pdt-status-desc">A series of models, each finer than the last, adding borehole logs from water wells, oil and gas wells and lithium drilling. The goal is predictions precise enough to place an individual borehole.</div>
           <div class="pdt-status-timeline">In progress</div>
           <div class="pdt-status-badge active">In Dev</div>
         </div>
 
         <div class="pdt-status-row">
           <div class="pdt-status-dot soon"></div>
-          <div class="pdt-status-mineral">Nickel Model</div>
-          <div class="pdt-status-desc">Our next commodity model. Nickel is a metal our customers already target alongside lithium.</div>
+          <div class="pdt-status-mineral">Field Testing</div>
+          <div class="pdt-status-desc">Testing predictions on the ground against real boreholes and feeding the results back in, until the model is accurate enough to sell.</div>
           <div class="pdt-status-timeline">Next</div>
           <div class="pdt-status-badge soon">Planned</div>
         </div>
 
         <div class="pdt-status-row">
+          <div class="pdt-status-dot soon"></div>
+          <div class="pdt-status-mineral">Software Platform</div>
+          <div class="pdt-status-desc">The interface geoscientist teams will use to import survey data and review ranked drill targets, a 3D visualization, a heat map and other geoanalysis tools.</div>
+          <div class="pdt-status-timeline">To build</div>
+          <div class="pdt-status-badge soon">Planned</div>
+        </div>
+
+        <div class="pdt-status-row">
           <div class="pdt-status-dot future"></div>
-          <div class="pdt-status-mineral">Cobalt, Gold &amp; Silver</div>
-          <div class="pdt-status-desc">Further models for minerals customers drill for alongside lithium. We are also researching neural networks to bring the models together into one framework.</div>
+          <div class="pdt-status-mineral">Other Minerals</div>
+          <div class="pdt-status-desc">Models for nickel, cobalt, gold and silver, the minerals our customers search for alongside lithium.</div>
           <div class="pdt-status-timeline">Later</div>
           <div class="pdt-status-badge future">Future</div>
         </div>
 
       </div>
 
-      <div class="xr-reveal" style="margin-top:44px;">
-        <p style="color:var(--xr-text-muted);font-size:14px;max-width:58ch;line-height:1.7;">X-Ray will be offered as a <strong style="color:var(--xr-text);">software subscription</strong>. Plans and pricing are still being set, so get in touch and we'll keep you posted.</p>
-        <a href="<?php echo esc_url( home_url( '/learn-more/' ) ); ?>" class="xr-btn xr-btn-outline" style="margin-top:20px;display:inline-flex;">Get in touch <span class="xr-arrow">→</span></a>
+      <div class="pdt-flow xr-reveal">
+        <div class="pdt-flow-head">How it will work</div>
+        <div class="pdt-flow-steps">
+          <div class="pdt-flow-step"><span>01</span><strong>Import survey data</strong><small>Your geoscientist team brings in the survey and drill data it already has.</small></div>
+          <div class="pdt-flow-arrow" aria-hidden="true">→</div>
+          <div class="pdt-flow-step"><span>02</span><strong>The model scores your ground</strong><small>It weighs your data together with our cleaned geological datasets.</small></div>
+          <div class="pdt-flow-arrow" aria-hidden="true">→</div>
+          <div class="pdt-flow-step"><span>03</span><strong>Review ranked drill targets</strong><small>Explore them on a 3D visualization and heat map, with other geoanalysis tools.</small></div>
+        </div>
+        <a href="<?php echo esc_url( home_url( '/learn-more/' ) ); ?>" class="xr-btn xr-btn-outline" style="margin-top:28px;display:inline-flex;">Follow our progress <span class="xr-arrow">→</span></a>
       </div>
     </div>
   </section>
@@ -341,7 +356,7 @@ add_action( 'generate_before_content', function() {
     <div class="pdt-cta-inner">
       <span class="xr-reveal xr-eyebrow" style="justify-content:center;margin-bottom:18px;"><span class="xr-eyebrow-hex"></span>Get Started</span>
       <h2 class="xr-reveal pdt-cta-h">Know where to drill<br>before you spend a <span class="gold">dollar.</span></h2>
-      <p class="xr-reveal xr-d2">Our Great Basin lithium model is built. Get in touch to see how it ranks drill targets on your ground.</p>
+      <p class="xr-reveal xr-d2">We're building toward drill targets precise enough for a single borehole. Get in touch to follow our progress or help shape the platform.</p>
       <div class="xr-reveal xr-d3" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
         <a href="<?php echo esc_url( home_url( '/learn-more/' ) ); ?>" class="xr-btn xr-btn-gold">Learn More</a>
         <a href="mailto:info@xraygeoanalytics.com" class="xr-btn xr-btn-outline">Email us directly <span class="xr-arrow">→</span></a>
