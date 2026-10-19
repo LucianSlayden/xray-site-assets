@@ -45,7 +45,7 @@ body { background: #0E141B !important; }
 #ot-page-bg {
   position: fixed;
   inset: 0;
-  background: url('https://xraygeoanalytics.com/wp-content/uploads/2026/05/mj-team-bg-full.png') center/cover no-repeat;
+  background: url('https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/mj-team-bg-full.webp') center/cover no-repeat;
   opacity: 0 !important;
   z-index: 0;
   pointer-events: none;
@@ -237,8 +237,7 @@ body { background: #0E141B !important; }
 <nav class="xr-nav">
   <div class="xr-nav-inner">
     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="xr-brand">
-      <img src="https://xraygeoanalytics.com/wp-content/uploads/2026/05/hex_logo_clean.png" alt="X-Ray Geoanalytics">
-      <span class="xr-brand-wordmark">X-Ray <span class="accent">Geoanalytics</span></span>
+      <img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180">
     </a>
     <div class="xr-nav-list">
       <div class="xr-nav-item">
@@ -305,26 +304,26 @@ body { background: #0E141B !important; }
         <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>Our Team</span>
       </div>
       <h1 style="font-family:var(--xr-font-display);font-size:clamp(38px,5vw,68px);font-weight:700;line-height:1.08;letter-spacing:-0.03em;margin:18px 0 0;color:#F1F4F8;">
-        <div style="overflow:hidden;"><div class="ot-hw-inner">Five co-founders.</div></div>
-        <div style="overflow:hidden;"><div class="ot-hw-inner">Three disciplines.</div></div>
+        <div style="overflow:hidden;"><div class="ot-hw-inner">Four co-founders.</div></div>
+        <div style="overflow:hidden;"><div class="ot-hw-inner">Equal ownership.</div></div>
         <div style="overflow:hidden;"><div class="ot-hw-inner"><span style="color:#E8B963;">One focus.</span></div></div>
       </h1>
       <p id="ot-lede" style="color:#A8B2C0;font-size:17px;line-height:1.8;margin:18px 0 40px;max-width:500px;">
-        X-Ray was built by a team that spans machine learning, geoscience data, software engineering, legal, and business strategy. The combination isn't accidental — it's the minimum viable team to solve this problem properly.
+        X-Ray was built by four founders who share equal ownership and cover every discipline needed to build the technology and bring it to market: geology, finance, model development, machine learning, and law.
       </p>
       <div id="ot-strip">
         <div class="ot-disc-strip">
           <div class="ot-disc-item">
             <div class="ot-disc-num">2</div>
-            <div class="ot-disc-lbl">Machine Learning</div>
+            <div class="ot-disc-lbl">Models &amp; Machine Learning</div>
           </div>
           <div class="ot-disc-item">
-            <div class="ot-disc-num sky">2</div>
-            <div class="ot-disc-lbl">Data &amp; Infrastructure</div>
+            <div class="ot-disc-num sky">1</div>
+            <div class="ot-disc-lbl">Geology &amp; Finance</div>
           </div>
           <div class="ot-disc-item">
             <div class="ot-disc-num">1</div>
-            <div class="ot-disc-lbl">Strategy &amp; Legal</div>
+            <div class="ot-disc-lbl">Legal &amp; IP</div>
           </div>
         </div>
       </div>
@@ -353,11 +352,11 @@ body { background: #0E141B !important; }
         </div>
         <h3 class="ot-name">Lucian Slayden</h3>
         <div class="ot-role">Chief Executive Officer</div>
-        <p class="ot-bio">Leads business strategy, investor relations, and go-to-market. Identified the exploration data fragmentation opportunity and assembled the founding team around it. Primary contact for partnerships and enterprise sales.</p>
+        <p class="ot-bio">Leads the company's direction. Studies both accounting and geology, acts as CFO, and helps with the geotechnical side of building X-Ray's predictive models. His geology background supports long-term planning and X-Ray's standing in the mining industry.</p>
         <div class="ot-tags">
           <span class="ot-tag">Strategy</span>
-          <span class="ot-tag">GTM</span>
-          <span class="ot-tag">Investor Relations</span>
+          <span class="ot-tag">Finance</span>
+          <span class="ot-tag">Geology</span>
         </div>
       </div>
 
@@ -371,10 +370,10 @@ body { background: #0E141B !important; }
         </div>
         <h3 class="ot-name">Ethan Lopez</h3>
         <div class="ot-role">Chief Technology Officer</div>
-        <p class="ot-bio">Architects the core ML pipeline: the multi-modal fusion layer, per-mineral inference models, and the continuous learning loop. Currently leading development of the Nevada lithium model toward its 90% accuracy target.</p>
+        <p class="ot-bio">Leads the direction of all model development and supports the CEO on everything technical that isn't specifically geological. Works closely with Jack on the Great Basin lithium model, which has reached 95% recall and 80% precision.</p>
         <div class="ot-tags">
-          <span class="ot-tag">ML Architecture</span>
-          <span class="ot-tag">Data Fusion</span>
+          <span class="ot-tag">Model Development</span>
+          <span class="ot-tag">Technology</span>
           <span class="ot-tag">Models</span>
         </div>
       </div>
@@ -389,11 +388,11 @@ body { background: #0E141B !important; }
         </div>
         <h3 class="ot-name">Jack Hilbert</h3>
         <div class="ot-role">Chief Data Officer</div>
-        <p class="ot-bio">Leads data acquisition strategy, geoscience domain integration, and the public data partnerships that underpin X-Ray's baseline datasets. Ensures models train on geologically coherent data, not just statistically convenient features.</p>
+        <p class="ot-bio">Leads development of everything related to machine learning and model training. X-Ray's lead programmer, he works closely with Ethan to turn decades of cleaned and sorted geological data into models that can learn from it.</p>
         <div class="ot-tags">
-          <span class="ot-tag">Geoscience Data</span>
-          <span class="ot-tag">Partnerships</span>
-          <span class="ot-tag">Curation</span>
+          <span class="ot-tag">Machine Learning</span>
+          <span class="ot-tag">Model Training</span>
+          <span class="ot-tag">Lead Programmer</span>
         </div>
       </div>
 
@@ -407,10 +406,10 @@ body { background: #0E141B !important; }
         </div>
         <h3 class="ot-name">Nick Lopez</h3>
         <div class="ot-role">Chief Legal Officer</div>
-        <p class="ot-bio">Manages legal, compliance, and IP at X-Ray. Structures data-licensing agreements with mining customers, manages IP protection for the core technology, and advises on regulatory expansion into new geographies.</p>
+        <p class="ot-bio">Handles IP protection, corporate formation, equity agreements, contracts, and regulatory compliance. Holds a J.D. from Georgetown and passed the Florida Bar Examination in 2025.</p>
         <div class="ot-tags">
-          <span class="ot-tag">Legal</span>
           <span class="ot-tag">IP Protection</span>
+          <span class="ot-tag">Contracts</span>
           <span class="ot-tag">Compliance</span>
         </div>
       </div>
@@ -424,7 +423,7 @@ body { background: #0E141B !important; }
   <div class="xr-container">
     <span class="xr-eyebrow ot-join-el" style="justify-content:center;margin-bottom:16px;"><span class="xr-eyebrow-hex"></span>Join the team</span>
     <h2 class="ot-join-el" style="font-family:var(--xr-font-display);font-size:clamp(26px,3vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 16px;color:#F1F4F8;">Want to work with us?</h2>
-    <p class="ot-join-el" style="color:#A8B2C0;font-size:17px;line-height:1.8;margin:0 auto 36px;max-width:500px;">We're a small, focused team. If you're a geoscientist, ML engineer, or mining-industry operator who wants to work on a genuinely hard problem, reach out.</p>
+    <p class="ot-join-el" style="color:#A8B2C0;font-size:17px;line-height:1.8;margin:0 auto 36px;max-width:500px;">We're a small, focused team, and we plan to bring on a geoscientist with proven industry experience to keep our models geologically sound. If you're a geoscientist, ML engineer, or mining-industry professional who wants to work on a genuinely hard problem, reach out.</p>
     <div class="ot-join-el" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
       <a href="mailto:lucian@xraygeoanalytics.com" class="xr-btn xr-btn-gold">Get in Touch</a>
       <a href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>" class="xr-btn xr-btn-outline">Request a Demo <span class="xr-arrow">→</span></a>
@@ -438,8 +437,7 @@ body { background: #0E141B !important; }
     <div class="xr-footer-grid">
       <div>
         <div class="xr-footer-brand">
-          <img src="https://xraygeoanalytics.com/wp-content/uploads/2026/05/hex_logo_clean.png" alt="X-Ray Geoanalytics">
-          <span>X-Ray Geoanalytics</span>
+          <img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180">
         </div>
         <p class="xr-footer-tagline">Advanced machine learning for mining site discovery. Nevada lithium. Every mineral. Every continent. Every drill result makes us smarter.</p>
         <div class="xr-footer-contact">

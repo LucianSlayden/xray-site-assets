@@ -197,6 +197,8 @@ a { color: inherit; text-decoration: none; }
   border-bottom: 1px solid rgba(232,185,99,0.18);
   transition: background .25s var(--xr-ease), border-color .25s var(--xr-ease);
 }
+.admin-bar .xr-nav { top: var(--wp-admin--admin-bar--height, 32px); }
+.admin-bar .xr-nav-mobile { top: calc(var(--xr-nav-h) + var(--wp-admin--admin-bar--height, 32px)); }
 .xr-nav.scrolled { background: rgba(14, 20, 27, 0.93); border-bottom-color: rgba(232,185,99,0.32); }
 .xr-nav-inner {
   max-width: var(--xr-max-w); margin: 0 auto; padding: 0 28px;
@@ -204,6 +206,7 @@ a { color: inherit; text-decoration: none; }
 }
 .xr-brand { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
 .xr-brand img { height: 44px; width: auto; }
+.xr-brand img.xr-brand-logo { height: 50px; }
 .xr-brand-wordmark {
   font-family: var(--xr-font-mono);
   font-weight: 600;
@@ -274,6 +277,7 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 980px) {
   :root { --xr-nav-h: 68px; }
   .xr-brand img { height: 36px; }
+  .xr-brand img.xr-brand-logo { height: 42px; }
   .xr-brand-wordmark { font-size: 14px; }
   .xr-nav-list { display: none; }
   .xr-nav-toggle {
@@ -432,6 +436,13 @@ body:has(.xr-hero)::after { display: none; }
   overflow: hidden;
   z-index: 1;
 }
+/* Logged-in visitors see the WordPress toolbar above the nav; drop the
+   pinned hero by the same amount so it starts exactly at the nav's
+   gold bottom border. */
+.admin-bar .xr-hero-pin {
+  top: calc(var(--xr-nav-h) + var(--wp-admin--admin-bar--height, 32px));
+  height: calc(100vh - var(--xr-nav-h) - var(--wp-admin--admin-bar--height, 32px));
+}
 /* Video is `contain` so the full frame (with every green hexagon)
    stays visible, and `object-position: right` pins it to the right
    edge of the viewport. Any letterbox column lands on the LEFT,
@@ -586,7 +597,7 @@ body:has(.xr-hero)::after { display: none; }
 
 /* Hover cues: an arrow from each label toward its hexagon and a pulsing
    ring on the hexagon. Each cue goes away once that hexagon has been
-   opened (.locked). */
+   opened (.seen, set by xray-hero.js). */
 .xr-hero-bullet::before {
   content: '';
   position: absolute;
@@ -610,8 +621,8 @@ body:has(.xr-hero)::after { display: none; }
   opacity: 0;
   pointer-events: none;
 }
-.xr-hero-bullets.in .xr-hero-bullet:not(.locked)::before,
-.xr-hero-bullets.in .xr-hero-bullet:not(.locked)::after {
+.xr-hero-bullets.in .xr-hero-bullet:not(.seen)::before,
+.xr-hero-bullets.in .xr-hero-bullet:not(.seen)::after {
   animation: xr-hero-cue 1.6s var(--xr-ease) 0.8s infinite;
 }
 @keyframes xr-hero-cue {
@@ -631,7 +642,7 @@ body:has(.xr-hero)::after { display: none; }
   opacity: 0;
   pointer-events: none;
 }
-.xr-hero-bullets.in .xr-hero-bullet:not(.locked) .xr-hero-bullet-hit::after {
+.xr-hero-bullets.in .xr-hero-bullet:not(.seen) .xr-hero-bullet-hit::after {
   animation: xr-hero-pulse 1.6s ease-out 0.8s infinite;
 }
 @keyframes xr-hero-pulse {
@@ -645,8 +656,9 @@ body:has(.xr-hero)::after { display: none; }
    on the left, deep amber glow so it reads on any background. */
 .xr-hero-bullet-body {
   position: absolute;
-  left: 72px;            /* past the right edge of the hex (hit zone is 80px wide, ±40px from centre) */
+  left: 50%;             /* centred on the hexagon */
   top: 50%;
+  z-index: 5;
   width: clamp(240px, 22vw, 320px);
   padding: 16px 20px 16px 18px;
   background:
@@ -667,8 +679,8 @@ body:has(.xr-hero)::after { display: none; }
   color: rgba(241,244,248,0.96);
   text-align: left;
   text-shadow: 0 1px 4px rgba(0,0,0,0.7);
-  transform-origin: left center;
-  transform: translate(-12px, -50%) scaleX(0.55);
+  transform-origin: center center;
+  transform: translate(-50%, -50%) scale(0.85);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -695,7 +707,7 @@ body:has(.xr-hero)::after { display: none; }
 .xr-hero-bullet:focus-within           .xr-hero-bullet-body,
 .xr-hero-bullet.locked                 .xr-hero-bullet-body,
 .xr-hero-bullet-hit:hover ~ .xr-hero-bullet-body {
-  transform: translate(0, -50%) scaleX(1);
+  transform: translate(-50%, -50%) scale(1);
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -751,7 +763,7 @@ body:has(.xr-hero)::after { display: none; }
      bottom so the directory text stays sharp. */
   background:
     linear-gradient(180deg, rgba(14,20,27,0.78) 0%, rgba(14,20,27,0.92) 55%, rgba(14,20,27,0.98) 100%),
-    url("https://xraygeoanalytics.com/wp-content/uploads/2026/05/mj-landscape-sharp.jpg") center bottom / cover no-repeat,
+    url("https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/bg-landscape-2560.webp") center bottom / cover no-repeat,
     var(--xr-deep);
 }
 .xr-footer::before {
@@ -778,6 +790,7 @@ body:has(.xr-hero)::after { display: none; }
 }
 .xr-footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
 .xr-footer-brand img { height: 36px; }
+.xr-footer-brand img.xr-brand-logo { height: 60px; width: auto; }
 .xr-footer-brand span {
   font-family: var(--xr-font-mono); font-weight: 600; font-size: 15px;
   letter-spacing: 0.04em; color: var(--xr-text);
@@ -852,7 +865,7 @@ body:has(.xr-hero)::after { display: none; }
   isolation: isolate;
   background:
     linear-gradient(180deg, rgba(14,20,27,0.88) 0%, rgba(14,20,27,0.65) 35%, rgba(14,20,27,0.92) 100%),
-    url("https://xraygeoanalytics.com/wp-content/uploads/2026/05/mj-landscape-sharp.jpg") center/cover no-repeat,
+    url("https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/bg-landscape-2560.webp") center/cover no-repeat,
     var(--xr-void);
 }
 .xr-page-hero::before {
@@ -912,7 +925,7 @@ body:has(.xr-hero)::after { display: none; }
          Lanczos-upscaled and saved as quality-92 progressive JPEG so
          large displays show no compression or scaling fuzziness.
          Per the May-2026 "new index instructions" doc. */
-      background-image: url("https://xraygeoanalytics.com/wp-content/uploads/2026/05/mj-landscape-sharp.jpg");
+      background-image: url("https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/bg-landscape-2560.webp");
       background-size: cover;
       background-position: center bottom;
       background-repeat: no-repeat;
@@ -943,7 +956,7 @@ body:has(.xr-hero)::after { display: none; }
     .solution-sec::before {
       content: '';
       position: absolute; inset: 0;
-      background-image: url("https://xraygeoanalytics.com/wp-content/uploads/2026/05/mj-canyon-8k.jpg");
+      background-image: url("https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/bg-canyon-2560.webp");
       background-size: cover;
       background-position: center 65%;
       background-repeat: no-repeat;
@@ -1132,7 +1145,7 @@ body:has(.xr-hero)::after { display: none; }
          ::before bridges the seam above the strip. */
       top: 0; left: 0; right: 0;
       height: 155%;
-      background-image: url("https://xraygeoanalytics.com/wp-content/uploads/2026/05/mj-landscape-sharp.jpg");
+      background-image: url("https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/bg-landscape-2560.webp");
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
@@ -1946,7 +1959,7 @@ body:has(.xr-hero)::after { display: none; }
 /* ─── Our Models ─────────────────────────────────── */
 #om-page-bg {
   position: fixed; inset: 0;
-  background: url('https://xraygeoanalytics.com/wp-content/uploads/2026/06/mj-ourmodels-bg-2.png') center / cover no-repeat;
+  background: url('https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/mj-ourmodels-bg-2.webp') center / cover no-repeat;
   opacity: 1;
   z-index: 0; pointer-events: none;
 }
@@ -2158,7 +2171,7 @@ footer.xr-footer { position: relative; z-index: 2; }
   content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
   background:
     linear-gradient(180deg, rgba(14,20,27,0.82) 0%, rgba(14,20,27,0.38) 30%, rgba(14,20,27,0.42) 70%, rgba(14,20,27,0.88) 100%),
-    url('https://xraygeoanalytics.com/wp-content/uploads/2026/06/mj-ind-hero-new.png') center 48% / cover no-repeat,
+    url('https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/mj-ind-hero-new.webp') center 48% / cover no-repeat,
     #0E141B;
 }
 #cta-section { position: relative; isolation: isolate; overflow: hidden; }
@@ -2178,7 +2191,7 @@ footer.xr-footer { position: relative; z-index: 2; }
 #pf-canvas { position:absolute; inset:0; width:100%; height:100%; z-index:1; pointer-events:none; }
 .pf-hero-bg {
   position:absolute; inset:0;
-  background-image:url('https://xraygeoanalytics.com/wp-content/uploads/2026/05/mj-landscape-4k.png');
+  background-image:url('https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/mj-landscape-4k.webp');
   background-size:cover; background-position:center 38%;
   opacity:0.15; z-index:0;
 }
@@ -2237,7 +2250,7 @@ footer.xr-footer { position: relative; z-index: 2; }
 .pf-mon-f-val.sky  { color:var(--xr-sky); }
 .pf-mon-f-label { font-family:var(--xr-font-mono); font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:var(--xr-text-muted); margin-top:4px; }
 
-.pf-sources-bg { position:absolute; inset:0; z-index:0; pointer-events:none; background-image:url('https://xraygeoanalytics.com/wp-content/uploads/2026/05/mj-wide-valley.png'); background-size:cover; background-position:center 60%; opacity:0.10; }
+.pf-sources-bg { position:absolute; inset:0; z-index:0; pointer-events:none; background-image:url('https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/mj-wide-valley.webp'); background-size:cover; background-position:center 60%; opacity:0.10; }
 .pf-sources-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; margin-top:56px; }
 @media(max-width:720px){ .pf-sources-grid { grid-template-columns:1fr; } }
 
@@ -2261,7 +2274,7 @@ footer.xr-footer { position: relative; z-index: 2; }
 .pf-src-items li::before { content:''; width:4px; height:4px; border-radius:50%; background:var(--xr-gold); flex-shrink:0; margin-top:6px; }
 .pf-src-card.sky .pf-src-items li::before { background:var(--xr-sky); }
 
-.pf-engine-bg { position:absolute; inset:0; z-index:0; pointer-events:none; background-image:url('https://xraygeoanalytics.com/wp-content/uploads/2026/05/mj-contour-heat-2.png'); background-size:cover; background-position:center 50%; opacity:0.09; }
+.pf-engine-bg { position:absolute; inset:0; z-index:0; pointer-events:none; background-image:url('https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/mj-contour-heat-2.webp'); background-size:cover; background-position:center 50%; opacity:0.09; }
 .pf-engine-steps { margin-top:56px; display:flex; flex-direction:column; }
 .pf-step-row { display:grid; grid-template-columns:110px 1fr 140px; align-items:stretch; border-bottom:1px solid rgba(255,255,255,0.07); opacity:0; transform:translateX(-24px); transition:background .22s; }
 .pf-step-row:first-child { border-top:1px solid rgba(255,255,255,0.07); }
@@ -2282,7 +2295,7 @@ footer.xr-footer { position: relative; z-index: 2; }
 .pf-step-stat-val.sky { color:var(--xr-sky); }
 .pf-step-stat-lbl { font-family:var(--xr-font-mono); font-size:9.5px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--xr-text-muted); margin-top:5px; text-align:right; }
 
-.pf-sec-bg { position:absolute; inset:0; z-index:0; pointer-events:none; background-image:url('https://xraygeoanalytics.com/wp-content/uploads/2026/05/mj-desert-4.png'); background-size:cover; background-position:center 40%; opacity:0.09; }
+.pf-sec-bg { position:absolute; inset:0; z-index:0; pointer-events:none; background-image:url('https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/mj-desert-4.webp'); background-size:cover; background-position:center 40%; opacity:0.09; }
 .pf-sec-layout { display:grid; grid-template-columns:1fr 1.1fr; gap:72px; align-items:start; }
 @media(max-width:900px){ .pf-sec-layout { grid-template-columns:1fr; gap:44px; } }
 .pf-sec-left { position:sticky; top:120px; }
@@ -2605,7 +2618,7 @@ body.page-id-288 .hiw-cta {
   padding:110px 0; position:relative; overflow:hidden; isolation:isolate;
   background:
     linear-gradient(180deg,rgba(14,20,27,0.94),rgba(14,20,27,0.92) 50%,rgba(14,20,27,0.98)),
-    url("https://xraygeoanalytics.com/wp-content/uploads/2026/05/mj-ridges.png") center / cover no-repeat,
+    url("https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/mj-ridges.webp") center / cover no-repeat,
     var(--xr-void);
 }
 .faq-section::before {
@@ -2646,7 +2659,7 @@ details.q .q-body strong { color:var(--xr-text); }
 }
 .pr-cta-bg {
   position:absolute; inset:0; z-index:-1; pointer-events:none;
-  background-image:url("https://xraygeoanalytics.com/wp-content/uploads/2026/05/mj-solution-canyon.png");
+  background-image:url("https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/mj-solution-canyon.webp");
   background-size:cover; background-position:center 80%; opacity:0.55;
 }
 .pr-cta-bg::before {
@@ -3554,7 +3567,7 @@ body.page-id-310 footer.xr-footer { z-index: 2; }
 #ot-page-bg {
   position: fixed;
   inset: 0;
-  background: url('https://xraygeoanalytics.com/wp-content/uploads/2026/05/mj-team-bg-full.png') center/cover no-repeat;
+  background: url('https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/mj-team-bg-full.webp') center/cover no-repeat;
   opacity: 0.20;
   z-index: 0;
   pointer-events: none;
@@ -4846,7 +4859,7 @@ body.page-resources #xr-page-bg {
   position: fixed;
   inset: 0;
   z-index: -2;
-  background: url('https://xraygeoanalytics.com/wp-content/uploads/2026/06/mj-hex-bg-full.png') 100% 0% / 200% auto no-repeat;
+  background: url('https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/mj-hex-bg-full.webp') 100% 0% / 200% auto no-repeat;
   opacity: 0.28;
   pointer-events: none;
 }
@@ -5265,7 +5278,7 @@ body.page-id-298 {
   stroke: var(--xr-gold); stroke-dasharray: 282; stroke-dashoffset: 282;
   transition: stroke-dashoffset 1.6s cubic-bezier(0.22,1,0.36,1);
 }
-.iv-gauge-arc.animated { stroke-dashoffset: 28.2; }
+.iv-gauge-arc.animated { stroke-dashoffset: 14.1; } /* 95% of 282 */
 .iv-gauge-label-text { font-family: var(--xr-font-mono); font-weight: 700; fill: var(--xr-gold); text-anchor: middle; }
 .iv-gauge-sub {
   font-family: var(--xr-font-mono); font-size: 11px;
@@ -5382,7 +5395,7 @@ body.page-id-298 {
 }
 
 /* TEAM */
-.iv-founders { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-top: 56px; }
+.iv-founders { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 56px; }
 .iv-founder {
   text-align: center; padding: 32px 16px 28px;
   background: var(--xr-card); border: 1px solid rgba(232,185,99,0.15);

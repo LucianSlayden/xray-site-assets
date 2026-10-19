@@ -47,8 +47,7 @@ body { background: #060c12 !important; }
 <nav class="xr-nav">
   <div class="xr-nav-inner">
     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="xr-brand">
-      <img src="https://xraygeoanalytics.com/wp-content/uploads/2026/05/hex_logo_clean.png" alt="X-Ray Geoanalytics">
-      <span class="xr-brand-wordmark">X-Ray <span class="accent">Geoanalytics</span></span>
+      <img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180">
     </a>
     <div class="xr-nav-list">
       <div class="xr-nav-item">
@@ -113,7 +112,7 @@ body { background: #060c12 !important; }
     <div class="iv-hero-inner">
       <div id="iv-eyebrow" class="iv-eyebrow">
         <span class="iv-eyebrow-dot"></span>
-        For Investors &nbsp;·&nbsp; Confidential Brief
+        For Investors &nbsp;·&nbsp; Company Brief
       </div>
 
       <h1 class="iv-headline" id="iv-headline" aria-label="The data layer for the next era of resource discovery.">
@@ -130,7 +129,7 @@ body { background: #060c12 !important; }
       </h1>
 
       <p class="iv-subhead" id="iv-sub">
-        X-Ray Geoanalytics is building the ML infrastructure that mining majors and exploration teams will use to find the minerals powering the energy transition — starting with Nevada lithium today, extending to every critical mineral on Earth.
+        X-Ray Geoanalytics uses machine learning to find mineral deposits for junior explorers, starting with lithium in the Great Basin and expanding to the minerals our customers already search for alongside it: nickel, cobalt, gold, and silver.
       </p>
 
       <a href="mailto:lucian@xraygeoanalytics.com" class="iv-hero-cta" id="iv-cta">
@@ -140,20 +139,20 @@ body { background: #060c12 !important; }
 
       <div class="iv-stat-strip" id="iv-stats">
         <div class="iv-stat-item">
-          <div class="iv-stat-n">$12.5B</div>
-          <div class="iv-stat-label">Annual exploration market</div>
+          <div class="iv-stat-n">$2.5B</div>
+          <div class="iv-stat-label">Annual target-generation spend</div>
         </div>
         <div class="iv-stat-item">
-          <div class="iv-stat-n sky">90%</div>
-          <div class="iv-stat-label">Target model accuracy</div>
+          <div class="iv-stat-n sky">95%</div>
+          <div class="iv-stat-label">Recall, Great Basin lithium</div>
         </div>
         <div class="iv-stat-item">
-          <div class="iv-stat-n">$25K</div>
-          <div class="iv-stat-label">Vs. $150K consulting baseline</div>
+          <div class="iv-stat-n">80%</div>
+          <div class="iv-stat-label">Precision, Great Basin lithium</div>
         </div>
         <div class="iv-stat-item">
-          <div class="iv-stat-n sky">5</div>
-          <div class="iv-stat-label">Co-founders, pre-revenue</div>
+          <div class="iv-stat-n sky">4</div>
+          <div class="iv-stat-label">Co-founders, equal ownership</div>
         </div>
       </div>
     </div>
@@ -171,9 +170,9 @@ body { background: #060c12 !important; }
     <div class="iv-container">
       <div class="xr-reveal">
         <div class="iv-section-label">01 · The Opportunity</div>
-        <h2 class="iv-section-h2" style="max-width:860px;">A <strong>$12.5B/year</strong> market running on a 90-year-old workflow.</h2>
+        <h2 class="iv-section-h2" style="max-width:860px;">A <strong>$2.5B/year</strong> target-generation market, and discoveries are falling.</h2>
         <p class="iv-section-lead" style="margin-top:16px;margin-bottom:0;">
-          Exploration dollars decompose into a handful of well-measured slices. The grassroots-targeting slice — where every program decides where to drill — runs on workflows unchanged since the 1970s. That's the slice X-Ray replaces.
+          New mineral discoveries fell from a peak of 202 in 2009 to roughly 80 in 2023, while lithium demand is projected to grow 2.5x from 2024 to 2030. Explorers spend $30,000 to $90,000 a year per project on target generation, and at the high end only one in 200 drill projects leads to a new mine site discovery. Target generation, deciding where to drill, is the slice X-Ray serves.
         </p>
       </div>
 
@@ -181,43 +180,43 @@ body { background: #060c12 !important; }
         <div class="iv-bar-row">
           <div class="iv-bar-track">
             <div class="iv-bar-fill" data-target-w="100"></div>
-            <span class="iv-bar-text">Total annual nonferrous exploration spend</span>
-            <span class="iv-bar-val">$12.5B / yr</span>
+            <span class="iv-bar-text">Global annual spend on target generation</span>
+            <span class="iv-bar-val">$2.5B / yr</span>
           </div>
-          <div class="iv-bar-cite">S&amp;P Global · 2024</div>
+          <div class="iv-bar-cite">Total addressable</div>
         </div>
         <div class="iv-bar-row">
           <div class="iv-bar-track featured">
-            <div class="iv-bar-fill bright" data-target-w="22"></div>
+            <div class="iv-bar-fill bright" data-target-w="4.4"></div>
             <span class="iv-bar-text featured">
-              Grassroots-targeting slice
-              <span class="featured-badge">X-Ray's primary market</span>
+              Great Basin target-generation spend
+              <span class="featured-badge">X-Ray's beachhead market</span>
             </span>
-            <span class="iv-bar-val">~$2.75B / yr</span>
+            <span class="iv-bar-val">$110M / yr</span>
           </div>
-          <div class="iv-bar-cite">22% of total</div>
+          <div class="iv-bar-cite">Serviceable obtainable</div>
         </div>
         <div class="iv-bar-row">
           <div class="iv-bar-track">
-            <div class="iv-bar-fill sky" data-target-w="71"></div>
-            <span class="iv-bar-text">Of mining executives report senior-geoscientist constraint</span>
-            <span class="iv-bar-val">71%</span>
+            <div class="iv-bar-fill sky" data-target-w="13.2"></div>
+            <span class="iv-bar-text">US target-generation spend</span>
+            <span class="iv-bar-val">$330M / yr</span>
           </div>
-          <div class="iv-bar-cite">McKinsey · 2023</div>
+          <div class="iv-bar-cite">Serviceable available</div>
         </div>
         <div class="iv-bar-row">
           <div class="iv-bar-track">
-            <div class="iv-bar-fill" data-target-w="90"></div>
-            <span class="iv-bar-text">Cost gap vs. comparable consultant engagement</span>
-            <span class="iv-bar-val">10–20× cheaper</span>
+            <div class="iv-bar-fill" data-target-w="24"></div>
+            <span class="iv-bar-text">Global subscription market at current pricing</span>
+            <span class="iv-bar-val">$600M / yr</span>
           </div>
-          <div class="iv-bar-cite">$25K / yr vs. $150–200K</div>
+          <div class="iv-bar-cite">$7M Great Basin · $24M US</div>
         </div>
       </div>
 
       <div class="iv-insight xr-reveal xr-d2">
         <div class="iv-insight-pin" aria-hidden="true"></div>
-        <p>The bottleneck isn't capital — it's <strong>knowing where to drill</strong>. X-Ray converts a labor-constrained workflow into compute and prices it at software economics.</p>
+        <p>The biggest question in mining is <strong>where to dig</strong>. Our current pricing sits well below what explorers already spend on target generation, which leaves room to grow as X-Ray builds credibility in the industry.</p>
       </div>
     </div>
   </section>
@@ -230,23 +229,23 @@ body { background: #060c12 !important; }
     <div class="iv-container">
       <div class="xr-reveal" style="margin-bottom:56px;">
         <div class="iv-section-label">02 · Traction</div>
-        <h2 class="iv-section-h2" style="max-width:820px;">Targeting <strong>90% accuracy</strong>. Validated against confirmed USGS deposits. Pre-launch.</h2>
+        <h2 class="iv-section-h2" style="max-width:820px;"><strong>95% recall</strong> and 80% precision across the Great Basin.</h2>
       </div>
       <div class="iv-traction-inner">
         <div class="xr-reveal xr-d1">
           <p style="color:var(--xr-text-2);font-size:17px;line-height:1.85;margin:0 0 22px;">
-            We are <strong style="color:var(--xr-text);">currently developing</strong> the Nevada lithium model — our first commercial release. Validated against known USGS deposits using public geochemistry, geophysics, and remote-sensing data, targeting <strong style="color:var(--xr-gold);">90% accuracy</strong> against confirmed economic deposits at launch.
+            We have <strong style="color:var(--xr-text);">built a lithium model</strong> that covers the entire Great Basin at 1x1 km cells. It reaches <strong style="color:var(--xr-gold);">95% recall</strong>: out of every 100 known deposits, it finds 95 on average. Its 80% precision means roughly 80% of its predictions are lithium deposits. An earlier Nevada model, built on 19,000 grid cells at 5x5 km, recovered 69% of deposits in the top 10% of ranked ground.
           </p>
           <p style="color:var(--xr-text-2);font-size:17px;line-height:1.85;margin:0 0 22px;">
-            The technical moat is the <em>deposit-anchored training methodology</em>: every model starts from confirmed economic deposits as ground truth and builds outward. Every drill result a customer feeds back becomes a new labeled training example — the moat compounds.
+            The moat is our <em>data and proprietary featuresets</em>. We collected decades of cluttered geological data, cleaned and sorted it, and designed features in-house that indicate lithium mineralization. The same raw data would be useless to most AI models, and it would be costly and slow for competitors to replicate.
           </p>
           <p style="color:var(--xr-text-2);font-size:17px;line-height:1.85;margin:0 0 28px;">
-            At launch we offer only the <strong style="color:var(--xr-text);">Explorer tier ($25K / year)</strong>. Operator and Enterprise tiers follow once additional commodity models become commercially viable.
+            Next comes <strong style="color:var(--xr-text);">customer discovery</strong> with junior explorers, finer-resolution models built on borehole data, and field validation against real boreholes drilled by mining companies.
           </p>
           <div class="iv-tags">
-            <span class="iv-tag iv-tag-gold">In Development · Nevada Lithium</span>
-            <span class="iv-tag iv-tag-sky">Roadmap · Cu &amp; REE</span>
-            <span class="iv-tag iv-tag-dim">Pilot pipeline opens at launch</span>
+            <span class="iv-tag iv-tag-gold">Built · Great Basin Lithium</span>
+            <span class="iv-tag iv-tag-sky">Next · Nickel</span>
+            <span class="iv-tag iv-tag-dim">Customer discovery next</span>
           </div>
         </div>
 
@@ -265,46 +264,46 @@ body { background: #060c12 !important; }
               <path id="iv-gauge-arc" d="M 30,125 A 90,90 0 0,1 210,125"
                     fill="none" stroke="url(#iv-gauge-grad)" stroke-width="12" stroke-linecap="round"
                     class="iv-gauge-arc"/>
-              <text x="120" y="108" class="iv-gauge-label-text" font-size="38" font-weight="800">90%</text>
+              <text x="120" y="108" class="iv-gauge-label-text" font-size="38" font-weight="800">95%</text>
               <text x="120" y="130" font-family="JetBrains Mono, monospace" font-size="11"
-                    fill="#6F7B8B" text-anchor="middle" letter-spacing="2">TARGET ACCURACY</text>
+                    fill="#6F7B8B" text-anchor="middle" letter-spacing="2">RECALL</text>
               <line x1="30" y1="125" x2="22" y2="125" stroke="rgba(232,185,99,0.3)" stroke-width="1.5"/>
               <line x1="210" y1="125" x2="218" y2="125" stroke="rgba(111,181,224,0.3)" stroke-width="1.5"/>
               <text x="18" y="130" font-family="JetBrains Mono, monospace" font-size="9" fill="#6F7B8B" text-anchor="middle">0%</text>
               <text x="222" y="130" font-family="JetBrains Mono, monospace" font-size="9" fill="#6F7B8B" text-anchor="middle">100%</text>
             </svg>
-            <p class="iv-gauge-sub">Validated against confirmed USGS deposits</p>
+            <p class="iv-gauge-sub">Great Basin lithium model · 80% precision</p>
           </div>
 
           <div class="iv-stack">
             <div class="iv-stack-row">
               <span class="iv-stack-idx">01</span>
-              <div class="iv-stack-lbl">Confirmed USGS deposits<small>Ground-truth labels</small></div>
-              <span class="iv-stack-v">Anchor</span>
+              <div class="iv-stack-lbl">Known deposits<small>Labels from mine sites, geochemistry and mining claims</small></div>
+              <span class="iv-stack-v">Labels</span>
             </div>
             <div class="iv-stack-arrow">↓</div>
             <div class="iv-stack-row">
               <span class="iv-stack-idx">02</span>
-              <div class="iv-stack-lbl">Multi-modal fusion<small>Geochem · Geophys · Remote-sensing · Terrain</small></div>
-              <span class="iv-stack-v">4+ src</span>
+              <div class="iv-stack-lbl">Six data layers<small>Geochem · Structural · Lithology · Geophys · Geothermal · Topo</small></div>
+              <span class="iv-stack-v">6 src</span>
             </div>
             <div class="iv-stack-arrow">↓</div>
             <div class="iv-stack-row sky">
               <span class="iv-stack-idx">03</span>
-              <div class="iv-stack-lbl">Ensemble inference<small>GBM + Neural net · Per-mineral weights</small></div>
-              <span class="iv-stack-v">GBM+NN</span>
+              <div class="iv-stack-lbl">Ensemble model<small>XGBoost + LightGBM · Feature selection</small></div>
+              <span class="iv-stack-v">XGB+LGBM</span>
             </div>
             <div class="iv-stack-arrow">↓</div>
             <div class="iv-stack-row green">
               <span class="iv-stack-idx">04</span>
-              <div class="iv-stack-lbl">Ranked drill targets<small>Confidence intervals · Signal attribution</small></div>
-              <span class="iv-stack-v">90%</span>
+              <div class="iv-stack-lbl">Ranked drill targets<small>Prospectivity heat map · 3D visualization</small></div>
+              <span class="iv-stack-v">95%</span>
             </div>
-            <div class="iv-stack-arrow">↑ Feedback loop ↑</div>
+            <div class="iv-stack-arrow">↑ Validation ↑</div>
             <div class="iv-stack-row">
               <span class="iv-stack-idx">05</span>
-              <div class="iv-stack-lbl">Drill outcomes return to training<small>Every result retrains the model</small></div>
-              <span class="iv-stack-v">Compounds</span>
+              <div class="iv-stack-lbl">Cross-validated<small>Spatial block · Repeated stratified k-fold · Leave-one-out</small></div>
+              <span class="iv-stack-v">3 methods</span>
             </div>
           </div>
         </div>
@@ -319,29 +318,29 @@ body { background: #060c12 !important; }
     <div class="iv-container">
       <div class="xr-reveal" style="margin-bottom:20px;">
         <div class="iv-section-label">03 · Business Model</div>
-        <h2 class="iv-section-h2" style="max-width:840px;">Software economics on top of a <strong>$150K consulting</strong> workflow.</h2>
+        <h2 class="iv-section-h2" style="max-width:840px;">A SaaS subscription for <strong>junior explorers</strong> in the Great Basin and American Southwest.</h2>
       </div>
 
       <div class="iv-tiers">
         <div class="iv-tier xr-reveal xr-d1">
           <div class="iv-tier-label">Pricing</div>
-          <div class="iv-tier-n">$25K</div>
-          <p>Per site per year. Flat. Vs. $150–200K per consultant engagement at comparable scope. Accessible to junior explorers and majors alike.</p>
+          <div class="iv-tier-n">3 tiers</div>
+          <p>Three annual tiers, so explorers can match their investment to the scale and risk of their projects. The first covers a single commodity and project; the second and third expand to multiple commodities and projects.</p>
         </div>
         <div class="iv-tier sky xr-reveal xr-d2">
           <div class="iv-tier-label" style="color:var(--xr-sky);">Expansion</div>
-          <div class="iv-tier-n" style="color:var(--xr-sky);">Per-site</div>
-          <p>Customers expand by adding sites under the same MSA. No re-contracting friction — each new site is a direct upsell with zero acquisition cost.</p>
+          <div class="iv-tier-n" style="color:var(--xr-sky);">New models</div>
+          <p>Explorers already search for nickel, cobalt, gold, and silver alongside lithium. Each new commodity model expands what we can offer, and opens a path to larger mining companies across the US.</p>
         </div>
         <div class="iv-tier xr-reveal xr-d3">
           <div class="iv-tier-label">Defensibility</div>
           <div class="iv-tier-n text">Compounding</div>
-          <p>Every drill result fed back retrains the model. Switching costs grow with every cycle a customer runs — the moat is structural, not contractual.</p>
+          <p>In-house featuresets and decades of cleaned data are hard to replicate. Each customer's data is compartmentalized and never used to train anyone else's model, so explorers can trust us with it.</p>
         </div>
       </div>
 
       <div class="iv-quote xr-reveal xr-d1">
-        Software margins on top of a workflow <strong>currently sold at consulting margins</strong>.
+        Fewer holes drilled before a discovery means <strong>less time and money spent</strong> on every project.
       </div>
     </div>
   </section>
@@ -353,9 +352,9 @@ body { background: #060c12 !important; }
     <div class="iv-container">
       <div class="xr-reveal" style="margin-bottom:16px;">
         <div class="iv-section-label">04 · Roadmap</div>
-        <h2 class="iv-section-h2" style="max-width:880px;">One platform. From Nevada lithium to <strong>lunar regolith</strong>.</h2>
+        <h2 class="iv-section-h2" style="max-width:880px;">One platform. From Great Basin lithium to <strong>the minerals explorers drill for alongside it</strong>.</h2>
         <p class="iv-section-lead" style="margin-top:16px;">
-          Every phase reuses the same fusion pipeline. Adding a new commodity is training data + features, not a new platform. That's why phases 4 and 5 are credible — not science fiction.
+          Each model focuses on one commodity in one region. Adding a commodity means new training data and features on the same framework, not a new platform.
         </p>
       </div>
 
@@ -366,7 +365,7 @@ body { background: #060c12 !important; }
         <div class="iv-tl-step active">
           <div class="iv-tl-icon" aria-hidden="true">
             <svg viewBox="0 0 100 130">
-              <path d="M16 8 L88 8 L88 90 L57 122 L13 65 L13 50 Z"
+              <path d="M10.0 5.0 L89.9 5.0 L89.9 104.6 L88.5 105.8 L86.1 106.8 L83.8 105.6 L82.2 106.1 L80.6 107.7 L81.0 110.4 L81.5 114.4 L82.7 119.0 L82.2 122.8 L82.0 125.0 L10.0 56.4 Z"
                     fill="rgba(232,185,99,0.06)" stroke="#E8B963" stroke-width="2" stroke-linejoin="round"/>
               <circle cx="44" cy="38" r="11" fill="none" stroke="#4ade80" stroke-width="1.5"/>
               <circle cx="44" cy="38" r="4"  fill="#4ade80"/>
@@ -376,9 +375,9 @@ body { background: #060c12 !important; }
               <line x1="51" y1="38" x2="58" y2="38" stroke="#4ade80" stroke-width="1.5"/>
             </svg>
           </div>
-          <div class="iv-tl-meta">In Development · 2026 launch · Explorer-tier only</div>
-          <h3 class="iv-tl-h3">Nevada Lithium</h3>
-          <p class="iv-tl-p">Our active model. Targeting 90% accuracy on a major Nevada lithium province, validated against confirmed USGS deposits. Pilot customers onboard at launch on the Explorer tier.</p>
+          <div class="iv-tl-meta">Now · Model built · Customer discovery</div>
+          <h3 class="iv-tl-h3">Great Basin Lithium</h3>
+          <p class="iv-tl-p">Our lithium model covers the Great Basin at 1x1 km cells with 95% recall and 80% precision. Next is two rounds of customer interviews: first to validate the problem and how explorers decide where to drill today, then to learn what they want in the software.</p>
         </div>
 
         <!-- 2: Western US Cu & REE -->
@@ -400,17 +399,17 @@ body { background: #060c12 !important; }
               <circle cx="98" cy="74" r="2.4" fill="#6FB5E0"/>
               <g font-family="JetBrains Mono,monospace" font-weight="700">
                 <rect x="14" y="10" width="22" height="20" rx="1" fill="rgba(232,185,99,0.12)" stroke="#E8B963" stroke-width="0.9"/>
-                <text x="25" y="23" text-anchor="middle" fill="#E8B963" font-size="10">Cu</text>
+                <text x="25" y="23" text-anchor="middle" fill="#E8B963" font-size="10">Ni</text>
                 <rect x="50" y="10" width="26" height="20" rx="1" fill="rgba(111,181,224,0.1)" stroke="#6FB5E0" stroke-width="0.9"/>
-                <text x="63" y="23" text-anchor="middle" fill="#6FB5E0" font-size="9.5">REE</text>
+                <text x="63" y="23" text-anchor="middle" fill="#6FB5E0" font-size="9.5">Li</text>
                 <rect x="90" y="10" width="22" height="20" rx="1" fill="rgba(232,185,99,0.06)" stroke="rgba(232,185,99,0.45)" stroke-width="0.8"/>
-                <text x="101" y="23" text-anchor="middle" fill="rgba(232,185,99,0.85)" font-size="10">Au</text>
+                <text x="101" y="23" text-anchor="middle" fill="rgba(232,185,99,0.85)" font-size="10">Co</text>
               </g>
             </svg>
           </div>
-          <div class="iv-tl-meta">In Development · 12–24 months</div>
-          <h3 class="iv-tl-h3">Western US Copper &amp; Rare Earths</h3>
-          <p class="iv-tl-p">Two new commodity models using the same data fusion infrastructure, trained on different geochemical signatures across the Western US corridor.</p>
+          <div class="iv-tl-meta">Next · Within a year</div>
+          <h3 class="iv-tl-h3">Nickel, Field Validation &amp; Federal Grants</h3>
+          <p class="iv-tl-p">A nickel model, a metal our customers already target alongside lithium. Then field validation, comparing predictions to real boreholes, and applications for SBIR and STTR grants to fund software development and validation.</p>
         </div>
 
         <!-- 3: Global -->
@@ -451,64 +450,11 @@ body { background: #060c12 !important; }
               </g>
             </svg>
           </div>
-          <div class="iv-tl-meta">Roadmap · 4–5 years</div>
-          <h3 class="iv-tl-h3">Global · All Critical Minerals</h3>
-          <p class="iv-tl-p">Same platform architecture, every commercially important mineral, every producing country. No re-platforming. The first ML-native catalog of where every critical mineral on Earth probably is.</p>
+          <div class="iv-tl-meta">Later · Five-year vision</div>
+          <h3 class="iv-tl-h3">Cobalt, Gold &amp; Silver</h3>
+          <p class="iv-tl-p">More commodity models, multiple paid clients across the Great Basin with successful drill sites, and expansion to larger mining companies across the US and potentially internationally.</p>
         </div>
 
-        <!-- 4: Deep Sea -->
-        <div class="iv-tl-step long">
-          <div class="iv-tl-icon" aria-hidden="true">
-            <svg viewBox="0 0 130 100">
-              <path d="M50 14 L80 14 L84 22 L46 22 Z" fill="#6FB5E0" opacity="0.85"/>
-              <rect x="62" y="8" width="6" height="6" fill="#6FB5E0" opacity="0.7"/>
-              <g fill="none" stroke="#6FB5E0" stroke-width="1" stroke-linecap="round">
-                <path d="M40 38 Q65 28 90 38" opacity="0.7"/>
-                <path d="M30 50 Q65 36 100 50" opacity="0.5"/>
-                <path d="M20 62 Q65 44 110 62" opacity="0.3"/>
-              </g>
-              <path d="M0 78 L18 70 L34 76 L50 66 L66 74 L84 64 L102 72 L120 66 L130 74 L130 100 L0 100 Z"
-                    fill="rgba(111,181,224,0.12)" stroke="#6FB5E0" stroke-width="1.2"/>
-              <circle cx="40"  cy="84" r="2.5" fill="#E8B963" opacity="0.85"/>
-              <circle cx="62"  cy="86" r="2"   fill="#E8B963" opacity="0.7"/>
-              <circle cx="88"  cy="82" r="2.8" fill="#E8B963" opacity="0.9"/>
-              <circle cx="110" cy="86" r="2"   fill="#E8B963" opacity="0.7"/>
-            </svg>
-          </div>
-          <div class="iv-tl-meta" style="color:#6FB5E0;">Long-term · Deep Sea Mining</div>
-          <h3 class="iv-tl-h3">Polymetallic Nodules &amp; Seafloor Sulphides</h3>
-          <p class="iv-tl-p">The same methodology applied to bathymetry, seafloor magnetics, and sediment geochemistry. As deep-sea mining matures into a permitted industry, X-Ray is positioned to be its targeting layer.</p>
-        </div>
-
-        <!-- 5: Lunar -->
-        <div class="iv-tl-step long">
-          <div class="iv-tl-icon" aria-hidden="true">
-            <svg viewBox="0 0 130 100">
-              <g fill="rgba(241,244,248,0.5)">
-                <circle cx="10" cy="14" r="0.8"/><circle cx="118" cy="22" r="1"/>
-                <circle cx="22" cy="34" r="0.7"/><circle cx="106" cy="48" r="0.8"/>
-              </g>
-              <defs>
-                <radialGradient id="moonGradIv" cx="38%" cy="38%">
-                  <stop offset="0%"  stop-color="#F1F4F8"/>
-                  <stop offset="60%" stop-color="#A8B2C0"/>
-                  <stop offset="100%" stop-color="#5a6678"/>
-                </radialGradient>
-              </defs>
-              <circle cx="65" cy="50" r="34" fill="url(#moonGradIv)"/>
-              <g fill="rgba(14,20,27,0.35)">
-                <circle cx="54" cy="38" r="4"/><circle cx="74" cy="44" r="3"/>
-                <circle cx="60" cy="58" r="5.5"/><circle cx="80" cy="64" r="2.5"/>
-                <circle cx="48" cy="68" r="3"/><circle cx="84" cy="36" r="2"/>
-              </g>
-              <line x1="60" y1="58" x2="60" y2="46" stroke="#4ade80" stroke-width="1.4"/>
-              <polygon points="60,42 56,48 64,48" fill="#4ade80"/>
-            </svg>
-          </div>
-          <div class="iv-tl-meta">Long-term · Lunar Mining</div>
-          <h3 class="iv-tl-h3">Moon-Surface Resource Models</h3>
-          <p class="iv-tl-p">Lunar regolith, KREEP terranes, ice-bearing permanently shadowed craters. The terrestrial methodology extends to remotely-sensed extraterrestrial bodies — same compute, same fusion, new training corpus.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -520,7 +466,7 @@ body { background: #060c12 !important; }
     <div class="iv-container">
       <div class="xr-reveal" style="margin-bottom:12px;">
         <div class="iv-section-label">05 · Team</div>
-        <h2 class="iv-section-h2">Five co-founders. The minimum viable team to solve this.</h2>
+        <h2 class="iv-section-h2">Four co-founders with equal ownership and every discipline needed to build and sell the technology.</h2>
       </div>
 
       <div class="iv-founders" id="iv-founders">
@@ -546,13 +492,6 @@ body { background: #060c12 !important; }
           <div class="iv-founder-name">Nick Lopez</div>
           <div class="iv-founder-role">CLO</div>
         </div>
-        <div class="iv-founder sky">
-          <div class="iv-founder-hex" style="border-color:#6FB5E0;">
-            <span class="iv-founder-initials" style="color:#6FB5E0;">LB</span>
-          </div>
-          <div class="iv-founder-name">Luke Bierbaum</div>
-          <div class="iv-founder-role" style="color:#6FB5E0;">CSE</div>
-        </div>
       </div>
 
       <div class="iv-team-link xr-reveal">
@@ -572,14 +511,14 @@ body { background: #060c12 !important; }
           <div class="iv-section-label">Get in Touch</div>
           <h2 class="iv-section-h2" style="margin-bottom:20px;">Want to talk?</h2>
           <p style="color:var(--xr-text-2);font-size:17px;line-height:1.75;max-width:460px;margin:0 0 8px;">
-            If you invest in industrial-tech, energy-transition infrastructure, or applied ML, we'd welcome a conversation.
+            If you invest in industrial tech, critical minerals, energy transition, or applied ML, we'd welcome a conversation.
           </p>
           <a href="mailto:lucian@xraygeoanalytics.com" class="iv-contact-email">
             <span class="iv-dot"></span>
             lucian@xraygeoanalytics.com
           </a>
           <div class="iv-access-note" style="margin-top:28px;">
-            <p>Investor materials (deck, model, references) are gated. Use the form to request access — expect a same-week reply.</p>
+            <p>Investor materials are available on request. Use the form or email our CEO directly.</p>
           </div>
         </div>
 
@@ -603,7 +542,7 @@ body { background: #060c12 !important; }
             <textarea id="iv-msg" name="message" placeholder="Stage focus, sector interest, anything specific."></textarea>
           </div>
           <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:8px;">
-            <span style="color:var(--xr-text-muted);font-size:12px;font-family:var(--xr-font-mono);letter-spacing:0.04em;">Replies within 5 business days.</span>
+            <span style="color:var(--xr-text-muted);font-size:12px;font-family:var(--xr-font-mono);letter-spacing:0.04em;">Goes directly to our CEO.</span>
             <button type="submit" class="xr-btn xr-btn-gold">Request Investor Materials <span class="xr-arrow">→</span></button>
           </div>
         </form>
@@ -617,8 +556,7 @@ body { background: #060c12 !important; }
     <div class="xr-footer-grid">
       <div>
         <div class="xr-footer-brand">
-          <img src="https://xraygeoanalytics.com/wp-content/uploads/2026/05/hex_logo_clean.png" alt="X-Ray Geoanalytics">
-          <span>X-Ray Geoanalytics</span>
+          <img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180">
         </div>
         <p class="xr-footer-tagline">Advanced machine learning for mining site discovery. Nevada lithium. Every mineral. Every continent. Every drill result makes us smarter.</p>
         <div class="xr-footer-contact">

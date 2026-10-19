@@ -43,7 +43,7 @@ body { background: transparent !important; }
 #xr-page-bg {
   position: fixed;
   inset: 0; z-index: 0;
-  background: url('https://xraygeoanalytics.com/wp-content/uploads/2026/06/mj-hex-bg-full.png') 100% 0% / 200% auto no-repeat;
+  background: url('https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/mj-hex-bg-full.webp') 100% 0% / 200% auto no-repeat;
   opacity: 0.28;
   pointer-events: none;
 }
@@ -206,8 +206,7 @@ body { background: transparent !important; }
 <nav class="xr-nav">
   <div class="xr-nav-inner">
     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="xr-brand">
-      <img src="https://xraygeoanalytics.com/wp-content/uploads/2026/05/hex_logo_clean.png" alt="X-Ray Geoanalytics">
-      <span class="xr-brand-wordmark">X-Ray <span class="accent">Geoanalytics</span></span>
+      <img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180">
     </a>
     <div class="xr-nav-list">
       <div class="xr-nav-item">
@@ -259,7 +258,6 @@ body { background: transparent !important; }
     <a href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>" class="xr-btn xr-btn-gold">Request Demo</a>
   </div>
 </nav>
-
 <!-- ══ HERO ══════════════════════════════════════════════════════ -->
 <section class="xr-page-hero xr-topo">
   <div class="xr-topo-layer xr-topo-contours"></div>
@@ -268,7 +266,7 @@ body { background: transparent !important; }
   <div class="xr-container">
     <div class="xr-reveal"><span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>Resources</span></div>
     <h1 class="xr-reveal xr-d1" style="max-width:920px;margin-top:18px;">Everything you need to <span style="color:var(--xr-gold);">evaluate X-Ray</span>.</h1>
-    <p class="xr-reveal xr-d2 xr-lede" style="max-width:680px;margin-top:14px;">Reports, data source references, and guides for exploration teams considering X-Ray for their programs.</p>
+    <p class="xr-reveal xr-d2 xr-lede" style="max-width:680px;margin-top:14px;">Our model report, the data our models learn from, and how the platform works for exploration teams considering X-Ray for their programs.</p>
   </div>
 </section>
 
@@ -280,20 +278,20 @@ body { background: transparent !important; }
       <div>
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
           <span style="background:var(--xr-gold);color:var(--xr-void);font-family:var(--xr-font-mono);font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:4px 11px;border-radius:2px;">Featured</span>
-          <span style="color:var(--xr-text-muted);font-family:var(--xr-font-mono);font-size:13px;letter-spacing:0.04em;">Case Study · February 2026</span>
+          <span style="color:var(--xr-text-muted);font-family:var(--xr-font-mono);font-size:13px;letter-spacing:0.04em;">Model Report</span>
         </div>
-        <h2 style="font-size:clamp(24px,2.6vw,32px);line-height:1.2;margin:0 0 16px;max-width:680px;">Nevada Lithium Model: 90% Out-of-Sample Accuracy Against USGS MRDS Deposits</h2>
-        <p style="color:var(--xr-text-2);font-size:16px;line-height:1.75;margin:0 0 24px;max-width:640px;">A complete technical write-up of the validation methodology, data sources, holdout design, and results for X-Ray's Nevada lithium model. Includes the confusion matrix, spatial distribution of predictions vs. confirmed deposits, and discussion of the dominant signal contributors.</p>
+        <h2 style="font-size:clamp(24px,2.6vw,32px);line-height:1.2;margin:0 0 16px;max-width:680px;">Early Nevada Lithium Model: 69% of Deposits Recovered in the Top 10% of Ranked Ground</h2>
+        <p style="color:var(--xr-text-2);font-size:16px;line-height:1.75;margin:0 0 24px;max-width:640px;">Our report on an early version of our lithium model. It covers a feature matrix of 19,000 grid cells across Nevada built from geochemistry, structural, lithology, geophysics, geothermal and topography data, labels drawn from existing mine sites, geochemistry and mining claim data, a weighted model ensemble evaluated with spatial block cross-validation, and an honest look at its limits. Our later Great Basin model has since addressed the largest of those, cell size and underprediction, and reaches 95% recall and 80% precision at 1x1 km cells.</p>
         <a href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>" class="xr-btn xr-btn-gold">Request full report</a>
       </div>
       <div style="display:flex;flex-direction:column;gap:12px;flex-shrink:0;">
         <div style="background:var(--xr-card);border:1px solid rgba(232,185,99,0.4);border-radius:2px;padding:22px 28px;text-align:center;min-width:160px;">
-          <div style="font-family:var(--xr-font-display);font-size:42px;font-weight:700;line-height:1;color:var(--xr-gold);">90%</div>
-          <div class="xr-eyebrow" style="justify-content:center;margin-top:6px;">Accuracy</div>
+          <div style="font-family:var(--xr-font-display);font-size:42px;font-weight:700;line-height:1;color:var(--xr-gold);">69%</div>
+          <div class="xr-eyebrow" style="justify-content:center;margin-top:6px;">In top 10%</div>
         </div>
         <div style="background:var(--xr-card);border:1px solid rgba(111,181,224,0.32);border-radius:2px;padding:22px 28px;text-align:center;min-width:160px;">
-          <div style="font-family:var(--xr-font-display);font-size:42px;font-weight:700;line-height:1;color:var(--xr-sky);">4</div>
-          <div class="xr-eyebrow" style="justify-content:center;margin-top:6px;color:var(--xr-sky);">Data modalities</div>
+          <div style="font-family:var(--xr-font-display);font-size:42px;font-weight:700;line-height:1;color:var(--xr-sky);">6</div>
+          <div class="xr-eyebrow" style="justify-content:center;margin-top:6px;color:var(--xr-sky);">Data categories</div>
         </div>
       </div>
     </div>
@@ -306,27 +304,27 @@ body { background: transparent !important; }
   <div class="xr-topo-layer xr-topo-wash"></div>
   <div class="xr-container">
     <div class="xr-reveal" style="margin-bottom:36px;">
-      <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>White Papers</span>
-      <h2 style="margin-top:14px;">Technical documentation.</h2>
+      <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>The Technology</span>
+      <h2 style="margin-top:14px;">How our models work.</h2>
     </div>
     <div class="res-grid xr-reveal xr-d1">
       <div class="res-card">
-        <span class="res-tag">White Paper</span>
-        <h3>Multi-Modal Geoscience Data Fusion: Architecture and Validation</h3>
-        <p>Technical overview of X-Ray's transformer-based fusion architecture. Covers CRS reconciliation, temporal alignment, resolution normalization, and the feature tensor construction pipeline.</p>
-        <a class="req" href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>">Request document <span class="xr-arrow">→</span></a>
+        <span class="res-tag">Model</span>
+        <h3>Great Basin Lithium Model</h3>
+        <p>Predicts lithium deposits across the whole Great Basin region at 1x1 km cells, with 95% recall and 80% precision. It runs on our proprietary featuresets: lists of geological features that indicate lithium mineralization, designed in-house.</p>
+        <a class="req" href="<?php echo esc_url( home_url( '/our-models/' ) ); ?>">Our models <span class="xr-arrow">→</span></a>
       </div>
       <div class="res-card">
-        <span class="res-tag">White Paper</span>
-        <h3>Per-Mineral Model Calibration: Why One Model Doesn't Fit All Commodities</h3>
-        <p>Explains why X-Ray uses separate, independently calibrated models for each commodity rather than a general-purpose exploration model. Includes feature weight comparisons across lithium, gold, and copper.</p>
-        <a class="req" href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>">Request document <span class="xr-arrow">→</span></a>
+        <span class="res-tag">Method</span>
+        <h3>Ensemble Learning and Validation</h3>
+        <p>An ensemble of XGBoost and LightGBM models with feature selection algorithms, tested with spatial block, repeated stratified k-fold and leave-one-out cross-validation. Field validation against real boreholes comes next.</p>
+        <a class="req" href="<?php echo esc_url( home_url( '/how-it-works/' ) ); ?>">How it works <span class="xr-arrow">→</span></a>
       </div>
       <div class="res-card">
-        <span class="res-tag">White Paper</span>
-        <h3>Continuous Learning in Mineral Exploration: The Feedback Loop</h3>
-        <p>How X-Ray's model fine-tunes on drill results. Covers minimum data requirements for a fine-tune cycle, update cadence, and how accuracy improves across successive exploration campaigns.</p>
-        <a class="req" href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>">Request document <span class="xr-arrow">→</span></a>
+        <span class="res-tag">Roadmap</span>
+        <h3>Finer Resolution, More Minerals</h3>
+        <p>We're building finer layers at 100–500 m per cell, toward a hierarchy of models that can point to exact drill coordinates. Nickel is the next commodity model, because our customers already explore for it alongside lithium.</p>
+        <a class="req" href="<?php echo esc_url( home_url( '/faqs/' ) ); ?>">Read the FAQs <span class="xr-arrow">→</span></a>
       </div>
     </div>
   </div>
@@ -337,82 +335,76 @@ body { background: transparent !important; }
   <div class="xr-topo-layer xr-topo-lattice"></div>
   <div class="xr-container">
     <div class="xr-reveal" style="margin-bottom:36px;">
-      <span class="xr-eyebrow" style="color:var(--xr-sky);"><span class="xr-eyebrow-hex" style="background:var(--xr-sky);"></span>Data Source Reference</span>
-      <h2 style="margin-top:14px;">Public data X-Ray integrates.</h2>
+      <span class="xr-eyebrow" style="color:var(--xr-sky);"><span class="xr-eyebrow-hex" style="background:var(--xr-sky);"></span>Data Reference</span>
+      <h2 style="margin-top:14px;">What our models learn from.</h2>
     </div>
     <div class="xr-reveal xr-d1 ds-grid">
       <div class="ds-card">
         <div class="ds-head">
           <span class="ds-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></span>
-          <div><div class="ds-name">USGS NGDB</div><div class="ds-type">Geochemistry</div></div>
+          <div><div class="ds-name">Geochemistry</div><div class="ds-type">Training feature</div></div>
         </div>
         <div class="ds-meta">
-          <span class="pill"><strong>Coverage:</strong> Contiguous US</span>
-          <span class="pill"><strong>Resolution:</strong> Sample-level</span>
+          <span class="pill"><strong>Coverage:</strong> Great Basin</span>
+          <span class="pill"><strong>Also used for:</strong> Labels</span>
         </div>
       </div>
       <div class="ds-card sky">
         <div class="ds-head">
           <span class="ds-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12c2-4 6-4 9 0s7 4 9 0"/><path d="M3 16c2-4 6-4 9 0s7 4 9 0"/></svg></span>
-          <div><div class="ds-name">USGS Aeromagnetics</div><div class="ds-type">Geophysics</div></div>
+          <div><div class="ds-name">Geophysics</div><div class="ds-type">Training feature</div></div>
         </div>
         <div class="ds-meta">
-          <span class="pill"><strong>Coverage:</strong> Contiguous US</span>
-          <span class="pill"><strong>Resolution:</strong> 200-2,000 m</span>
+          <span class="pill"><strong>Coverage:</strong> Great Basin</span>
         </div>
       </div>
       <div class="ds-card sky">
         <div class="ds-head">
           <span class="ds-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4l8 4 8-4M4 12l8 4 8-4M4 20l8-4 8 4"/></svg></span>
-          <div><div class="ds-name">WGM2012 Gravity</div><div class="ds-type">Geophysics</div></div>
+          <div><div class="ds-name">Structural</div><div class="ds-type">Training feature</div></div>
         </div>
         <div class="ds-meta">
-          <span class="pill"><strong>Coverage:</strong> Global</span>
-          <span class="pill"><strong>Resolution:</strong> ~2 arc-min</span>
+          <span class="pill"><strong>Coverage:</strong> Great Basin</span>
         </div>
       </div>
       <div class="ds-card">
         <div class="ds-head">
           <span class="ds-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg></span>
-          <div><div class="ds-name">Sentinel-2 MSI</div><div class="ds-type">Remote Sensing</div></div>
+          <div><div class="ds-name">Lithology</div><div class="ds-type">Training feature</div></div>
         </div>
         <div class="ds-meta">
-          <span class="pill"><strong>Coverage:</strong> Global</span>
-          <span class="pill"><strong>Resolution:</strong> 10 m</span>
+          <span class="pill"><strong>Coverage:</strong> Great Basin</span>
         </div>
       </div>
       <div class="ds-card">
         <div class="ds-head">
           <span class="ds-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3v18M5 6c5 4 9 4 14 0M5 18c5-4 9-4 14 0"/></svg></span>
-          <div><div class="ds-name">ASTER SWIR</div><div class="ds-type">Remote Sensing</div></div>
+          <div><div class="ds-name">Geothermal</div><div class="ds-type">Training feature</div></div>
         </div>
         <div class="ds-meta">
-          <span class="pill"><strong>Coverage:</strong> Global</span>
-          <span class="pill"><strong>Resolution:</strong> 30 m</span>
+          <span class="pill"><strong>Coverage:</strong> Great Basin</span>
         </div>
       </div>
       <div class="ds-card green">
         <div class="ds-head">
           <span class="ds-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 18l5-7 4 5 3-4 6 6"/><path d="M3 20h18"/></svg></span>
-          <div><div class="ds-name">SRTM / GTOPO30</div><div class="ds-type">Terrain</div></div>
+          <div><div class="ds-name">Topography</div><div class="ds-type">Training feature</div></div>
         </div>
         <div class="ds-meta">
-          <span class="pill"><strong>Coverage:</strong> Global</span>
-          <span class="pill"><strong>Resolution:</strong> 30-1,000 m</span>
+          <span class="pill"><strong>Coverage:</strong> Great Basin</span>
         </div>
       </div>
       <div class="ds-card" style="grid-column: 1 / -1;">
         <div class="ds-head">
           <span class="ds-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></span>
           <div>
-            <div class="ds-name">USGS MRDS</div>
-            <div class="ds-type">Mineral deposit records (training labels)</div>
+            <div class="ds-name">Training labels</div>
+            <div class="ds-type">Existing mine sites, geochemistry and mining claim data</div>
           </div>
         </div>
         <div class="ds-meta">
-          <span class="pill"><strong>Coverage:</strong> Global</span>
-          <span class="pill"><strong>Resolution:</strong> Point records</span>
-          <span class="pill"><strong>Use:</strong> Ground-truth labels for model validation</span>
+          <span class="pill"><strong>Use:</strong> Ground-truth labels for training and validation</span>
+          <span class="pill"><strong>Coming next:</strong> Water well, oil and gas, and lithium drill logs</span>
         </div>
       </div>
     </div>
@@ -426,27 +418,27 @@ body { background: transparent !important; }
   <div class="xr-topo-hex-bl"></div>
   <div class="xr-container">
     <div class="xr-reveal" style="margin-bottom:36px;">
-      <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>Guides</span>
-      <h2 style="margin-top:14px;">For new clients.</h2>
+      <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>The Platform</span>
+      <h2 style="margin-top:14px;">For exploration teams.</h2>
     </div>
     <div class="res-grid xr-reveal xr-d1">
       <div class="res-card sky-border">
-        <span class="res-tag">Guide</span>
-        <h3>Getting Started with X-Ray</h3>
-        <p>Step-by-step onboarding guide: how to prepare your data for upload, what to expect from your first analysis run, and how to interpret your ranked probability map.</p>
-        <a class="req" href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>">Available at onboarding <span class="xr-arrow">→</span></a>
+        <span class="res-tag">Step 1</span>
+        <h3>Upload Your Data</h3>
+        <p>Your geologists upload the exploration data they've already collected. It is compartmentalized: used only for your predictions and never to train other customers' models.</p>
+        <a class="req" href="<?php echo esc_url( home_url( '/platform/' ) ); ?>">Platform details <span class="xr-arrow">→</span></a>
       </div>
       <div class="res-card sky-border">
-        <span class="res-tag">Guide</span>
-        <h3>Data Preparation Guide</h3>
-        <p>How to format and clean your proprietary drill data, assay tables, and geophysical surveys before uploading. Covers common CRS issues, unit mismatches, and column naming conventions.</p>
-        <a class="req" href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>">Available at onboarding <span class="xr-arrow">→</span></a>
+        <span class="res-tag">Step 2</span>
+        <h3>Get Ranked Drill Targets</h3>
+        <p>The platform returns a prospectivity heat map and a ranked list of drill targets, plus a 3D visualization of the area being targeted.</p>
+        <a class="req" href="<?php echo esc_url( home_url( '/how-it-works/' ) ); ?>">How it works <span class="xr-arrow">→</span></a>
       </div>
       <div class="res-card sky-border">
-        <span class="res-tag">Guide</span>
-        <h3>Interpreting Your Results</h3>
-        <p>How to read the ranked probability map, what the score thresholds mean, how to use signal attribution to interrogate individual targets, and how to export results into ArcGIS or QGIS.</p>
-        <a class="req" href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>">Available at onboarding <span class="xr-arrow">→</span></a>
+        <span class="res-tag">Step 3</span>
+        <h3>Keep Your Program Moving</h3>
+        <p>Keep uploading drilling data as your program progresses to make quick, informed decisions on where to drill next, with updates as we improve model accuracy.</p>
+        <a class="req" href="<?php echo esc_url( home_url( '/pricing/' ) ); ?>">See pricing tiers <span class="xr-arrow">→</span></a>
       </div>
     </div>
   </div>
@@ -458,8 +450,8 @@ body { background: transparent !important; }
   <div class="xr-topo-hex-tr"></div>
   <div class="xr-container" style="max-width:760px;text-align:center;">
     <span class="xr-reveal xr-eyebrow" style="justify-content:center;margin-bottom:18px;"><span class="xr-eyebrow-hex"></span>Need More?</span>
-    <h2 class="xr-reveal xr-d1" style="margin:0 0 18px;">Need specific technical documentation?</h2>
-    <p class="xr-reveal xr-d2" style="color:var(--xr-text-2);font-size:17px;line-height:1.75;margin:0 auto 40px;max-width:520px;">We provide detailed security, methodology, and validation documentation to help your team evaluate X-Ray. Contact us with your specific requirements.</p>
+    <h2 class="xr-reveal xr-d1" style="margin:0 0 18px;">Need specific technical detail?</h2>
+    <p class="xr-reveal xr-d2" style="color:var(--xr-text-2);font-size:17px;line-height:1.75;margin:0 auto 40px;max-width:520px;">Want the early Nevada model report, or more on our data and validation methods? Contact us with what your team needs to evaluate X-Ray.</p>
     <div class="xr-reveal xr-d3" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
       <a href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>" class="xr-btn xr-btn-gold">Request a Demo</a>
       <a href="mailto:info@xraygeoanalytics.com" class="xr-btn xr-btn-outline">Email the team <span class="xr-arrow">→</span></a>
@@ -473,8 +465,7 @@ body { background: transparent !important; }
     <div class="xr-footer-grid">
       <div>
         <div class="xr-footer-brand">
-          <img src="https://xraygeoanalytics.com/wp-content/uploads/2026/05/hex_logo_clean.png" alt="X-Ray Geoanalytics">
-          <span>X-Ray Geoanalytics</span>
+          <img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180">
         </div>
         <p class="xr-footer-tagline">Advanced machine learning for mining site discovery. Nevada lithium. Every mineral. Every continent. Every drill result makes us smarter.</p>
         <div class="xr-footer-contact">

@@ -10,8 +10,7 @@ add_action( 'generate_before_content', function () {
 <nav class="xr-nav">
   <div class="xr-nav-inner">
     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="xr-brand">
-      <img src="https://xraygeoanalytics.com/wp-content/uploads/2026/05/hex_logo_clean.png" alt="X-Ray Geoanalytics">
-      <span class="xr-brand-wordmark">X-Ray <span class="accent">Geoanalytics</span></span>
+      <img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180">
     </a>
     <div class="xr-nav-list">
       <div class="xr-nav-item">
@@ -68,8 +67,8 @@ add_action( 'generate_before_content', function () {
   <canvas id="pr-terrain"></canvas>
   <div class="pr-hero-bg"></div>
   <div class="pr-hero-inner">
-    <h1>The full X-Ray pipeline, available now. <span class="accent">Explorer tier.</span></h1>
-    <p>When the Nevada lithium model launches, <strong>Explorer</strong> will be the only tier we offer. Operator and Enterprise arrive later — once we have additional commercially viable models worth bundling into them.</p>
+    <h1>Three annual tiers. <span class="accent">Matched to your program.</span></h1>
+    <p>X-Ray is sold as an annual software subscription. Pick the tier that fits the scale of your exploration: <strong>a single commodity and project</strong>, or <strong>multiple commodities and projects</strong>. Contact us for exact pricing.</p>
   </div>
 </section>
 
@@ -77,60 +76,51 @@ add_action( 'generate_before_content', function () {
   <div class="plan-inner">
     <div class="plan-grid">
 
-      <div class="plan-card soon">
-        <span class="plan-soon-badge">Coming Later</span>
-        <div class="plan-name">Operator</div>
-        <div class="plan-price">$70K+<span class="unit">/yr</span></div>
-        <p class="plan-sub">Once we ship three commercially viable models. For mid-cap teams running multiple commodity programs.</p>
+      <div class="plan-card">
+        <span class="plan-soon-badge">Single Project</span>
+        <div class="plan-name">Tier 1</div>
+        <div class="plan-price" style="font-size:36px;">Contact us</div>
+        <p class="plan-sub">Billed annually. One commodity, one project. Built for junior explorers running a focused lithium program in the Great Basin.</p>
         <hr class="plan-divider">
         <div class="plan-feats">
-          <div class="plan-feat muted"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6F7B8B" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg><span>Everything in Explorer</span></div>
-          <div class="plan-feat muted"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6F7B8B" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg><span>Up to three mineral models</span></div>
-          <div class="plan-feat muted"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6F7B8B" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg><span>Unlimited analysis runs</span></div>
-          <div class="plan-feat muted"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6F7B8B" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg><span>Priority processing queue</span></div>
-          <div class="plan-feat muted"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6F7B8B" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg><span>Dedicated onboarding</span></div>
+          <div class="plan-feat"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8B963" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>One commodity model · Great Basin lithium</span></div>
+          <div class="plan-feat"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8B963" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>One exploration project</span></div>
+          <div class="plan-feat"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8B963" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Upload your own exploration data</span></div>
+          <div class="plan-feat"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8B963" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Prospectivity heat map &amp; ranked drill targets</span></div>
+          <div class="plan-feat"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8B963" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>3D visualization of your target area</span></div>
+          <div class="plan-feat"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8B963" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Compartmentalized data · never trains other customers' models</span></div>
         </div>
-        <a href="mailto:info@xraygeoanalytics.com?subject=Operator%20Waitlist" class="xr-btn xr-btn-outline plan-cta" style="justify-content:center;">Join the Waitlist</a>
+        <a href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>" class="xr-btn xr-btn-outline plan-cta" style="justify-content:center;">Contact Us</a>
       </div>
 
       <div class="plan-card featured">
-        <span class="plan-badge">Launching · Explorer Tier</span>
-        <div class="plan-name" style="margin-top:18px;">Explorer</div>
-        <div class="plan-price">$25K<span class="unit">/yr</span></div>
-        <p class="plan-sub">Billed annually. The only tier offered at launch. One mineral model — Nevada lithium — with everything you need to run a real program.</p>
+        <span class="plan-badge">Multi-Project · Multi-Commodity</span>
+        <div class="plan-name" style="margin-top:18px;">Tier 2</div>
+        <div class="plan-price" style="font-size:36px;">Contact us</div>
+        <p class="plan-sub">Billed annually. Expands to multiple commodities and multiple projects for teams running more than one program.</p>
         <hr class="plan-divider">
         <div class="plan-feats">
-          <div class="plan-feat"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8B963" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Nevada lithium model · launch tier</span></div>
-          <div class="plan-feat"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8B963" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Up to 12 analysis runs per year</span></div>
-          <div class="plan-feat"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8B963" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Full four-layer ML pipeline</span></div>
-          <div class="plan-feat"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8B963" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Ranked probability map &amp; GeoTIFF export</span></div>
-          <div class="plan-feat"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8B963" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Natural-language target report (PDF)</span></div>
-          <div class="plan-feat"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8B963" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Signal attribution per target</span></div>
-          <div class="plan-feat"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8B963" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Continuous learning from your drill results</span></div>
-          <div class="plan-feat"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8B963" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Email support · 48-hour response</span></div>
+          <div class="plan-feat"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8B963" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Everything in Tier 1</span></div>
+          <div class="plan-feat"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8B963" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Multiple exploration projects</span></div>
+          <div class="plan-feat"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8B963" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Multiple commodity models as they are released (nickel is next)</span></div>
+          <div class="plan-feat"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8B963" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Keep uploading drill data as your program moves</span></div>
+          <div class="plan-feat"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8B963" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Continuous updates as model accuracy improves</span></div>
         </div>
-        <a href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>" class="xr-btn xr-btn-gold plan-cta" style="justify-content:center;">Get Started with Explorer</a>
+        <a href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>" class="xr-btn xr-btn-gold plan-cta" style="justify-content:center;">Request a Demo</a>
       </div>
 
-      <div class="plan-card soon">
-        <span class="plan-soon-badge">Coming Later</span>
-        <div class="plan-name">Enterprise</div>
-        <div class="plan-price">$140K+<span class="unit">/yr</span></div>
-        <p class="plan-sub">Base price + à-la-carte models &amp; project sites. For majors running global, multi-commodity portfolios.</p>
+      <div class="plan-card">
+        <span class="plan-soon-badge">Broadest Scope</span>
+        <div class="plan-name">Tier 3</div>
+        <div class="plan-price" style="font-size:36px;">Contact us</div>
+        <p class="plan-sub">Billed annually. Our widest coverage of commodities and projects, scoped with you to the scale and risk of your portfolio.</p>
         <hr class="plan-divider">
         <div class="plan-feats">
-          <div class="plan-feat muted"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6F7B8B" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg><span>Everything in Operator</span></div>
-          <div class="plan-feat muted"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6F7B8B" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg><span>API access + GIS integration</span></div>
-          <div class="plan-feat muted"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6F7B8B" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg><span>Dedicated technical account team</span></div>
-          <div class="plan-feat muted"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6F7B8B" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg><span>Custom SLAs &amp; security review</span></div>
+          <div class="plan-feat"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8B963" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Everything in Tier 2</span></div>
+          <div class="plan-feat"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8B963" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>More commodities and projects under one subscription</span></div>
+          <div class="plan-feat"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8B963" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Scope set to match your exploration investment</span></div>
         </div>
-        <div class="ent-addon">
-          <div class="ent-addon-title">À-la-carte add-ons</div>
-          <div class="ent-addon-row"><span>Additional model</span><span><strong>discounted</strong></span></div>
-          <div class="ent-addon-row"><span>Additional project site</span><span><strong>discounted</strong></span></div>
-          <div class="ent-addon-row" style="color:var(--xr-text-muted);font-size:12px;line-height:1.5;font-style:italic;">Each below the cost of the next-tier upgrade.</div>
-        </div>
-        <a href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>" class="xr-btn xr-btn-outline plan-cta" style="justify-content:center;margin-top:20px;">Contact Sales</a>
+        <a href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>" class="xr-btn xr-btn-outline plan-cta" style="justify-content:center;">Contact Us</a>
       </div>
 
     </div>
@@ -141,32 +131,28 @@ add_action( 'generate_before_content', function () {
   <div class="faq-inner">
     <h2>How the <span class="accent">tiers</span> actually work.</h2>
     <details class="q" open>
-      <summary>Why is only Explorer available at launch?</summary>
-      <div class="q-body">Because we're being honest. The Nevada lithium model is the only commercially-viable model we'll have when we launch. Operator and Enterprise tiers exist on the long-term roadmap, but they make sense only once we have multiple commodity models to bundle. Building those tiers prematurely would force us to charge for capability we haven't delivered yet.</div>
+      <summary>What's the difference between the tiers?</summary>
+      <div class="q-body">Scope. Tier 1 covers a single commodity and a single project. Tiers 2 and 3 expand to multiple commodities and multiple projects. The point is to let you match your investment to the scale and risk of your exploration.</div>
     </details>
     <details class="q">
-      <summary>When will Operator and Enterprise tiers be offered?</summary>
-      <div class="q-body">Once we have at least three commercially-viable mineral models. The lithium model is the first; copper, rare earths, and gold are on the roadmap. We don't have a hard date — we'll announce when the second and third models are independently verified. Pilot Explorer customers get priority access to upgrade as soon as the higher tiers open.</div>
+      <summary>Why don't you list prices?</summary>
+      <div class="q-body">Pricing depends on how many commodities and projects you need, and we're still refining it with input from exploration teams. <a href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>">Request a demo</a> or email <a href="mailto:info@xraygeoanalytics.com">info@xraygeoanalytics.com</a> and we'll walk you through it.</div>
     </details>
     <details class="q">
-      <summary>How does Enterprise pricing work?</summary>
-      <div class="q-body">Enterprise will have a <strong>base annual price</strong> covering one model and one project site. Additional models and additional project sites can then be added as <strong>discounted add-ons</strong>, each priced below the cost of upgrading from a lower tier. This rewards major mining companies who consolidate their entire portfolio onto X-Ray rather than paying piecemeal across many engagements.</div>
+      <summary>Which commodities are available?</summary>
+      <div class="q-body">Lithium in the Great Basin today. Our Great Basin lithium model reaches 95% recall and 80% precision at 1x1 km cells. Nickel is the next model we're building, because our customers already explore for it alongside lithium. More commodities follow as each model is ready.</div>
     </details>
     <details class="q">
-      <summary>What's the minimum commitment for Explorer?</summary>
-      <div class="q-body">One year, billed annually. There's no pay-as-you-go option — the continuous learning loop only delivers meaningful value across a full program cycle, and we don't want to charge by the run for something that should compound.</div>
+      <summary>Why an annual subscription?</summary>
+      <div class="q-body">Exploration projects run for years. An annual subscription gives you continuous access to the platform and to updates as we improve model accuracy and add features, and you can keep uploading drilling data as your program progresses.</div>
     </details>
     <details class="q">
-      <summary>What counts as an "analysis run"?</summary>
-      <div class="q-body">One run is a full pipeline execution on a single AOI for a specific mineral. It produces one ranked probability map, one PDF target report, and one GeoTIFF. Running the same AOI again with new data counts as a second run.</div>
+      <summary>What do I get from the platform?</summary>
+      <div class="q-body">Your geologists upload their exploration data and get back a prospectivity heat map, a ranked list of drill targets and a 3D visualization of the area being targeted.</div>
     </details>
     <details class="q">
-      <summary>What's the AOI size limit on Explorer?</summary>
-      <div class="q-body">10,000 km² per run as a soft cap. We've successfully run analyses on areas as small as a single permit block (~50 km²) and as large as a full basin province. Contact us for larger coverage during the pilot.</div>
-    </details>
-    <details class="q">
-      <summary>Do I need to bring my own data to start?</summary>
-      <div class="q-body">No. We pre-integrate public USGS geochemistry, aeromagnetics, gravity, Sentinel-2 satellite imagery and terrain data for any region we cover. You can run a full Explorer analysis on day one without uploading anything. Proprietary drill data improves results — but it's optional.</div>
+      <summary>Is my data used to train anyone else's model?</summary>
+      <div class="q-body">No. Each customer's data is compartmentalized. Everything you upload is used only for your own predictions and is never used to train other customers' models.</div>
     </details>
   </div>
 </section>
@@ -174,10 +160,10 @@ add_action( 'generate_before_content', function () {
 <section class="pr-cta">
   <div class="pr-cta-bg"></div>
   <div class="pr-cta-inner">
-    <h2>Less than the cost of <span class="accent">one drill hole</span>.</h2>
-    <p>Start with Explorer when the lithium model launches. Get on the pilot list now.</p>
+    <h2>Spend less finding <span class="accent">where to drill</span>.</h2>
+    <p>Target generation runs $30K–$90K per project a year, and drilling can cost up to $500K per site. X-Ray helps you drill fewer holes before you make a discovery.</p>
     <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-      <a href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>" class="xr-btn xr-btn-gold" style="font-size:16px;padding:16px 36px;">Join the Pilot</a>
+      <a href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>" class="xr-btn xr-btn-gold" style="font-size:16px;padding:16px 36px;">Request a Demo</a>
       <a href="<?php echo esc_url( home_url( '/why-xray/' ) ); ?>" class="xr-btn xr-btn-outline" style="font-size:16px;padding:16px 36px;">Why X-Ray <span class="xr-arrow">→</span></a>
     </div>
   </div>
@@ -188,7 +174,7 @@ add_action( 'generate_before_content', function () {
   <div class="xr-footer-inner">
     <div class="xr-footer-grid">
       <div>
-        <div class="xr-footer-brand"><img src="https://xraygeoanalytics.com/wp-content/uploads/2026/05/hex_logo_clean.png" alt="X-Ray Geoanalytics"><span>X-Ray Geoanalytics</span></div>
+        <div class="xr-footer-brand"><img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180"></div>
         <p class="xr-footer-tagline">Advanced machine learning for mining site discovery. Nevada lithium. Every mineral. Every continent. Every drill result makes us smarter.</p>
         <div class="xr-footer-contact"><a href="mailto:info@xraygeoanalytics.com"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M4 6l8 7 8-7"/></svg>info@xraygeoanalytics.com</a></div>
       </div>

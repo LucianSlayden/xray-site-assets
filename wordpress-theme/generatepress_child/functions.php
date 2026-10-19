@@ -51,4 +51,12 @@ if ( XRAY_THEME_LIVE ) {
 		$url  = get_stylesheet_directory_uri() . '/assets/xray.css?ver=' . filemtime( $path );
 		echo '<link rel="stylesheet" id="xray-css" href="' . esc_url( $url ) . '" media="all" />' . "\n";
 	}, 101 );
+
+	// Browser tab and home-screen icons from the hex logo.
+	add_action( 'wp_head', function () {
+		$img = get_stylesheet_directory_uri() . '/assets/img/';
+		echo '<link rel="icon" type="image/png" sizes="32x32" href="' . esc_url( $img . 'logo-hex-32.png' ) . '" />' . "\n";
+		echo '<link rel="icon" type="image/png" sizes="512x512" href="' . esc_url( $img . 'logo-hex-512.png' ) . '" />' . "\n";
+		echo '<link rel="apple-touch-icon" href="' . esc_url( $img . 'logo-hex-180.png' ) . '" />' . "\n";
+	}, 102 );
 }

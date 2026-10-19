@@ -8,7 +8,7 @@ add_action( 'generate_before_content', function () {
     echo <<<'HTML'
 <nav class="xr-nav">
   <div class="xr-nav-inner">
-    <a href="/" class="xr-brand"><img src="https://xraygeoanalytics.com/wp-content/uploads/2026/05/hex_logo_clean.png" alt="X-Ray Geoanalytics"><span class="xr-brand-wordmark">X-Ray <span class="accent">Geoanalytics</span></span></a>
+    <a href="/" class="xr-brand"><img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180"></a>
     <div class="xr-nav-list">
       <div class="xr-nav-item"><button class="xr-nav-btn" style="color:var(--xr-gold);">Product<svg aria-hidden="true" class="xr-nav-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
         <div class="xr-nav-drop"><a href="/product/">Product Overview</a><a href="/our-models/">Our Models</a><a href="/industries/" style="color:var(--xr-gold);">Industries</a><a href="/platform/">Platform</a><a href="/how-it-works/">How it Works</a><a href="/pricing/">Pricing</a></div>
@@ -48,8 +48,8 @@ add_action( 'generate_before_content', function () {
   <div class="xr-topo-hex-bl"></div>
   <div class="xr-container">
     <div class="xr-reveal"><span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>Industries</span></div>
-    <h1 class="xr-reveal xr-d1" style="max-width:980px;margin-top:18px;font-size:clamp(38px,4.8vw,70px);line-height:1.04;letter-spacing:-0.032em;">Built for every scale of <span style="color:var(--xr-gold);">mineral exploration</span>.</h1>
-    <p class="xr-reveal xr-d2 xr-lede" style="max-width:680px;margin-top:14px;">One fusion engine, three deployment tiers — sized to your portfolio, your budget, and your geoscience team. <strong style="color:var(--xr-text);">Only Explorer is offered at launch</strong>; Operator and Enterprise tiers arrive once we ship additional commercially-viable models.</p>
+    <h1 class="xr-reveal xr-d1" style="max-width:980px;margin-top:18px;font-size:clamp(38px,4.8vw,70px);line-height:1.04;letter-spacing:-0.032em;">Built for <span style="color:var(--xr-gold);">junior explorers</span> in the Great Basin.</h1>
+    <p class="xr-reveal xr-d2 xr-lede" style="max-width:680px;margin-top:14px;">We start with junior mining companies exploring the Great Basin and the American Southwest. Three annual tiers let you match your investment to the scale and risk of your projects. <strong style="color:var(--xr-text);">Larger mining companies come next</strong>, once our models have proven themselves in the field.</p>
   </div>
 </section>
 
@@ -61,19 +61,19 @@ add_action( 'generate_before_content', function () {
   <div class="xr-container">
     <div class="xr-reveal ind-grid">
       <div>
-        <div class="tier-pill"><span class="hx"></span><span>Explorer Tier</span></div>
+        <div class="tier-pill"><span class="hx"></span><span>Where We Start</span></div>
         <h2 style="margin:0 0 20px;">Junior exploration companies.</h2>
-        <p style="color:var(--xr-text-2);font-size:16.5px;line-height:1.8;margin:0 0 18px;">You're running a single grassroots campaign — constrained budget, small team, enormous geological uncertainty. Every drill hole costs real money. One misallocated hole can set a program back a year.</p>
-        <p style="color:var(--xr-text-2);font-size:16.5px;line-height:1.8;margin:0 0 32px;">X-Ray gives your team the same targeting precision as a major miner's in-house geoscience department — at a fraction of the cost, and without the months-long wait of a consultant study.</p>
+        <p style="color:var(--xr-text-2);font-size:16.5px;line-height:1.8;margin:0 0 18px;">You're early in exploration, without the time, people or money for large-scale data analytics. Every drill hole costs real money, and the risk regularly drives smaller firms into bankruptcy.</p>
+        <p style="color:var(--xr-text-2);font-size:16.5px;line-height:1.8;margin:0 0 32px;">X-Ray gives your geologists a prospectivity heat map and a ranked list of drill targets from the data you've already collected, so you test fewer targets before you make a discovery.</p>
         <div class="xr-eyebrow" style="margin-bottom:14px;">What changes when you use X-Ray</div>
         <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:32px;">
-          <div class="change-row"><span class="ico"></span><span>Replace $150K+ consultant studies with a subscription that costs less than one drill hole</span></div>
-          <div class="change-row"><span class="ico"></span><span>Get ranked drill targets in hours — not months — from your existing geochemistry and remote sensing data</span></div>
-          <div class="change-row"><span class="ico"></span><span>Every drill result feeds back in — so your second program is smarter than your first</span></div>
-          <div class="change-row"><span class="ico"></span><span>Outputs are in plain English — legible for your board, your investors, and your field team</span></div>
+          <div class="change-row"><span class="ico"></span><span>Narrow thousands of possible targets down to a ranked list of where to drill first</span></div>
+          <div class="change-row"><span class="ico"></span><span>Upload the exploration data you already have and get a prospectivity heat map back</span></div>
+          <div class="change-row"><span class="ico"></span><span>Keep uploading drill data to make quick, informed decisions on where to drill next</span></div>
+          <div class="change-row"><span class="ico"></span><span>Build a stronger geological case when you raise funding and report to investors</span></div>
         </div>
         <div style="display:flex;gap:12px;flex-wrap:wrap;">
-          <a href="/pricing/" class="xr-btn xr-btn-outline">View Explorer Pricing <span class="xr-arrow">→</span></a>
+          <a href="/pricing/" class="xr-btn xr-btn-outline">View Pricing <span class="xr-arrow">→</span></a>
           <a href="/request-demo/" class="xr-btn xr-btn-gold">Request Demo</a>
         </div>
       </div>
@@ -81,24 +81,24 @@ add_action( 'generate_before_content', function () {
         <div class="outcome-card">
           <div class="xr-eyebrow" style="margin-bottom:22px;">The real cost of the old way</div>
           <div class="outcome-item">
-            <div class="outcome-stat"><div class="v">3-6</div><div class="lbl">Months</div></div>
-            <p>Average time from data collection to a consultant-delivered targeting report</p>
+            <div class="outcome-stat"><div class="v">1 in 200</div><div class="lbl">Drill projects</div></div>
+            <p>Industry success rate for new mine discovery, with about 20 boreholes per project</p>
           </div>
           <div class="outcome-item">
-            <div class="outcome-stat"><div class="v">$200K</div><div class="lbl">Typical cost</div></div>
-            <p>What a full geoscience consultant study costs — before a single hole is drilled</p>
+            <div class="outcome-stat"><div class="v">$30–90K</div><div class="lbl">Per year</div></div>
+            <p>What companies spend per project, every year, on target generation alone</p>
           </div>
           <div class="outcome-item">
-            <div class="outcome-stat"><div class="v">Zero</div><div class="lbl">Compounding</div></div>
-            <p>Static report. Doesn't learn from your drill results. Next program starts from scratch.</p>
+            <div class="outcome-stat"><div class="v">$500K</div><div class="lbl">Per site</div></div>
+            <p>What getting equipment to a site and drilling it can cost</p>
           </div>
         </div>
         <div class="tier-cta-card sky">
           <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
             <span style="display:inline-block;width:10px;height:12px;background:var(--xr-sky);clip-path:polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);"></span>
-            <span class="xr-mono" style="color:var(--xr-sky);font-size:13px;font-weight:700;letter-spacing:0.05em;">X-Ray Explorer · $25K/year</span>
+            <span class="xr-mono" style="color:var(--xr-sky);font-size:13px;font-weight:700;letter-spacing:0.05em;">Tier 1 · Single commodity or project</span>
           </div>
-          <p style="color:var(--xr-text-2);font-size:13.5px;line-height:1.7;margin:0;">One mineral model. Unlimited data uploads. Ranked drill targets within hours. Every drill result refines your next output.</p>
+          <p style="color:var(--xr-text-2);font-size:13.5px;line-height:1.7;margin:0;">An annual plan for one commodity or one project. Prospectivity heat map, ranked drill targets, 3D visualization and analysis tools.</p>
         </div>
       </div>
     </div>
@@ -113,41 +113,41 @@ add_action( 'generate_before_content', function () {
     <div class="xr-reveal ind-grid">
       <div>
         <div class="outcome-card sky-border">
-          <div class="xr-eyebrow" style="margin-bottom:22px;color:var(--xr-sky);">Where mid-cap teams get stuck</div>
+          <div class="xr-eyebrow" style="margin-bottom:22px;color:var(--xr-sky);">Why exploration is so hard</div>
           <div class="outcome-item">
-            <div class="outcome-stat"><div class="v sky">8+</div><div class="lbl">Project sites</div></div>
-            <p>Managing multiple sites simultaneously with a geoscience team built for one or two</p>
+            <div class="outcome-stat"><div class="v sky">1000s</div><div class="lbl">Targets</div></div>
+            <p>An exploration team can test several thousand targets before a discovery that could become a profitable mine</p>
           </div>
           <div class="outcome-item">
-            <div class="outcome-stat"><div class="v sky">Siloed</div><div class="lbl">Drill history</div></div>
-            <p>Historical drill results from Site A don't improve targeting decisions at Site B</p>
+            <div class="outcome-stat"><div class="v sky">&lt;1%</div><div class="lbl">Become mines</div></div>
+            <p>Generally less than 1% of exploration projects ever become an operational mine</p>
           </div>
           <div class="outcome-item">
-            <div class="outcome-stat"><div class="v sky">Re-hire</div><div class="lbl">To expand</div></div>
-            <p>Adding a second commodity means hiring another specialist or paying another consultant</p>
+            <div class="outcome-stat"><div class="v sky">95%</div><div class="lbl">Recall</div></div>
+            <p>Our Great Basin lithium model finds 95 of every 100 known deposits on average, with 80% precision</p>
           </div>
         </div>
         <div class="tier-cta-card">
           <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
             <span style="display:inline-block;width:10px;height:12px;background:var(--xr-gold);clip-path:polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);"></span>
-            <span class="xr-mono" style="color:var(--xr-gold);font-size:13px;font-weight:700;letter-spacing:0.05em;">X-Ray Operator · Coming Soon</span>
+            <span class="xr-mono" style="color:var(--xr-gold);font-size:13px;font-weight:700;letter-spacing:0.05em;">Tiers 2 &amp; 3 · Multiple commodities or projects</span>
           </div>
-          <p style="color:var(--xr-text-2);font-size:13.5px;line-height:1.7;margin:0;">Three mineral models. Up to eight project sites. Continuous learning across your full portfolio. Contact us to join the waitlist.</p>
+          <p style="color:var(--xr-text-2);font-size:13.5px;line-height:1.7;margin:0;">Annual plans that cover multiple commodities and projects. More commodity models are on the way, starting with nickel. Contact us to talk through your program.</p>
         </div>
       </div>
       <div>
-        <div class="tier-pill sky"><span class="hx"></span><span>Operator Tier</span></div>
-        <h2 style="margin:0 0 20px;">Mid-cap mining companies.</h2>
-        <p style="color:var(--xr-text-2);font-size:16.5px;line-height:1.8;margin:0 0 18px;">Your geoscience team is capable — but they're the bottleneck. Every targeting decision funnels through the same two or three specialists who are already stretched across multiple active sites.</p>
-        <p style="color:var(--xr-text-2);font-size:16.5px;line-height:1.8;margin:0 0 32px;">X-Ray doesn't replace your geologists. It removes the repetitive data processing burden so they can focus on interpretation, not preprocessing. And it compounds across all your sites simultaneously.</p>
+        <div class="tier-pill sky"><span class="hx"></span><span>Tiers 2 &amp; 3</span></div>
+        <h2 style="margin:0 0 20px;">Teams running multiple projects.</h2>
+        <p style="color:var(--xr-text-2);font-size:16.5px;line-height:1.8;margin:0 0 18px;">As your program grows to more projects and more commodities, tiers 2 and 3 cover them under one annual plan, so your investment matches the scale of your exploration.</p>
+        <p style="color:var(--xr-text-2);font-size:16.5px;line-height:1.8;margin:0 0 32px;">X-Ray doesn't replace your geologists. It processes more data and weighs more factors than any one person can, so your team can spend its time on interpretation and decisions.</p>
         <div class="xr-eyebrow" style="margin-bottom:14px;color:var(--xr-sky);">What changes when you use X-Ray</div>
         <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:32px;">
-          <div class="change-row sky"><span class="ico"></span><span>Run targeting analysis on all eight sites simultaneously — not one at a time as geoscience bandwidth permits</span></div>
-          <div class="change-row sky"><span class="ico"></span><span>Drill history from every site feeds one continuous model — each program benefits from all past programs</span></div>
-          <div class="change-row sky"><span class="ico"></span><span>Add a second commodity without hiring — switch models inside the same platform</span></div>
-          <div class="change-row sky"><span class="ico"></span><span>Your geoscientists review outputs and make decisions — they don't produce the analysis</span></div>
+          <div class="change-row sky"><span class="ico"></span><span>Run targeting across several projects under one plan</span></div>
+          <div class="change-row sky"><span class="ico"></span><span>Each project's data stays compartmentalized and is used only for your predictions</span></div>
+          <div class="change-row sky"><span class="ico"></span><span>Add commodities as new models arrive: nickel next, then cobalt, gold and silver</span></div>
+          <div class="change-row sky"><span class="ico"></span><span>Your geologists review the ranked targets and make the call</span></div>
         </div>
-        <a href="/request-demo/" class="xr-btn xr-btn-gold">Join the Operator Waitlist</a>
+        <a href="/request-demo/" class="xr-btn xr-btn-gold">Talk to Us</a>
       </div>
     </div>
   </div>
@@ -161,38 +161,38 @@ add_action( 'generate_before_content', function () {
   <div class="xr-container">
     <div class="xr-reveal ind-grid">
       <div>
-        <div class="tier-pill"><span class="hx"></span><span>Enterprise Tier</span></div>
-        <h2 style="margin:0 0 20px;">Major mining companies.</h2>
-        <p style="color:var(--xr-text-2);font-size:16.5px;line-height:1.8;margin:0 0 18px;">Global portfolios. Dozens of active projects. Multiple critical minerals. You have large exploration budgets, but you have large boards scrutinizing them too. The cost of wrong targeting decisions scales with the size of your program.</p>
-        <p style="color:var(--xr-text-2);font-size:16.5px;line-height:1.8;margin:0 0 32px;">X-Ray at enterprise scale means private cloud deployment, custom SLAs, dedicated geoscientist support, and a model that compounds across your entire global portfolio — not just one region or one commodity.</p>
-        <div class="xr-eyebrow" style="margin-bottom:14px;">What enterprise deployment includes</div>
+        <div class="tier-pill"><span class="hx"></span><span>What Comes Next</span></div>
+        <h2 style="margin:0 0 20px;">Larger mining companies.</h2>
+        <p style="color:var(--xr-text-2);font-size:16.5px;line-height:1.8;margin:0 0 18px;">Once our models have earned credibility with junior explorers, and we have added more commodity models, we plan to work with larger mining companies across the Great Basin and the rest of the United States.</p>
+        <p style="color:var(--xr-text-2);font-size:16.5px;line-height:1.8;margin:0 0 32px;">The need is growing. Lithium demand is projected to grow 2.5x from 2024 to 2030, while new discoveries keep falling.</p>
+        <div class="xr-eyebrow" style="margin-bottom:14px;">What we are building</div>
         <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:32px;">
-          <div class="change-row"><span class="ico"></span><span>Custom mineral model plans — beyond what standard tiers offer</span></div>
-          <div class="change-row"><span class="ico"></span><span>Private cloud deployment with your security and compliance requirements</span></div>
-          <div class="change-row"><span class="ico"></span><span>Dedicated geoscientist support and custom SLAs</span></div>
-          <div class="change-row"><span class="ico"></span><span>Pay-per-site expansion as your portfolio grows — no re-negotiating your contract</span></div>
+          <div class="change-row"><span class="ico"></span><span>A nickel model next, followed by cobalt, gold and silver</span></div>
+          <div class="change-row"><span class="ico"></span><span>A hierarchy of finer models at 100–500 m, working toward exact drill coordinates</span></div>
+          <div class="change-row"><span class="ico"></span><span>Borehole logs from water wells, oil and gas wells and lithium drilling added to the data</span></div>
+          <div class="change-row"><span class="ico"></span><span>Research into neural networks that bring the models together</span></div>
         </div>
-        <a href="/request-demo/" class="xr-btn xr-btn-gold">Contact Sales</a>
+        <a href="/request-demo/" class="xr-btn xr-btn-gold">Get in Touch</a>
       </div>
       <div>
         <div class="outcome-card">
-          <div class="xr-eyebrow" style="margin-bottom:22px;">The compounding advantage at scale</div>
+          <div class="xr-eyebrow" style="margin-bottom:22px;">Why it matters now</div>
           <div class="outcome-item">
-            <div class="outcome-stat"><div class="v">40+</div><div class="lbl">Projects</div></div>
-            <p>Each active project feeds your central model — making every subsequent decision more accurate</p>
+            <div class="outcome-stat"><div class="v">2.5x</div><div class="lbl">Lithium demand</div></div>
+            <p>Projected growth in lithium demand from 2024 to 2030</p>
           </div>
           <div class="outcome-item">
-            <div class="outcome-stat"><div class="v">Global</div><div class="lbl">Geology</div></div>
-            <p>Your exploration data from every continent becomes a proprietary training dataset no competitor has</p>
+            <div class="outcome-stat"><div class="v">~80</div><div class="lbl">Discoveries</div></div>
+            <p>New mineral deposit discoveries in 2023, down from 202 in 2009</p>
           </div>
           <div class="outcome-item">
-            <div class="outcome-stat"><div class="v">Zero</div><div class="lbl">Talent dep.</div></div>
-            <p>No single geoscientist holds institutional knowledge — it lives in the model, not in anyone's head</p>
+            <div class="outcome-stat"><div class="v">Ni</div><div class="lbl">Next model</div></div>
+            <p>Nickel, a metal our customers already target alongside lithium, is our next commodity model</p>
           </div>
         </div>
         <div style="background:linear-gradient(135deg,rgba(232,185,99,0.08) 0%,rgba(232,185,99,0.03) 100%);border:1px solid rgba(232,185,99,0.28);border-radius:2px;padding:24px 28px;">
-          <p class="xr-quote" style="border-left:none;padding:0;font-size:16px;margin:0 0 14px;">"The platform that scales as your global portfolio does — without scaling your headcount alongside it."</p>
-          <a href="/request-demo/" class="xr-btn xr-btn-ghost" style="padding:0;">Talk to our enterprise team <span class="xr-arrow">→</span></a>
+          <p class="xr-quote" style="border-left:none;padding:0;font-size:16px;margin:0 0 14px;">Every X-Ray model is trained for one commodity in one region, so each new model is built for the ground you are exploring.</p>
+          <a href="/request-demo/" class="xr-btn xr-btn-ghost" style="padding:0;">Talk to our team <span class="xr-arrow">→</span></a>
         </div>
       </div>
     </div>
@@ -207,7 +207,7 @@ add_action( 'generate_before_content', function () {
   <div class="xr-container" style="max-width:760px;text-align:center;">
     <span class="xr-reveal xr-eyebrow" style="justify-content:center;margin-bottom:18px;"><span class="xr-eyebrow-hex"></span>Ready to start</span>
     <h2 class="xr-reveal xr-d1" style="margin:0 0 18px;">Stop planning where to drill. Start knowing.</h2>
-    <p class="xr-reveal xr-d2" style="color:var(--xr-text-2);font-size:17px;line-height:1.75;margin:0 auto 40px;max-width:520px;">Request a demo and see ranked drill targets from your own geological data — within a single session.</p>
+    <p class="xr-reveal xr-d2" style="color:var(--xr-text-2);font-size:17px;line-height:1.75;margin:0 auto 40px;max-width:520px;">Request a demo and see how the Great Basin lithium model ranks drill targets on your own ground.</p>
     <div class="xr-reveal xr-d3" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
       <a href="/request-demo/" class="xr-btn xr-btn-gold">Request Demo</a>
       <a href="/pricing/" class="xr-btn xr-btn-outline">View Pricing <span class="xr-arrow">→</span></a>
@@ -220,7 +220,7 @@ add_action( 'generate_before_content', function () {
   <div class="xr-footer-inner">
     <div class="xr-footer-grid">
       <div>
-        <div class="xr-footer-brand"><img src="https://xraygeoanalytics.com/wp-content/uploads/2026/05/hex_logo_clean.png" alt="X-Ray Geoanalytics"><span>X-Ray Geoanalytics</span></div>
+        <div class="xr-footer-brand"><img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180"></div>
         <p class="xr-footer-tagline">Advanced machine learning for mining site discovery. Nevada lithium. Every mineral. Every continent. Every drill result makes us smarter.</p>
         <div class="xr-footer-contact"><a href="mailto:info@xraygeoanalytics.com"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M4 6l8 7 8-7"/></svg>info@xraygeoanalytics.com</a></div>
       </div>

@@ -177,8 +177,7 @@ details.fq-q .fq-body strong { color: #F1F4F8; font-weight: 600; }
 <nav class="xr-nav">
   <div class="xr-nav-inner">
     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="xr-brand">
-      <img src="https://xraygeoanalytics.com/wp-content/uploads/2026/05/hex_logo_clean.png" alt="X-Ray Geoanalytics">
-      <span class="xr-brand-wordmark">X-Ray <span class="accent">Geoanalytics</span></span>
+      <img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180">
     </a>
     <div class="xr-nav-list">
       <div class="xr-nav-item">
@@ -269,41 +268,36 @@ details.fq-q .fq-body strong { color: #F1F4F8; font-weight: 600; }
           <details class="fq-q" open>
             <summary>What exactly does X-Ray produce? What does the output look like?<span class="fq-icon"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0E141B" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span></summary>
             <div class="fq-body">
-              <p>X-Ray delivers three outputs per analysis run:</p>
+              <p>X-Ray is a software platform for geologists at exploration companies. Your team uploads its exploration data and gets back:</p>
               <ul>
-                <li><strong>Ranked probability map</strong> — an interactive web viewer showing your full AOI with each spatial cell scored 0-100. Zoom, filter by score threshold, click any cell to see contributing signal data.</li>
-                <li><strong>Drill target report (PDF)</strong> — natural language summaries of the top-ranked target locations, including coordinates, estimated extent, and the primary data signals that drove the ranking.</li>
-                <li><strong>Exportable GeoTIFF</strong> — the probability raster in a format you can import directly into ArcGIS, QGIS, or any standard GIS platform.</li>
+                <li><strong>A prospectivity heat map</strong> of the area you're exploring.</li>
+                <li><strong>A ranked list of drill targets</strong> to help you narrow down where to drill.</li>
+                <li><strong>A 3D visualization</strong> of the target area, along with analysis tools for the target generation process.</li>
               </ul>
-              <p>Every target includes full signal attribution — the relative contribution of each data layer to the score — so your geoscientists can interrogate rather than just accept the recommendation.</p>
+              <p>You can keep uploading drilling data as your program moves, so your decisions on where to drill next stay informed.</p>
             </div>
           </details>
 
           <details class="fq-q">
-            <summary>How is the 90% accuracy figure validated?<span class="fq-icon"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0E141B" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+            <summary>How accurate is the model?<span class="fq-icon"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0E141B" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span></summary>
             <div class="fq-body">
-              <p><strong>Important context first:</strong> 90% is the <em>target</em> accuracy of our Nevada lithium model, which is currently <strong>in active development</strong> — not a shipped, validated production figure. The benchmark is out-of-sample: 90% of confirmed USGS mineral deposit records that are withheld from the training set must fall within the top scoring quintile of our ranked probability map. We do not report training accuracy because it doesn't reflect real-world performance. Final independent validation will accompany the lithium model's commercial launch.</p>
+              <p>Our Great Basin lithium model reaches <strong>95% recall</strong> and <strong>80% precision</strong> at 1x1 km cells. Recall means that out of every 100 known lithium deposits, the model finds 95 on average. Precision means roughly 80% of its predictions are lithium deposits.</p>
+              <p>An earlier, coarser Nevada model (5x5 km cells) recovered <strong>69% of deposits in the top 10%</strong> of its ranked ground. Validating the model against real boreholes in the field is a next step on our roadmap.</p>
             </div>
           </details>
 
           <details class="fq-q">
-            <summary>What minerals do you currently cover?<span class="fq-icon"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0E141B" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+            <summary>What minerals and regions do you cover?<span class="fq-icon"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0E141B" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span></summary>
             <div class="fq-body">
-              <p>Our engineering effort right now is focused on a single model — <strong>Nevada lithium</strong>, currently in active development and the first commercial model we'll ship. Additional commodity models (gold, copper, nickel, rare earths) live on the long-term roadmap and become available, model-by-model, once they reach commercial viability. Operator and Enterprise tiers — which bundle multiple models — launch at the same time.</p>
+              <p>Today, <strong>lithium in the Great Basin</strong>. X-Ray is the only platform specifically trained to find lithium there. Each model focuses on one commodity in one region.</p>
+              <p><strong>Nickel</strong> is the next model we're building, because our customers already explore for it alongside lithium. Over the longer term we plan models for other minerals explored alongside lithium, such as cobalt, gold and silver.</p>
             </div>
           </details>
 
           <details class="fq-q">
-            <summary>How long does an analysis take from data upload to results?<span class="fq-icon"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0E141B" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+            <summary>Who is X-Ray built for?<span class="fq-icon"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0E141B" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span></summary>
             <div class="fq-body">
-              <p>For a standard 5,000 km² area of interest using baseline public datasets, under one hour. This includes data validation, multi-modal fusion, ML inference, and report generation. Analyses over larger AOIs or incorporating large proprietary datasets may take longer — we give you a runtime estimate before you submit a run. Compare this to 4-12 weeks for an equivalent consulting engagement.</p>
-            </div>
-          </details>
-
-          <details class="fq-q">
-            <summary>Do I need to have my own data, or can I use just the public datasets?<span class="fq-icon"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0E141B" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-            <div class="fq-body">
-              <p>You can run a full analysis with only the baseline public data — no proprietary data required. X-Ray pre-integrates USGS geochemistry, aeromagnetics, gravity, Sentinel-2 satellite imagery, and terrain data for any region we cover. If you have proprietary drill logs, geophysical surveys, or assay data, you can layer those on top and they will improve your model's precision for your specific tenure.</p>
+              <p>Junior exploration companies in the Great Basin and the American Southwest. These teams are early in the exploration stage and often don't have the time, staff or budget for large-scale data analytics. Larger mining companies come later, as we add models and grow our track record.</p>
             </div>
           </details>
         </div>
@@ -317,21 +311,14 @@ details.fq-q .fq-body strong { color: #F1F4F8; font-weight: 600; }
           <details class="fq-q">
             <summary>Is my exploration data kept confidential? Will it be used to train models for other clients?<span class="fq-icon"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0E141B" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span></summary>
             <div class="fq-body">
-              <p>Absolutely not. Your data is isolated in a dedicated compute and storage namespace. No data you upload, no drill results you return to us, and no model outputs from your workspace are ever shared with or used to train models for any other client. This is enforced at both the contractual level (your agreement with us) and the technical level (isolated compute namespaces, separate encrypted storage volumes).</p>
+              <p>Your data stays yours. Each customer's model is compartmentalized. Everything you upload is used only for your own predictions and is never used to train other customers' models. We know exploration companies spend millions collecting their data, and we built the platform around that.</p>
             </div>
           </details>
 
           <details class="fq-q">
-            <summary>Are you SOC 2 certified?<span class="fq-icon"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0E141B" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+            <summary>What data are your models trained on?<span class="fq-icon"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0E141B" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span></summary>
             <div class="fq-body">
-              <p>SOC 2 Type II certification is in progress. We are currently undergoing our first audit and expect certification in Q3 2026. In the meantime, we provide detailed security documentation, can answer your vendor security questionnaire directly, and can schedule a technical security review with your team. Our security architecture uses AES-256 encryption at rest, TLS 1.3 in transit, and immutable audit logging for all data access events.</p>
-            </div>
-          </details>
-
-          <details class="fq-q">
-            <summary>What data formats do you accept for uploads?<span class="fq-icon"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0E141B" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-            <div class="fq-body">
-              <p>CSV and XLSX for assay tables and geochemical data; GeoTIFF, Shapefile (.shp), GeoJSON, and KML for spatial data; LAS for point cloud data; and PDF for historical exploration reports (with OCR-based extraction). If you have data in a format not listed here, contact us — we build custom ingestion adapters for enterprise clients.</p>
+              <p>Geochemistry, structural, lithology, geophysics, geothermal and topography data. Training labels come from existing mine site locations, geochemistry and mining claim data. We collected decades of cluttered geological data and cleaned and sorted it with our own pipeline so the model can learn from it.</p>
             </div>
           </details>
         </div>
@@ -343,23 +330,16 @@ details.fq-q .fq-body strong { color: #F1F4F8; font-weight: 600; }
           </div>
 
           <details class="fq-q">
-            <summary>What's the minimum commitment? Can I run a single project?<span class="fq-icon"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0E141B" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+            <summary>How is pricing structured? Can I start with a single project?<span class="fq-icon"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0E141B" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span></summary>
             <div class="fq-body">
-              <p>At launch, the <strong>Explorer tier ($25K / year) is the only tier we offer</strong>. It's designed for junior companies running one active lithium program. Operator and Enterprise tiers arrive later — once we ship additional commercially-viable models worth bundling into them. There is no per-run or pay-as-you-go option; the continuous learning loop only delivers meaningful value on an annual basis.</p>
+              <p>Yes. X-Ray is an annual subscription with three tiers. <strong>Tier 1</strong> covers a single commodity and a single project. <strong>Tiers 2 and 3</strong> expand to multiple commodities and projects. The tiers let you match your investment to the scale and risk of your exploration. For exact pricing, <a href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>">request a demo</a> or email <a href="mailto:info@xraygeoanalytics.com">info@xraygeoanalytics.com</a>.</p>
             </div>
           </details>
 
           <details class="fq-q">
-            <summary>How will pricing work for majors when Enterprise launches?<span class="fq-icon"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0E141B" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+            <summary>Why a subscription instead of a one-off report?<span class="fq-icon"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0E141B" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span></summary>
             <div class="fq-body">
-              <p>Enterprise will have a <strong>base annual price</strong> covering one model and one project site. Additional models and project sites can then be added as discounted add-ons — each priced below the cost of upgrading from a lower tier. This rewards major mining companies who consolidate their entire portfolio onto X-Ray rather than paying piecemeal across many engagements. Pricing announces alongside the second commercially-viable model.</p>
-            </div>
-          </details>
-
-          <details class="fq-q">
-            <summary>What happens to my model if I don't renew?<span class="fq-icon"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0E141B" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-            <div class="fq-body">
-              <p>At contract end, you retain all reports and outputs delivered during your contract. Your uploaded data and model checkpoints are deleted from our systems per your data agreement (typically 30 days after contract end, unless requested sooner). You do not take a copy of the model itself — the trained weights are our IP — but all your data and all outputs generated during your term are yours.</p>
+              <p>Exploration projects can last years. A subscription gives you continuous access to the platform and to updates as we improve model accuracy and add new features.</p>
             </div>
           </details>
         </div>
@@ -371,23 +351,29 @@ details.fq-q .fq-body strong { color: #F1F4F8; font-weight: 600; }
           </div>
 
           <details class="fq-q">
-            <summary>Do I need any special software or GIS expertise to use X-Ray?<span class="fq-icon"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0E141B" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+            <summary>How is the model built?<span class="fq-icon"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0E141B" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span></summary>
             <div class="fq-body">
-              <p>No. X-Ray is a self-serve web platform. You need a browser and your data files. No GIS software, no command line, no Python environment. The output GeoTIFF can be imported into ArcGIS or QGIS if you want to do further spatial analysis, but that's optional — the interactive web viewer is the primary way to explore results.</p>
+              <p>It's an ensemble of XGBoost and LightGBM models with feature selection algorithms, built on our proprietary featuresets: lists of geological features that indicate lithium mineralization. Machine learning also runs through the rest of the process, from data ingestion and cleaning to the results delivered to you.</p>
             </div>
           </details>
 
           <details class="fq-q">
-            <summary>Can X-Ray integrate with our existing exploration data management system?<span class="fq-icon"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0E141B" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+            <summary>How do you validate the model?<span class="fq-icon"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0E141B" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span></summary>
             <div class="fq-body">
-              <p>Enterprise clients can connect X-Ray to existing data systems (e.g., GEOSOFT environments, Datamine, or internal data lakes) via our API. We'll scope the integration during the enterprise onboarding process. Explorer and Operator tier clients use file-based upload through the platform UI.</p>
+              <p>We use three methods:</p>
+              <ul>
+                <li><strong>Spatial block cross-validation</strong>, which accounts for spatial autocorrelation between nearby cells.</li>
+                <li><strong>Repeated stratified k-fold cross-validation.</strong></li>
+                <li><strong>Leave-one-out cross-validation.</strong></li>
+              </ul>
+              <p>Next, we'll validate the model in the field by comparing its predictions with real boreholes drilled by mining companies.</p>
             </div>
           </details>
 
           <details class="fq-q">
-            <summary>How does the model improve from drill results? Is there a lag?<span class="fq-icon"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0E141B" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+            <summary>Will the model get more precise?<span class="fq-icon"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0E141B" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span></summary>
             <div class="fq-body">
-              <p>When you upload drill results, they're processed in your workspace within 24-48 hours and used to fine-tune your mineral model. The next analysis run you submit will use the updated model. There is a minimum threshold of drill results (typically 3+ confirmed outcomes) before we run a fine-tune cycle — below this threshold, the data is accumulated and the update runs when the threshold is reached.</p>
+              <p>Yes, that's the plan. We're building finer layers at 100–500 m per cell, adding borehole data from water well, oil and gas, and lithium drill logs. The end goal is a hierarchy of models, each finer than the last, that can tell you where to drill down to exact coordinates.</p>
             </div>
           </details>
         </div>
@@ -398,7 +384,7 @@ details.fq-q .fq-body strong { color: #F1F4F8; font-weight: 600; }
       <aside class="fq-aside">
         <div class="fq-side-card">
           <h3>Still have questions?</h3>
-          <p>Can't find the answer here? Our team responds to every inquiry within 24 hours.</p>
+          <p>Can't find the answer here? Email us and we'll get back to you.</p>
           <a href="mailto:info@xraygeoanalytics.com" class="xr-btn xr-btn-gold" style="display:block;text-align:center;justify-content:center;margin-bottom:10px;">Email us</a>
           <a href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>" class="xr-btn xr-btn-outline" style="display:block;text-align:center;justify-content:center;">Request a demo</a>
         </div>
@@ -431,8 +417,7 @@ details.fq-q .fq-body strong { color: #F1F4F8; font-weight: 600; }
     <div class="xr-footer-grid">
       <div>
         <div class="xr-footer-brand">
-          <img src="https://xraygeoanalytics.com/wp-content/uploads/2026/05/hex_logo_clean.png" alt="X-Ray Geoanalytics">
-          <span>X-Ray Geoanalytics</span>
+          <img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180">
         </div>
         <p class="xr-footer-tagline">Advanced machine learning for mining site discovery. Nevada lithium. Every mineral. Every continent. Every drill result makes us smarter.</p>
         <div class="xr-footer-contact">
