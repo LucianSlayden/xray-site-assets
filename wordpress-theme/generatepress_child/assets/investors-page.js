@@ -1,6 +1,6 @@
 /* X-Ray Geoanalytics — Investors Page
    Canvas 1: Radar sweep with mineral blips (#iv-canvas, hero)
-   Canvas 2: Page-wide grid dots (#iv-page-canvas, fixed)
+   Canvas 2: Page-wide drifting contour lines (#iv-page-canvas, fixed)
    GSAP:     hero reveal + extensive ScrollTrigger batches
    Enqueue with dependency: ['gsap-st']
 */
@@ -65,7 +65,7 @@
       for (var i = 1; i <= 4; i++) {
         ctx.beginPath();
         ctx.arc(CX, CY, R * i / 4, 0, PI2);
-        ctx.strokeStyle = 'rgba(232,185,99,' + (0.03 + i * 0.013) + ')';
+        ctx.strokeStyle = 'rgba(232,185,99,' + (0.06 + i * 0.02) + ')';
         ctx.lineWidth = 0.8;
         ctx.stroke();
       }
@@ -84,7 +84,7 @@
         ctx.moveTo(CX, CY);
         ctx.arc(CX, CY, R, a0, a1);
         ctx.closePath();
-        ctx.fillStyle = 'rgba(232,185,99,' + (frac * 0.048) + ')';
+        ctx.fillStyle = 'rgba(232,185,99,' + (frac * 0.11) + ')';
         ctx.fill();
       }
 
@@ -120,17 +120,6 @@
         if (age < FADE) {
           var t = age / FADE;
           var alpha = Math.max(0, 1 - t);
-
-          var pingR = 4 + t * 28;
-          var pCol = b.col === GOLD ? ('rgba(232,185,99,' + (alpha * 0.55) + ')')
-                   : b.col === SKY  ? ('rgba(111,181,224,' + (alpha * 0.55) + ')')
-                   :                   ('rgba(111,123,139,' + (alpha * 0.35) + ')');
-          ctx.beginPath(); ctx.arc(bx, by, pingR, 0, PI2);
-          ctx.strokeStyle = pCol; ctx.lineWidth = 1; ctx.stroke();
-
-          var pingR2 = 4 + t * 14;
-          ctx.beginPath(); ctx.arc(bx, by, pingR2, 0, PI2);
-          ctx.strokeStyle = pCol; ctx.lineWidth = 0.6; ctx.stroke();
 
           var dotCol = b.col === GOLD ? ('rgba(232,185,99,' + alpha + ')')
                      : b.col === SKY  ? ('rgba(111,181,224,' + alpha + ')')
@@ -283,87 +272,106 @@
     }
   }
 
-  /* ── 3. PAGE GRID DOTS ──────────────────────────────────────────────── */
-  (function ivPageDots() {
+  /* ── 3. PAGE CONTOURS ───────────────────────────────────────────────── */
+  /* Drifting topographic contour lines across the whole page. A light pool
+     wanders over the map and brightens the contours under it; the field
+     shifts with scroll so the terrain moves past as you read. */
+  (function ivPageContours() {
     var pc = document.getElementById('iv-page-canvas');
     if (!pc) return;
     var cx = pc.getContext('2d');
-    var GRID = 54, W, H;
+    var dpr = Math.min(2, window.devicePixelRatio || 1);
+    var CELL = 22, W, H, cols, rows, field;
+    var LEVELS = [];
+    for (var lvl = -1.2; lvl <= 1.21; lvl += 0.2) LEVELS.push(lvl);
 
     function resize() {
-      W = pc.width  = pc.offsetWidth;
-      H = pc.height = pc.offsetHeight;
+      W = pc.offsetWidth; H = pc.offsetHeight;
+      pc.width = W * dpr; pc.height = H * dpr;
+      cx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      cols = Math.ceil(W / CELL) + 2;
+      rows = Math.ceil(H / CELL) + 2;
+      field = new Float32Array(cols * rows);
     }
     resize();
     window.addEventListener('resize', resize);
 
-    var SYMS = ['Li','Cu','Au','Ni','REE','Co','Pt','Ag','U','Zn','Mo','V','Mn','Sn','W','Pd'];
-    var COLS = 30, ROWS = 190, COUNT = 160;
-    var nodes = [], used = {}, tries = 0;
-    while (nodes.length < COUNT && tries < 3000) {
-      tries++;
-      var c = Math.floor(Math.random() * COLS);
-      var r = Math.floor(Math.random() * ROWS);
-      var k = c + ',' + r;
-      if (used[k]) continue;
-      used[k] = true;
-      var rv = Math.random();
-      nodes.push({
-        gx: c * GRID, gy: r * GRID,
-        sym: SYMS[Math.floor(Math.random() * SYMS.length)],
-        color: rv < 0.52 ? 'g' : rv < 0.82 ? 's' : 'm',
-        pinging: false, pingStart: 0,
-        nextPing: Math.random() * 5000,
-        interval: 7000 + Math.random() * 11000,
-      });
+    // Smooth terrain from a few layered sine waves.
+    function height(x, y, t) {
+      return 0.55 * Math.sin(x * 0.0052 + t * 0.21) * Math.cos(y * 0.0047 - t * 0.17)
+           + 0.35 * Math.sin((x + y) * 0.0074 - t * 0.29)
+           + 0.25 * Math.cos(x * 0.0113 - y * 0.0063 + t * 0.37)
+           + 0.15 * Math.sin(y * 0.014 + Math.sin(x * 0.005 + t * 0.2) * 2.0);
     }
 
-    var PING_DUR = 1900;
-    function rgba(n, a) {
-      if (n.color === 'g') return 'rgba(232,185,99,'  + a.toFixed(3) + ')';
-      if (n.color === 's') return 'rgba(111,181,224,' + a.toFixed(3) + ')';
-      return                      'rgba(168,178,192,' + a.toFixed(3) + ')';
-    }
+    function lerp(a, b, lv) { return (lv - a) / (b - a); }
 
-    function drawDots(ts) {
-      cx.clearRect(0, 0, W, H);
-      var sy0 = window.scrollY || 0;
+    var last = 0;
+    function draw(ts) {
+      if (ts - last < 33 && !reducedMotion) { requestAnimationFrame(draw); return; } // ~30 fps
+      last = ts;
+      var t = ts / 1000;
+      var sy = (window.scrollY || 0) * 0.35;
 
-      for (var i = 0; i < nodes.length; i++) {
-        var n = nodes[i];
-        var sx = n.gx, sy = n.gy - sy0;
-        if (sx < -60 || sx > W + 60 || sy < -60 || sy > H + 60) continue;
-
-        if (!n.pinging && ts >= n.nextPing) {
-          n.pinging = true; n.pingStart = ts;
-          n.nextPing = ts + n.interval;
+      for (var r = 0; r < rows; r++) {
+        for (var c = 0; c < cols; c++) {
+          field[r * cols + c] = height(c * CELL, r * CELL + sy, t);
         }
+      }
 
-        if (n.pinging) {
-          var age = ts - n.pingStart;
-          if (age >= PING_DUR) { n.pinging = false; }
-          else {
-            var p = age / PING_DUR, a = 1 - p;
-            cx.beginPath(); cx.arc(sx, sy, 3 + p * 22, 0, Math.PI * 2);
-            cx.strokeStyle = rgba(n, a * 0.42); cx.lineWidth = 0.9; cx.stroke();
-            cx.beginPath(); cx.arc(sx, sy, 3 + p * 11, 0, Math.PI * 2);
-            cx.strokeStyle = rgba(n, a * 0.28); cx.lineWidth = 0.6; cx.stroke();
-            cx.beginPath(); cx.arc(sx, sy, 2.2, 0, Math.PI * 2);
-            cx.fillStyle = rgba(n, Math.min(1, a * 1.3 + 0.15)); cx.fill();
-            if (p < 0.58) {
-              cx.font = '600 10px "JetBrains Mono",monospace';
-              cx.fillStyle = rgba(n, a * 0.88);
-              cx.fillText(n.sym, sx + 8, sy - 7);
+      cx.clearRect(0, 0, W, H);
+
+      // Wandering light pool that brightens the lines it passes over.
+      var lx = W * (0.5 + 0.38 * Math.sin(t * 0.13));
+      var ly = H * (0.5 + 0.32 * Math.sin(t * 0.09 + 1.3));
+      var glow = cx.createRadialGradient(lx, ly, 0, lx, ly, Math.max(W, H) * 0.55);
+      glow.addColorStop(0, 'rgba(232,185,99,1)');
+      glow.addColorStop(0.45, 'rgba(232,185,99,0.6)');
+      glow.addColorStop(1, 'rgba(232,185,99,0.3)');
+
+      for (var li = 0; li < LEVELS.length; li++) {
+        var lv = LEVELS[li];
+        cx.beginPath();
+        for (var r2 = 0; r2 < rows - 1; r2++) {
+          for (var c2 = 0; c2 < cols - 1; c2++) {
+            var i0 = r2 * cols + c2;
+            var a = field[i0], b = field[i0 + 1], d = field[i0 + cols], e = field[i0 + cols + 1];
+            var code = (a > lv ? 8 : 0) | (b > lv ? 4 : 0) | (e > lv ? 2 : 0) | (d > lv ? 1 : 0);
+            if (code === 0 || code === 15) continue;
+            var x0 = c2 * CELL, y0 = r2 * CELL;
+            var top = [x0 + CELL * lerp(a, b, lv), y0];
+            var rgt = [x0 + CELL, y0 + CELL * lerp(b, e, lv)];
+            var bot = [x0 + CELL * lerp(d, e, lv), y0 + CELL];
+            var lft = [x0, y0 + CELL * lerp(a, d, lv)];
+            var segs;
+            switch (code) {
+              case 1: case 14: segs = [lft, bot]; break;
+              case 2: case 13: segs = [bot, rgt]; break;
+              case 3: case 12: segs = [lft, rgt]; break;
+              case 4: case 11: segs = [top, rgt]; break;
+              case 6: case 9:  segs = [top, bot]; break;
+              case 7: case 8:  segs = [lft, top]; break;
+              case 5:  segs = [lft, top, bot, rgt]; break;
+              case 10: segs = [lft, bot, top, rgt]; break;
             }
-            continue;
+            for (var s = 0; s < segs.length; s += 2) {
+              cx.moveTo(segs[s][0], segs[s][1]);
+              cx.lineTo(segs[s + 1][0], segs[s + 1][1]);
+            }
           }
         }
-        cx.beginPath(); cx.arc(sx, sy, 1.5, 0, Math.PI * 2);
-        cx.fillStyle = rgba(n, 0.22); cx.fill();
+        // Index contours (every fourth level) are brighter and sky blue.
+        var index = li % 4 === 2;
+        cx.globalAlpha = index ? 0.42 : 0.34;
+        cx.strokeStyle = index ? 'rgba(111,181,224,0.9)' : glow;
+        cx.lineWidth = index ? 1.2 : 0.9;
+        cx.stroke();
       }
-      if (!reducedMotion) requestAnimationFrame(drawDots);
+      cx.globalAlpha = 1;
+
+      if (!reducedMotion) requestAnimationFrame(draw);
     }
-    requestAnimationFrame(drawDots);
+    requestAnimationFrame(draw);
   })();
 
   /* ── 4. ACCURACY GAUGE ──────────────────────────────────────────────── */
