@@ -56,11 +56,6 @@ body { background: #060c12 !important; }
     <canvas id="iv-canvas" aria-hidden="true"></canvas>
 
     <div class="iv-hero-inner">
-      <div id="iv-eyebrow" class="iv-eyebrow">
-        <span class="iv-eyebrow-dot"></span>
-        For Investors &nbsp;·&nbsp; Company Brief
-      </div>
-
       <h1 class="iv-headline" id="iv-headline" aria-label="The data layer for the next era of resource discovery.">
         <span class="iv-hw"><span class="iv-hw-inner">The</span></span>
         <span class="iv-hw"><span class="iv-hw-inner">data</span></span>
@@ -79,7 +74,7 @@ body { background: #060c12 !important; }
       </p>
 
       <a href="#iv-contact" class="iv-hero-cta" id="iv-cta">
-        Request investor access
+        Request investor materials
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
 
