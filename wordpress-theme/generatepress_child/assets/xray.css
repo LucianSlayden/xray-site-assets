@@ -5542,3 +5542,14 @@ body.page-id-298 {
 .iv-founder-role { font-size: 10.5px; line-height: 1.5; }
 .iv-founder.sky .iv-founder-role { color: var(--xr-sky); }
 @media (max-width: 560px) { .iv-founder-hex { width: 104px; height: 120px; } }
+
+/* Recall hexagon pie: a 95% gold wedge clipped to a hexagon, dark core for the label. */
+.iv-hexpie { width: 340px; max-width: 100%; height: auto; overflow: visible; }
+.iv-hexpie-rest { fill: rgba(232,185,99,0.08); }
+#iv-gauge-arc.iv-hexpie-fill {
+  stroke: var(--xr-gold);
+  transition: stroke-dashoffset 1.6s cubic-bezier(0.22,1,0.36,1);
+}
+.iv-hexpie-edge { fill: none; stroke: rgba(232,185,99,0.55); stroke-width: 2; }
+.iv-hexpie-core { fill: #0B1118; stroke: rgba(232,185,99,0.35); stroke-width: 1.5; }
+.iv-hexpie + .iv-gauge-sub { margin-top: 18px; }
