@@ -37,7 +37,7 @@ add_action( 'generate_before_content', function() {
             <span class="xr-eyebrow no-caret" style="margin-bottom:18px;">
               <span class="xr-eyebrow-hex"></span>
               <span class="xr-pulse-dot" style="margin-right:6px;"></span>
-              Nevada Lithium Model · In Development · Targeting 90% Accuracy
+              Nevada Lithium Model · Prototype · In Development
             </span>
 
             <h1 class="xr-hero-headline">
@@ -296,7 +296,7 @@ add_action( 'generate_before_content', function() {
   <section class="xr-section proof-sec">
     <div class="xr-section-rule"></div>
 
-    <div class="xr-container" style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;">
+    <div class="xr-container proof-grid">
       <div class="xr-reveal">
         <h2 style="margin:0 0 22px;"><span style="color:var(--xr-gold);">Validated metrics</span> on Nevada lithium.</h2>
         <p style="color:var(--xr-text-2);font-size:17px;line-height:1.8;margin:0 0 18px;">Our Nevada lithium prospectivity model recovers <strong style="color:var(--xr-text);">39%</strong> of known deposits in the <strong style="color:var(--xr-text);">top 1%</strong> of ranked ground, which is 39x more effective than a uniform search. The model is trained on deposit and geochemistry/geophysics data across 19,000 grid cells, validated under spacial cross-validation, and built on a five-model ensemble.</p>
@@ -305,53 +305,39 @@ add_action( 'generate_before_content', function() {
         <a href="<?php echo esc_url( home_url( '/product/' ) ); ?>" class="xr-btn xr-btn-outline">Explore the Product <span class="xr-arrow">→</span></a>
       </div>
 
-      <!-- Circular accuracy dial — replaces the bland 90% card -->
-      <div class="xr-reveal xr-d2 proof-dial-wrap">
-        <svg class="proof-dial" viewBox="0 0 240 240" aria-hidden="true">
-          <!-- Outer hex frame -->
-          <polygon points="120,12 213,66 213,174 120,228 27,174 27,66"
-                   fill="none" stroke="rgba(232,185,99,0.22)" stroke-width="1.2"/>
-          <polygon points="120,30 196,74 196,166 120,210 44,166 44,74"
-                   fill="rgba(232,185,99,0.04)" stroke="rgba(232,185,99,0.18)" stroke-width="1"/>
+      <!-- Lift panel: how many known deposits the top 1% of ranked ground recovers,
+           against a uniform (unranked) search of the same area. -->
+      <div class="xr-reveal xr-d2 lift-panel">
+        <div class="lift-head">
+          <span class="lift-tag">Nevada lithium prototype</span>
+          <span class="lift-tag lift-tag-dim">Spatial cross-validation</span>
+        </div>
 
-          <!-- Tick marks around the dial -->
-          <g stroke="rgba(232,185,99,0.35)" stroke-width="1">
-            <line x1="120" y1="44"  x2="120" y2="52"/>
-            <line x1="178" y1="76"  x2="172" y2="83"/>
-            <line x1="178" y1="164" x2="172" y2="157"/>
-            <line x1="120" y1="196" x2="120" y2="188"/>
-            <line x1="62"  y1="164" x2="68"  y2="157"/>
-            <line x1="62"  y1="76"  x2="68"  y2="83"/>
-          </g>
+        <div class="lift-big">
+          <span class="lift-num">39<span>&times;</span></span>
+          <p>more known deposits found in the <strong>top 1%</strong> of ranked ground than a uniform search of the same area.</p>
+        </div>
 
-          <!-- Dial track -->
-          <circle cx="120" cy="120" r="76"
-                  fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="10"/>
-          <!-- Dial fill (90% of 360°). dasharray = circumference * pct/100 -->
-          <circle class="proof-dial-arc" cx="120" cy="120" r="76"
-                  fill="none" stroke="url(#proofGrad)" stroke-width="10" stroke-linecap="round"
-                  stroke-dasharray="429.6 47.7" stroke-dashoffset="0"
-                  transform="rotate(-90 120 120)"/>
-          <defs>
-            <linearGradient id="proofGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%"  stop-color="#E8B963"/>
-              <stop offset="100%" stop-color="#7BC97A"/>
-            </linearGradient>
-          </defs>
+        <div class="lift-compare">
+          <div class="lift-compare-title">Known deposits recovered by searching 1% of the ground</div>
+          <div class="lift-row lift-row-old">
+            <span class="lift-label">Uniform search</span>
+            <span class="lift-track"><span class="lift-fill" style="--w:1%"></span></span>
+            <span class="lift-val">1%</span>
+          </div>
+          <div class="lift-row lift-row-new">
+            <span class="lift-label">X-Ray ranking</span>
+            <span class="lift-track"><span class="lift-fill" style="--w:39%"></span></span>
+            <span class="lift-val">39%</span>
+          </div>
+          <div class="lift-scale" aria-hidden="true"><span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span></div>
+        </div>
 
-          <!-- Center text -->
-          <text x="120" y="115" text-anchor="middle" fill="#F1F4F8" font-family="JetBrains Mono, monospace" font-weight="700" font-size="44">90%</text>
-          <text x="120" y="138" text-anchor="middle" fill="rgba(168,178,192,0.85)" font-family="Inter, sans-serif" font-size="11" letter-spacing="2">TARGET ACCURACY</text>
-
-          <!-- Status pills -->
-          <g transform="translate(40,236)">
-            <rect x="0"  y="0" width="74" height="22" rx="2" fill="rgba(123,201,122,0.08)" stroke="rgba(123,201,122,0.4)"/>
-            <circle cx="12" cy="11" r="3" fill="#7BC97A"/>
-            <text x="22" y="15" fill="#7BC97A" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700" letter-spacing="1">LIVE</text>
-            <rect x="86" y="0" width="74" height="22" rx="2" fill="rgba(111,181,224,0.08)" stroke="rgba(111,181,224,0.4)"/>
-            <text x="123" y="15" text-anchor="middle" fill="#6FB5E0" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700" letter-spacing="1">USGS</text>
-          </g>
-        </svg>
+        <dl class="lift-facts">
+          <div><dt>19,000</dt><dd>grid cells</dd></div>
+          <div><dt>5</dt><dd>model ensemble</dd></div>
+          <div><dt>1&times;1 km</dt><dd>current resolution</dd></div>
+        </dl>
       </div>
     </div>
   </section>
@@ -561,34 +547,32 @@ add_action( 'generate_before_content', function() {
         <p style="color:var(--xr-text-2);font-size:16px;line-height:1.7;margin:14px 0 0;">Three dimensions where X-Ray fundamentally outperforms the traditional consultant + GIS workflow.</p>
       </div>
 
-      <!-- vs. comparison bars — animated bar-race style -->
-      <div class="vs-grid xr-reveal xr-d1">
-        <div class="vs-row">
-          <div class="vs-label">Time to ranked targets</div>
-          <div class="vs-bars">
-            <div class="vs-bar vs-bar-old"><span class="vs-bar-fill" data-bar-fill="92"></span><span class="vs-bar-text">3-6 months</span></div>
-            <div class="vs-bar vs-bar-new"><span class="vs-bar-fill" data-bar-fill="6"></span><span class="vs-bar-text">Hours</span></div>
+      <!-- vs. comparison: three cards, traditional workflow above, X-Ray below -->
+      <div class="vs2-grid xr-reveal xr-d1">
+        <article class="vs2-card">
+          <div class="vs2-head">
+            <span class="vs2-num">01</span>
+            <h3>Time to ranked targets</h3>
           </div>
-        </div>
-        <div class="vs-row">
-          <div class="vs-label">Improves over time</div>
-          <div class="vs-bars">
-            <div class="vs-bar vs-bar-old static"><span class="vs-bar-fill static" data-bar-fill="100"></span><span class="vs-bar-text">Static — one report</span></div>
-            <div class="vs-bar vs-bar-new"><span class="vs-bar-fill" data-bar-fill="100"></span><span class="vs-bar-text">Every drill result feeds back</span></div>
+          <div class="vs2-row vs2-old"><span>Traditional</span><p>Months of consultant and GIS work for each project area.</p></div>
+          <div class="vs2-row vs2-new"><span>X-Ray</span><p>The model scores every cell across a whole region in one run.</p></div>
+        </article>
+        <article class="vs2-card">
+          <div class="vs2-head">
+            <span class="vs2-num">02</span>
+            <h3>Improves over time</h3>
           </div>
-        </div>
-        <div class="vs-row">
-          <div class="vs-label">Geoscience bottleneck</div>
-          <div class="vs-bars">
-            <div class="vs-bar vs-bar-old"><span class="vs-bar-fill" data-bar-fill="95"></span><span class="vs-bar-text">Constrained by team size</span></div>
-            <div class="vs-bar vs-bar-new"><span class="vs-bar-fill" data-bar-fill="5"></span><span class="vs-bar-text">None — fully self-serve</span></div>
+          <div class="vs2-row vs2-old"><span>Traditional</span><p>A static report that is out of date once drilling starts.</p></div>
+          <div class="vs2-row vs2-new"><span>X-Ray</span><p>Each new drill result can feed back in and sharpen the next ranking.</p></div>
+        </article>
+        <article class="vs2-card">
+          <div class="vs2-head">
+            <span class="vs2-num">03</span>
+            <h3>Geoscience bottleneck</h3>
           </div>
-        </div>
-
-        <div class="vs-legend">
-          <span class="vs-legend-item vs-legend-old">Traditional</span>
-          <span class="vs-legend-item vs-legend-new">X-Ray</span>
-        </div>
+          <div class="vs2-row vs2-old"><span>Traditional</span><p>Limited by how much data a team can review by hand.</p></div>
+          <div class="vs2-row vs2-new"><span>X-Ray</span><p>Weighs more data than any team can, so geologists focus on the best targets.</p></div>
+        </article>
       </div>
 
       <div class="xr-reveal" style="text-align:center;margin-top:40px;">
