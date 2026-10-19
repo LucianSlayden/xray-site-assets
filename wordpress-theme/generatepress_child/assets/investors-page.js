@@ -271,15 +271,30 @@
     }
   }
 
+  /* Hero shade: fades from solid at the top to clear at the stat strip. */
+  (function ivHeroShade() {
+    var shade = document.querySelector('.iv-hero-fog-edges');
+    var strip = document.getElementById('iv-stats') || document.querySelector('.iv-stat-strip');
+    var hero = document.querySelector('.iv-hero');
+    if (!shade || !strip || !hero) return;
+    function fit() {
+      var top = strip.getBoundingClientRect().top - hero.getBoundingClientRect().top;
+      shade.style.height = Math.max(0, Math.round(top)) + 'px';
+    }
+    fit();
+    window.addEventListener('resize', fit);
+    window.addEventListener('load', fit);
+  })();
+
   /* ── 3. PAGE CONTOURS ───────────────────────────────────────────────── */
   /* Drifting topographic contour lines across the whole page. A light pool
-     wanders over the map and brightens the contours under it; the field
-     shifts with scroll so the terrain moves past as you read. */
+     wanders over the map and brightens the contours under it. Drawn at half
+     resolution and paused while the page is scrolling so scrolling stays smooth. */
   (function ivPageContours() {
     var pc = document.getElementById('iv-page-canvas');
     if (!pc) return;
     var cx = pc.getContext('2d');
-    var dpr = 1; // soft lines don't need retina resolution; keeps frames smooth
+    var dpr = 0.5; // soft lines look the same at half resolution and cost a quarter as much
     var CELL = 28, W, H, cols, rows, field;
     var LEVELS = [];
     for (var lvl = -1.2; lvl <= 1.21; lvl += 0.2) LEVELS.push(lvl);
@@ -305,12 +320,20 @@
 
     function lerp(a, b, lv) { return (lv - a) / (b - a); }
 
+    // Skip redraws while the visitor scrolls; the drift is slow enough that a pause is invisible.
+    var scrolling = false, scrollTimer = 0;
+    window.addEventListener('scroll', function () {
+      scrolling = true;
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(function () { scrolling = false; }, 180);
+    }, { passive: true });
+
     var last = 0;
     function draw(ts) {
-      if (ts - last < 33 && !reducedMotion) { requestAnimationFrame(draw); return; } // ~30 fps
+      if ((ts - last < 33 || scrolling || document.hidden) && !reducedMotion && last) { requestAnimationFrame(draw); return; } // ~30 fps
       last = ts;
       var t = ts / 1000 * 0.33; // a third of the original drift speed
-      var sy = (window.scrollY || 0) * 0.35;
+      var sy = 0;
 
       for (var r = 0; r < rows; r++) {
         for (var c = 0; c < cols; c++) {
