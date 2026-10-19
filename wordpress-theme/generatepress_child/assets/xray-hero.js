@@ -346,10 +346,11 @@
     const bulletEls = bullets.querySelectorAll('.xr-hero-bullet');
 
     // Pin each label to its hexagon. Centres are fractions of the video
-    // frame on its LAST frame (taken from the 1923x866 end-state screenshot;
+    // frame on its LAST frame, measured at the inner solid hexagon of each marker
+    // (re-measured 2026-10-19 from a 1924px-wide live screenshot;
     // the poster image is an earlier, less zoomed frame), mapped onto where
     // the frame is drawn: object-fit: contain, anchored right, centred vertically.
-    const HEX_CENTRES = [[0.2886, 0.1800], [0.4384, 0.3400], [0.5008, 0.5800], [0.5507, 0.8200]];
+    const HEX_CENTRES = [[0.3079, 0.1681], [0.4316, 0.3376], [0.5079, 0.5880], [0.5622, 0.8182]];
     const mobile = window.matchMedia('(max-width: 980px)');
     function placeBullets() {
       if (mobile.matches) { bullets.style.removeProperty('--hex-r'); bulletEls.forEach((el) => { el.style.left = ''; el.style.top = ''; }); return; }
