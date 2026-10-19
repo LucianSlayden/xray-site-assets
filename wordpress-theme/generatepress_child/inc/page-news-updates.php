@@ -10,8 +10,7 @@ add_action( 'generate_before_content', function () {
 <nav class="xr-nav">
   <div class="xr-nav-inner">
     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="xr-brand">
-      <img src="https://xraygeoanalytics.com/wp-content/uploads/2026/05/hex_logo_clean.png" alt="X-Ray Geoanalytics">
-      <span class="xr-brand-wordmark">X-Ray <span class="accent">Geoanalytics</span></span>
+      <img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180">
     </a>
     <div class="xr-nav-list">
       <div class="xr-nav-item">
@@ -79,19 +78,19 @@ add_action( 'generate_before_content', function () {
       <span class="nu-wclip"><span class="nu-w">happening</span></span><br>
       <span class="nu-wclip"><span class="nu-w">at</span></span>&#32;<span class="nu-wclip"><span class="nu-w nu-accent">X-Ray.</span></span>
     </h1>
-    <p class="nu-hero-sub" id="nu-sub">Product milestones, model accuracy updates, and company announcements. We're moving fast — here's what's changed.</p>
+    <p class="nu-hero-sub" id="nu-sub">Model milestones, customer discovery progress, and company announcements. Here's where X-Ray stands and what comes next.</p>
     <div class="nu-stats">
       <div class="nu-stat" id="nu-s0">
-        <span class="nu-stat-val" data-target="5" data-duration="900">5</span>
-        <span class="nu-stat-lbl">Updates Published</span>
+        <span class="nu-stat-val" data-target="4" data-duration="900">4</span>
+        <span class="nu-stat-lbl">Co-founders</span>
       </div>
       <div class="nu-stat" id="nu-s1">
-        <span class="nu-stat-val" data-target="90" data-suffix="%" data-duration="1500">90%</span>
-        <span class="nu-stat-lbl">Model Accuracy</span>
+        <span class="nu-stat-val" data-target="95" data-suffix="%" data-duration="1500">95%</span>
+        <span class="nu-stat-lbl">Recall</span>
       </div>
       <div class="nu-stat" id="nu-s2">
-        <span class="nu-stat-val" data-target="2026" data-duration="1100">2026</span>
-        <span class="nu-stat-lbl">Launch Year</span>
+        <span class="nu-stat-val" data-target="80" data-suffix="%" data-duration="1100">80%</span>
+        <span class="nu-stat-lbl">Precision</span>
       </div>
     </div>
   </div>
@@ -112,13 +111,13 @@ add_action( 'generate_before_content', function () {
         <div class="nu-card-body">
           <div class="nu-card-meta">
             <span class="nu-pill nu-pill-sky">Company</span>
-            <span class="nu-card-date">April 2026</span>
+            <span class="nu-card-date">Up next</span>
           </div>
-          <h3>X-Ray applied to Y Combinator S26 batch</h3>
-          <p>X-Ray Geoanalytics has submitted its application to Y Combinator's Summer 2026 batch, citing Nevada lithium model validation results, the $12.5B addressable market, and the team's geoscience and ML expertise.</p>
+          <h3>Customer discovery with junior explorers begins</h3>
+          <p>X-Ray is starting two rounds of interviews with mining companies exploring in the Great Basin. Round one validates the problem and how teams decide where to drill today. Round two asks what they want to see in the software.</p>
         </div>
         <div class="nu-card-foot">
-          <span class="nu-card-tag">Company · Strategy</span>
+          <span class="nu-card-tag">Company · Customers</span>
           <span class="nu-card-ico s"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </div>
       </article>
@@ -128,13 +127,13 @@ add_action( 'generate_before_content', function () {
         <div class="nu-card-body">
           <div class="nu-card-meta">
             <span class="nu-pill nu-pill-gold">Model</span>
-            <span class="nu-card-date">February 2026</span>
+            <span class="nu-card-date">Latest</span>
           </div>
-          <h3>Nevada lithium model crosses 90% accuracy in internal validation</h3>
-          <p>Internal benchmarks crossed the 90% threshold in out-of-sample validation against confirmed USGS MRDS lithium deposit records. 90% of held-out deposits land in the top scoring quintile of the ranked probability map.</p>
+          <h3>Great Basin lithium model reaches 95% recall and 80% precision</h3>
+          <p>Our lithium model now covers the entire Great Basin at 1x1 km cells. An ensemble of XGBoost and LightGBM trained on geochemistry, structural, lithology, geophysics, geothermal, and topography data, it was validated with repeated stratified k-fold and leave-one-out cross-validation.</p>
         </div>
         <div class="nu-card-foot">
-          <span class="nu-card-tag">Model · Accuracy</span>
+          <span class="nu-card-tag">Model · Lithium</span>
           <span class="nu-card-ico g"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </div>
       </article>
@@ -144,13 +143,13 @@ add_action( 'generate_before_content', function () {
         <div class="nu-card-body">
           <div class="nu-card-meta">
             <span class="nu-pill nu-pill-sky">Platform</span>
-            <span class="nu-card-date">January 2026</span>
+            <span class="nu-card-date">In planning</span>
           </div>
-          <h3>Platform beta launched — full four-layer pipeline operational</h3>
-          <p>All four layers — ingestion, fusion, inference, and delivery — are live. The platform produces ranked probability maps in under one hour for a 5,000 km² AOI, delivered as an interactive viewer or exportable GeoTIFF.</p>
+          <h3>Building the X-Ray platform for exploration geologists</h3>
+          <p>Customers will upload their exploration data and receive a prospectivity heat map, a ranked list of drill targets, and a 3D visualization of the target area. Each customer's data stays compartmentalized and is never used to train anyone else's model.</p>
         </div>
         <div class="nu-card-foot">
-          <span class="nu-card-tag">Platform · Infrastructure</span>
+          <span class="nu-card-tag">Platform · Product</span>
           <span class="nu-card-ico s"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </div>
       </article>
@@ -174,9 +173,9 @@ add_action( 'generate_before_content', function () {
         <div class="nu-tl-dot"></div>
       </div>
       <div class="nu-tl-entry">
-        <div class="nu-tl-period">Q4 2025</div>
-        <h3>X-Ray Geoanalytics, Inc. incorporated in Delaware</h3>
-        <p>X-Ray Geoanalytics, Inc. was incorporated as a Delaware C-corporation. The founding team spans ML engineering, geoscience data expertise, software engineering, legal strategy, and business development. Initial funding was provided by the five co-founders.</p>
+        <div class="nu-tl-period">First model</div>
+        <h3>Early Nevada lithium model recovers 69% of deposits in the top 10% of ranked ground</h3>
+        <p>Our first lithium model covered 19,000 grid cells across Nevada at 5x5 km and was evaluated with spatial block cross-validation to account for spatial autocorrelation. Later models addressed its main limitations, including the large cell size and a tendency to underpredict prospectivity.</p>
       </div>
     </div>
   </div>
@@ -189,16 +188,16 @@ add_action( 'generate_before_content', function () {
       <div class="nu-cta-card xr-reveal">
         <div class="nu-cta-ey">Stay updated</div>
         <h3>Get model accuracy updates first.</h3>
-        <p>Get notified when we publish model accuracy updates, new mineral coverage, or product launches. No noise — only signal.</p>
+        <p>Get notified when we publish model updates, new mineral models like nickel, or product news. No noise, only signal.</p>
         <form class="nu-form" action="mailto:info@xraygeoanalytics.com" method="post" enctype="text/plain">
           <input class="nu-input" type="email" name="email" placeholder="you@company.com" aria-label="Email address" required>
           <button type="submit" class="xr-btn xr-btn-gold" style="text-align:center;justify-content:center;width:100%;">Subscribe</button>
         </form>
       </div>
       <div class="nu-cta-card hi xr-reveal xr-d1">
-        <div class="nu-cta-ey">Live demonstration</div>
-        <h3>See the Nevada lithium model on your AOI.</h3>
-        <p>Schedule a 45-minute demo and we'll run a live analysis on a dataset for your region of interest — ranked probability output, data layer explanations, and the full platform workflow.</p>
+        <div class="nu-cta-ey">Demonstration</div>
+        <h3>See the Great Basin lithium model.</h3>
+        <p>Request a demo and we'll walk you through how the model ranks ground across the Great Basin, the data layers behind it, and what the platform will deliver: a prospectivity heat map and ranked drill targets.</p>
         <a href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>" class="xr-btn xr-btn-gold" style="align-self:flex-start;">Request Demo <span class="xr-arrow">→</span></a>
       </div>
     </div>
@@ -211,7 +210,7 @@ add_action( 'generate_before_content', function () {
   <div class="xr-footer-inner">
     <div class="xr-footer-grid">
       <div>
-        <div class="xr-footer-brand"><img src="https://xraygeoanalytics.com/wp-content/uploads/2026/05/hex_logo_clean.png" alt="X-Ray Geoanalytics"><span>X-Ray Geoanalytics</span></div>
+        <div class="xr-footer-brand"><img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180"></div>
         <p class="xr-footer-tagline">Advanced machine learning for mining site discovery. Nevada lithium. Every mineral. Every continent. Every drill result makes us smarter.</p>
         <div class="xr-footer-contact"><a href="mailto:info@xraygeoanalytics.com"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M4 6l8 7 8-7"/></svg>info@xraygeoanalytics.com</a></div>
       </div>

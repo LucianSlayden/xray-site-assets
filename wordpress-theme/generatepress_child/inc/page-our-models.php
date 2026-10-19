@@ -12,12 +12,12 @@ add_action( 'generate_before_content', function () {
   }
   body { background: #0E141B !important; }
 </style>
-<div id="om-page-bg" style="position:fixed;inset:0;background:url('https://xraygeoanalytics.com/wp-content/uploads/2026/06/mj-ourmodels-bg-2.png') center/cover no-repeat;opacity:0.32;z-index:0;pointer-events:none;"></div>
+<div id="om-page-bg" style="position:fixed;inset:0;background:url('https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/mj-ourmodels-bg-2.webp') center/cover no-repeat;opacity:0.32;z-index:0;pointer-events:none;"></div>
 <div id="om-veil" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(14,20,27,0.72);z-index:50;pointer-events:none;"></div>
 
 <nav class="xr-nav">
   <div class="xr-nav-inner">
-    <a href="/" class="xr-brand"><img src="https://xraygeoanalytics.com/wp-content/uploads/2026/05/hex_logo_clean.png" alt="X-Ray Geoanalytics"><span class="xr-brand-wordmark">X-Ray <span class="accent">Geoanalytics</span></span></a>
+    <a href="/" class="xr-brand"><img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180"></a>
     <div class="xr-nav-list">
       <div class="xr-nav-item"><button class="xr-nav-btn" style="color:var(--xr-gold);">Product<svg aria-hidden="true" class="xr-nav-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
         <div class="xr-nav-drop"><a href="/product/">Product Overview</a><a href="/our-models/" style="color:var(--xr-gold);">Our Models</a><a href="/industries/">Industries</a><a href="/platform/">Platform</a><a href="/how-it-works/">How it Works</a><a href="/pricing/">Pricing</a></div>
@@ -52,31 +52,31 @@ add_action( 'generate_before_content', function () {
 
 <section class="om-hero">
   <div class="om-hero-inner">
-    <h1>One model in active development. <span class="accent">Every</span> mineral on the long horizon.</h1>
-    <p>Our entire engineering effort is focused on a single prediction model right now — Nevada lithium. Once it's commercially viable, we'll expand model-by-model into the rest of the commodity universe.</p>
+    <h1>One lithium model built. <span class="accent">More</span> minerals on the way.</h1>
+    <p>Our work is focused on one prediction model right now: lithium in the Great Basin. Nickel is next, then cobalt, gold and silver, the minerals our customers already search for alongside lithium.</p>
   </div>
 </section>
 
 <section class="active-section">
   <div class="active-inner">
     <div>
-      <h2>Nevada lithium. <span class="accent">In development.</span> Targeting 90% accuracy.</h2>
-      <p>Trained on USGS Mineral Resources Program deposit records as confirmed ground truth, fused with public geochemistry, geophysics, remote sensing, and structural geology data. The model returns ranked drill targets with explicit confidence intervals — not a heatmap, a list.</p>
-      <p><strong>This is the only X-Ray model approaching commercial viability today.</strong> Pilot launch with Explorer-tier customers begins as soon as accuracy benchmarks are independently verified.</p>
-      <p>Every commodity below is on the roadmap. None of them are shipping yet, and we are deliberately not building them in parallel — focus matters in early-stage modelling.</p>
+      <h2>Great Basin lithium. <span class="accent">95% recall.</span> 80% precision.</h2>
+      <p>Trained on geochemistry, structural, lithology, geophysics, geothermal and topography data, with labels from known mine sites, geochemistry and mining-claim data. We cleaned and sorted decades of cluttered public geological data so the model can learn from it. The model returns a prospectivity heat map and a ranked list of drill targets.</p>
+      <p><strong>The model predicts lithium across the whole Great Basin at 1x1 km cells.</strong> An earlier Nevada model, covering 19,000 grid cells at 5x5 km, recovered 69% of deposits in the top 10% of ranked ground.</p>
+      <p>Next is a hierarchy of finer models at 100–500 m per cell, each more precise than the last, working toward exact drill coordinates. They will add borehole logs from water wells, oil and gas wells and lithium drilling, plus customers' own exploration data.</p>
       <a href="/request-demo/" class="xr-btn xr-btn-gold" style="margin-top:16px;">Request Pilot Access</a>
     </div>
     <div class="model-card">
       <div class="tag-row">
-        <span class="tag"><span class="dot"></span>In Development</span>
+        <span class="tag"><span class="dot"></span>Active Model</span>
       </div>
-      <h3>Nevada Lithium</h3>
-      <div class="sub">Basin &amp; Range province · 4 fused data modalities</div>
+      <h3>Great Basin Lithium</h3>
+      <div class="sub">Great Basin region · 6 data types</div>
       <div class="data-grid">
-        <div><div class="lbl">Target Accuracy</div><div class="v">90% out-of-sample<br><span style="color:var(--xr-text-muted);font-family:var(--xr-font-mono);font-size:12.5px;letter-spacing:0.04em;">(target metric, in development)</span></div></div>
-        <div><div class="lbl">Coverage</div><div class="v">Northern + Central Nevada</div></div>
-        <div><div class="lbl">Modalities</div><div class="v">Geochem · Geophys · Remote sensing · Terrain</div></div>
-        <div><div class="lbl">Training Labels</div><div class="v">USGS MRDS confirmed Li occurrences</div></div>
+        <div><div class="lbl">Results</div><div class="v">95% recall<br><span style="color:var(--xr-text-muted);font-family:var(--xr-font-mono);font-size:12.5px;letter-spacing:0.04em;">80% precision on known deposits</span></div></div>
+        <div><div class="lbl">Resolution</div><div class="v">1x1 km cells</div></div>
+        <div><div class="lbl">Data Types</div><div class="v">Geochem · Structural · Lithology · Geophys · Geothermal · Topography</div></div>
+        <div><div class="lbl">Training Labels</div><div class="v">Mine sites · geochemistry · mining claims</div></div>
       </div>
     </div>
   </div>
@@ -84,11 +84,11 @@ add_action( 'generate_before_content', function () {
 
 <section class="roadmap-section">
   <div class="roadmap-inner">
-    <h2>From <span class="accent">Nevada lithium</span> to <span class="accent">lunar regolith</span>.</h2>
-    <p class="intro">Every model below is on the long-term roadmap. <strong>None of them is shipping today.</strong> The Nevada lithium model is the only one in active development; everything else follows once we have additional commercially-viable models to bundle into Operator and Enterprise tiers.</p>
+    <h2>From <span class="accent">Great Basin lithium</span> to <span class="accent">more minerals</span>.</h2>
+    <p class="intro">Each model is trained for one commodity in one region. <strong>Lithium is the only model available today.</strong> Nickel comes next, followed by cobalt, gold and silver, while finer-resolution lithium models and neural network research continue alongside.</p>
     <div class="roadmap-grid">
       <article class="rm-card is-active">
-        <span class="rm-tag"><span class="dot"></span>In Development</span>
+        <span class="rm-tag"><span class="dot"></span>Active</span>
         <div class="rm-art">
           <svg viewBox="0 0 100 132" aria-hidden="true">
             <path d="M10 4 L88 4 L90 110 L82 114 L78 122 L60 130 L48 122 L30 88 L20 52 L12 22 Z" fill="rgba(232,185,99,0.08)" stroke="var(--xr-gold)" stroke-width="2.2" stroke-linejoin="round"/>
@@ -102,11 +102,11 @@ add_action( 'generate_before_content', function () {
             </g>
           </svg>
         </div>
-        <h3>Nevada Lithium</h3>
-        <p>Our active model — targeting 90% accuracy. Pilot launch with Explorer tier.</p>
+        <h3>Great Basin Lithium</h3>
+        <p>Our active model. 95% recall and 80% precision at 1x1 km cells.</p>
       </article>
       <article class="rm-card is-future-1">
-        <span class="rm-tag"><span class="dot"></span>Roadmap</span>
+        <span class="rm-tag"><span class="dot"></span>Next</span>
         <div class="rm-art">
           <svg viewBox="0 0 130 100" aria-hidden="true">
             <defs><linearGradient id="cuVein" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E8B963"/><stop offset="100%" stop-color="#6FB5E0"/></linearGradient></defs>
@@ -116,17 +116,15 @@ add_action( 'generate_before_content', function () {
             <circle cx="68" cy="78" r="3" fill="#C77A3D"/>
             <circle cx="98" cy="74" r="2.4" fill="#6FB5E0"/>
             <g font-family="monospace" font-weight="700">
-              <rect x="14" y="12" width="22" height="20" fill="rgba(232,185,99,0.1)" stroke="#E8B963" stroke-width="0.9"/><text x="25" y="25" text-anchor="middle" fill="#E8B963" font-size="10">Cu</text>
-              <rect x="48" y="12" width="26" height="20" fill="rgba(111,181,224,0.1)" stroke="#6FB5E0" stroke-width="0.9"/><text x="61" y="25" text-anchor="middle" fill="#6FB5E0" font-size="9.5">REE</text>
-              <rect x="86" y="12" width="22" height="20" fill="rgba(232,185,99,0.06)" stroke="rgba(232,185,99,0.45)" stroke-width="0.8"/><text x="97" y="25" text-anchor="middle" fill="rgba(232,185,99,0.85)" font-size="10">Au</text>
+              <rect x="52" y="12" width="26" height="20" fill="rgba(111,181,224,0.1)" stroke="#6FB5E0" stroke-width="0.9"/><text x="65" y="25" text-anchor="middle" fill="#6FB5E0" font-size="10">Ni</text>
             </g>
           </svg>
         </div>
-        <h3>Western US · Cu &amp; REE</h3>
-        <p>Two future commodity models on the same fusion infrastructure.</p>
+        <h3>Nickel</h3>
+        <p>Our next model. A metal our customers already target alongside lithium.</p>
       </article>
       <article class="rm-card is-future-2">
-        <span class="rm-tag"><span class="dot"></span>Long-term</span>
+        <span class="rm-tag"><span class="dot"></span>Later</span>
         <div class="rm-art">
           <svg viewBox="0 0 130 90" aria-hidden="true">
             <g font-family="monospace" font-weight="700">
@@ -148,43 +146,42 @@ add_action( 'generate_before_content', function () {
             </g>
           </svg>
         </div>
-        <h3>Global · All Minerals</h3>
-        <p>Same architecture, every commercially-important commodity, every producing country.</p>
+        <h3>Cobalt, Gold &amp; Silver</h3>
+        <p>Further models for minerals our customers drill for alongside lithium.</p>
       </article>
       <article class="rm-card is-future-2">
-        <span class="rm-tag"><span class="dot"></span>Long-term</span>
+        <span class="rm-tag"><span class="dot"></span>In Progress</span>
         <div class="rm-art">
           <svg viewBox="0 0 130 100" aria-hidden="true">
-            <path d="M50 14 L80 14 L84 22 L46 22 Z" fill="#6FB5E0" opacity="0.85"/>
-            <rect x="62" y="8" width="6" height="6" fill="#6FB5E0" opacity="0.7"/>
-            <g fill="none" stroke="#6FB5E0" stroke-width="1" stroke-linecap="round">
-              <path d="M40 38 Q65 28 90 38" opacity="0.7"/>
-              <path d="M30 50 Q65 36 100 50" opacity="0.5"/>
-              <path d="M20 62 Q65 44 110 62" opacity="0.3"/>
+            <rect x="15" y="8" width="84" height="84" fill="rgba(111,181,224,0.06)" stroke="rgba(111,181,224,0.45)" stroke-width="1.2"/>
+            <rect x="57" y="8" width="42" height="42" fill="rgba(111,181,224,0.1)" stroke="#6FB5E0" stroke-width="1.1"/>
+            <rect x="78" y="29" width="21" height="21" fill="rgba(232,185,99,0.12)" stroke="#E8B963" stroke-width="1.1"/>
+            <rect x="88.5" y="39.5" width="10.5" height="10.5" fill="rgba(232,185,99,0.3)" stroke="#E8B963" stroke-width="1"/>
+            <circle cx="93.75" cy="44.75" r="2.2" fill="#4ade80"/>
+          </svg>
+        </div>
+        <h3>Finer Models · 100–500 m</h3>
+        <p>A hierarchy of lithium models, each finer than the last, working toward exact drill coordinates.</p>
+      </article>
+      <article class="rm-card is-future-2">
+        <span class="rm-tag"><span class="dot"></span>Research</span>
+        <div class="rm-art">
+          <svg viewBox="0 0 130 100" aria-hidden="true">
+            <g stroke="rgba(111,181,224,0.35)" stroke-width="1">
+              <line x1="22" y1="22" x2="65" y2="30"/><line x1="22" y1="22" x2="65" y2="70"/>
+              <line x1="22" y1="50" x2="65" y2="30"/><line x1="22" y1="50" x2="65" y2="70"/>
+              <line x1="22" y1="78" x2="65" y2="30"/><line x1="22" y1="78" x2="65" y2="70"/>
+              <line x1="65" y1="30" x2="108" y2="50"/><line x1="65" y1="70" x2="108" y2="50"/>
             </g>
-            <path d="M0 78 L18 70 L34 76 L50 66 L66 74 L84 64 L102 72 L120 66 L130 74 L130 100 L0 100 Z" fill="rgba(111,181,224,0.14)" stroke="#6FB5E0" stroke-width="1.2"/>
-            <circle cx="40" cy="84" r="2.6" fill="#E8B963" opacity="0.9"/>
-            <circle cx="64" cy="86" r="2" fill="#E8B963" opacity="0.7"/>
-            <circle cx="92" cy="82" r="2.8" fill="#E8B963"/>
+            <g fill="rgba(14,20,27,0.9)" stroke="#6FB5E0" stroke-width="1.4">
+              <circle cx="22" cy="22" r="6"/><circle cx="22" cy="50" r="6"/><circle cx="22" cy="78" r="6"/>
+              <circle cx="65" cy="30" r="6"/><circle cx="65" cy="70" r="6"/>
+            </g>
+            <circle cx="108" cy="50" r="7" fill="rgba(232,185,99,0.18)" stroke="#E8B963" stroke-width="1.6"/>
           </svg>
         </div>
-        <h3>Deep Sea Mining</h3>
-        <p>Polymetallic nodules and seafloor sulphides — bathymetry + sediment geochem.</p>
-      </article>
-      <article class="rm-card is-future-2">
-        <span class="rm-tag"><span class="dot"></span>Long-term</span>
-        <div class="rm-art">
-          <svg viewBox="0 0 130 100" aria-hidden="true">
-            <defs><radialGradient id="moonR" cx="38%" cy="38%"><stop offset="0%" stop-color="#F1F4F8"/><stop offset="60%" stop-color="#A8B2C0"/><stop offset="100%" stop-color="#5a6678"/></radialGradient></defs>
-            <g fill="rgba(241,244,248,0.6)"><circle cx="10" cy="14" r="0.8"/><circle cx="118" cy="22" r="1"/><circle cx="22" cy="34" r="0.7"/><circle cx="14" cy="68" r="0.9"/><circle cx="120" cy="78" r="0.7"/></g>
-            <circle cx="65" cy="50" r="34" fill="url(#moonR)"/>
-            <g fill="rgba(14,20,27,0.35)"><circle cx="54" cy="38" r="4"/><circle cx="74" cy="44" r="3"/><circle cx="60" cy="58" r="5.5"/><circle cx="80" cy="64" r="2.5"/><circle cx="48" cy="68" r="3"/></g>
-            <line x1="60" y1="58" x2="60" y2="46" stroke="#4ade80" stroke-width="1.4"/>
-            <polygon points="60,42 56,48 64,48" fill="#4ade80"/>
-          </svg>
-        </div>
-        <h3>Lunar Mining</h3>
-        <p>Moon-surface resource models. KREEP terranes, ice-bearing shadowed craters.</p>
+        <h3>Neural Networks</h3>
+        <p>Research into neural networks that bring our commodity models together into one framework.</p>
       </article>
     </div>
   </div>
@@ -192,23 +189,23 @@ add_action( 'generate_before_content', function () {
 
 <section class="meth-section">
   <div class="meth-inner">
-    <h2>Built on <span style="color:var(--xr-gold);">confirmed deposits</span>, not assumptions.</h2>
-    <p class="intro">Every X-Ray model begins with known economic deposits as its ground truth. We then build outward, never inward from untested assumptions.</p>
+    <h2>Built on <span style="color:var(--xr-gold);">known deposits</span>, not assumptions.</h2>
+    <p class="intro">Every X-Ray model starts from known deposits as its ground truth, and is tested on ground it has not seen.</p>
     <div class="meth-grid">
       <div class="meth-item">
         <span class="lbl">Foundation</span>
-        <h3>Deposit-anchored training.</h3>
-        <p>USGS Mineral Resources Program deposit records serve as confirmed positive labels. Only real economically significant deposits make it into training — no synthetic or modelled positives.</p>
+        <h3>Labels from real ground.</h3>
+        <p>Training labels come from existing mine site locations, geochemistry and mining-claim data. The model learns what real lithium ground looks like in the Great Basin.</p>
       </div>
       <div class="meth-item">
-        <span class="lbl">Fusion</span>
-        <h3>Multi-modal feature alignment.</h3>
-        <p>Geochemistry, geophysics, remote sensing, and structural geology are fused into a unified spatial tensor per hex cell. Each source is aligned and normalised before fusion — not simply stacked.</p>
+        <span class="lbl">Data</span>
+        <h3>Decades of data, cleaned.</h3>
+        <p>Geochemistry, structural, lithology, geophysics, geothermal and topography data, collected over decades, then cleaned and sorted into a form a model can learn from. Our featuresets, the geological features that indicate lithium mineralization, are designed in-house.</p>
       </div>
       <div class="meth-item">
         <span class="lbl">Validation</span>
-        <h3>Out-of-sample only.</h3>
-        <p>Accuracy is measured against deposits held out from training. We do not report training-set metrics. The 90% target on Nevada lithium is the benchmark, measured in independent verification, that we are still working to meet.</p>
+        <h3>Tested the hard way.</h3>
+        <p>An ensemble of XGBoost and LightGBM models with feature selection algorithms. Checked with spatial block cross-validation to account for spatial autocorrelation, plus repeated stratified k-fold and leave-one-out cross-validation.</p>
       </div>
     </div>
   </div>
@@ -217,7 +214,7 @@ add_action( 'generate_before_content', function () {
 <section class="om-cta">
   <div class="om-cta-inner">
     <h2>Pilot customers shape the <span class="accent">roadmap</span>.</h2>
-    <p>Our pilot Explorer customers get early access to the lithium model and direct input into which commodity ships next.</p>
+    <p>Early customers get access to the Great Basin lithium model and a direct say in what the platform does next.</p>
     <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
       <a href="/request-demo/" class="xr-btn xr-btn-gold" style="font-size:16px;padding:16px 36px;">Request Demo</a>
       <a href="/pricing/" class="xr-btn xr-btn-outline" style="font-size:16px;padding:16px 36px;">View Pricing <span class="xr-arrow">→</span></a>
@@ -230,7 +227,7 @@ add_action( 'generate_before_content', function () {
   <div class="xr-footer-inner">
     <div class="xr-footer-grid">
       <div>
-        <div class="xr-footer-brand"><img src="https://xraygeoanalytics.com/wp-content/uploads/2026/05/hex_logo_clean.png" alt="X-Ray Geoanalytics"><span>X-Ray Geoanalytics</span></div>
+        <div class="xr-footer-brand"><img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180"></div>
         <p class="xr-footer-tagline">Advanced machine learning for mining site discovery. Nevada lithium. Every mineral. Every continent. Every drill result makes us smarter.</p>
         <div class="xr-footer-contact"><a href="mailto:info@xraygeoanalytics.com"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M4 6l8 7 8-7"/></svg>info@xraygeoanalytics.com</a></div>
       </div>

@@ -344,8 +344,37 @@
 
     /* ──────────── Hexagon labels: sticky hover ──────────── */
     const bulletEls = bullets.querySelectorAll('.xr-hero-bullet');
-    function lockBullet(el) { el.classList.add('locked'); }
-    function clearSticky() { bulletEls.forEach((el) => el.classList.remove('locked')); }
+
+    // Pin each label to its hexagon. Centres are fractions of the video
+    // frame (measured on the final frame), mapped onto where the frame is
+    // actually drawn: object-fit: contain, anchored right, centred vertically.
+    const HEX_CENTRES = [[0.3454, 0.2750], [0.4461, 0.4000], [0.5117, 0.5687], [0.5638, 0.7979]];
+    const mobile = window.matchMedia('(max-width: 980px)');
+    function placeBullets() {
+      if (mobile.matches) { bulletEls.forEach((el) => { el.style.left = ''; el.style.top = ''; }); return; }
+      const bw = fwd.clientWidth, bh = fwd.clientHeight;
+      const vw = fwd.videoWidth || 16, vh = fwd.videoHeight || 9;
+      if (!bw || !bh) return;
+      const scale = Math.min(bw / vw, bh / vh);
+      const cw = vw * scale, ch = vh * scale;
+      const x0 = bw - cw, y0 = (bh - ch) / 2;
+      bulletEls.forEach((el, i) => {
+        const c = HEX_CENTRES[i];
+        if (!c) return;
+        el.style.left = (x0 + c[0] * cw).toFixed(1) + 'px';
+        el.style.top  = (y0 + c[1] * ch).toFixed(1) + 'px';
+      });
+    }
+    placeBullets();
+    fwd.addEventListener('loadedmetadata', placeBullets);
+    window.addEventListener('resize', placeBullets, { passive: true });
+
+    // One panel open at a time now that panels sit over the hexagons.
+    function lockBullet(el) {
+      bulletEls.forEach((other) => { if (other !== el) other.classList.remove('locked'); });
+      el.classList.add('locked', 'seen');
+    }
+    function clearSticky() { bulletEls.forEach((el) => el.classList.remove('locked', 'seen')); }
     bulletEls.forEach((el) => {
       el.addEventListener('mouseenter', () => lockBullet(el));
       el.addEventListener('focusin',    () => lockBullet(el));

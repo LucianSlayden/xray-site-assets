@@ -17,7 +17,7 @@ add_action( 'generate_before_content', function() {
 <canvas id="pdt-bg-canvas" aria-hidden="true" style="position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;"></canvas>
  <nav class="xr-nav">
     <div class="xr-nav-inner">
-      <a href="/" class="xr-brand"><img src="https://xraygeoanalytics.com/wp-content/uploads/2026/05/hex_logo_clean.png" alt="X-Ray Geoanalytics"><span class="xr-brand-wordmark">X-Ray <span class="accent">Geoanalytics</span></span></a>
+      <a href="/" class="xr-brand"><img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180"></a>
       <div class="xr-nav-list">
         <div class="xr-nav-item">
           <button class="xr-nav-btn" style="color:var(--xr-gold);">Product<svg aria-hidden="true" class="xr-nav-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
@@ -68,30 +68,30 @@ add_action( 'generate_before_content', function() {
         <!-- Left: copy -->
         <div class="pdt-hero-left">
           <div class="pdt-eyebrow-wrap">
-            <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>The X-Ray Platform · Nevada Lithium</span>
+            <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>The X-Ray Platform · Great Basin Lithium</span>
           </div>
           <h1>
             <span class="pdt-hw"><span class="pdt-hw-inner">A</span></span>&#32;<span class="pdt-hw"><span class="pdt-hw-inner">model</span></span>&#32;<span class="pdt-hw"><span class="pdt-hw-inner">that</span></span><br>
             <span class="pdt-hw"><span class="pdt-hw-inner gold">learns.</span></span>&#32;<span class="pdt-hw"><span class="pdt-hw-inner gold"></span></span><br>
            
           </h1>
-          <p class="pdt-lede">Greenfield exploration has slowed significantly in recent years, largely because most undiscovered deposits are becoming increasingly harder to find. To combat this, we are building models that learn new mineralization patterns by integrating geochemistry, geophysics, and structural data into a unified feature set. We train our model on confirmed deposits and validate it under spatial cross-validation. Every prediction comes with quantified uncertainty and the geological reasoning behind it. Every drilled result feeds back into the model, improving its accuracy. And the best part is, we don't share your improved model with anyone else.</p>
+          <p class="pdt-lede">New mineral discoveries have fallen from 202 in 2009 to about 80 in 2023, because most of the easy deposits have already been found. Our machine learning models process more data and weigh more factors than any human can. They are trained on geochemistry, structural, lithology, geophysics, geothermal and topography data, and checked with spatial block cross-validation. Your geologists upload their exploration data and get back a prospectivity heat map and a ranked list of drill targets. Your data is only used for your own predictions. It is never used to train anyone else's model.</p>
           <div class="pdt-cta-row">
             <a href="request-demo" class="xr-btn xr-btn-gold">Request Demo</a>
             <a href="how-it-works" class="xr-btn xr-btn-outline">How It Works <span class="xr-arrow">→</span></a>
           </div>
           <div class="pdt-hero-stats">
             <div class="pdt-stat-item">
-              <span class="pdt-stat-num">94%</span>
-              <span class="pdt-stat-label">Top target confidence</span>
+              <span class="pdt-stat-num">95%</span>
+              <span class="pdt-stat-label">Recall · Great Basin lithium</span>
             </div>
             <div class="pdt-stat-item">
-              <span class="pdt-stat-num sky">Hours</span>
-              <span class="pdt-stat-label">Not months</span>
+              <span class="pdt-stat-num sky">80%</span>
+              <span class="pdt-stat-label">Precision</span>
             </div>
             <div class="pdt-stat-item">
-              <span class="pdt-stat-num">$25K</span>
-              <span class="pdt-stat-label">Annual vs $150-200K/study</span>
+              <span class="pdt-stat-num">1x1 km</span>
+              <span class="pdt-stat-label">Prediction cells</span>
             </div>
           </div>
         </div>
@@ -100,10 +100,10 @@ add_action( 'generate_before_content', function() {
         <div class="pdt-output-panel" id="pdt-op">
           <div class="pdt-op-header">
             <div class="pdt-op-header-left">
-              <div class="pdt-op-run">Nevada Basin · Run-NV-047</div>
-              <div class="pdt-op-meta">94 parcels scored · 18,400 km² AOI · 2h 14m ago</div>
+              <div class="pdt-op-run">Great Basin Lithium · Example Output</div>
+              <div class="pdt-op-meta">Illustrative ranked drill-target list · 1x1 km cells</div>
             </div>
-            <div class="pdt-op-badge">Live · NV-Li-001</div>
+            <div class="pdt-op-badge">Sample</div>
           </div>
           <div class="pdt-op-col-heads">
             <span class="pdt-op-col-head">#</span>
@@ -114,42 +114,42 @@ add_action( 'generate_before_content', function() {
           </div>
           <div class="pdt-op-row top" data-fill="94">
             <span class="pdt-op-rank">01</span>
-            <span class="pdt-op-zone">NV-7B</span>
+            <span class="pdt-op-zone">Target A</span>
             <div class="pdt-op-bar-wrap"><div class="pdt-op-bar"><div class="pdt-op-bar-fill" data-w="94"></div></div></div>
             <span class="pdt-op-pct">94%</span>
             <span class="pdt-op-conf">HIGH CONF</span>
           </div>
           <div class="pdt-op-row top" data-fill="87">
             <span class="pdt-op-rank">02</span>
-            <span class="pdt-op-zone">NV-12A</span>
+            <span class="pdt-op-zone">Target B</span>
             <div class="pdt-op-bar-wrap"><div class="pdt-op-bar"><div class="pdt-op-bar-fill" data-w="87"></div></div></div>
             <span class="pdt-op-pct">87%</span>
             <span class="pdt-op-conf">HIGH CONF</span>
           </div>
           <div class="pdt-op-row sky">
             <span class="pdt-op-rank">03</span>
-            <span class="pdt-op-zone">NV-3C</span>
+            <span class="pdt-op-zone">Target C</span>
             <div class="pdt-op-bar-wrap"><div class="pdt-op-bar"><div class="pdt-op-bar-fill" data-w="71"></div></div></div>
             <span class="pdt-op-pct">71%</span>
             <span class="pdt-op-conf">MODERATE</span>
           </div>
           <div class="pdt-op-row sky">
             <span class="pdt-op-rank">04</span>
-            <span class="pdt-op-zone">NV-8D</span>
+            <span class="pdt-op-zone">Target D</span>
             <div class="pdt-op-bar-wrap"><div class="pdt-op-bar"><div class="pdt-op-bar-fill" data-w="63"></div></div></div>
             <span class="pdt-op-pct">63%</span>
             <span class="pdt-op-conf">MODERATE</span>
           </div>
           <div class="pdt-op-row">
             <span class="pdt-op-rank" style="color:rgba(255,255,255,.18);">05</span>
-            <span class="pdt-op-zone" style="color:rgba(255,255,255,.25);">NV-4F</span>
+            <span class="pdt-op-zone" style="color:rgba(255,255,255,.25);">Target E</span>
             <div class="pdt-op-bar-wrap"><div class="pdt-op-bar"><div class="pdt-op-bar-fill" style="background:rgba(255,255,255,.18);" data-w="48"></div></div></div>
             <span class="pdt-op-pct" style="color:rgba(255,255,255,.28);">48%</span>
             <span class="pdt-op-conf">LOW CONF</span>
           </div>
           <div class="pdt-op-footer">
-            <span class="pdt-op-footer-txt">4 high-confidence targets · 40.8°N 118.0°W</span>
-            <a href="how-it-works" class="pdt-op-view-all">View all 94 →</a>
+            <span class="pdt-op-footer-txt">Example layout · not real targets</span>
+            <a href="how-it-works" class="pdt-op-view-all">How it works →</a>
           </div>
         </div>
 
@@ -163,7 +163,7 @@ add_action( 'generate_before_content', function() {
       <div class="pdt-cmp-intro xr-reveal">
         <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>The Difference</span>
         <h2>Old methods.<br>Or X-Ray.</h2>
-        <p>The mineral exploration market hasn't changed in decades. Expensive, slow, and static. We built the alternative.</p>
+        <p>Discoveries fell from 202 in 2009 to about 80 in 2023, and the cost of finding new deposits keeps rising. Choosing where to drill is still slow, expensive and mostly unsuccessful. We built the alternative.</p>
       </div>
       <div class="pdt-cmp-grid xr-reveal">
 
@@ -173,31 +173,31 @@ add_action( 'generate_before_content', function() {
             <div class="pdt-cmp-head-icon">
               <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
-            <span class="pdt-cmp-head-title">Traditional Consultants</span>
+            <span class="pdt-cmp-head-title">Traditional Exploration</span>
           </div>
           <div class="pdt-cmp-row">
-            <span class="pdt-cmp-label">Turnaround</span>
-            <span class="pdt-cmp-val">1 – 3 months</span>
+            <span class="pdt-cmp-label">Success rate</span>
+            <span class="pdt-cmp-val">About 1 in 200 drill projects, ~20 boreholes each</span>
           </div>
           <div class="pdt-cmp-row">
-            <span class="pdt-cmp-label">Cost</span>
-            <span class="pdt-cmp-val">$100 – 250K / study</span>
+            <span class="pdt-cmp-label">Target generation</span>
+            <span class="pdt-cmp-val">$30K – $90K per project, per year</span>
           </div>
           <div class="pdt-cmp-row">
-            <span class="pdt-cmp-label">Learning</span>
-            <span class="pdt-cmp-val">Static deliverable</span>
+            <span class="pdt-cmp-label">Drilling</span>
+            <span class="pdt-cmp-val">Up to $500K per site</span>
           </div>
           <div class="pdt-cmp-row">
-            <span class="pdt-cmp-label">Output</span>
-            <span class="pdt-cmp-val">Expert interpretation</span>
+            <span class="pdt-cmp-label">Method</span>
+            <span class="pdt-cmp-val">Geologist teams, GIS, prospectivity studies, surface mapping</span>
           </div>
           <div class="pdt-cmp-row">
-            <span class="pdt-cmp-label">Access</span>
-            <span class="pdt-cmp-val">Calendar bottleneck</span>
+            <span class="pdt-cmp-label">Targets tested</span>
+            <span class="pdt-cmp-val">Can run to several thousand before a discovery</span>
           </div>
           <div class="pdt-cmp-row">
-            <span class="pdt-cmp-label">Explainability</span>
-            <span class="pdt-cmp-val">Additional interpretation from mining company required</span>
+            <span class="pdt-cmp-label">Data processed</span>
+            <span class="pdt-cmp-val">As much as a team can review by hand</span>
           </div>
         </div>
 
@@ -210,28 +210,28 @@ add_action( 'generate_before_content', function() {
             <span class="pdt-cmp-head-title">X-Ray Platform</span>
           </div>
           <div class="pdt-cmp-row">
-            <span class="pdt-cmp-label">Turnaround</span>
-            <span class="pdt-cmp-val">Less than a month</span>
+            <span class="pdt-cmp-label">Success rate</span>
+            <span class="pdt-cmp-val">Great Basin lithium model: 95% recall, 80% precision</span>
           </div>
           <div class="pdt-cmp-row">
-            <span class="pdt-cmp-label">Cost</span>
-            <span class="pdt-cmp-val">Negotiated per project/mineral</span>
+            <span class="pdt-cmp-label">Target generation</span>
+            <span class="pdt-cmp-val">Three annual subscription tiers</span>
           </div>
           <div class="pdt-cmp-row">
-            <span class="pdt-cmp-label">Learning</span>
-            <span class="pdt-cmp-val">Sharpens every drill cycle</span>
+            <span class="pdt-cmp-label">Drilling</span>
+            <span class="pdt-cmp-val">Fewer holes drilled before a discovery</span>
           </div>
           <div class="pdt-cmp-row">
-            <span class="pdt-cmp-label">Output</span>
-            <span class="pdt-cmp-val">Ranked prospectivity report</span>
+            <span class="pdt-cmp-label">Method</span>
+            <span class="pdt-cmp-val">Machine learning on decades of cleaned geological data</span>
           </div>
           <div class="pdt-cmp-row">
-            <span class="pdt-cmp-label">Access</span>
-            <span class="pdt-cmp-val">Securely upload data and we take care of the rest</span>
+            <span class="pdt-cmp-label">Targets tested</span>
+            <span class="pdt-cmp-val">A ranked list shows where to drill first</span>
           </div>
           <div class="pdt-cmp-row">
-            <span class="pdt-cmp-label">Explainability</span>
-            <span class="pdt-cmp-val">Easily understandable in-depth analysis and reasoning per target with satelite mapping</span>
+            <span class="pdt-cmp-label">Data processed</span>
+            <span class="pdt-cmp-val">More data and more factors than any human can weigh</span>
           </div>
         </div>
 
@@ -244,8 +244,8 @@ add_action( 'generate_before_content', function() {
     <div class="xr-container">
       <div class="pdt-arch-intro xr-reveal">
         <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>How It Works</span>
-        <h2>Three inputs. One model.<br>Drill-ready output.</h2>
-        <p>The X-Ray platform is a closed loop — data goes in, ranked targets come out, drill results feed back in. The model compounds with every campaign.</p>
+        <h2>Your data. Our models.<br>Ranked drill targets.</h2>
+        <p>The X-Ray platform is a software subscription for geologists. Your exploration data goes in, and a prospectivity heat map and ranked drill targets come out. Keep uploading drill data as you go and make quick, informed decisions on where to drill next.</p>
       </div>
 
       <div class="pdt-arch-flow">
@@ -256,13 +256,13 @@ add_action( 'generate_before_content', function() {
           <div class="pdt-arch-icon">
             <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="4"/><rect x="3" y="9.5" width="18" height="4"/><rect x="3" y="16" width="18" height="4"/></svg>
           </div>
-          <h3 class="pdt-arch-h">Connect your unprocessed data</h3>
-          <p class="pdt-arch-p">Securely upload any combination of geochemistry grids, aeromagnetic surveys, remote sensing, structural mapping, etc. No preprocessing required — the platform auto-aligns datasets to a common spatial reference.</p>
+          <h3 class="pdt-arch-h">Upload your exploration data</h3>
+          <p class="pdt-arch-p">Securely upload the exploration data your team has already collected. It is combined with our own dataset: decades of cluttered public geological data that we have cleaned and sorted so a model can learn from it.</p>
           <div class="pdt-arch-bullets">
-            <div class="pdt-arch-bullet">Geochemistry (soil, rock, stream sed)</div>
-            <div class="pdt-arch-bullet">Aeromagnetics &amp; gravity</div>
-            <div class="pdt-arch-bullet">ASTER / EMIT remote sensing</div>
-            <div class="pdt-arch-bullet">Structural / mapping overlays</div>
+            <div class="pdt-arch-bullet">Geochemistry</div>
+            <div class="pdt-arch-bullet">Structural &amp; lithology data</div>
+            <div class="pdt-arch-bullet">Geophysics, geothermal &amp; topography</div>
+            <div class="pdt-arch-bullet">Your own survey and drill data</div>
           </div>
         </div>
 
@@ -274,13 +274,13 @@ add_action( 'generate_before_content', function() {
           <div class="pdt-arch-icon">
             <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg>
           </div>
-          <h3 class="pdt-arch-h">X-Ray individual model training</h3>
-          <p class="pdt-arch-p">We process and upload the data to a private, company-specific cross-validation model to train it. Then we run the machine learning algorithm to generate targets backed by geological reasoning and build a detailed report with both geoscientists and mining executives in mind.</p>
+          <h3 class="pdt-arch-h">Models built for one mineral, one region</h3>
+          <p class="pdt-arch-p">An ensemble of XGBoost and LightGBM models scores your ground using our proprietary featuresets: in-house lists of the geological features that indicate lithium mineralization. Each customer's model is kept separate.</p>
           <div class="pdt-arch-bullets">
-            <div class="pdt-arch-bullet">Company data is kept private from the beginning</div>
-            <div class="pdt-arch-bullet">Deposit-anchored inference (not generic ML)</div>
-            <div class="pdt-arch-bullet">Signal attribution layer per target</div>
-            <div class="pdt-arch-bullet">Compound learning on drill outcomes</div>
+            <div class="pdt-arch-bullet">Your data is used only for your predictions</div>
+            <div class="pdt-arch-bullet">XGBoost + LightGBM ensemble</div>
+            <div class="pdt-arch-bullet">Proprietary in-house featuresets</div>
+            <div class="pdt-arch-bullet">Spatial block cross-validation</div>
           </div>
         </div>
 
@@ -292,13 +292,13 @@ add_action( 'generate_before_content', function() {
           <div class="pdt-arch-icon">
             <svg viewBox="0 0 24 24"><polygon points="4 21 9 21 9 8 4 8"/><polygon points="11 21 16 21 16 4 11 4"/><polygon points="18 21 22 21 22 13 18 13"/></svg>
           </div>
-          <h3 class="pdt-arch-h">Ranked targets, ready to drill</h3>
-          <p class="pdt-arch-p">We look at your specific area of interest and localize the report for easy interpretation, building a heatmap to display areas within the scope with high mineralization probability. Each target includes plain-language rationale and the specific signals driving its score.</p>
+          <h3 class="pdt-arch-h">Ranked targets, ready to review</h3>
+          <p class="pdt-arch-p">You get a prospectivity heat map of your area of interest and a ranked list of drill targets. A 3D view and analysis tools help your geologists narrow down where to drill.</p>
           <div class="pdt-arch-bullets">
-            <div class="pdt-arch-bullet">Ranked list with confidence intervals</div>
-            <div class="pdt-arch-bullet">Plain-language explanation per target</div>
-            <div class="pdt-arch-bullet">GeoTIFF export for GIS integration</div>
-            <div class="pdt-arch-bullet">PDF drill target report (client-ready)</div>
+            <div class="pdt-arch-bullet">Prospectivity heat map</div>
+            <div class="pdt-arch-bullet">Ranked list of drill targets</div>
+            <div class="pdt-arch-bullet">3D visualization of the target area</div>
+            <div class="pdt-arch-bullet">Analysis tools for your geologists</div>
           </div>
         </div>
 
@@ -311,31 +311,31 @@ add_action( 'generate_before_content', function() {
     <div class="xr-container">
       <div class="pdt-proof-intro xr-reveal">
         <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>Proof of Concept</span>
-        <h2>The Nevada lithium<br>proof of concept.</h2>
-        <p>The first X-Ray model targets lithium in Nevada's Basin and Range province — the same geology driving the Thacker Pass mine. Internal validation completed May 2026.</p>
+        <h2>The Great Basin<br>lithium model.</h2>
+        <p>Our first model predicts lithium deposits across the whole Great Basin region of the United States at 1x1 km cells. It builds on an earlier Nevada model that proved the approach.</p>
       </div>
 
       <div class="pdt-proof-grid">
         <div class="pdt-proof-stat">
-          <div class="pdt-proof-stat-eyebrow">Top target confidence</div>
-          <div class="pdt-proof-stat-num">94%</div>
-          <div class="pdt-proof-stat-label">Zone NV-7B — Thacker Pass Adjacent. Aeromagnetic low coincident with elevated Li claystone indicators.</div>
+          <div class="pdt-proof-stat-eyebrow">Recall · known deposits</div>
+          <div class="pdt-proof-stat-num">95%</div>
+          <div class="pdt-proof-stat-label">Out of every 100 known lithium deposits in the Great Basin, the model finds 95 of them on average.</div>
         </div>
         <div class="pdt-proof-stat">
-          <div class="pdt-proof-stat-eyebrow">Avg precision · top-10 targets</div>
-          <div class="pdt-proof-stat-num sky">87%</div>
-          <div class="pdt-proof-stat-label">Average confidence across the top 10 ranked parcels in the Nevada Basin AOI. Validated against USGS ground data.</div>
+          <div class="pdt-proof-stat-eyebrow">Precision</div>
+          <div class="pdt-proof-stat-num sky">80%</div>
+          <div class="pdt-proof-stat-label">Roughly 80% of the model's predictions are lithium deposits.</div>
         </div>
         <div class="pdt-proof-stat">
-          <div class="pdt-proof-stat-eyebrow">Turnaround · full AOI run</div>
-          <div class="pdt-proof-stat-num">2.2h</div>
-          <div class="pdt-proof-stat-label">18,400 km² AOI. 94 parcels scored. From data upload to ranked output — under 3 hours including signal attribution.</div>
+          <div class="pdt-proof-stat-eyebrow">Earlier Nevada model</div>
+          <div class="pdt-proof-stat-num">69%</div>
+          <div class="pdt-proof-stat-label">Of deposits recovered in the top 10% of ranked ground, across 19,000 grid cells at 5x5 km.</div>
         </div>
       </div>
 
       <div class="pdt-proof-quote xr-reveal" style="margin-top:2px;">
-        <blockquote>"The Nevada model correctly identified Zone NV-7B as the highest-probability lithium target in the Thacker Pass Adjacent region. Ground survey confirmed elevated Li-bearing claystones at depth consistent with Basin and Range extension zone predictions."</blockquote>
-        <cite>Internal Validation Report · X-Ray Geoanalytics · June 2025</cite>
+        <blockquote>Trained on labels from known mine sites, geochemistry and mining-claim data. Checked with spatial block cross-validation to account for spatial autocorrelation, plus repeated stratified k-fold and leave-one-out cross-validation.</blockquote>
+        <cite>Model validation · X-Ray Geoanalytics</cite>
       </div>
     </div>
   </section>
@@ -346,47 +346,47 @@ add_action( 'generate_before_content', function() {
       <div class="pdt-status-intro xr-reveal">
         <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>Development Status</span>
         <h2>Where we are today.</h2>
-        <p>We are pre-launch. The Nevada lithium model is in active development; the self-serve platform UI is being built around it; pilot customers onboard at launch.</p>
+        <p>We are pre-launch. The Great Basin lithium model is built. The software platform is being designed around it, shaped by what geologists at junior explorers tell us they need.</p>
       </div>
 
       <div class="pdt-status-board">
 
         <div class="pdt-status-row">
           <div class="pdt-status-dot live"></div>
-          <div class="pdt-status-mineral">Nevada Lithium Model</div>
-          <div class="pdt-status-desc">Targeting 94k km² across Nevada's Basin and Range. 94 active parcels scored at 15-km grid resolution. Compound-learning on pilot drill results in real time.</div>
-          <div class="pdt-status-timeline">Active · Pilot</div>
+          <div class="pdt-status-mineral">Great Basin Lithium Model</div>
+          <div class="pdt-status-desc">Predicts lithium across the Great Basin at 1x1 km cells. 95% recall and 80% precision on known deposits.</div>
+          <div class="pdt-status-timeline">Built</div>
           <div class="pdt-status-badge live">Active</div>
         </div>
 
         <div class="pdt-status-row">
           <div class="pdt-status-dot active"></div>
-          <div class="pdt-status-mineral">Self-serve Platform UI</div>
-          <div class="pdt-status-desc">Data upload, AOI configuration, target report generation — all through the platform, no calendar bottleneck, no data export. Pilot customers onboard at launch.</div>
-          <div class="pdt-status-timeline">Q3 2026</div>
+          <div class="pdt-status-mineral">Finer Models · 100–500 m</div>
+          <div class="pdt-status-desc">A hierarchy of models, each finer than the last, working toward exact drill coordinates. Adds borehole logs from water wells, oil and gas wells and lithium drilling, plus customer data.</div>
+          <div class="pdt-status-timeline">In progress</div>
           <div class="pdt-status-badge active">In Dev</div>
         </div>
 
         <div class="pdt-status-row">
           <div class="pdt-status-dot soon"></div>
-          <div class="pdt-status-mineral">Copper, Rare Earths &amp; Gold</div>
-          <div class="pdt-status-desc">Additional commodity models joining the library after Nevada lithium. Same fusion architecture, deposit-anchored weights trained per-mineral.</div>
-          <div class="pdt-status-timeline">Q4 2026</div>
+          <div class="pdt-status-mineral">Nickel Model</div>
+          <div class="pdt-status-desc">Our next commodity model. Nickel is a metal our customers already target alongside lithium.</div>
+          <div class="pdt-status-timeline">Next</div>
           <div class="pdt-status-badge soon">Planned</div>
         </div>
 
         <div class="pdt-status-row">
           <div class="pdt-status-dot future"></div>
-          <div class="pdt-status-mineral">Deep Sea &amp; Lunar Models</div>
-          <div class="pdt-status-desc">Extending the fusion architecture to sub-sea nodule provinces and eventually lunar resource mapping. Same platform, different training domains.</div>
-          <div class="pdt-status-timeline">2027 +</div>
+          <div class="pdt-status-mineral">Cobalt, Gold &amp; Silver</div>
+          <div class="pdt-status-desc">Further models for minerals customers drill for alongside lithium. We are also researching neural networks to bring the models together into one framework.</div>
+          <div class="pdt-status-timeline">Later</div>
           <div class="pdt-status-badge future">Future</div>
         </div>
 
       </div>
 
       <div class="xr-reveal" style="margin-top:44px;">
-        <p style="color:var(--xr-text-muted);font-size:14px;max-width:58ch;line-height:1.7;">At launch we ship a single tier — <strong style="color:var(--xr-text);">Explorer at $25K / year</strong>. Operator and Enterprise tiers follow once they become commercially viable.</p>
+        <p style="color:var(--xr-text-muted);font-size:14px;max-width:58ch;line-height:1.7;">We offer <strong style="color:var(--xr-text);">three annual tiers</strong>. Tier 1 covers a single commodity or project; tiers 2 and 3 cover multiple commodities and projects, so you can match your investment to the scale and risk of your exploration.</p>
         <a href="pricing" class="xr-btn xr-btn-outline" style="margin-top:20px;display:inline-flex;">View pricing plans <span class="xr-arrow">→</span></a>
       </div>
     </div>
@@ -397,7 +397,7 @@ add_action( 'generate_before_content', function() {
     <div class="pdt-cta-inner">
       <span class="xr-reveal xr-eyebrow" style="justify-content:center;margin-bottom:18px;"><span class="xr-eyebrow-hex"></span>Get Started</span>
       <h2 class="xr-reveal pdt-cta-h">Know where to drill<br>before you spend a <span class="gold">dollar.</span></h2>
-      <p class="xr-reveal xr-d2">Get on the list. The Nevada lithium model launches to pilot exploration teams shortly — spots are limited.</p>
+      <p class="xr-reveal xr-d2">Our Great Basin lithium model is built. Request a demo to see how it ranks drill targets on your ground.</p>
       <div class="xr-reveal xr-d3" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
         <a href="request-demo" class="xr-btn xr-btn-gold">Request a Demo</a>
         <a href="platform"     class="xr-btn xr-btn-outline">Platform details <span class="xr-arrow">→</span></a>
@@ -410,7 +410,7 @@ add_action( 'generate_before_content', function() {
     <div class="xr-footer-inner">
       <div class="xr-footer-grid">
         <div>
-          <div class="xr-footer-brand"><img src="https://xraygeoanalytics.com/wp-content/uploads/2026/05/hex_logo_clean.png" alt="X-Ray Geoanalytics"><span>X-Ray Geoanalytics</span></div>
+          <div class="xr-footer-brand"><img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180"></div>
           <p class="xr-footer-tagline">Advanced machine learning for mining site discovery. Nevada lithium. Every mineral. Every continent. Every drill result makes us smarter.</p>
           <div class="xr-footer-contact"><a href="mailto:info@xraygeoanalytics.com"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M4 6l8 7 8-7"/></svg>info@xraygeoanalytics.com</a></div>
         </div>

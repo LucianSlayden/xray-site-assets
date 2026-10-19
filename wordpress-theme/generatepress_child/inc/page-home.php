@@ -18,8 +18,7 @@ add_action( 'generate_before_content', function() {
 <nav class="xr-nav">
     <div class="xr-nav-inner">
       <a href="/" class="xr-brand">
-        <img src="https://xraygeoanalytics.com/wp-content/uploads/2026/05/hex_logo_clean.png" alt="X-Ray Geoanalytics">
-        <span class="xr-brand-wordmark">X-Ray <span class="accent">Geoanalytics</span></span>
+        <img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180">
       </a>
       <div class="xr-nav-list">
         <div class="xr-nav-item">
@@ -431,16 +430,12 @@ add_action( 'generate_before_content', function() {
         <article class="phase-card phase-live">
           <span class="phase-status"><span class="phase-status-dot"></span>In Development</span>
           <div class="phase-art">
-            <!-- Geographically accurate Nevada silhouette.
-                 NW corner ~ (16, 8). Top edge runs ~horizontal to the
-                 NE corner at (88, 8). Eastern border drops nearly
-                 vertical to the SE notch around (88, 90); the panhandle
-                 cuts SW along a diagonal to the southern tip at
-                 (55, 122). The Colorado-River border curves SE briefly
-                 before reaching the southern tip; the SW border runs
-                 NNW back up to the NW corner along the California line. -->
+            <!-- Nevada outline projected from its real border coordinates:
+                 42°N north line, 114.04°W east line down to Lake Mead,
+                 the Colorado River south to the 35°N tip, the diagonal
+                 California line to Lake Tahoe, then 120°W north. -->
             <svg viewBox="0 0 100 130" aria-hidden="true">
-              <path d="M16 8 L88 8 L88 90 L57 122 L13 65 L13 50 Z"
+              <path d="M10.0 5.0 L89.9 5.0 L89.9 104.6 L88.5 105.8 L86.1 106.8 L83.8 105.6 L82.2 106.1 L80.6 107.7 L81.0 110.4 L81.5 114.4 L82.7 119.0 L82.2 122.8 L82.0 125.0 L10.0 56.4 Z"
                     fill="rgba(232,185,99,0.06)" stroke="var(--xr-gold)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
               <!-- Active exploration target — northern Nevada lithium basin -->
               <circle cx="44" cy="38" r="11" fill="none" stroke="var(--xr-green)" stroke-width="1.5"/>
@@ -693,8 +688,7 @@ add_action( 'generate_before_content', function() {
       <div class="xr-footer-grid">
         <div>
           <div class="xr-footer-brand">
-            <img src="https://xraygeoanalytics.com/wp-content/uploads/2026/05/hex_logo_clean.png" alt="X-Ray Geoanalytics">
-            <span>X-Ray Geoanalytics</span>
+            <img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180">
           </div>
           <p class="xr-footer-tagline">Advanced machine learning for mining site discovery. Nevada lithium. Every mineral. Every continent. Every drill result makes us smarter.</p>
           <div class="xr-footer-contact">

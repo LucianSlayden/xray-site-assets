@@ -30,7 +30,7 @@ body { background: #0E141B !important; }
 .xr-page-hero {
     background:
         linear-gradient(180deg, rgba(14,20,27,0.88) 0%, rgba(14,20,27,0.65) 35%, rgba(14,20,27,0.92) 100%),
-        url('https://xraygeoanalytics.com/wp-content/uploads/2026/05/mj-landscape-sharp-1.jpg') center/cover no-repeat,
+        url('https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/bg-landscape-2560.webp') center/cover no-repeat,
         #0E141B !important;
 }
 
@@ -100,8 +100,7 @@ body { background: #0E141B !important; }
 <nav class="xr-nav">
   <div class="xr-nav-inner">
     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="xr-brand">
-      <img src="https://xraygeoanalytics.com/wp-content/uploads/2026/05/hex_logo_clean.png" alt="X-Ray Geoanalytics">
-      <span class="xr-brand-wordmark">X-Ray <span class="accent">Geoanalytics</span></span>
+      <img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180">
     </a>
     <div class="xr-nav-list">
       <div class="xr-nav-item">
@@ -165,7 +164,7 @@ body { background: #0E141B !important; }
       <div>
         <div class="xr-reveal"><span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>Get Early Access</span></div>
         <h1 class="xr-reveal xr-d1" style="margin-top:18px;">Request<br><span style="color:var(--xr-gold);">a Demo</span></h1>
-        <p class="xr-reveal xr-d2 xr-lede" style="margin-top:14px;max-width:480px;">We're onboarding our first pilot exploration teams now. Tell us about your project and we'll reach out within one business day to schedule a walkthrough.</p>
+        <p class="xr-reveal xr-d2 xr-lede" style="margin-top:14px;max-width:480px;">We're talking with junior exploration teams across the Great Basin and the American Southwest. Tell us about your project and we'll reach out to schedule a walkthrough.</p>
 
         <div class="xr-reveal xr-d3 step-list" style="margin-top:42px;margin-bottom:36px;">
           <div class="step-item">
@@ -178,15 +177,15 @@ body { background: #0E141B !important; }
           <div class="step-item">
             <div class="step-hex">02</div>
             <div>
-              <div class="title">We'll be in touch within 24 hours</div>
-              <div class="desc">Lucian or Ethan will reach out directly to schedule a live walkthrough of the platform.</div>
+              <div class="title">We'll be in touch</div>
+              <div class="desc">Lucian or Ethan will reach out directly to set up a walkthrough.</div>
             </div>
           </div>
           <div class="step-item">
             <div class="step-hex">03</div>
             <div>
-              <div class="title">See ranked targets on your data</div>
-              <div class="desc">Pilot customers can run the model on their own project data before committing to a subscription.</div>
+              <div class="title">See what the platform delivers</div>
+              <div class="desc">We'll show you how uploaded exploration data becomes a prospectivity heat map, a ranked list of drill targets and a 3D view. Your data is never used to train other customers' models.</div>
             </div>
           </div>
         </div>
@@ -196,7 +195,7 @@ body { background: #0E141B !important; }
             <span class="xr-pulse-dot"></span>
             <div class="xr-eyebrow" style="margin:0;">Current Status</div>
           </div>
-          <p style="color:var(--xr-text-2);font-size:14.5px;line-height:1.7;margin:0;">Our Nevada lithium model is currently in active development, targeting 90% accuracy at launch. Demo requests reserve a spot in the first pilot cohort and priority access to additional models as they become commercially viable.</p>
+          <p style="color:var(--xr-text-2);font-size:14.5px;line-height:1.7;margin:0;">Our Great Basin lithium model reaches 95% recall and 80% precision at 1x1 km cells. Next on our roadmap: customer discovery with exploration teams, a nickel model, and field validation against real boreholes.</p>
         </div>
       </div>
 
@@ -220,7 +219,7 @@ body { background: #0E141B !important; }
 
         <div class="form-row">
           <label for="email">Company Email</label>
-          <input type="email" id="email" name="email" placeholder="jane@acmeexploration.com" required>
+          <input type="email" id="email" name="email" placeholder="Your work email" required>
         </div>
 
         <div class="form-grid-2">
@@ -228,16 +227,16 @@ body { background: #0E141B !important; }
             <label for="mineral">Target Mineral</label>
             <select id="mineral" name="mineral">
               <option value="lithium">Lithium</option>
-              <option value="copper">Copper</option>
-              <option value="gold">Gold</option>
-              <option value="rare-earth">Rare Earths</option>
               <option value="nickel">Nickel</option>
+              <option value="cobalt">Cobalt</option>
+              <option value="gold">Gold</option>
+              <option value="silver">Silver</option>
               <option value="other">Other</option>
             </select>
           </div>
           <div>
             <label for="region">Geography</label>
-            <input type="text" id="region" name="region" placeholder="e.g., Nevada, Western Australia">
+            <input type="text" id="region" name="region" placeholder="e.g., Nevada, Great Basin">
           </div>
         </div>
 
@@ -259,7 +258,7 @@ body { background: #0E141B !important; }
   <div class="xr-footer-inner">
     <div class="xr-footer-grid">
       <div>
-        <div class="xr-footer-brand"><img src="https://xraygeoanalytics.com/wp-content/uploads/2026/05/hex_logo_clean.png" alt="X-Ray Geoanalytics"><span>X-Ray Geoanalytics</span></div>
+        <div class="xr-footer-brand"><img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180"></div>
         <p class="xr-footer-tagline">Advanced machine learning for mining site discovery. Nevada lithium. Every mineral. Every continent. Every drill result makes us smarter.</p>
         <div class="xr-footer-contact"><a href="mailto:info@xraygeoanalytics.com"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M4 6l8 7 8-7"/></svg>info@xraygeoanalytics.com</a></div>
       </div>

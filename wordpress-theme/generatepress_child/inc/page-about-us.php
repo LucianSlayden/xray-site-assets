@@ -224,8 +224,7 @@ body { background: #060c12 !important; }
 <nav class="xr-nav">
   <div class="xr-nav-inner">
     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="xr-brand">
-      <img src="https://xraygeoanalytics.com/wp-content/uploads/2026/05/hex_logo_clean.png" alt="X-Ray Geoanalytics">
-      <span class="xr-brand-wordmark">X-Ray <span class="accent">Geoanalytics</span></span>
+      <img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180">
     </a>
     <div class="xr-nav-list">
       <div class="xr-nav-item">
@@ -294,7 +293,7 @@ body { background: #060c12 !important; }
         <div style="overflow:hidden;"><div class="ab-hw-inner"><span style="color:#E8B963;">exploration engine</span>.</div></div>
       </h1>
       <p id="ab-lede" style="color:#A8B2C0;font-size:17px;line-height:1.8;margin:18px 0 34px;max-width:520px;">
-        X-Ray Geoanalytics was founded on a simple observation: the mining industry generates enormous quantities of geoscience data, but almost none of it is analyzed in a way that makes the most of what it contains. We're changing that.
+        X-Ray Geoanalytics finds mineral deposits for mining companies using machine learning. Our models process more data and consider more factors than any human can, so explorers spend less time and money drilling in the wrong places. We started with lithium in the Great Basin.
       </p>
       <div id="ab-ctas" style="display:flex;gap:14px;flex-wrap:wrap;">
         <a href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>" class="xr-btn xr-btn-gold">Request a Demo</a>
@@ -308,25 +307,25 @@ body { background: #060c12 !important; }
           <div class="xr-eyebrow" style="margin-bottom:16px;">Company Snapshot</div>
           <div class="ab-snap-grid">
             <div class="ab-stat-cell">
-              <div class="ab-stat-num">2025</div>
-              <div class="ab-stat-lbl">Founded</div>
-            </div>
-            <div class="ab-stat-cell">
-              <div class="ab-stat-num">5</div>
+              <div class="ab-stat-num">4</div>
               <div class="ab-stat-lbl">Co-founders</div>
             </div>
             <div class="ab-stat-cell">
-              <div class="ab-stat-num">90%</div>
-              <div class="ab-stat-lbl">Model accuracy</div>
+              <div class="ab-stat-num">95%</div>
+              <div class="ab-stat-lbl">Recall</div>
+            </div>
+            <div class="ab-stat-cell">
+              <div class="ab-stat-num">80%</div>
+              <div class="ab-stat-lbl">Precision</div>
             </div>
             <div class="ab-stat-cell sky">
-              <div class="ab-stat-num">Pre-seed</div>
-              <div class="ab-stat-lbl">Stage · 2026</div>
+              <div class="ab-stat-num">1x1 km</div>
+              <div class="ab-stat-lbl">Great Basin lithium</div>
             </div>
           </div>
           <div class="ab-quote">
-            <p>"The data problem in mining exploration isn't a collection problem — it's an integration problem. USGS alone has decades of surveys that have never been machine-fused with each other. That gap is our product."</p>
-            <div class="ab-quote-src">— The Founding Insight</div>
+            <p>"Most easily accessible deposits have already been found. To find more, explorers will have to drill deeper and analyze more data than ever before to make reliable predictions. That is the problem X-Ray is built to solve."</p>
+            <div class="ab-quote-src">— X-Ray Geoanalytics</div>
           </div>
         </div>
       </div>
@@ -345,28 +344,28 @@ body { background: #060c12 !important; }
           <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>Our Mission</span>
         </div>
         <h2 class="ab-section-h2" style="font-family:var(--xr-font-display);font-size:clamp(28px,3vw,40px);font-weight:700;letter-spacing:-0.02em;margin:16px 0 20px;color:#F1F4F8;">Make the right drill site obvious before anyone puts a bit in the ground.</h2>
-        <p class="ab-section-p" style="color:#A8B2C0;font-size:16px;line-height:1.85;margin:0 0 16px;">Mineral exploration is one of the most capital-intensive and failure-prone industries in the world. Junior explorers spend $2-5M per target. Majors spend far more. And the historical success rate of finding a commercially viable deposit from first discovery is less than 1 in 1,000.</p>
-        <p class="ab-section-p" style="color:#A8B2C0;font-size:16px;line-height:1.85;margin:0;">Most of that failure is avoidable. Not because the deposits aren't there — they are — but because the data that would point to them exists in fragmented, incompatible formats across decades of surveys, and no one has the bandwidth to fuse it all. We built the machine that does.</p>
+        <p class="ab-section-p" style="color:#A8B2C0;font-size:16px;line-height:1.85;margin:0 0 16px;">Mineral exploration is one of the most capital-intensive and failure-prone parts of mining. Explorers spend $30,000 to $90,000 a year per project on target generation and as much as $500,000 to get equipment to a site and drill. At the high end, only one in every 200 drill projects, each averaging about 20 boreholes, leads to a new mine site discovery.</p>
+        <p class="ab-section-p" style="color:#A8B2C0;font-size:16px;line-height:1.85;margin:0;">Meanwhile, new discoveries have fallen from a peak of 202 in 2009 to roughly 80 in 2023, while lithium demand is projected to grow 2.5x from 2024 to 2030. Our models rank ground by how likely it is to host a deposit, so explorers can drill fewer holes before they make a discovery.</p>
       </div>
       <div>
         <div class="ab-info-box ab-section-p" style="margin-bottom:16px;">
           <div class="xr-eyebrow" style="margin-bottom:13px;">The Problem We're Solving</div>
-          <p style="color:#A8B2C0;font-size:14.5px;line-height:1.8;margin:0;">USGS alone has decades of publicly available geochemical and geophysical surveys that have never been machine-fused with satellite imagery or each other. Proprietary drill results sit in silos. Geophysical surveys exist in incompatible projections. That integration gap — not the absence of data — is why deposits go undiscovered.</p>
+          <p style="color:#A8B2C0;font-size:14.5px;line-height:1.8;margin:0;">Junior explorers are early in the exploration stage and rarely have the time, people, or money for the large-scale data analytics their projects need. Decades of geological data exist, but in a cluttered form no AI model can use as-is. We collected that data, cleaned and sorted it, and built proprietary featuresets that indicate lithium mineralization.</p>
         </div>
         <div class="ab-info-box ab-section-p" style="margin-bottom:0;">
           <div class="xr-eyebrow" style="margin-bottom:14px;">Team Disciplines</div>
           <div class="ab-discipline-row">
-            <span class="ab-discipline-label">ML Engineering &amp; AI</span>
+            <span class="ab-discipline-label">Model Development &amp; Machine Learning</span>
             <span class="xr-tag xr-tag-gold">2 founders</span>
           </div>
           <div class="ab-discipline-div"></div>
           <div class="ab-discipline-row">
-            <span class="ab-discipline-label">Data &amp; Infrastructure</span>
-            <span class="xr-tag xr-tag-sky">2 founders</span>
+            <span class="ab-discipline-label">Geology &amp; Finance</span>
+            <span class="xr-tag xr-tag-sky">1 founder</span>
           </div>
           <div class="ab-discipline-div"></div>
           <div class="ab-discipline-row">
-            <span class="ab-discipline-label">Strategy &amp; Legal</span>
+            <span class="ab-discipline-label">Legal &amp; IP</span>
             <span class="xr-tag xr-tag-gold">1 founder</span>
           </div>
         </div>
@@ -386,33 +385,33 @@ body { background: #060c12 !important; }
     <div class="ab-prin-grid">
       <div class="ab-prin-card">
         <div class="ab-prin-hex"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0E141B" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
-        <h3>Speed is the product</h3>
-        <p>A result that arrives in hours is worth more than one that arrives in months, even if the underlying analysis is identical. We obsess over pipeline speed because our clients' capital is at risk every day they wait.</p>
+        <h3>Speed to target</h3>
+        <p>Junior explorers need capital efficiency, speed to target, and a compelling geological story for their investors. We build for faster, better-informed decisions about where to drill, because our customers' capital is on the line with every hole.</p>
       </div>
       <div class="ab-prin-card">
         <div class="ab-prin-hex"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0E141B" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
         <h3>Explainability is trust</h3>
-        <p>Every ranked target comes with attribution — which data signals drove the score — so geoscientists can interrogate, override, or validate before committing capital. We never ship a black box.</p>
+        <p>Accurate predictions aren't enough. Customers' geologists need defensible explanations behind every target, so they can check the reasoning before they commit capital. We aim for results that make geological sense, not a black box.</p>
       </div>
       <div class="ab-prin-card">
         <div class="ab-prin-hex"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0E141B" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
         <h3>Data isolation by default</h3>
-        <p>Exploration data is commercially sensitive. We treat every client's dataset as proprietary from day one — isolated compute, no cross-client training, full audit logs. Security is not a feature we add later.</p>
+        <p>Explorers spend millions collecting their data. Every customer's model is compartmentalized: what they upload is used only for their own predictions and is never used to train anyone else's model.</p>
       </div>
       <div class="ab-prin-card sky">
         <div class="ab-prin-hex sky"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0E141B" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
         <h3>Compound learning</h3>
-        <p>Every drill result is a label. Our models improve with every campaign. We build systems that get sharper over time — not static tools that deliver the same analysis in year three as year one.</p>
+        <p>Customers can keep uploading new drilling data to inform where they drill next, and we keep improving model accuracy and shipping updates. We're building a hierarchy of progressively finer models, each one closer to exact drill coordinates.</p>
       </div>
       <div class="ab-prin-card sky">
         <div class="ab-prin-hex sky"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0E141B" stroke-width="2.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"/></svg></div>
         <h3>Built with geoscientists</h3>
-        <p>Domain expertise is baked in, not bolted on. Our team includes people who've worked exploration data problems from the field side. We build tools geoscientists trust — not tools that replace them.</p>
+        <p>Domain expertise is baked in, not bolted on. Our CEO studies geology and works on the geotechnical side of our models, and we plan to bring on an experienced geoscientist. We build tools for geologists, not tools that replace them.</p>
       </div>
       <div class="ab-prin-card">
         <div class="ab-prin-hex"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0E141B" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
-        <h3>Every mineral, every continent</h3>
-        <p>We started with Nevada lithium because it offered the best validation dataset. The same data problems exist everywhere exploration happens. We are building toward full mineral and geographic coverage — including deep-sea mining and lunar resources.</p>
+        <h3>Beyond lithium</h3>
+        <p>We started with lithium in Nevada and the Great Basin. Next comes a nickel model, a metal our customers already target alongside lithium, followed by cobalt, gold, and silver. Each model focuses on one commodity in one region.</p>
       </div>
     </div>
   </div>
@@ -435,7 +434,7 @@ body { background: #060c12 !important; }
               <span class="xr-eyebrow" style="margin:0;">Our Team</span>
             </div>
             <h3>Meet the founders</h3>
-            <p>Five co-founders spanning ML engineering, geoscience, data infrastructure, and legal strategy.</p>
+            <p>Four co-founders with equal ownership, covering geology, finance, model development, machine learning, and law.</p>
           </div>
           <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8B963" stroke-width="2" style="flex-shrink:0;margin-top:4px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </div>
@@ -448,7 +447,7 @@ body { background: #060c12 !important; }
               <span class="xr-eyebrow" style="margin:0;">Why X-Ray</span>
             </div>
             <h3>The competitive difference</h3>
-            <p>How X-Ray compares to consultants, generic GIS software, and doing it in-house. The numbers tell the story.</p>
+            <p>How X-Ray compares to traditional exploration methods and to other companies applying machine learning to mineral exploration.</p>
           </div>
           <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8B963" stroke-width="2" style="flex-shrink:0;margin-top:4px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </div>
@@ -461,7 +460,7 @@ body { background: #060c12 !important; }
               <span class="xr-eyebrow" style="margin:0;color:#6FB5E0;">News &amp; Updates</span>
             </div>
             <h3>Company milestones</h3>
-            <p>Product launches, model accuracy milestones, YC batch acceptance, and company announcements.</p>
+            <p>Model milestones, customer discovery progress, and company announcements.</p>
           </div>
           <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6FB5E0" stroke-width="2" style="flex-shrink:0;margin-top:4px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </div>
@@ -490,7 +489,7 @@ body { background: #060c12 !important; }
     <span class="xr-eyebrow ab-section-eyebrow" style="justify-content:center;margin-bottom:18px;"><span class="xr-eyebrow-hex"></span>Early Partners</span>
     <h2 class="ab-section-h2" style="font-family:var(--xr-font-display);font-size:clamp(28px,3vw,42px);font-weight:700;letter-spacing:-0.025em;margin:0;color:#F1F4F8;line-height:1.15;">We're actively seeking<br>early partners.</h2>
     <div class="ab-cta-divider"></div>
-    <p class="ab-section-p" style="color:#A8B2C0;font-size:16px;line-height:1.85;margin:0 0 36px;">If you're running an exploration campaign in 2026 and want to see what X-Ray can surface for your region, reach out. We're taking on a small number of early access clients now.</p>
+    <p class="ab-section-p" style="color:#A8B2C0;font-size:16px;line-height:1.85;margin:0 0 36px;">If you're a junior explorer in the Great Basin or American Southwest, we want to hear how you decide where to drill. We're starting customer discovery interviews and looking for pilot customers.</p>
     <div class="ab-section-p" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
       <a href="<?php echo esc_url( home_url( '/request-demo/' ) ); ?>" class="xr-btn xr-btn-gold">Request a Demo</a>
       <a href="mailto:info@xraygeoanalytics.com" class="xr-btn xr-btn-outline">Email us directly <span class="xr-arrow">→</span></a>
@@ -504,8 +503,7 @@ body { background: #060c12 !important; }
     <div class="xr-footer-grid">
       <div>
         <div class="xr-footer-brand">
-          <img src="https://xraygeoanalytics.com/wp-content/uploads/2026/05/hex_logo_clean.png" alt="X-Ray Geoanalytics">
-          <span>X-Ray Geoanalytics</span>
+          <img class="xr-brand-logo" src="https://xraygeoanalytics.com/wp-content/themes/generatepress_child/assets/img/logo-wordmark.png" alt="X-Ray Geoanalytics" width="570" height="180">
         </div>
         <p class="xr-footer-tagline">Advanced machine learning for mining site discovery. Nevada lithium. Every mineral. Every continent. Every drill result makes us smarter.</p>
         <div class="xr-footer-contact">
