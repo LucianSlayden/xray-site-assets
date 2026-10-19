@@ -20,6 +20,7 @@ if ( XRAY_THEME_LIVE ) {
 	// registration and hook order stay identical.
 	$xray_includes = array(
 		'site-chrome',
+		'roadmap-art',
 		'global-scripts',
 		'page-home',
 		'enqueue-scripts',

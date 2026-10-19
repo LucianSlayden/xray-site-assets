@@ -78,7 +78,7 @@ body { background: #060c12 !important; }
       </h1>
 
       <p class="iv-subhead" id="iv-sub">
-        X-Ray Geoanalytics uses machine learning to find mineral deposits for mining companies, starting with lithium in the Great Basin and expanding to the minerals our customers already search for alongside it: nickel, cobalt, gold, and silver.
+        X-Ray Geoanalytics uses machine learning to find mineral deposits for mining companies, starting with lithium in the Great Basin and expanding to the minerals mining companies already search for alongside it: nickel, cobalt, gold, and silver.
       </p>
 
       <a href="#iv-contact" class="iv-hero-cta" id="iv-cta">
@@ -178,8 +178,8 @@ body { background: #060c12 !important; }
             The models are <strong style="color:var(--xr-text);">not commercially viable yet</strong>. We are raising funding to develop them down to <strong style="color:var(--xr-gold);">1x1 m precision</strong>, fine enough to place individual boreholes, alongside customer discovery with mining companies and field validation against real boreholes.
           </p>
           <div class="iv-tags">
-            <span class="iv-tag iv-tag-gold">Built · Great Basin Lithium</span>
-            <span class="iv-tag iv-tag-sky">Next · Nickel</span>
+            <span class="iv-tag iv-tag-gold">Prototype · Great Basin Lithium</span>
+            <span class="iv-tag iv-tag-sky">Next · Finer models</span>
             <span class="iv-tag iv-tag-dim">Goal · 1x1 m precision</span>
           </div>
         </div>
@@ -292,96 +292,41 @@ body { background: #060c12 !important; }
       <div class="iv-timeline xr-reveal xr-d1" id="iv-timeline">
         <div class="iv-tl-line" id="iv-tl-line"></div>
 
-        <!-- 1: Nevada Lithium -->
+        <!-- Same five stages, in the same order and with the same drawings,
+             as the Home roadmap and the Product development tracker. -->
         <div class="iv-tl-step active">
-          <div class="iv-tl-icon" aria-hidden="true">
-            <svg viewBox="0 0 100 130">
-              <path d="M10.0 5.0 L89.9 5.0 L89.9 104.6 L88.5 105.8 L86.1 106.8 L83.8 105.6 L82.2 106.1 L80.6 107.7 L81.0 110.4 L81.5 114.4 L82.7 119.0 L82.2 122.8 L82.0 125.0 L10.0 56.4 Z"
-                    fill="rgba(232,185,99,0.06)" stroke="#E8B963" stroke-width="2" stroke-linejoin="round"/>
-              <circle cx="44" cy="38" r="11" fill="none" stroke="#4ade80" stroke-width="1.5"/>
-              <circle cx="44" cy="38" r="4"  fill="#4ade80"/>
-              <line x1="44" y1="24" x2="44" y2="31" stroke="#4ade80" stroke-width="1.5"/>
-              <line x1="44" y1="45" x2="44" y2="52" stroke="#4ade80" stroke-width="1.5"/>
-              <line x1="30" y1="38" x2="37" y2="38" stroke="#4ade80" stroke-width="1.5"/>
-              <line x1="51" y1="38" x2="58" y2="38" stroke="#4ade80" stroke-width="1.5"/>
-            </svg>
-          </div>
-          <div class="iv-tl-meta">Now · Model built · Customer discovery</div>
+          <div class="iv-tl-icon" aria-hidden="true"><?php echo xray_roadmap_art( 'prototype' ); ?></div>
+          <div class="iv-tl-meta">Now · Prototype · Customer discovery</div>
           <h3 class="iv-tl-h3">Great Basin Lithium</h3>
           <p class="iv-tl-p">Our lithium model covers the Great Basin at 1x1 km cells with 95% recall and 80% precision. Next is two rounds of customer interviews: first to validate the problem and how explorers decide where to drill today, then to learn what they want in the software.</p>
         </div>
 
-        <!-- 2: Nickel, field validation, grants -->
         <div class="iv-tl-step dev">
-          <div class="iv-tl-icon" aria-hidden="true">
-            <svg viewBox="0 0 130 100">
-              <!-- Nickel tile -->
-              <g font-family="JetBrains Mono,monospace" font-weight="700">
-                <rect x="4" y="22" width="34" height="38" rx="2" fill="rgba(111,181,224,0.1)" stroke="#6FB5E0" stroke-width="1.2"/>
-                <text x="8" y="32" fill="rgba(111,181,224,0.8)" font-size="7">28</text>
-                <text x="21" y="51" text-anchor="middle" fill="#6FB5E0" font-size="15">Ni</text>
-              </g>
-              <!-- Field validation: drill into ground, hitting the target -->
-              <path d="M44 56 H86" stroke="rgba(232,185,99,0.55)" stroke-width="1.2"/>
-              <path d="M44 62 H86 M44 70 H86 M44 78 H86" stroke="rgba(232,185,99,0.18)" stroke-width="1"/>
-              <path d="M58 56 L65 22 L72 56" fill="none" stroke="#A8B2C0" stroke-width="1.4" stroke-linejoin="round"/>
-              <path d="M61 40 H69" stroke="#A8B2C0" stroke-width="1.2"/>
-              <path d="M65 56 V82" stroke="#E8B963" stroke-width="2" stroke-dasharray="3 2"/>
-              <circle cx="65" cy="86" r="5" fill="none" stroke="#4ade80" stroke-width="1.5"/>
-              <path d="M62.3 86 l2 2 l3.6 -4" fill="none" stroke="#4ade80" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <!-- Federal grant: government building -->
-              <path d="M94 34 L110 24 L126 34 Z" fill="rgba(232,185,99,0.08)" stroke="#E8B963" stroke-width="1.2" stroke-linejoin="round"/>
-              <path d="M97 38 V54 M103 38 V54 M110 38 V54 M117 38 V54 M123 38 V54" stroke="#E8B963" stroke-width="1.6"/>
-              <path d="M94 36 H126 M93 57 H127 M91 61 H129" stroke="#E8B963" stroke-width="1.2"/>
-              <text x="110" y="74" text-anchor="middle" font-family="JetBrains Mono,monospace" font-weight="700" fill="rgba(232,185,99,0.85)" font-size="8">SBIR</text>
-            </svg>
-          </div>
+          <div class="iv-tl-icon" aria-hidden="true"><?php echo xray_roadmap_art( 'finer' ); ?></div>
           <div class="iv-tl-meta">Next · Within a year</div>
-          <h3 class="iv-tl-h3">Nickel, Field Validation &amp; Federal Grants</h3>
-          <p class="iv-tl-p">A nickel model, a metal our customers already target alongside lithium. Development toward 1x1 m precision for individual boreholes, field validation comparing predictions to real boreholes, and applications for SBIR and STTR grants to fund the work.</p>
+          <h3 class="iv-tl-h3">Finer Models &amp; Federal Grants</h3>
+          <p class="iv-tl-p">Development toward 1x1 m precision for individual boreholes, and applications for SBIR and STTR grants to fund the work.</p>
         </div>
 
-        <!-- 3: Global -->
+        <div class="iv-tl-step dev">
+          <div class="iv-tl-icon" aria-hidden="true"><?php echo xray_roadmap_art( 'field' ); ?></div>
+          <div class="iv-tl-meta">Next · Within a year</div>
+          <h3 class="iv-tl-h3">Field Validation</h3>
+          <p class="iv-tl-p">Field validation comparing predictions to real boreholes, with the results fed back into the model until it is accurate enough to sell.</p>
+        </div>
+
         <div class="iv-tl-step long">
-          <div class="iv-tl-icon" aria-hidden="true">
-            <svg viewBox="0 0 130 90">
-              <g font-family="JetBrains Mono,monospace" font-weight="700">
-                <rect x="4"   y="4"  width="20" height="22" rx="1" fill="rgba(232,185,99,0.18)" stroke="#E8B963" stroke-width="1"/>
-                <text x="14"  y="18" text-anchor="middle" fill="#E8B963" font-size="9">Li</text>
-                <rect x="28"  y="4"  width="20" height="22" rx="1" fill="rgba(232,185,99,0.1)" stroke="rgba(232,185,99,0.5)" stroke-width="1"/>
-                <text x="38"  y="18" text-anchor="middle" fill="#E8B963" font-size="9">Cu</text>
-                <rect x="52"  y="4"  width="20" height="22" rx="1" fill="rgba(232,185,99,0.06)" stroke="rgba(232,185,99,0.35)" stroke-width="1"/>
-                <text x="62"  y="18" text-anchor="middle" fill="rgba(232,185,99,0.85)" font-size="9">Au</text>
-                <rect x="76"  y="4"  width="20" height="22" rx="1" fill="rgba(111,181,224,0.08)" stroke="rgba(111,181,224,0.45)" stroke-width="1"/>
-                <text x="86"  y="18" text-anchor="middle" fill="#6FB5E0" font-size="9">Ni</text>
-                <rect x="100" y="4"  width="20" height="22" rx="1" fill="rgba(111,181,224,0.06)" stroke="rgba(111,181,224,0.3)" stroke-width="1"/>
-                <text x="110" y="18" text-anchor="middle" fill="rgba(111,181,224,0.85)" font-size="9">Co</text>
-                <rect x="4"   y="32" width="20" height="22" rx="1" fill="rgba(232,185,99,0.06)" stroke="rgba(232,185,99,0.32)" stroke-width="1"/>
-                <text x="14"  y="46" text-anchor="middle" fill="rgba(232,185,99,0.85)" font-size="9">Ag</text>
-                <rect x="28"  y="32" width="20" height="22" rx="1" fill="rgba(111,181,224,0.08)" stroke="rgba(111,181,224,0.4)" stroke-width="1"/>
-                <text x="38"  y="46" text-anchor="middle" fill="#6FB5E0" font-size="9">U</text>
-                <rect x="52"  y="32" width="20" height="22" rx="1" fill="rgba(232,185,99,0.06)" stroke="rgba(232,185,99,0.3)" stroke-width="1"/>
-                <text x="62"  y="46" text-anchor="middle" fill="rgba(232,185,99,0.85)" font-size="9">Pt</text>
-                <rect x="76"  y="32" width="20" height="22" rx="1" fill="rgba(111,181,224,0.06)" stroke="rgba(111,181,224,0.3)" stroke-width="1"/>
-                <text x="86"  y="46" text-anchor="middle" fill="rgba(168,178,192,0.85)" font-size="9">Mo</text>
-                <rect x="100" y="32" width="20" height="22" rx="1" fill="rgba(232,185,99,0.06)" stroke="rgba(232,185,99,0.3)" stroke-width="1"/>
-                <text x="110" y="46" text-anchor="middle" fill="rgba(232,185,99,0.85)" font-size="9">Zn</text>
-                <rect x="4"   y="60" width="20" height="22" rx="1" fill="rgba(232,185,99,0.04)" stroke="rgba(232,185,99,0.22)" stroke-width="1"/>
-                <text x="14"  y="74" text-anchor="middle" fill="rgba(168,178,192,0.85)" font-size="9">Sn</text>
-                <rect x="28"  y="60" width="20" height="22" rx="1" fill="rgba(111,181,224,0.04)" stroke="rgba(111,181,224,0.22)" stroke-width="1"/>
-                <text x="38"  y="74" text-anchor="middle" fill="rgba(168,178,192,0.85)" font-size="9">V</text>
-                <rect x="52"  y="60" width="20" height="22" rx="1" fill="rgba(232,185,99,0.04)" stroke="rgba(232,185,99,0.22)" stroke-width="1"/>
-                <text x="62"  y="74" text-anchor="middle" fill="rgba(232,185,99,0.85)" font-size="9">Pd</text>
-                <rect x="76"  y="60" width="20" height="22" rx="1" fill="rgba(111,181,224,0.04)" stroke="rgba(111,181,224,0.22)" stroke-width="1"/>
-                <text x="86"  y="74" text-anchor="middle" fill="rgba(168,178,192,0.85)" font-size="9">W</text>
-                <rect x="100" y="60" width="20" height="22" rx="1" fill="rgba(232,185,99,0.04)" stroke="rgba(232,185,99,0.22)" stroke-width="1"/>
-                <text x="110" y="74" text-anchor="middle" fill="rgba(168,178,192,0.85)" font-size="9">Mn</text>
-              </g>
-            </svg>
-          </div>
+          <div class="iv-tl-icon" aria-hidden="true"><?php echo xray_roadmap_art( 'platform' ); ?></div>
+          <div class="iv-tl-meta">Then · Software platform</div>
+          <h3 class="iv-tl-h3">The X-Ray Platform</h3>
+          <p class="iv-tl-p">The software mining companies will use: their geologist teams import survey data and get ranked drill targets, a heat map, a 3D view of the target area and other geoanalysis tools.</p>
+        </div>
+
+        <div class="iv-tl-step long">
+          <div class="iv-tl-icon" aria-hidden="true"><?php echo xray_roadmap_art( 'minerals' ); ?></div>
           <div class="iv-tl-meta">Later · Five-year vision</div>
-          <h3 class="iv-tl-h3">Cobalt, Gold &amp; Silver</h3>
-          <p class="iv-tl-p">More commodity models, multiple paid clients across the Great Basin with successful drill sites, and expansion to larger mining companies across the US and potentially internationally.</p>
+          <h3 class="iv-tl-h3">Nickel, Cobalt, Gold &amp; Silver</h3>
+          <p class="iv-tl-p">More commodity models, starting with nickel, a metal mining companies already target alongside lithium. Multiple paid clients across the Great Basin with successful drill sites, and expansion to larger mining companies across the US and potentially internationally.</p>
         </div>
 
       </div>
@@ -406,7 +351,7 @@ body { background: #060c12 !important; }
         <div class="iv-founder">
           <div class="iv-founder-hex"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/founder-ethan.webp' ); ?>" alt="Ethan Lopez" width="320" height="320" loading="lazy"></div>
           <div class="iv-founder-name">Ethan Lopez</div>
-          <div class="iv-founder-role">Chief Technical Officer</div>
+          <div class="iv-founder-role">Chief Technology Officer</div>
         </div>
         <div class="iv-founder sky">
           <div class="iv-founder-hex"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/founder-jack.webp' ); ?>" alt="Jack Hilbert" width="320" height="320" loading="lazy"></div>

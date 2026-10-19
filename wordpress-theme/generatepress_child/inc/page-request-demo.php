@@ -153,7 +153,7 @@ body { background: #0E141B !important; }
             <span class="xr-pulse-dot"></span>
             <div class="xr-eyebrow" style="margin:0;">Current Status</div>
           </div>
-          <p style="color:var(--xr-text-2);font-size:14.5px;line-height:1.7;margin:0;">Our Great Basin lithium model reaches 95% recall and 80% precision at 1x1 km cells. Next on our roadmap: customer discovery with exploration teams, a nickel model, and field validation against real boreholes.</p>
+          <p style="color:var(--xr-text-2);font-size:14.5px;line-height:1.7;margin:0;">Our Great Basin lithium model is a prototype that reaches 95% recall and 80% precision at 1x1 km cells. Next on our roadmap: customer discovery with mining companies, finer models, and field validation against real boreholes.</p>
         </div>
       </div>
 

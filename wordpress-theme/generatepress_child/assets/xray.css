@@ -1209,27 +1209,68 @@ body:has(.xr-hero)::after { display: none; }
       color: var(--xr-text-muted);
     }
 
+    /* Rail: same three equal columns and gap as the cards, so each node
+       sits over a card's centre and its stem lands on the card's top edge. */
     .ld-rail {
-      width: 100%;
-      height: 56px;
-      display: block;
-      margin-bottom: -6px;
+      --ld-gap: 18px;
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--ld-gap);
+      height: 52px;
+    }
+    .ld-rail::before {            /* narrowing band behind the line */
+      content: '';
+      position: absolute; left: 0; right: 0; top: 4px; height: 30px;
+      background: linear-gradient(90deg, rgba(232,185,99,0.10), rgba(232,185,99,0.05) 55%, rgba(111,181,224,0.08));
+      clip-path: polygon(0 0, 100% 34%, 100% 70%, 0 100%);
+    }
+    .ld-rail::after {             /* line from the first node to the last */
+      content: '';
+      position: absolute; top: 18px; height: 2px;
+      left: calc((100% - 2 * var(--ld-gap)) / 6);
+      right: calc((100% - 2 * var(--ld-gap)) / 6);
+      background: linear-gradient(90deg, var(--xr-gold), var(--xr-gold) 50%, var(--xr-sky));
+    }
+    .ld-rail-node {
+      position: relative; z-index: 1;
+      justify-self: center;
+      width: 32px; height: 100%;
+      color: var(--xr-gold);
+      /* stem from the node down to the card */
+      background: linear-gradient(currentColor, currentColor) 50% 100% / 1px 26px no-repeat;
+    }
+    .ld-rail-node-sky { color: var(--xr-sky); }
+    .ld-rail-node::before {       /* halo */
+      content: ''; position: absolute; left: 0; top: 3px; width: 32px; height: 32px;
+      border-radius: 50%;
+      background: radial-gradient(circle, color-mix(in srgb, currentColor 30%, transparent) 0, transparent 70%);
+    }
+    .ld-rail-node::after {        /* hexagon node */
+      content: ''; position: absolute; left: 9px; top: 10px; width: 14px; height: 16px;
+      background: currentColor;
+      clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
     }
 
     .ld-stations {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
-      margin-top: 8px;
+      container-type: inline-size;   /* the numbers scale with the card width */
     }
-    @media (max-width: 760px) { .ld-stations { grid-template-columns: 1fr; gap: 12px; } }
 
     .ld-station {
+      display: flex; flex-direction: column;
       padding: 18px 16px 16px;
       background: rgba(14, 20, 27, 0.55);
       border: 1px solid rgba(232,185,99,0.16);
       border-radius: 2px;
       position: relative;
+    }
+    /* Line the rows up across the three cards: labels, numbers, context, sources. */
+    @supports (grid-template-rows: subgrid) {
+      .ld-stations { grid-template-rows: auto auto 1fr auto; row-gap: 0; }
+      .ld-station { display: grid; grid-row: span 4; grid-template-rows: subgrid; }
     }
     .ld-station-sky { border-color: rgba(111,181,224,0.22); }
 
@@ -1245,7 +1286,8 @@ body:has(.xr-hero)::after { display: none; }
 
     .ld-num {
       display: block;
-      font-size: clamp(40px, 4.6vw, 62px);
+      font-size: min(62px, calc(8.2cqi - 11px));   /* '$12.5B' fills a card without overflowing */
+      white-space: nowrap;
       line-height: 1;
       margin-bottom: 14px;
       color: var(--xr-gold);
@@ -1257,7 +1299,7 @@ body:has(.xr-hero)::after { display: none; }
       font-size: 13.5px;
       line-height: 1.6;
       margin-bottom: 14px;
-      min-height: 4.6em;
+      flex: 1;
     }
 
     .ld-source {
@@ -1269,6 +1311,25 @@ body:has(.xr-hero)::after { display: none; }
       border-top: 1px solid rgba(232,185,99,0.12);
     }
     .ld-station-sky .ld-source { border-top-color: rgba(111,181,224,0.16); }
+    /* Phones: the cards stack, so the rail turns vertical down their left side. */
+    @media (max-width: 760px) {
+      .ld-rail { display: none; }
+      .ld-stations { grid-template-columns: 1fr; grid-template-rows: none; row-gap: 12px; padding-left: 26px; }
+      .ld-station { display: flex; grid-row: auto; }
+      .ld-num { font-size: min(48px, calc(24cqi - 15px)); }
+      .ld-station::before {
+        content: ''; position: absolute; left: -26px; top: 18px; width: 14px; height: 16px;
+        background: var(--xr-gold);
+        clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+      }
+      .ld-station-sky::before { background: var(--xr-sky); }
+      .ld-station:not(:last-child)::after {
+        content: ''; position: absolute; left: -20px; top: 34px; width: 2px;
+        height: calc(100% + 12px - 16px);
+        background: linear-gradient(var(--xr-gold), rgba(232,185,99,0.35));
+      }
+      .ld-station:nth-child(2)::after { background: linear-gradient(var(--xr-gold), var(--xr-sky)); }
+    }
     /* Legacy Problem-section styles (cross-section figure, oversized
        lede paragraphs, etc.) have been retired. The Problem section
        is now built around the .lottery-diagram component defined
@@ -5666,12 +5727,17 @@ body.page-id-298 {
 /* Roadmap: an older #iv-timeline rule shrank the left gutter, so the icons
    sat outside the content column and the line ran through the text. The
    line now runs through the middle of the icons. */
-#iv-timeline { padding-left: 132px; }
-#iv-timeline .iv-tl-line { left: 49px; top: 40px; bottom: 40px; }
-#iv-timeline .iv-tl-icon { left: -132px; z-index: 1; background: #0E141B; }
+#iv-timeline { padding-left: 164px; }
+#iv-timeline .iv-tl-step { min-height: 128px; margin-bottom: 48px; }
+#iv-timeline .iv-tl-step:last-child { margin-bottom: 0; }
+#iv-timeline .iv-tl-line { left: 63px; top: 64px; bottom: 64px; }
+#iv-timeline .iv-tl-icon { left: -164px; top: 0; width: 128px; height: 128px; padding: 0; z-index: 1; background: #0B121A; }
+#iv-timeline .iv-tl-meta { padding-top: 14px; }
 @media (max-width: 720px) {
   #iv-timeline { padding-left: 0; }
-  #iv-timeline .iv-tl-icon { left: 0; }
+  #iv-timeline .iv-tl-step { min-height: 0; }
+  #iv-timeline .iv-tl-icon { position: relative; left: 0; width: 120px; height: 120px; margin-bottom: 14px; }
+  #iv-timeline .iv-tl-meta { padding-top: 0; }
 }
 
 /* Business model cards: one heading style for all three. */
@@ -5911,22 +5977,31 @@ body.page-id-298 { animation: none; }
 .lift-row { display: grid; grid-template-columns: 118px 1fr 44px; align-items: center; gap: 14px; margin-bottom: 14px; }
 .lift-label { font-size: 13.5px; color: var(--xr-text-2); }
 .lift-row-new .lift-label { color: var(--xr-text); font-weight: 600; }
+/* Bars are drawn to scale: 1% of the track really is 1% wide. Gridlines sit at
+   0, 25, 50, 75 and 100%, and the axis labels below are centred on them. */
 .lift-track {
-  position: relative; height: 18px; background: rgba(255,255,255,.06);
-  background-image: repeating-linear-gradient(90deg, transparent 0 calc(25% - 1px), rgba(255,255,255,.08) calc(25% - 1px) 25%);
-  clip-path: polygon(9px 0, calc(100% - 9px) 0, 100% 50%, calc(100% - 9px) 100%, 9px 100%, 0 50%);
+  position: relative; height: 18px; background-color: rgba(255,255,255,.05);
+  background-image: linear-gradient(90deg, rgba(255,255,255,.16) 1px, transparent 1px),
+    repeating-linear-gradient(90deg, transparent 0 calc(25% - 1px), rgba(255,255,255,.10) calc(25% - 1px) 25%);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.05);
 }
 .lift-fill {
-  position: absolute; inset: 0 auto 0 0; width: 0; min-width: 0;
-  clip-path: polygon(9px 0, calc(100% - 9px) 0, 100% 50%, calc(100% - 9px) 100%, 9px 100%, 0 50%);
+  position: absolute; inset: 0 auto 0 0; width: 0; min-width: 2px;
   transition: width 1.6s cubic-bezier(.22,1,.36,1) .35s;
+}
+.lift-row-new .lift-fill::after {   /* bright cap marking the exact end of the bar */
+  content: ""; position: absolute; right: 0; top: -3px; bottom: -3px; width: 2px; background: #FFE3A8;
+  box-shadow: 0 0 10px rgba(255,227,168,.8);
 }
 .lift-row-old .lift-fill { background: rgba(168,178,192,.55); }
 .lift-row-new .lift-fill { background: linear-gradient(90deg, #B98A3E, var(--xr-gold) 70%, #FFE3A8); }
-.lift-panel.in .lift-fill { width: max(var(--w), 18px); }
+.lift-panel.in .lift-fill { width: var(--w); }
 .lift-val { font: 700 14px/1 "JetBrains Mono", monospace; color: var(--xr-text-2); text-align: right; }
 .lift-row-new .lift-val { color: var(--xr-gold); }
-.lift-scale { display: flex; justify-content: space-between; margin-left: 132px; margin-right: 58px; font: 10px/1 "JetBrains Mono", monospace; color: rgba(168,178,192,.55); }
+.lift-scale { display: grid; grid-template-columns: 118px 1fr 44px; gap: 14px; font: 10px/1 "JetBrains Mono", monospace; color: #8A96A6; }
+.lift-axis { grid-column: 2; position: relative; height: 16px; border-top: 1px solid rgba(255,255,255,.08); }
+.lift-axis span { position: absolute; top: 5px; left: var(--x); transform: translateX(-50%); }
+.lift-axis span::before { content: ""; position: absolute; left: 50%; top: -6px; width: 1px; height: 4px; background: rgba(255,255,255,.22); }
 .lift-facts { display: grid; grid-template-columns: repeat(3, 1fr); margin: 22px 0 0; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.08); }
 .lift-facts div { padding: 0 12px; border-left: 1px solid rgba(255,255,255,.08); }
 .lift-facts div:first-child { padding-left: 0; border-left: 0; }
@@ -5935,8 +6010,7 @@ body.page-id-298 { animation: none; }
 @media (max-width: 600px) {
   .lift-panel { padding: 26px 20px 22px; }
   .lift-big { flex-direction: column; align-items: flex-start; gap: 10px; }
-  .lift-row { grid-template-columns: 96px 1fr 38px; gap: 10px; }
-  .lift-scale { margin-left: 106px; margin-right: 48px; }
+  .lift-row, .lift-scale { grid-template-columns: 96px 1fr 38px; gap: 10px; }
   .lift-facts dt { font-size: 17px; }
 }
 @media (prefers-reduced-motion: reduce) { .lift-fill { transition: none; } }
