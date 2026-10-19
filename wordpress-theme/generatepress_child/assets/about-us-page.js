@@ -17,16 +17,19 @@
 
   var W, H, CX, CY, FOV;
   function resize() {
+    // Backing store at screen density (capped at 2) so thin lines stay sharp.
+    var dpr = Math.min(2, window.devicePixelRatio || 1);
     W   = canvas.offsetWidth  || window.innerWidth;
     H   = canvas.offsetHeight || window.innerHeight;
-    canvas.width  = W;
-    canvas.height = H;
+    canvas.width  = Math.round(W * dpr);
+    canvas.height = Math.round(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     CX  = W * 0.5;
     CY  = H * 0.5;
     FOV = Math.max(W, H) * 0.52;
   }
   resize();
-  window.addEventListener('resize', resize);
+  window.addEventListener('resize', function () { resize(); if (REDUCED) tick(0); });
 
   function rotXYZ(v, rx, ry, rz) {
     var x = v[0], y = v[1], z = v[2], ny, nz, nx;
@@ -157,14 +160,21 @@
     for (var i = 0; i < sorted.length; i++) drawShape(sorted[i], t, cx, cy);
   }
   tick(0);
-  function loop(ts) { requestAnimationFrame(loop); tick(ts); }
-  requestAnimationFrame(loop);
+  // Reduced motion: one still frame. Otherwise animate, paused while the tab is hidden.
+  if (REDUCED) return;
+  var rafId = null;
+  function loop(ts) { rafId = requestAnimationFrame(loop); tick(ts); }
+  function start() { if (!rafId) { lastTS = performance.now(); rafId = requestAnimationFrame(loop); } }
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) { cancelAnimationFrame(rafId); rafId = null; } else start();
+  });
+  start();
 }());
 
 /* ══ MISSION CANVAS — Drifting data particles ═══════════════════════════ */
 (function () {
   var canvas = document.getElementById('ab-mission-canvas');
-  if (!canvas) return;
+  if (!canvas || getComputedStyle(canvas).display === 'none') return; // hidden in page CSS
   var ctx = canvas.getContext('2d');
   var W, H;
   var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -227,7 +237,7 @@
 /* ══ PRINCIPLES CANVAS — Animated hex-grid tessellation ════════════════ */
 (function () {
   var canvas = document.getElementById('ab-prin-canvas');
-  if (!canvas) return;
+  if (!canvas || getComputedStyle(canvas).display === 'none') return; // hidden in page CSS
   var ctx = canvas.getContext('2d');
   var W, H, t = 0;
   var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -279,10 +289,10 @@
 
 /* ══ GSAP ANIMATIONS ════════════════════════════════════════════════════ */
 (function () {
-  gsap.registerPlugin(ScrollTrigger);
   var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  if (prefersReduced) {
+  // Reduced motion, or GSAP failed to load: show everything at rest.
+  if (prefersReduced || !window.gsap || !window.ScrollTrigger) {
     document.querySelectorAll(
       '#ab-eyebrow,#ab-lede,#ab-ctas,#ab-snapshot,.ab-hw-inner,' +
       '.ab-section-eyebrow,.ab-section-h2,.ab-section-p,' +
@@ -293,6 +303,7 @@
     });
     return;
   }
+  gsap.registerPlugin(ScrollTrigger);
 
   var heroTl = gsap.timeline({ delay: 0.15 });
   heroTl
