@@ -3,14 +3,6 @@
  * Moved from Code Snippets #7 "XRay — index".
  */
 
-add_action( 'wp_enqueue_scripts', function() {
-    if ( ! is_page( 'home' ) ) return;
-
-    // Add page-specific scripts here (see table below for each page)
-    wp_enqueue_script( 'gsap',    'https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js', [], null, true );
-    wp_enqueue_script( 'gsap-st', 'https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js', ['gsap'], null, true );
-});
-
 add_action( 'generate_before_content', function() {
     if ( ! is_page( 'home' ) ) return;
     ?>
@@ -66,7 +58,7 @@ add_action( 'generate_before_content', function() {
       <div class="xr-hero-bullets">
 
         <div class="xr-hero-bullet" tabindex="0">
-          <h2 class="xr-hero-bullet-head">Validated<br>accuracy</h2>
+          <h2 class="xr-hero-bullet-head">Validated<br> accuracy</h2>
           <span class="xr-hero-bullet-hit" aria-hidden="true"></span>
           <div class="xr-hero-bullet-body" role="tooltip">
             Our <strong>Nevada lithium model</strong> recovers 39% of deposits in the top 1% of ranked ground.
@@ -74,15 +66,15 @@ add_action( 'generate_before_content', function() {
         </div>
 
         <div class="xr-hero-bullet" tabindex="0">
-          <h2 class="xr-hero-bullet-head">From months<br>to days</h2>
+          <h2 class="xr-hero-bullet-head">From months<br> to days</h2>
           <span class="xr-hero-bullet-hit" aria-hidden="true"></span>
           <div class="xr-hero-bullet-body" role="tooltip">
-            Upload data on a <strong>Monday</strong> and by the end of the work week have a complete list of ranked drilled targets ready for your geologists.
+            Upload data on a <strong>Monday</strong> and by the end of the work week have a complete list of ranked drill targets ready for your geologists.
           </div>
         </div>
 
         <div class="xr-hero-bullet" tabindex="0">
-          <h2 class="xr-hero-bullet-head">Software<br>subscription</h2>
+          <h2 class="xr-hero-bullet-head">Software<br> subscription</h2>
           <span class="xr-hero-bullet-hit" aria-hidden="true"></span>
           <div class="xr-hero-bullet-body" role="tooltip">
             X-Ray is offered as a <strong>software subscription</strong>, so your team keeps access to the platform and its model updates instead of paying for one-off consulting studies. Plans will be announced as the lithium model launches.
@@ -90,7 +82,7 @@ add_action( 'generate_before_content', function() {
         </div>
 
         <div class="xr-hero-bullet" tabindex="0">
-          <h2 class="xr-hero-bullet-head">A compounding<br>advantage</h2>
+          <h2 class="xr-hero-bullet-head">A compounding<br> advantage</h2>
           <span class="xr-hero-bullet-hit" aria-hidden="true"></span>
           <div class="xr-hero-bullet-body" role="tooltip">
             Every drill result you feed back makes your model sharper. <strong>The longer you use X-Ray, the more accurate it becomes.</strong>

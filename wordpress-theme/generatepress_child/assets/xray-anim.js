@@ -231,18 +231,25 @@
     if (!strips.length) return;
 
     const PARALLAX_RATE = 0.45;   // bg moves at 45 % of the page scroll
+    const sticky = window.CSS && CSS.supports && CSS.supports('overflow', 'clip');
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches && sticky) return;
 
     function update() {
       strips.forEach((strip) => {
         const bg = strip.querySelector('.parallax-strip-bg');
         if (!bg) return;
         const rect = strip.getBoundingClientRect();
-        // distance the strip has scrolled past the top of the viewport
-        // Clamp to >= 0 — before the strip reaches the top of the viewport
-        // we leave parallax-y at 0 so the bg sits at its declared `top: -20vh`
-        // and visually bridges the previous section. (Otherwise a positive
-        // translateY would push the bg DOWN out of the seam, creating a
-        // dark void band between Solution and Proof.)
+        if (sticky) {
+          // The bg is a viewport-sized sticky layer (xray.css): drift it by
+          // up to ±3% of the viewport across the strip, inside its 8% overscale.
+          const vh = window.innerHeight;
+          const span = Math.max(1, rect.height - vh);
+          const p = Math.min(1, Math.max(0, -rect.top / span));
+          bg.style.setProperty('--parallax-y', ((0.5 - p) * 0.06 * vh).toFixed(1) + 'px');
+          return;
+        }
+        // Older browsers: the bg is a tall absolute layer that moves up at
+        // PARALLAX_RATE once the strip passes the top of the viewport.
         const passed = Math.max(0, -rect.top);
         const offset = passed * PARALLAX_RATE;
         bg.style.setProperty('--parallax-y', -offset.toFixed(1) + 'px');

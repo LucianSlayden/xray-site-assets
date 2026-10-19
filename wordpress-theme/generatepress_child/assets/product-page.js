@@ -60,12 +60,19 @@
 
   var scanY = 0.28, scanDir = 1;
 
+  // Backing store at the screen's pixel density (capped at 2) so the thin
+  // terrain lines stay sharp on retina screens; drawing uses CSS pixels.
+  var W = 0, H = 0;
   function resize() {
-    canvas.width  = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
+    var dpr = Math.min(2, window.devicePixelRatio || 1);
+    W = canvas.offsetWidth; H = canvas.offsetHeight;
+    canvas.width  = Math.round(W * dpr);
+    canvas.height = Math.round(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    if (REDUCED) draw();
   }
-  window.addEventListener('resize', resize);
-  resize();
+  var resizeTimer = null;
+  window.addEventListener('resize', function () { clearTimeout(resizeTimer); resizeTimer = setTimeout(resize, 120); });
 
   var scrollP = 0, targetP = 0;
   window.addEventListener('scroll', function () {
@@ -75,21 +82,33 @@
 
   var t = 0;
 
-  function frame() {
-    requestAnimationFrame(frame);
-    if (!REDUCED) {
-      t       += 0.0018;
-      scrollP += (targetP - scrollP) * 0.028;
-      scanY   += scanDir * 0.00068;
-      if (scanY > 0.86) { scanY = 0.86; scanDir = -1; }
-      if (scanY < 0.06) { scanY = 0.06; scanDir =  1; }
-      for (var i = 0; i < NP; i++) {
-        ppy[i] -= pvy[i];
-        if (ppy[i] < -0.03) { ppy[i] = 1.04 + Math.random() * 0.12; ppx[i] = Math.random(); }
-      }
-    }
+  // ~30 fps is plenty for this slow drift and halves the main-thread cost;
+  // the loop stops while the tab is hidden, and never runs with reduced motion.
+  var last = 0, rafId = null;
+  function frame(now) {
+    rafId = requestAnimationFrame(frame);
+    if (now - last < 32) return;
+    last = now;
+    step(); step(); // two simulation steps per drawn frame keep the original speed
+    draw();
+  }
+  function start() { if (!rafId && !REDUCED) rafId = requestAnimationFrame(frame); }
+  function stop()  { if (rafId) { cancelAnimationFrame(rafId); rafId = null; } }
+  document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); else start(); });
 
-    var W = canvas.width, H = canvas.height;
+  function step() {
+    t       += 0.0018;
+    scrollP += (targetP - scrollP) * 0.028;
+    scanY   += scanDir * 0.00068;
+    if (scanY > 0.86) { scanY = 0.86; scanDir = -1; }
+    if (scanY < 0.06) { scanY = 0.06; scanDir =  1; }
+    for (var i = 0; i < NP; i++) {
+      ppy[i] -= pvy[i];
+      if (ppy[i] < -0.03) { ppy[i] = 1.04 + Math.random() * 0.12; ppx[i] = Math.random(); }
+    }
+  }
+
+  function draw() {
     ctx.clearRect(0, 0, W, H);
 
     var ep = scrollP < 0.5
@@ -191,15 +210,18 @@
     }
   }
 
-  frame();
+  resize();
+  if (REDUCED) draw(); else start();
 }());
 
 /* ══ GSAP animations ════════════════════════════════════════════════════ */
 (function () {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  // Reduced motion, or GSAP failed to load: show everything at rest.
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !window.gsap || !window.ScrollTrigger) {
     document.querySelectorAll('.pdt-hw-inner').forEach(function (el) { el.style.transform = 'translateY(0)'; });
-    document.querySelectorAll('.pdt-lede,.pdt-cta-row,.pdt-hero-stats,.pdt-output-panel').forEach(function (el) { el.style.opacity = '1'; });
+    document.querySelectorAll('.pdt-lede,.pdt-cta-row,.pdt-hero-stats,.pdt-output-panel,#pdt-op').forEach(function (el) { el.style.opacity = '1'; el.style.transform = 'none'; });
     document.querySelectorAll('.pdt-arch-card,.pdt-proof-stat,.pdt-proof-quote,.pdt-status-row').forEach(function (el) { el.style.opacity = '1'; el.style.transform = 'none'; });
+    document.querySelectorAll('.pdt-op-bar-fill[data-w]').forEach(function (el) { el.style.width = el.dataset.w + '%'; });
     return;
   }
 
@@ -221,7 +243,10 @@
 
   ScrollTrigger.batch('.pdt-arch-card',  { start: 'top 86%', onEnter: function (b) { gsap.to(b, { opacity: 1, y: 0, stagger: 0.15, duration: 0.70, ease: 'power2.out' }); } });
   ScrollTrigger.batch('.pdt-proof-stat', { start: 'top 88%', onEnter: function (b) { gsap.to(b, { opacity: 1, y: 0, stagger: 0.12, duration: 0.68, ease: 'power2.out' }); } });
-  ScrollTrigger.create({ trigger: '.pdt-proof-quote', start: 'top 88%', onEnter: function () { gsap.to('.pdt-proof-quote', { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }); } });
+  if (document.querySelector('.pdt-proof-quote')) {
+    ScrollTrigger.create({ trigger: '.pdt-proof-quote', start: 'top 88%', onEnter: function () { gsap.to('.pdt-proof-quote', { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }); } });
+  }
   ScrollTrigger.batch('.pdt-status-row', { start: 'top 88%', onEnter: function (b) { gsap.to(b, { opacity: 1, x: 0, stagger: 0.10, duration: 0.65, ease: 'power2.out' }); } });
-  ScrollTrigger.batch('.xr-reveal',      { start: 'top 88%', onEnter: function (b) { gsap.to(b, { opacity: 1, y: 0, stagger: 0.08, duration: 0.6,  ease: 'power2.out' }); } });
+  // .xr-reveal elements are revealed by xray-anim.js (CSS transition); a GSAP
+  // tween on the same properties made the two fight, so it was removed.
 }());

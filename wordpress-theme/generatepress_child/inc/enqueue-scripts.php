@@ -12,16 +12,17 @@ wp_register_script(
     '0.160.0',
     true
 );
-    wp_enqueue_script( 'gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js', array(), '3.12.5', true );
-    wp_enqueue_script( 'gsap-st', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js', array('gsap'), '3.12.5', true );
-    wp_enqueue_script( 'xray-anim', 'https://cdn.jsdelivr.net/gh/LucianSlayden/xray-site-assets@main/xray-anim.js', array('gsap-st'), '1.0', true );
+    // One GSAP version site-wide. Learn More has no GSAP animation.
+    if ( ! is_page( array( 'learn-more', 'request-demo' ) ) ) {
+        wp_enqueue_script( 'gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js', array(), '3.12.7', true );
+        wp_enqueue_script( 'gsap-st', 'https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js', array('gsap'), '3.12.7', true );
+    }
+    // Page scripts are served from the theme (not jsDelivr @main) so a deploy takes effect at once.
     if ( is_page(254) ) {
-        wp_enqueue_script( 'xray-product', 'https://cdn.jsdelivr.net/gh/LucianSlayden/xray-site-assets@main/product-page.js', array('gsap-st'), '1.0', true );
+        xray_theme_script( 'xray-product', 'product-page.js', array('gsap-st') );
     }
     if ( is_front_page() ) {
-        // Served from the theme (not jsDelivr) so a deploy takes effect at once.
-        $hero_js = get_stylesheet_directory() . '/assets/xray-hero.js';
-        wp_enqueue_script( 'xray-hero', get_stylesheet_directory_uri() . '/assets/xray-hero.js', array('gsap'), filemtime( $hero_js ), true );
+        xray_theme_script( 'xray-hero', 'xray-hero.js', array('gsap') );
     }
 	if ( is_page(283) ) {
     wp_enqueue_script( 'xray-platform', 'https://cdn.jsdelivr.net/gh/LucianSlayden/xray-site-assets@main/platform-page.js', array('gsap-st'), '1.0', true );
@@ -46,13 +47,7 @@ if ( is_page( 298 ) ) {
 }
 	// About Us page
 if ( is_page( 'about-us' ) ) {
-    wp_enqueue_script(
-        'xray-about-us',
-        'https://cdn.jsdelivr.net/gh/LucianSlayden/xray-site-assets@main/about-us-page.js',
-        array( 'gsap-st' ),
-        null,
-        true
-    );
+    xray_theme_script( 'xray-about-us', 'about-us-page.js', array( 'gsap-st' ) );
 }
 	// Our Team page
 if ( is_page( 'our-team' ) ) {

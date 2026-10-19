@@ -743,17 +743,134 @@ body:has(.xr-hero)::after { display: none; }
 .xr-hero-bullets.in .xr-hero-bullet:nth-child(3) { transition-delay: 0.25s; }
 .xr-hero-bullets.in .xr-hero-bullet:nth-child(4) { transition-delay: 0.35s; }
 
+/* Static hero: no GSAP, prefers-reduced-motion, or the video could not
+   play (xray-hero.js adds .is-static). The page scrolls normally, the
+   headline stays on frame 0 and the four labels are listed under it. */
+.xr-hero.is-static { min-height: 0; }
+.xr-hero.is-static .xr-hero-pin {
+  position: relative; top: 0; height: auto;
+  min-height: calc(100vh - var(--xr-nav-h));
+  display: flex; flex-direction: column; justify-content: center;
+}
+.xr-hero.is-static .xr-hero-content { position: relative; inset: auto; padding: 64px 0 36px; transform: none; opacity: 1; visibility: visible; }
+.xr-hero.is-static .xr-hero-bullets {
+  position: relative; inset: auto; z-index: 3; opacity: 1; visibility: visible; transition: none;
+  width: 100%; max-width: var(--xr-max-w); margin: 0 auto; padding: 0 28px 56px;
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px;
+  counter-reset: xr-hex;
+  padding-top: 28px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0.78) 28px, rgba(0,0,0,0.9) 100%);
+  max-width: none; padding-left: max(28px, calc((100% - var(--xr-max-w)) / 2 + 28px)); padding-right: max(28px, calc((100% - var(--xr-max-w)) / 2 + 28px));
+}
+.xr-hero.is-static .xr-hero-bullet::before, .xr-hero.is-static .xr-hero-bullet::after,
+.xr-hero.is-static .xr-hero-bullet-hit::after { animation: none; }
+.xr-hero.is-static .xr-hero-bullet {
+    position: relative; top: auto; left: auto; width: auto; height: auto;
+    transform: none !important; opacity: 1;
+    display: grid; grid-template-columns: 24px minmax(0, 1fr); column-gap: 12px; align-items: start; align-content: start;
+    pointer-events: auto; counter-increment: xr-hex;
+  }
+  .xr-hero.is-static .xr-hero-bullet::before {
+    content: counter(xr-hex);
+    position: static; grid-row: 1 / span 2; margin-top: 2px;
+    width: 22px; height: 25px; right: auto; transform: none; opacity: 1; animation: none !important;
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+    background: var(--xr-green); color: #05080C;
+    font: 700 11px/25px var(--xr-font-mono); text-align: center;
+  }
+  .xr-hero.is-static .xr-hero-bullet::after, .xr-hero.is-static .xr-hero-bullet-hit { display: none; }
+  .xr-hero.is-static .xr-hero-bullet-head {
+    position: static; width: auto; right: auto; transform: none !important; opacity: 1;
+    font-size: clamp(18px, 2.4vw, 22px); line-height: 1.2; letter-spacing: -0.015em; text-align: left;
+  }
+  .xr-hero.is-static .xr-hero-bullet-head br { display: none; }
+  .xr-hero.is-static .xr-hero-bullet-body {
+    position: static; grid-column: 2; width: auto; margin-top: 5px; padding: 0;
+    background: none; border: 0; border-radius: 0; box-shadow: none;
+    -webkit-backdrop-filter: none; backdrop-filter: none;
+    font-size: 14px; line-height: 1.55; color: rgba(241,244,248,0.78); text-shadow: 0 1px 6px rgba(0,0,0,0.8);
+    transform: none !important; opacity: 1; visibility: visible; pointer-events: auto; transition: none;
+  }
+  .xr-hero.is-static .xr-hero-bullet-body::before { display: none; }
+
+.xr-hero-hexmark { display: none; }
+
 @media (max-width: 980px) {
-  .xr-hero { min-height: calc(100vh + 300px); }
+  .xr-hero-pin { background: #000; }
   .xr-hero-content-inner { padding: 0 22px; }
   .xr-hero-text { max-width: 100%; }
-  .xr-hero-fade {
-    background: linear-gradient(to bottom, #000 0%, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0) 85%);
+  /* The full frame sits as a 16:9 band at the bottom of the pinned hero;
+     the headline (and, once the clip ends, the label list) fills the
+     space above it. */
+  .xr-hero-video { inset: auto 0 4% 0; height: auto; aspect-ratio: 16 / 9; object-position: center; }
+  .xr-hero-fade { background: linear-gradient(to bottom, #000 0%, rgba(0,0,0,0.9) 45%, rgba(0,0,0,0) 62%); }
+  .xr-hero-fade-v { height: 8%; }
+  .xr-hero-content { align-items: flex-start; bottom: calc(56.25vw + 4%); padding-top: clamp(20px, 5vh, 56px); overflow: hidden; }
+  .xr-hero-headline { font-size: clamp(34px, 8.6vw, 56px); margin-bottom: 18px; }
+  .xr-hero-sub { font-size: 16px; line-height: 1.6; margin-bottom: 22px; }
+  .xr-hero-bullets {
+    position: absolute; inset: 0 0 calc(56.25vw + 4%) 0;
+    display: flex; flex-direction: column; justify-content: center; gap: clamp(12px, 2.4vh, 22px);
+    padding: 16px 22px; counter-reset: xr-hex;
   }
-  /* Mobile: stack bullets in a column at the bottom instead of overlaying */
-  .xr-hero-bullets { position: relative; display: flex; flex-direction: column; gap: 10px; padding: 24px 22px; pointer-events: auto; }
-  .xr-hero-bullet { position: relative; top: auto; left: auto; transform: translateY(0); width: 100%; }
-  .xr-hero-bullet::before, .xr-hero-bullet::after, .xr-hero-bullet-hit::after { display: none; }
+  .xr-hero-bullet {
+    position: relative; top: auto; left: auto; width: auto; height: auto;
+    transform: none !important; opacity: 1;
+    display: grid; grid-template-columns: 24px minmax(0, 1fr); column-gap: 12px; align-items: start; align-content: start;
+    pointer-events: auto; counter-increment: xr-hex;
+  }
+  .xr-hero-bullet::before {
+    content: counter(xr-hex);
+    position: static; grid-row: 1 / span 2; margin-top: 2px;
+    width: 22px; height: 25px; right: auto; transform: none; opacity: 1; animation: none !important;
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+    background: var(--xr-green); color: #05080C;
+    font: 700 11px/25px var(--xr-font-mono); text-align: center;
+  }
+  .xr-hero-bullet::after, .xr-hero-bullet-hit { display: none; }
+  .xr-hero-bullet-head {
+    position: static; width: auto; right: auto; transform: none !important; opacity: 1;
+    font-size: clamp(18px, 2.4vw, 22px); line-height: 1.2; letter-spacing: -0.015em; text-align: left;
+  }
+  .xr-hero-bullet-head br { display: none; }
+  .xr-hero-bullet-body {
+    position: static; grid-column: 2; width: auto; margin-top: 5px; padding: 0;
+    background: none; border: 0; border-radius: 0; box-shadow: none;
+    -webkit-backdrop-filter: none; backdrop-filter: none;
+    font-size: 14px; line-height: 1.55; color: rgba(241,244,248,0.78); text-shadow: 0 1px 6px rgba(0,0,0,0.8);
+    transform: none !important; opacity: 1; visibility: visible; pointer-events: auto; transition: none;
+  }
+  .xr-hero-bullet-body::before { display: none; }
+
+  .xr-hero-bullets:not(.in) .xr-hero-bullet { pointer-events: none; }
+  /* Numbered markers on each hexagon in the video band (placed by xray-hero.js). */
+  .xr-hero-hexmark {
+    display: block; position: absolute; z-index: 3; width: 18px; height: 20px; margin: -10px 0 0 -9px;
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+    background: var(--xr-green); color: #05080C; font: 700 10px/20px var(--xr-font-mono); text-align: center;
+    opacity: 0; transition: opacity .5s var(--xr-ease); pointer-events: none;
+  }
+  .xr-hero-bullets.in ~ .xr-hero-hexmark { opacity: 1; }
+  .xr-hero.is-static .xr-hero-hexmark { display: none; }
+
+  .xr-hero.is-static .xr-hero-pin { min-height: 0; justify-content: flex-start; }
+  .xr-hero.is-static .xr-hero-video { position: relative; inset: auto; width: 100%; }
+  .xr-hero.is-static .xr-hero-content { bottom: auto; padding: 40px 0 24px; }
+  .xr-hero.is-static .xr-hero-bullets { position: relative; inset: auto; display: flex; padding: 28px 22px 48px; }
+}
+@media (max-width: 980px) and (orientation: landscape) and (max-height: 520px) {
+  /* Phones on their side: too short for the pinned layout. */
+  .xr-hero-bullets { gap: 8px; }
+  .xr-hero-bullet-body { display: none; }
+}
+@supports (height: 100svh) {
+  .xr-hero { min-height: calc(100svh + 300px); }
+  .xr-hero-pin { height: calc(100svh - var(--xr-nav-h)); }
+  .xr-hero.is-static { min-height: 0; }
+  .xr-hero.is-static .xr-hero-pin { height: auto; min-height: calc(100svh - var(--xr-nav-h)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .xr-hero-bullet::before, .xr-hero-bullet::after, .xr-hero-bullet-hit::after { animation: none !important; }
 }
 
 /* ────────────────────────────────────────── FOOTER ─────────────────────── */
@@ -1181,6 +1298,24 @@ body:has(.xr-hero)::after { display: none; }
           rgba(14,20,27,0.9) 100%);
     }
     .parallax-strip > section { position: relative; z-index: 1; }
+    /* The landscape is only as big as the viewport and stays pinned
+       (sticky) while the strip scrolls past, so the 4096px image is shown
+       at or below its native size instead of being stretched over the
+       whole ~5000px strip. xray-anim.js adds a slight drift. Browsers
+       without overflow:clip keep the older absolute layer above. */
+    @supports (overflow: clip) {
+      .parallax-strip { overflow: clip; }
+      .parallax-strip-bg {
+        position: sticky; top: 0;
+        height: 100vh; height: 100lvh;
+        margin-bottom: -100vh; margin-bottom: -100lvh;
+        background-position: center 42%;
+        transform: translateY(var(--parallax-y, 0px)) scale(1.08);
+      }
+      .parallax-strip-bg::before {
+        background: linear-gradient(180deg, rgba(14,20,27,0.7) 0%, rgba(14,20,27,0.62) 45%, rgba(14,20,27,0.78) 100%);
+      }
+    }
 
     .proof-sec    { position: relative; overflow: hidden; }
     .roadmap-sec  { position: relative; overflow: hidden; }
@@ -5791,7 +5926,7 @@ body.page-id-298 { animation: none; }
 @media (max-width: 900px) { .proof-grid { grid-template-columns: 1fr; gap: 44px; } }
 
 /* ── Home: Clean / Train / Predict pipeline ── */
-.pipe2 { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; counter-reset: none; position: relative; }
+.pipe2 { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; counter-reset: none; position: relative; }
 .pipe2-step {
   position: relative; padding: 26px 26px 28px; margin: 0;
   background: rgba(10,16,24,.78); border: 1px solid rgba(232,185,99,.2);
@@ -5837,15 +5972,17 @@ body.page-id-298 { animation: none; }
 .rm2-step h3 { margin: 0 0 8px; font-size: 17px; }
 .rm2-step p { margin: 0; color: var(--xr-text-2); font-size: 14px; line-height: 1.6; }
 @media (max-width: 1080px) {
-  .rm2 { grid-template-columns: 1fr; gap: 0; max-width: 560px; margin: 0 auto; }
+  .rm2 { grid-template-columns: 1fr; gap: 0; max-width: 760px; margin: 0 auto; }
   .rm2::before { left: 9px; right: auto; top: 10px; bottom: 10px; width: 1px; height: auto; background: linear-gradient(180deg, var(--xr-gold), rgba(232,185,99,.18)); }
-  .rm2-step { display: grid; grid-template-columns: 96px 1fr; column-gap: 18px; padding: 0 0 30px 36px; }
+  .rm2-step { display: grid; grid-template-columns: clamp(96px, 22vw, 168px) 1fr; column-gap: clamp(18px, 3vw, 28px); padding: 0 0 30px 36px; }
   .rm2-node { left: 0; margin-left: 0; top: 0; }
   .rm2-when { grid-column: 1 / -1; text-align: left; margin: 4px 0 12px; }
   .rm2-art { grid-row: span 2; margin: 0; }
   .rm2-step h3 { align-self: end; }
 }
 .pipe2-art figcaption span { white-space: nowrap; }
+.pipe2-art figcaption { flex-wrap: wrap; row-gap: 4px; }
+@media (min-width: 901px) and (max-width: 1180px) { .pipe2 { gap: 18px; } .pipe2-art figcaption { letter-spacing: .04em; padding: 8px 9px 10px; } }
 @media (max-width: 420px) { .pipe2-art figcaption { font-size: 9px; letter-spacing: .04em; padding: 8px 8px 10px; } }
 
 /* Home problem section: raise the stats panel beside the headline's last line,

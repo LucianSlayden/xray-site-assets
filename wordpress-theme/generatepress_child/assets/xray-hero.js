@@ -48,13 +48,23 @@
     if (!fwd || !content || !bullets) { log('missing required DOM nodes'); return; }
 
     const showBullets = () => { bullets.classList.add('in'); if (window.gsap) gsap.set(bullets, { autoAlpha: 1 }); };
+    // Static hero (no GSAP, reduced motion, or the video can't play): the
+    // headline stays on frame 0 and the hexagon labels are listed under the
+    // hero instead of being laid over the headline.
+    const staticHero = (why) => {
+      log('static hero:', why);
+      try { fwd.pause(); } catch (e) {}
+      hero.classList.add('is-static');
+      bullets.classList.add('in');
+      bullets.style.removeProperty('visibility');
+      bullets.style.removeProperty('opacity');
+      if (window.gsap) gsap.set(content, { clearProps: 'transform,opacity,visibility' });
+    };
 
-    if (!window.gsap) { log('GSAP missing, inert hero'); showBullets(); return; }
+    if (!window.gsap) { staticHero('GSAP missing'); return; }
 
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      log('reduced motion, skip animation');
-      try { fwd.pause(); } catch (e) {}
-      showBullets();
+      staticHero('reduced motion');
       return;
     }
 
@@ -103,7 +113,7 @@
       try {
         v.playbackRate = RATE;
         const p = v.play();
-        if (p && typeof p.catch === 'function') p.catch(() => {});
+        if (p && typeof p.catch === 'function') p.catch((err) => { if (err && err.name === 'NotAllowedError') fail('play() refused'); });
       } catch (e) {}
     }
 
@@ -120,8 +130,9 @@
     /* ──────────── Holding the page ──────────── */
     let held = false;
     let heldY = 0;
+    let failed = false;
     function hold() {
-      if (held) return;
+      if (held || failed) return;
       held = true;
       heldY = window.scrollY;
       document.documentElement.classList.add('xr-hero-held');
@@ -133,7 +144,7 @@
 
     /* ──────────── Forward ──────────── */
     function playForward() {
-      if (state === 'forward' || state === 'completed') return;
+      if (failed || state === 'forward' || state === 'completed') return;
       log('forward from', state);
       const my = ++token;
       const from = position();
@@ -177,7 +188,7 @@
 
     /* ──────────── Reverse ──────────── */
     function playReverse() {
-      if (state === 'idle' || state === 'reverse') return;
+      if (failed || state === 'idle' || state === 'reverse') return;
       log('reverse from', state);
       const my = ++token;
       const from = position();
@@ -241,19 +252,19 @@
     }
 
     /* ──────────── Failure ──────────── */
-    let failed = false;
     function fail(reason) {
       if (failed) return;
       failed = true;
       log('video failed:', reason);
       ++token;
       stopStepping();
+      clearTimeout(stallTimer);
       state = 'completed';
       release();
-      showBullets();
+      gsap.killTweensOf([content, bullets]);
+      staticHero('video failed');
     }
     fwd.addEventListener('error', () => fail('error event'));
-    if (fwd.error) fail('error at init');
 
     /* ──────────── Scroll gestures ──────────── */
     let acc = 0, accDir = 0, lastGesture = 0;
@@ -331,7 +342,8 @@
     /* ──────────── Initial state ──────────── */
     function onReady() { if (state === 'idle' && fwd.currentTime > 0) fwd.currentTime = 0; }
     if (fwd.readyState >= 1) onReady(); else fwd.addEventListener('loadedmetadata', onReady, { once: true });
-    if (window.scrollY <= TOP_EPS) hold();
+    if (fwd.error) fail('error at init');
+    else if (window.scrollY <= TOP_EPS) hold();
     else {
       // Landed part way down (e.g. a #link): show the finished hero.
       state = 'completed';
@@ -352,8 +364,34 @@
     // the frame is drawn: object-fit: contain, anchored right, centred vertically.
     const HEX_CENTRES = [[0.3079, 0.1681], [0.4316, 0.3376], [0.5079, 0.5880], [0.5622, 0.8182]];
     const mobile = window.matchMedia('(max-width: 980px)');
+    // Phones/tablets list the labels above the video band and number the
+    // hexagons in the band to match (.xr-hero-hexmark, see xray.css).
+    const marks = HEX_CENTRES.map((c, i) => {
+      const m = document.createElement('span');
+      m.className = 'xr-hero-hexmark';
+      m.setAttribute('aria-hidden', 'true');
+      m.textContent = String(i + 1);
+      bullets.after(m);
+      return m;
+    });
     function placeBullets() {
-      if (mobile.matches) { bullets.style.removeProperty('--hex-r'); bulletEls.forEach((el) => { el.style.left = ''; el.style.top = ''; }); return; }
+      if (mobile.matches) {
+        bullets.style.removeProperty('--hex-r');
+        bulletEls.forEach((el) => { el.style.left = ''; el.style.top = ''; });
+        const bw = fwd.clientWidth, bh = fwd.clientHeight;
+        const vw = fwd.videoWidth || 16, vh = fwd.videoHeight || 9;
+        if (!bw || !bh) return;
+        const scale = Math.min(bw / vw, bh / vh);
+        const cw = vw * scale, ch = vh * scale;
+        const x0 = fwd.offsetLeft + (bw - cw) / 2, y0 = fwd.offsetTop + (bh - ch) / 2;
+        marks.forEach((m, i) => {
+          const c = HEX_CENTRES[i];
+          // Just right of the hexagon so the hexagon itself stays visible.
+          m.style.left = (x0 + c[0] * cw + cw * 0.032 + 12).toFixed(1) + 'px';
+          m.style.top  = (y0 + c[1] * ch).toFixed(1) + 'px';
+        });
+        return;
+      }
       const bw = fwd.clientWidth, bh = fwd.clientHeight;
       const vw = fwd.videoWidth || 16, vh = fwd.videoHeight || 9;
       if (!bw || !bh) return;
@@ -402,6 +440,25 @@
         if (dx * dx + dy * dy <= PROXIMITY_PX * PROXIMITY_PX) lockBullet(el);
       }
     }, { passive: true });
+
+    // Tabbing to a link below while the page is held at the top: skip the
+    // intro so the focused element can scroll into view.
+    document.addEventListener('focusin', (e) => {
+      if (!held || hero.contains(e.target)) return;
+      log('focus left the hero, skipping intro');
+      ++token;
+      stopStepping();
+      clearTimeout(stallTimer);
+      try { fwd.pause(); if (duration()) fwd.currentTime = duration(); } catch (err) {}
+      if (rev) rev.pause();
+      show('fwd');
+      state = 'completed';
+      leftTop = true;
+      gsap.set(content, { y: -60, autoAlpha: 0 });
+      showBullets();
+      release();
+      e.target.scrollIntoView({ block: 'center' });
+    });
 
     window.__xrHero = { get state() { return state; }, get held() { return held; }, position };
   }

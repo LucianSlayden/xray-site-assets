@@ -3,14 +3,6 @@
  * Moved from Code Snippets #11 "XRay — Product".
  */
 
-add_action( 'wp_enqueue_scripts', function() {
-    if ( ! is_page( 'product' ) ) return;
-
-    // Add page-specific scripts here (see table below for each page)
-    wp_enqueue_script( 'gsap',    'https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js', [], null, true );
-    wp_enqueue_script( 'gsap-st', 'https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js', ['gsap'], null, true );
-});
-
 add_action( 'generate_before_content', function() {
     if ( ! is_page( 'product' ) ) return;
     ?>
