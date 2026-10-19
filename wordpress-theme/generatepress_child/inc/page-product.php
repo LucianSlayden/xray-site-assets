@@ -53,59 +53,46 @@ add_action( 'generate_before_content', function() {
           </div>
         </div>
 
-        <!-- Right: ranked output panel -->
-        <div class="pdt-output-panel" id="pdt-op">
+        <!-- Right: what the customer's team gets -->
+        <div class="pdt-output-panel pdt-gets" id="pdt-op">
           <div class="pdt-op-header">
             <div class="pdt-op-header-left">
-              <div class="pdt-op-run">Great Basin Lithium · Example Output</div>
-              <div class="pdt-op-meta">Illustrative ranked drill-target list · 1x1 km cells</div>
+              <div class="pdt-op-run">What your geologist team gets</div>
+              <div class="pdt-op-meta">From your exploration data to a drill decision</div>
             </div>
-            <div class="pdt-op-badge">Sample</div>
           </div>
-          <div class="pdt-op-col-heads">
-            <span class="pdt-op-col-head">#</span>
-            <span class="pdt-op-col-head">Zone</span>
-            <span class="pdt-op-col-head">Score</span>
-            <span class="pdt-op-col-head">Pct</span>
-            <span class="pdt-op-col-head">Confidence</span>
+
+          <div class="pdt-gets-block">
+            <div class="pdt-gets-label"><span>01</span>You upload</div>
+            <div class="pdt-gets-chips">
+              <span>Geochemistry</span><span>Structure</span><span>Lithology</span>
+              <span>Geophysics</span><span>Geothermal</span><span>Topography</span>
+            </div>
           </div>
-          <div class="pdt-op-row top" data-fill="94">
-            <span class="pdt-op-rank">01</span>
-            <span class="pdt-op-zone">Target A</span>
-            <div class="pdt-op-bar-wrap"><div class="pdt-op-bar"><div class="pdt-op-bar-fill" data-w="94"></div></div></div>
-            <span class="pdt-op-pct">94%</span>
-            <span class="pdt-op-conf">HIGH CONF</span>
+
+          <div class="pdt-gets-block pdt-gets-model">
+            <div class="pdt-gets-label"><span>02</span>The model scores</div>
+            <p>Every 1x1 km cell in your area, weighing more factors together than a team can review by hand.</p>
           </div>
-          <div class="pdt-op-row top" data-fill="87">
-            <span class="pdt-op-rank">02</span>
-            <span class="pdt-op-zone">Target B</span>
-            <div class="pdt-op-bar-wrap"><div class="pdt-op-bar"><div class="pdt-op-bar-fill" data-w="87"></div></div></div>
-            <span class="pdt-op-pct">87%</span>
-            <span class="pdt-op-conf">HIGH CONF</span>
+
+          <div class="pdt-gets-block">
+            <div class="pdt-gets-label"><span>03</span>You get</div>
+            <div class="pdt-gets-item">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18"/><rect x="7" y="7" width="4" height="4" class="hot"/><rect x="13" y="13" width="4" height="4"/></svg>
+              <div><strong>Prospectivity heat map</strong><small>See where the whole area is most likely to host a deposit, and which ground is not worth holding.</small></div>
+            </div>
+            <div class="pdt-gets-item">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg>
+              <div><strong>3D view of the target area</strong><small>Review the geology under each target with your team before committing a rig.</small></div>
+            </div>
+            <div class="pdt-gets-item">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h11M4 18h6"/></svg>
+              <div><strong>Ranked drill targets</strong><small>Know which holes to drill first, so the drilling budget goes to the best odds.</small></div>
+            </div>
           </div>
-          <div class="pdt-op-row sky">
-            <span class="pdt-op-rank">03</span>
-            <span class="pdt-op-zone">Target C</span>
-            <div class="pdt-op-bar-wrap"><div class="pdt-op-bar"><div class="pdt-op-bar-fill" data-w="71"></div></div></div>
-            <span class="pdt-op-pct">71%</span>
-            <span class="pdt-op-conf">MODERATE</span>
-          </div>
-          <div class="pdt-op-row sky">
-            <span class="pdt-op-rank">04</span>
-            <span class="pdt-op-zone">Target D</span>
-            <div class="pdt-op-bar-wrap"><div class="pdt-op-bar"><div class="pdt-op-bar-fill" data-w="63"></div></div></div>
-            <span class="pdt-op-pct">63%</span>
-            <span class="pdt-op-conf">MODERATE</span>
-          </div>
-          <div class="pdt-op-row">
-            <span class="pdt-op-rank" style="color:rgba(255,255,255,.18);">05</span>
-            <span class="pdt-op-zone" style="color:rgba(255,255,255,.25);">Target E</span>
-            <div class="pdt-op-bar-wrap"><div class="pdt-op-bar"><div class="pdt-op-bar-fill" style="background:rgba(255,255,255,.18);" data-w="48"></div></div></div>
-            <span class="pdt-op-pct" style="color:rgba(255,255,255,.28);">48%</span>
-            <span class="pdt-op-conf">LOW CONF</span>
-          </div>
+
           <div class="pdt-op-footer">
-            <span class="pdt-op-footer-txt">Example layout · not real targets</span>
+            <span class="pdt-op-footer-txt">Your data only trains your own predictions</span>
             <a href="#pdt-how" class="pdt-op-view-all">How it works →</a>
           </div>
         </div>

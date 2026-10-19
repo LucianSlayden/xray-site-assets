@@ -5553,3 +5553,39 @@ body.page-id-298 {
 .iv-hexpie-edge { fill: none; stroke: rgba(232,185,99,0.55); stroke-width: 2; }
 .iv-hexpie-core { fill: #0B1118; stroke: rgba(232,185,99,0.35); stroke-width: 1.5; }
 .iv-hexpie + .iv-gauge-sub { margin-top: 18px; }
+
+/* Product hero panel: what the customer's geologist team gets. */
+.pdt-gets-block { padding: 16px 18px; border-bottom: 1px solid rgba(255,255,255,.05); }
+.pdt-gets-label {
+  font-family: var(--xr-font-mono); font-size: 10px; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--xr-text-muted); margin-bottom: 10px;
+}
+.pdt-gets-label span { color: var(--xr-gold); margin-right: 8px; }
+.pdt-gets-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.pdt-gets-chips span {
+  font-family: var(--xr-font-mono); font-size: 11px; color: var(--xr-sky);
+  border: 1px solid rgba(111,181,224,.3); background: rgba(111,181,224,.06);
+  padding: 4px 9px; border-radius: 1px;
+}
+.pdt-gets-model p { margin: 0; font-size: 14px; line-height: 1.6; color: var(--xr-text-2); }
+.pdt-gets-item { display: flex; gap: 14px; align-items: flex-start; padding: 8px 0; }
+.pdt-gets-item + .pdt-gets-item { border-top: 1px solid rgba(255,255,255,.04); }
+.pdt-gets-item svg {
+  flex: 0 0 34px; width: 34px; height: 34px; padding: 6px;
+  fill: none; stroke: var(--xr-gold); stroke-width: 1.6; stroke-linejoin: round;
+  border: 1px solid rgba(232,185,99,.3); background: rgba(232,185,99,.06);
+}
+.pdt-gets-item svg .hot { fill: var(--xr-gold); }
+.pdt-gets-item strong { display: block; font-size: 15px; color: var(--xr-text); margin-bottom: 3px; }
+.pdt-gets-item small { display: block; font-size: 13px; line-height: 1.55; color: var(--xr-text-2); }
+
+/* Recall hexagon glow. */
+.iv-hexpie {
+  filter: drop-shadow(0 0 14px rgba(232,185,99,.55)) drop-shadow(0 0 42px rgba(232,185,99,.30));
+  animation: iv-hexpie-glow 3.2s ease-in-out infinite;
+}
+@keyframes iv-hexpie-glow {
+  0%, 100% { filter: drop-shadow(0 0 14px rgba(232,185,99,.55)) drop-shadow(0 0 42px rgba(232,185,99,.30)); }
+  50%      { filter: drop-shadow(0 0 20px rgba(232,185,99,.70)) drop-shadow(0 0 64px rgba(232,185,99,.40)); }
+}
+@media (prefers-reduced-motion: reduce) { .iv-hexpie { animation: none; } }
