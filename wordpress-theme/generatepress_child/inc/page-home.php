@@ -220,67 +220,144 @@ add_action( 'generate_before_content', function() {
         <p style="color:var(--xr-text-2);font-size:18px;line-height:1.75;margin:0;">X-Ray fuses your geological data through a machine learning pipeline and returns a prospectivity map to assist with drilling, helping mining companies narrow down their areas of interest for greenfield and minesite exploration.</p>
       </div>
 
-      <!-- Pipeline diagram replaces the numbered hex steps -->
-      <div class="xr-reveal xr-d1 pipeline">
-        <div class="pipeline-step">
-          <div class="pipeline-step-art">
-            <svg viewBox="0 0 100 80" aria-hidden="true">
-              <rect x="6"  y="14" width="14" height="44" rx="1" fill="var(--xr-gold)" opacity="0.85"/>
-              <rect x="26" y="22" width="14" height="36" rx="1" fill="var(--xr-gold)" opacity="0.55"/>
-              <rect x="46" y="8"  width="14" height="50" rx="1" fill="var(--xr-gold)" opacity="0.7"/>
-              <rect x="66" y="30" width="14" height="28" rx="1" fill="var(--xr-sky)"  opacity="0.6"/>
-              <line x1="0" y1="68" x2="100" y2="68" stroke="rgba(232,185,99,0.35)" stroke-width="1" stroke-dasharray="2 3"/>
-            </svg>
-          </div>
-          <div class="pipeline-step-label">Clean</div>
-          <p>Geochemistry, geophysics, remote sensing, and other datasets are cleaned and merged into a set of features.</p>
-        </div>
+      <!-- Pipeline: each step shows what the data looks like at that stage. -->
+      <ol class="xr-reveal xr-d1 pipe2">
+        <li class="pipe2-step">
+          <div class="pipe2-head"><span class="pipe2-num">01</span><h3>Clean</h3></div>
+          <figure class="pipe2-art pipe2-art-layers">
+            <svg viewBox="0 0 170 150" aria-hidden="true">
+<polygon points="40,12 150,12 130,46 20,46" fill="rgba(14,22,32,.92)" stroke="rgba(232,185,99,.55)" stroke-width="1"/>
+<rect x="39.0" y="13.7" width="7" height="5.2" fill="#E8B963" opacity="0.16"/>
+<rect x="49.0" y="13.7" width="7" height="5.2" fill="#E8B963" opacity="0.08"/>
+<rect x="59.0" y="13.7" width="7" height="5.2" fill="#E8B963" opacity="0.33"/>
+<rect x="69.0" y="13.7" width="7" height="5.2" fill="#E8B963" opacity="0.04"/>
+<rect x="79.0" y="13.7" width="7" height="5.2" fill="#E8B963" opacity="0.27"/>
+<rect x="89.0" y="13.7" width="7" height="5.2" fill="#E8B963" opacity="0.18"/>
+<rect x="99.0" y="13.7" width="7" height="5.2" fill="#E8B963" opacity="0.03"/>
+<rect x="109.0" y="13.7" width="7" height="5.2" fill="#E8B963" opacity="0.25"/>
+<rect x="119.0" y="13.7" width="7" height="5.2" fill="#E8B963" opacity="0.02"/>
+<rect x="129.0" y="13.7" width="7" height="5.2" fill="#E8B963" opacity="0.22"/>
+<rect x="139.0" y="13.7" width="7" height="5.2" fill="#E8B963" opacity="0.03"/>
+<rect x="34.0" y="22.1" width="7" height="5.2" fill="#E8B963" opacity="0.05"/>
+<rect x="44.0" y="22.1" width="7" height="5.2" fill="#E8B963" opacity="0.21"/>
+<rect x="54.0" y="22.1" width="7" height="5.2" fill="#E8B963" opacity="0.41"/>
+<rect x="64.0" y="22.1" width="7" height="5.2" fill="#E8B963" opacity="0.06"/>
+<rect x="74.0" y="22.1" width="7" height="5.2" fill="#E8B963" opacity="0.11"/>
+<rect x="84.0" y="22.1" width="7" height="5.2" fill="#E8B963" opacity="0.31"/>
+<rect x="94.0" y="22.1" width="7" height="5.2" fill="#E8B963" opacity="0.47"/>
+<rect x="104.0" y="22.1" width="7" height="5.2" fill="#E8B963" opacity="0.29"/>
+<rect x="114.0" y="22.1" width="7" height="5.2" fill="#E8B963" opacity="0.20"/>
+<rect x="124.0" y="22.1" width="7" height="5.2" fill="#E8B963" opacity="0.49"/>
+<rect x="134.0" y="22.1" width="7" height="5.2" fill="#E8B963" opacity="0.02"/>
+<rect x="29.0" y="30.6" width="7" height="5.2" fill="#E8B963" opacity="0.43"/>
+<rect x="39.0" y="30.6" width="7" height="5.2" fill="#E8B963" opacity="0.14"/>
+<rect x="49.0" y="30.6" width="7" height="5.2" fill="#E8B963" opacity="0.07"/>
+<rect x="59.0" y="30.6" width="7" height="5.2" fill="#E8B963" opacity="0.06"/>
+<rect x="69.0" y="30.6" width="7" height="5.2" fill="#E8B963" opacity="0.15"/>
+<rect x="79.0" y="30.6" width="7" height="5.2" fill="#E8B963" opacity="0.41"/>
+<rect x="89.0" y="30.6" width="7" height="5.2" fill="#E8B963" opacity="0.09"/>
+<rect x="99.0" y="30.6" width="7" height="5.2" fill="#E8B963" opacity="0.29"/>
+<rect x="109.0" y="30.6" width="7" height="5.2" fill="#E8B963" opacity="0.32"/>
+<rect x="119.0" y="30.6" width="7" height="5.2" fill="#E8B963" opacity="0.19"/>
+<rect x="129.0" y="30.6" width="7" height="5.2" fill="#E8B963" opacity="0.27"/>
+<rect x="24.0" y="39.1" width="7" height="5.2" fill="#E8B963" opacity="0.03"/>
+<rect x="34.0" y="39.1" width="7" height="5.2" fill="#E8B963" opacity="0.03"/>
+<rect x="44.0" y="39.1" width="7" height="5.2" fill="#E8B963" opacity="0.10"/>
+<rect x="54.0" y="39.1" width="7" height="5.2" fill="#E8B963" opacity="0.34"/>
+<rect x="64.0" y="39.1" width="7" height="5.2" fill="#E8B963" opacity="0.21"/>
+<rect x="74.0" y="39.1" width="7" height="5.2" fill="#E8B963" opacity="0.16"/>
+<rect x="84.0" y="39.1" width="7" height="5.2" fill="#E8B963" opacity="0.29"/>
+<rect x="94.0" y="39.1" width="7" height="5.2" fill="#E8B963" opacity="0.23"/>
+<rect x="104.0" y="39.1" width="7" height="5.2" fill="#E8B963" opacity="0.15"/>
+<rect x="114.0" y="39.1" width="7" height="5.2" fill="#E8B963" opacity="0.40"/>
+<rect x="124.0" y="39.1" width="7" height="5.2" fill="#E8B963" opacity="0.35"/>
+<polygon points="40,54 150,54 130,88 20,88" fill="rgba(14,22,32,.92)" stroke="rgba(232,185,99,.55)" stroke-width="1"/>
+<path d="M42.0 60.8 q30 -5 55 0 t50 1" fill="none" stroke="#6FB5E0" stroke-opacity=".7" stroke-width="1"/>
+<path d="M38.0 67.6 q30 -5 55 0 t50 1" fill="none" stroke="#6FB5E0" stroke-opacity=".7" stroke-width="1"/>
+<path d="M34.0 74.4 q30 -5 55 0 t50 1" fill="none" stroke="#6FB5E0" stroke-opacity=".7" stroke-width="1"/>
+<path d="M30.0 81.2 q30 -5 55 0 t50 1" fill="none" stroke="#6FB5E0" stroke-opacity=".7" stroke-width="1"/>
+<polygon points="40,96 150,96 130,130 20,130" fill="rgba(14,22,32,.92)" stroke="rgba(232,185,99,.55)" stroke-width="1"/>
+<circle cx="55.4" cy="115.5" r="1.8" fill="#E8B963" opacity="0.88"/>
+<circle cx="114.5" cy="105.8" r="2.5" fill="#E8B963" opacity="0.42"/>
+<circle cx="70.9" cy="121.7" r="1.3" fill="#E8B963" opacity="0.64"/>
+<circle cx="30.9" cy="118.7" r="2.2" fill="#E8B963" opacity="0.69"/>
+<circle cx="130.0" cy="106.7" r="2.1" fill="#E8B963" opacity="0.71"/>
+<circle cx="94.7" cy="111.5" r="2.3" fill="#E8B963" opacity="0.92"/>
+<circle cx="78.9" cy="118.6" r="1.2" fill="#E8B963" opacity="0.77"/>
+<circle cx="91.3" cy="129.8" r="2.3" fill="#E8B963" opacity="0.52"/>
+<circle cx="69.1" cy="118.7" r="1.1" fill="#E8B963" opacity="0.63"/>
+<circle cx="56.1" cy="100.0" r="1.2" fill="#E8B963" opacity="0.81"/>
+<circle cx="49.3" cy="104.4" r="1.6" fill="#E8B963" opacity="0.87"/>
+<circle cx="39.9" cy="111.3" r="1.9" fill="#E8B963" opacity="0.88"/>
+<circle cx="112.8" cy="125.4" r="1.5" fill="#E8B963" opacity="0.60"/>
+<circle cx="61.8" cy="126.1" r="2.4" fill="#E8B963" opacity="0.44"/>
+<circle cx="54.7" cy="103.9" r="1.4" fill="#E8B963" opacity="0.64"/>
+<circle cx="99.5" cy="104.9" r="1.1" fill="#E8B963" opacity="0.60"/>
+<circle cx="69.3" cy="115.3" r="2.4" fill="#E8B963" opacity="0.76"/>
+<circle cx="84.4" cy="117.0" r="2.0" fill="#E8B963" opacity="0.38"/>
+<circle cx="123.3" cy="122.5" r="2.3" fill="#E8B963" opacity="0.83"/>
+<circle cx="75.2" cy="109.6" r="1.2" fill="#E8B963" opacity="0.73"/>
+<circle cx="45.5" cy="98.3" r="1.4" fill="#E8B963" opacity="0.45"/>
+<circle cx="76.4" cy="97.8" r="1.1" fill="#E8B963" opacity="0.44"/>
+<circle cx="43.9" cy="108.4" r="1.1" fill="#E8B963" opacity="0.87"/>
+<circle cx="104.6" cy="101.1" r="1.5" fill="#E8B963" opacity="0.56"/>
+<circle cx="77.6" cy="100.2" r="2.3" fill="#E8B963" opacity="0.95"/>
+<circle cx="81.6" cy="112.5" r="1.2" fill="#E8B963" opacity="0.41"/>
+</svg>
+            <figcaption><span>Remote sensing</span><span>Geophysics</span><span>Geochemistry</span></figcaption>
+          </figure>
+          <p>Geochemistry, geophysics, remote sensing and other surveys are cleaned and aligned to one grid, so every cell carries the same set of features.</p>
+        </li>
+        <li class="pipe2-step">
+          <div class="pipe2-head"><span class="pipe2-num">02</span><h3>Train</h3></div>
+          <figure class="pipe2-art">
+            <svg viewBox="0 0 170 150" aria-hidden="true">
+<rect x="13" y="14" width="21" height="25" fill="#E8B963" fill-opacity="0.12" stroke="#E8B963" stroke-opacity="0.35" stroke-width="1"/>
+<rect x="37" y="14" width="21" height="25" fill="#E8B963" fill-opacity="0.22" stroke="#E8B963" stroke-opacity="0.35" stroke-width="1"/>
+<rect x="61" y="14" width="21" height="25" fill="#E8B963" fill-opacity="0.12" stroke="#E8B963" stroke-opacity="0.35" stroke-width="1"/>
+<rect x="85" y="14" width="21" height="25" fill="#E8B963" fill-opacity="0.22" stroke="#E8B963" stroke-opacity="0.35" stroke-width="1"/>
+<rect x="109" y="14" width="21" height="25" fill="#E8B963" fill-opacity="0.12" stroke="#E8B963" stroke-opacity="0.35" stroke-width="1"/>
+<rect x="133" y="14" width="21" height="25" fill="#E8B963" fill-opacity="0.22" stroke="#E8B963" stroke-opacity="0.35" stroke-width="1"/>
+<rect x="13" y="42" width="21" height="25" fill="#E8B963" fill-opacity="0.22" stroke="#E8B963" stroke-opacity="0.35" stroke-width="1"/>
+<rect x="37" y="42" width="21" height="25" fill="#E8B963" fill-opacity="0.12" stroke="#E8B963" stroke-opacity="0.35" stroke-width="1"/>
+<rect x="61" y="42" width="21" height="25" fill="#E8B963" fill-opacity="0.22" stroke="#E8B963" stroke-opacity="0.35" stroke-width="1"/>
+<rect x="85" y="42" width="21" height="25" fill="#6FB5E0" fill-opacity="0.55" stroke="#6FB5E0" stroke-opacity="0.9" stroke-width="1"/>
+<rect x="109" y="42" width="21" height="25" fill="#6FB5E0" fill-opacity="0.55" stroke="#6FB5E0" stroke-opacity="0.9" stroke-width="1"/>
+<rect x="133" y="42" width="21" height="25" fill="#E8B963" fill-opacity="0.12" stroke="#E8B963" stroke-opacity="0.35" stroke-width="1"/>
+<rect x="13" y="70" width="21" height="25" fill="#E8B963" fill-opacity="0.12" stroke="#E8B963" stroke-opacity="0.35" stroke-width="1"/>
+<rect x="37" y="70" width="21" height="25" fill="#E8B963" fill-opacity="0.22" stroke="#E8B963" stroke-opacity="0.35" stroke-width="1"/>
+<rect x="61" y="70" width="21" height="25" fill="#E8B963" fill-opacity="0.12" stroke="#E8B963" stroke-opacity="0.35" stroke-width="1"/>
+<rect x="85" y="70" width="21" height="25" fill="#6FB5E0" fill-opacity="0.55" stroke="#6FB5E0" stroke-opacity="0.9" stroke-width="1"/>
+<rect x="109" y="70" width="21" height="25" fill="#6FB5E0" fill-opacity="0.55" stroke="#6FB5E0" stroke-opacity="0.9" stroke-width="1"/>
+<rect x="133" y="70" width="21" height="25" fill="#E8B963" fill-opacity="0.22" stroke="#E8B963" stroke-opacity="0.35" stroke-width="1"/>
+<rect x="13" y="98" width="21" height="25" fill="#E8B963" fill-opacity="0.22" stroke="#E8B963" stroke-opacity="0.35" stroke-width="1"/>
+<rect x="37" y="98" width="21" height="25" fill="#E8B963" fill-opacity="0.12" stroke="#E8B963" stroke-opacity="0.35" stroke-width="1"/>
+<rect x="61" y="98" width="21" height="25" fill="#E8B963" fill-opacity="0.22" stroke="#E8B963" stroke-opacity="0.35" stroke-width="1"/>
+<rect x="85" y="98" width="21" height="25" fill="#E8B963" fill-opacity="0.12" stroke="#E8B963" stroke-opacity="0.35" stroke-width="1"/>
+<rect x="109" y="98" width="21" height="25" fill="#E8B963" fill-opacity="0.22" stroke="#E8B963" stroke-opacity="0.35" stroke-width="1"/>
+<rect x="133" y="98" width="21" height="25" fill="#E8B963" fill-opacity="0.12" stroke="#E8B963" stroke-opacity="0.35" stroke-width="1"/>
+<rect x="83" y="40" width="49" height="57" fill="none" stroke="#6FB5E0" stroke-width="1.4" stroke-dasharray="3 3"/>
+<path d="M30 26 L33.5 28 L33.5 32 L30 34 L26.5 32 L26.5 28 Z" fill="#E8B963"/>
+<path d="M60 94 L63.5 96 L63.5 100 L60 102 L56.5 100 L56.5 96 Z" fill="#E8B963"/>
+<path d="M110 58 L113.5 60 L113.5 64 L110 66 L106.5 64 L106.5 60 Z" fill="#E8B963"/>
+<path d="M140 36 L143.5 38 L143.5 42 L140 44 L136.5 42 L136.5 38 Z" fill="#E8B963"/>
+<path d="M88 116 L91.5 118 L91.5 122 L88 124 L84.5 122 L84.5 118 Z" fill="#E8B963"/>
+</svg>
+            <figcaption><span class="k-gold">Known deposit</span><span class="k-sky">Held-out block</span></figcaption>
+          </figure>
+          <p>The model learns from confirmed deposits and their geology. Whole blocks of ground are held out during testing (spatial cross-validation), so it is scored on areas it has never seen.</p>
+        </li>
+        <li class="pipe2-step">
+          <div class="pipe2-head"><span class="pipe2-num">03</span><h3>Predict</h3></div>
+          <figure class="pipe2-art pipe2-art-map">
+            <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/model-run-heatmap.webp?ver=' . filemtime( get_stylesheet_directory() . '/assets/img/model-run-heatmap.webp' ) ); ?>" alt="Lithium prospectivity map from a recent model run across the Great Basin" loading="lazy" width="1168" height="1128">
+            <figcaption><span>Low</span><i aria-hidden="true"></i><span>High</span></figcaption>
+          </figure>
+          <p>Every cell gets a prospectivity score. The highest-ranked ground is then analysed further to narrow the search to the strongest drill targets.</p>
+        </li>
+      </ol>
 
-        <div class="pipeline-arrow" aria-hidden="true">
-          <svg aria-hidden="true" viewBox="0 0 100 14"><path d="M0 7 L92 7 M88 2 L94 7 L88 12" fill="none" stroke="var(--xr-gold)" stroke-width="1.4" stroke-linecap="round"/></svg>
-        </div>
-
-        <div class="pipeline-step">
-          <div class="pipeline-step-art">
-            <svg viewBox="0 0 100 80" aria-hidden="true">
-              <g fill="none" stroke="var(--xr-gold)" stroke-width="1">
-                <polygon points="50,8 76,22 76,50 50,64 24,50 24,22" fill="var(--xr-gold)" opacity="0.85"/>
-                <polygon points="20,28 36,38 36,56 20,66 4,56 4,38"  fill="var(--xr-gold)" opacity="0.45"/>
-                <polygon points="80,28 96,38 96,56 80,66 64,56 64,38" fill="var(--xr-sky)"  opacity="0.5"/>
-              </g>
-              <circle cx="50" cy="36" r="3" fill="var(--xr-void)"/>
-              <line x1="50" y1="20" x2="50" y2="32" stroke="var(--xr-void)" stroke-width="1.2"/>
-              <line x1="50" y1="40" x2="50" y2="52" stroke="var(--xr-void)" stroke-width="1.2"/>
-              <line x1="38" y1="36" x2="46" y2="36" stroke="var(--xr-void)" stroke-width="1.2"/>
-              <line x1="54" y1="36" x2="62" y2="36" stroke="var(--xr-void)" stroke-width="1.2"/>
-            </svg>
-          </div>
-          <div class="pipeline-step-label">Train</div>
-          <p>Model learns from confirmed deposits and geology and uses spacial cross-validation to prevent overfitting.</p>
-        </div>
-
-        <div class="pipeline-arrow" aria-hidden="true">
-          <svg aria-hidden="true" viewBox="0 0 100 14"><path d="M0 7 L92 7 M88 2 L94 7 L88 12" fill="none" stroke="var(--xr-gold)" stroke-width="1.4" stroke-linecap="round"/></svg>
-        </div>
-
-        <div class="pipeline-step">
-          <div class="pipeline-step-art">
-            <svg viewBox="0 0 100 80" aria-hidden="true">
-              <path d="M8 60 Q30 18 50 38 T92 22" fill="none" stroke="var(--xr-gold)" stroke-width="2" stroke-linecap="round"/>
-              <circle cx="8"  cy="60" r="3" fill="var(--xr-gold)"/>
-              <circle cx="30" cy="34" r="3" fill="var(--xr-gold)"/>
-              <circle cx="50" cy="38" r="3" fill="var(--xr-gold)"/>
-              <circle cx="70" cy="28" r="3" fill="var(--xr-gold)"/>
-              <circle cx="92" cy="22" r="3.5" fill="var(--xr-green)"/>
-              <path d="M86 22 L92 16 L98 22" fill="none" stroke="var(--xr-green)" stroke-width="1.5"/>
-            </svg>
-          </div>
-          <div class="pipeline-step-label">Predict</div>
-          <p>Our model produces prospectivity maps that identify areas of high probability, then we run additional computations on those areas to narrow the search area.</p>
-        </div>
-      </div>
-
-      <div class="xr-reveal xr-quote" style="margin-top:60px;">Months of senior geoscience — compressed into an afternoon.</div>
+      <p class="xr-reveal pipe2-close">The surveys already exist. The advantage is reading all of them together, before the first hole is drilled.</p>
     </div>
   </section>
 
@@ -342,194 +419,52 @@ add_action( 'generate_before_content', function() {
     </div>
   </section>
 
-  <!-- ═════════════════════════ ROADMAP (themed phase cards) ═════════════════════════ -->
+  <!-- ═════════════════════════ ROADMAP (timeline) ═════════════════════════ -->
   <section class="xr-section roadmap-sec">
 
     <div class="xr-container">
-      <div class="xr-reveal" style="text-align:center;margin-bottom:48px;max-width:840px;margin-left:auto;margin-right:auto;">
-        <h2>One platform. From Nevada lithium to lunar ice.</h2>
-        <p style="color:var(--xr-text-2);font-size:16px;line-height:1.7;margin:14px 0 0;">We are currently developing the Nevada lithium model. Looking to the future, X-Ray is planning on using the same methodology applied to a broader range of minerals, and even for Lunar ice.</p>
+      <div class="xr-reveal" style="text-align:center;margin-bottom:56px;max-width:840px;margin-left:auto;margin-right:auto;">
+        <h2>From prototype to platform.</h2>
+        <p style="color:var(--xr-text-2);font-size:16px;line-height:1.7;margin:14px 0 0;">Our Great Basin lithium model is a working prototype. Here is the path from that prototype to a product mining companies can rely on.</p>
       </div>
 
-      <div class="roadmap-grid xr-reveal xr-d1">
-        <!-- 1. Nevada Lithium — themed: Nevada state outline -->
-        <article class="phase-card phase-live">
-          <span class="phase-status"><span class="phase-status-dot"></span>In Development</span>
-          <div class="phase-art">
-            <!-- Nevada outline projected from its real border coordinates:
-                 42°N north line, 114.04°W east line down to Lake Mead,
-                 the Colorado River south to the 35°N tip, the diagonal
-                 California line to Lake Tahoe, then 120°W north. -->
-            <svg viewBox="0 0 100 130" aria-hidden="true">
-              <path d="M10.0 5.0 L89.9 5.0 L89.9 104.6 L88.5 105.8 L86.1 106.8 L83.8 105.6 L82.2 106.1 L80.6 107.7 L81.0 110.4 L81.5 114.4 L82.7 119.0 L82.2 122.8 L82.0 125.0 L10.0 56.4 Z"
-                    fill="rgba(232,185,99,0.06)" stroke="var(--xr-gold)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-              <!-- Active exploration target — northern Nevada lithium basin -->
-              <circle cx="44" cy="38" r="11" fill="none" stroke="var(--xr-green)" stroke-width="1.5"/>
-              <circle cx="44" cy="38" r="4" fill="var(--xr-green)"/>
-              <line x1="44" y1="24" x2="44" y2="31" stroke="var(--xr-green)" stroke-width="1.5"/>
-              <line x1="44" y1="45" x2="44" y2="52" stroke="var(--xr-green)" stroke-width="1.5"/>
-              <line x1="30" y1="38" x2="37" y2="38" stroke="var(--xr-green)" stroke-width="1.5"/>
-              <line x1="51" y1="38" x2="58" y2="38" stroke="var(--xr-green)" stroke-width="1.5"/>
-            </svg>
-          </div>
-          <h3>Nevada Lithium</h3>
-          <p><strong style="color:var(--xr-gold);">In active development</strong>.</p>
-        </article>
-
-        <!-- 2. Western US Cu & REE — themed: copper-ore vein under ridgeline -->
-        <article class="phase-card phase-dev">
-          <span class="phase-status"><span class="phase-status-dot dev"></span>Long-term Roadmap</span>
-          <div class="phase-art">
-            <svg viewBox="0 0 130 100" aria-hidden="true">
-              <defs>
-                <linearGradient id="cuOreGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%"  stop-color="#E8B963"/>
-                  <stop offset="50%" stop-color="#C77A3D"/>
-                  <stop offset="100%" stop-color="#6FB5E0"/>
-                </linearGradient>
-              </defs>
-              <!-- Sky/sub-surface backdrop -->
-              <rect x="0" y="0" width="130" height="38" fill="rgba(111,181,224,0.04)"/>
-              <!-- Western-US ridgeline silhouette (Sierra Nevada → Rockies feel) -->
-              <path d="M0 60 L12 50 L20 56 L30 44 L42 52 L52 38 L62 46 L72 32 L82 42 L92 36 L102 44 L114 38 L122 46 L130 42 L130 100 L0 100 Z"
-                    fill="rgba(14,20,27,0.85)" stroke="rgba(111,181,224,0.6)" stroke-width="1.2" stroke-linejoin="round"/>
-              <!-- Sub-surface ore vein in copper gradient running diagonally -->
-              <path d="M14 80 Q40 70 60 78 T118 72"
-                    fill="none" stroke="url(#cuOreGrad)" stroke-width="2.2" stroke-linecap="round"/>
-              <!-- Ore nodes pulsing along the vein -->
-              <circle cx="36" cy="76" r="2.6" fill="#E8B963"/>
-              <circle cx="68" cy="78" r="3"   fill="#C77A3D"/>
-              <circle cx="98" cy="74" r="2.4" fill="#6FB5E0"/>
-              <!-- Element tags floating in sky region -->
-              <g font-family="JetBrains Mono, monospace" font-weight="700">
-                <rect x="14" y="10" width="22" height="20" rx="1" fill="rgba(232,185,99,0.12)" stroke="var(--xr-gold)" stroke-width="0.9"/>
-                <text x="25" y="23" text-anchor="middle" fill="var(--xr-gold)" font-size="10">Cu</text>
-                <rect x="50" y="10" width="26" height="20" rx="1" fill="rgba(111,181,224,0.1)" stroke="var(--xr-sky)" stroke-width="0.9"/>
-                <text x="63" y="23" text-anchor="middle" fill="var(--xr-sky)" font-size="9.5">REE</text>
-                <rect x="90" y="10" width="22" height="20" rx="1" fill="rgba(232,185,99,0.06)" stroke="rgba(232,185,99,0.45)" stroke-width="0.8"/>
-                <text x="101" y="23" text-anchor="middle" fill="rgba(232,185,99,0.85)" font-size="10">Au</text>
-              </g>
-            </svg>
-          </div>
-          <h3>Western US Cu &amp; REE</h3>
-          <p>Future models for copper, rare earths and gold across the Cordillera — on the same fusion infrastructure. Long-term roadmap.</p>
-        </article>
-
-        <!-- 3. Global · All Minerals — themed: periodic-table tiles -->
-        <article class="phase-card phase-soon">
-          <span class="phase-status"><span class="phase-status-dot soon"></span>Roadmap</span>
-          <div class="phase-art">
-            <svg viewBox="0 0 130 90" aria-hidden="true">
-              <!-- Periodic-table style grid of element tiles -->
-              <g font-family="JetBrains Mono, monospace" font-weight="700">
-                <rect x="4"   y="4"  width="20" height="22" rx="1" fill="rgba(232,185,99,0.18)" stroke="var(--xr-gold)" stroke-width="1"/>
-                <text x="14"  y="18" text-anchor="middle" fill="var(--xr-gold)" font-size="9">Li</text>
-                <rect x="28"  y="4"  width="20" height="22" rx="1" fill="rgba(232,185,99,0.1)" stroke="rgba(232,185,99,0.5)" stroke-width="1"/>
-                <text x="38"  y="18" text-anchor="middle" fill="var(--xr-gold)" font-size="9">Cu</text>
-                <rect x="52"  y="4"  width="20" height="22" rx="1" fill="rgba(232,185,99,0.06)" stroke="rgba(232,185,99,0.35)" stroke-width="1"/>
-                <text x="62"  y="18" text-anchor="middle" fill="rgba(232,185,99,0.85)" font-size="9">Au</text>
-                <rect x="76"  y="4"  width="20" height="22" rx="1" fill="rgba(111,181,224,0.08)" stroke="rgba(111,181,224,0.45)" stroke-width="1"/>
-                <text x="86"  y="18" text-anchor="middle" fill="var(--xr-sky)" font-size="9">Ni</text>
-                <rect x="100" y="4"  width="20" height="22" rx="1" fill="rgba(111,181,224,0.06)" stroke="rgba(111,181,224,0.3)" stroke-width="1"/>
-                <text x="110" y="18" text-anchor="middle" fill="rgba(111,181,224,0.85)" font-size="9">Co</text>
-
-                <rect x="4"   y="32" width="20" height="22" rx="1" fill="rgba(232,185,99,0.06)" stroke="rgba(232,185,99,0.32)" stroke-width="1"/>
-                <text x="14"  y="46" text-anchor="middle" fill="rgba(232,185,99,0.85)" font-size="9">Ag</text>
-                <rect x="28"  y="32" width="20" height="22" rx="1" fill="rgba(111,181,224,0.08)" stroke="rgba(111,181,224,0.4)" stroke-width="1"/>
-                <text x="38"  y="46" text-anchor="middle" fill="var(--xr-sky)" font-size="9">U</text>
-                <rect x="52"  y="32" width="20" height="22" rx="1" fill="rgba(232,185,99,0.06)" stroke="rgba(232,185,99,0.3)" stroke-width="1"/>
-                <text x="62"  y="46" text-anchor="middle" fill="rgba(232,185,99,0.85)" font-size="9">Pt</text>
-                <rect x="76"  y="32" width="20" height="22" rx="1" fill="rgba(111,181,224,0.06)" stroke="rgba(111,181,224,0.3)" stroke-width="1"/>
-                <text x="86"  y="46" text-anchor="middle" fill="rgba(111,181,224,0.85)" font-size="9">Mo</text>
-                <rect x="100" y="32" width="20" height="22" rx="1" fill="rgba(232,185,99,0.06)" stroke="rgba(232,185,99,0.3)" stroke-width="1"/>
-                <text x="110" y="46" text-anchor="middle" fill="rgba(232,185,99,0.85)" font-size="9">Zn</text>
-
-                <rect x="4"   y="60" width="20" height="22" rx="1" fill="rgba(232,185,99,0.04)" stroke="rgba(232,185,99,0.22)" stroke-width="1"/>
-                <text x="14"  y="74" text-anchor="middle" fill="rgba(168,178,192,0.85)" font-size="9">Sn</text>
-                <rect x="28"  y="60" width="20" height="22" rx="1" fill="rgba(111,181,224,0.04)" stroke="rgba(111,181,224,0.22)" stroke-width="1"/>
-                <text x="38"  y="74" text-anchor="middle" fill="rgba(168,178,192,0.85)" font-size="9">V</text>
-                <rect x="52"  y="60" width="20" height="22" rx="1" fill="rgba(232,185,99,0.04)" stroke="rgba(232,185,99,0.22)" stroke-width="1"/>
-                <text x="62"  y="74" text-anchor="middle" fill="rgba(168,178,192,0.85)" font-size="9">Pd</text>
-                <rect x="76"  y="60" width="20" height="22" rx="1" fill="rgba(111,181,224,0.04)" stroke="rgba(111,181,224,0.22)" stroke-width="1"/>
-                <text x="86"  y="74" text-anchor="middle" fill="rgba(168,178,192,0.85)" font-size="9">W</text>
-                <rect x="100" y="60" width="20" height="22" rx="1" fill="rgba(232,185,99,0.04)" stroke="rgba(232,185,99,0.22)" stroke-width="1"/>
-                <text x="110" y="74" text-anchor="middle" fill="rgba(168,178,192,0.85)" font-size="9">Mn</text>
-              </g>
-            </svg>
-          </div>
-          <h3>Global · All Minerals</h3>
-          <p>Same platform architecture, every commercially important mineral, every producing country.</p>
-        </article>
-
-        <!-- 4. Deep Sea Mining — themed: sonar / seafloor -->
-        <article class="phase-card phase-deep">
-          <span class="phase-status"><span class="phase-status-dot deep"></span>Long-term</span>
-          <div class="phase-art">
-            <svg viewBox="0 0 130 100" aria-hidden="true">
-              <!-- Vessel at top -->
-              <path d="M50 14 L80 14 L84 22 L46 22 Z" fill="var(--xr-sky)" opacity="0.85"/>
-              <rect x="62" y="8" width="6" height="6" fill="var(--xr-sky)" opacity="0.7"/>
-              <!-- Sonar pings (concentric arcs) -->
-              <g fill="none" stroke="var(--xr-sky)" stroke-width="1" stroke-linecap="round">
-                <path d="M40 38 Q65 28 90 38" opacity="0.7"/>
-                <path d="M30 50 Q65 36 100 50" opacity="0.5"/>
-                <path d="M20 62 Q65 44 110 62" opacity="0.3"/>
-              </g>
-              <!-- Seafloor terrain -->
-              <path d="M0 78 L18 70 L34 76 L50 66 L66 74 L84 64 L102 72 L120 66 L130 74 L130 100 L0 100 Z"
-                    fill="rgba(111,181,224,0.12)" stroke="var(--xr-sky)" stroke-width="1.2"/>
-              <!-- Polymetallic nodules -->
-              <circle cx="40"  cy="84" r="2.5" fill="var(--xr-gold)" opacity="0.85"/>
-              <circle cx="62"  cy="86" r="2"   fill="var(--xr-gold)" opacity="0.7"/>
-              <circle cx="88"  cy="82" r="2.8" fill="var(--xr-gold)" opacity="0.9"/>
-              <circle cx="110" cy="86" r="2"   fill="var(--xr-gold)" opacity="0.7"/>
-            </svg>
-          </div>
-          <h3>Deep Sea Mining</h3>
-          <p>Polymetallic nodules &amp; seafloor sulphides — bathymetry + sediment geochemistry through the same fusion engine.</p>
-        </article>
-
-        <!-- 5. Lunar Mining — themed: moon -->
-        <article class="phase-card phase-lunar">
-          <span class="phase-status"><span class="phase-status-dot lunar"></span>Long-term</span>
-          <div class="phase-art">
-            <svg viewBox="0 0 130 100" aria-hidden="true">
-              <!-- Stars -->
-              <g fill="rgba(241,244,248,0.6)">
-                <circle cx="10"  cy="14" r="0.8"/>
-                <circle cx="118" cy="22" r="1"/>
-                <circle cx="22"  cy="34" r="0.7"/>
-                <circle cx="106" cy="48" r="0.8"/>
-                <circle cx="14"  cy="68" r="0.9"/>
-                <circle cx="120" cy="78" r="0.7"/>
-              </g>
-              <!-- Moon -->
-              <defs>
-                <radialGradient id="moonGrad" cx="38%" cy="38%">
-                  <stop offset="0%"  stop-color="#F1F4F8"/>
-                  <stop offset="60%" stop-color="#A8B2C0"/>
-                  <stop offset="100%" stop-color="#5a6678"/>
-                </radialGradient>
-              </defs>
-              <circle cx="65" cy="50" r="34" fill="url(#moonGrad)"/>
-              <!-- Craters -->
-              <g fill="rgba(14,20,27,0.35)">
-                <circle cx="54" cy="38" r="4"/>
-                <circle cx="74" cy="44" r="3"/>
-                <circle cx="60" cy="58" r="5.5"/>
-                <circle cx="80" cy="64" r="2.5"/>
-                <circle cx="48" cy="68" r="3"/>
-                <circle cx="84" cy="36" r="2"/>
-              </g>
-              <!-- Mining marker -->
-              <line x1="60"  y1="58" x2="60"  y2="46" stroke="var(--xr-green)" stroke-width="1.4"/>
-              <polygon points="60,42 56,48 64,48" fill="var(--xr-green)"/>
-            </svg>
-          </div>
-          <h3>Lunar Mining</h3>
-          <p>Moon-surface resource models. KREEP terranes, ice-bearing shadowed craters — terrestrial methodology applied to the regolith.</p>
-        </article>
-      </div>
+      <ol class="rm2 xr-reveal xr-d1">
+        <li class="rm2-step is-now">
+          <span class="rm2-node" aria-hidden="true"></span>
+          <span class="rm2-when">Now</span>
+          <div class="rm2-art"><svg viewBox="0 0 140 140" aria-hidden="true"><rect x="10.00" y="10.00" width="29.00" height="29.00" fill="#E8B963" fill-opacity="0.23"/><rect x="40.00" y="10.00" width="29.00" height="29.00" fill="#E8B963" fill-opacity="0.51"/><rect x="70.00" y="10.00" width="29.00" height="29.00" fill="#E8B963" fill-opacity="0.65"/><rect x="100.00" y="10.00" width="29.00" height="29.00" fill="#E8B963" fill-opacity="0.45"/><rect x="10.00" y="40.00" width="29.00" height="29.00" fill="#E8B963" fill-opacity="0.32"/><rect x="40.00" y="40.00" width="29.00" height="29.00" fill="#E8B963" fill-opacity="0.74"/><rect x="70.00" y="40.00" width="29.00" height="29.00" fill="#E8B963" fill-opacity="0.95"/><rect x="100.00" y="40.00" width="29.00" height="29.00" fill="#E8B963" fill-opacity="0.65"/><rect x="10.00" y="70.00" width="29.00" height="29.00" fill="#E8B963" fill-opacity="0.25"/><rect x="40.00" y="70.00" width="29.00" height="29.00" fill="#E8B963" fill-opacity="0.57"/><rect x="70.00" y="70.00" width="29.00" height="29.00" fill="#E8B963" fill-opacity="0.74"/><rect x="100.00" y="70.00" width="29.00" height="29.00" fill="#E8B963" fill-opacity="0.51"/><rect x="10.00" y="100.00" width="29.00" height="29.00" fill="#E8B963" fill-opacity="0.13"/><rect x="40.00" y="100.00" width="29.00" height="29.00" fill="#E8B963" fill-opacity="0.25"/><rect x="70.00" y="100.00" width="29.00" height="29.00" fill="#E8B963" fill-opacity="0.32"/><rect x="100.00" y="100.00" width="29.00" height="29.00" fill="#E8B963" fill-opacity="0.23"/></svg></div>
+          <h3>Prototype model</h3>
+          <p>A first lithium model for the Great Basin. It ranks ground at 1&times;1&nbsp;km, which proves the method but is too coarse to sell.</p>
+        </li>
+        <li class="rm2-step is-next">
+          <span class="rm2-node" aria-hidden="true"></span>
+          <span class="rm2-when">Next</span>
+          <div class="rm2-art"><svg viewBox="0 0 140 140" aria-hidden="true"><rect x="10.00" y="10.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="17.50" y="10.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="25.00" y="10.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="32.50" y="10.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="40.00" y="10.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="47.50" y="10.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.09"/><rect x="55.00" y="10.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.10"/><rect x="62.50" y="10.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.12"/><rect x="70.00" y="10.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.14"/><rect x="77.50" y="10.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.15"/><rect x="85.00" y="10.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.14"/><rect x="92.50" y="10.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.13"/><rect x="100.00" y="10.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.11"/><rect x="107.50" y="10.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.09"/><rect x="115.00" y="10.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.08"/><rect x="122.50" y="10.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="10.00" y="17.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="17.50" y="17.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="25.00" y="17.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="32.50" y="17.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="40.00" y="17.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.09"/><rect x="47.50" y="17.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.12"/><rect x="55.00" y="17.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.15"/><rect x="62.50" y="17.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.19"/><rect x="70.00" y="17.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.22"/><rect x="77.50" y="17.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.24"/><rect x="85.00" y="17.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.23"/><rect x="92.50" y="17.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.20"/><rect x="100.00" y="17.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.16"/><rect x="107.50" y="17.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.12"/><rect x="115.00" y="17.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.10"/><rect x="122.50" y="17.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.08"/><rect x="10.00" y="25.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="17.50" y="25.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="25.00" y="25.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="32.50" y="25.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.09"/><rect x="40.00" y="25.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.12"/><rect x="47.50" y="25.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.16"/><rect x="55.00" y="25.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.23"/><rect x="62.50" y="25.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.30"/><rect x="70.00" y="25.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.36"/><rect x="77.50" y="25.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.38"/><rect x="85.00" y="25.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.36"/><rect x="92.50" y="25.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.31"/><rect x="100.00" y="25.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.24"/><rect x="107.50" y="25.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.18"/><rect x="115.00" y="25.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.12"/><rect x="122.50" y="25.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.09"/><rect x="10.00" y="32.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="17.50" y="32.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="25.00" y="32.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.08"/><rect x="32.50" y="32.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.10"/><rect x="40.00" y="32.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.15"/><rect x="47.50" y="32.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.22"/><rect x="55.00" y="32.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.33"/><rect x="62.50" y="32.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.44"/><rect x="70.00" y="32.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.53"/><rect x="77.50" y="32.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.57"/><rect x="85.00" y="32.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.54"/><rect x="92.50" y="32.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.46"/><rect x="100.00" y="32.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.35"/><rect x="107.50" y="32.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.24"/><rect x="115.00" y="32.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.16"/><rect x="122.50" y="32.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.11"/><rect x="10.00" y="40.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="17.50" y="40.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="25.00" y="40.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.08"/><rect x="32.50" y="40.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.12"/><rect x="40.00" y="40.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.18"/><rect x="47.50" y="40.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.29"/><rect x="55.00" y="40.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.43"/><rect x="62.50" y="40.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.58"/><rect x="70.00" y="40.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.71"/><rect x="77.50" y="40.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.76"/><rect x="85.00" y="40.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.73"/><rect x="92.50" y="40.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.61"/><rect x="100.00" y="40.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.46"/><rect x="107.50" y="40.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.31"/><rect x="115.00" y="40.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.20"/><rect x="122.50" y="40.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.13"/><rect x="10.00" y="47.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="17.50" y="47.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="25.00" y="47.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.09"/><rect x="32.50" y="47.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.13"/><rect x="40.00" y="47.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.21"/><rect x="47.50" y="47.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.33"/><rect x="55.00" y="47.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.51"/><rect x="62.50" y="47.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.69"/><rect x="70.00" y="47.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.85"/><rect x="77.50" y="47.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.91"/><rect x="85.00" y="47.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.87"/><rect x="92.50" y="47.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.73"/><rect x="100.00" y="47.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.54"/><rect x="107.50" y="47.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.36"/><rect x="115.00" y="47.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.23"/><rect x="122.50" y="47.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.14"/><rect x="10.00" y="55.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="17.50" y="55.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="25.00" y="55.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.09"/><rect x="32.50" y="55.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.13"/><rect x="40.00" y="55.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.22"/><rect x="47.50" y="55.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.35"/><rect x="55.00" y="55.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.53"/><rect x="62.50" y="55.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.73"/><rect x="70.00" y="55.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.89"/><rect x="77.50" y="55.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.96"/><rect x="85.00" y="55.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.91"/><rect x="92.50" y="55.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.76"/><rect x="100.00" y="55.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.57"/><rect x="107.50" y="55.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.38"/><rect x="115.00" y="55.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.24"/><rect x="122.50" y="55.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.15"/><rect x="10.00" y="62.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="17.50" y="62.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="25.00" y="62.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.09"/><rect x="32.50" y="62.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.13"/><rect x="40.00" y="62.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.20"/><rect x="47.50" y="62.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.33"/><rect x="55.00" y="62.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.49"/><rect x="62.50" y="62.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.68"/><rect x="70.00" y="62.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.82"/><rect x="77.50" y="62.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.89"/><rect x="85.00" y="62.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.85"/><rect x="92.50" y="62.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.71"/><rect x="100.00" y="62.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.53"/><rect x="107.50" y="62.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.36"/><rect x="115.00" y="62.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.22"/><rect x="122.50" y="62.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.14"/><rect x="10.00" y="70.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="17.50" y="70.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="25.00" y="70.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.08"/><rect x="32.50" y="70.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.11"/><rect x="40.00" y="70.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.18"/><rect x="47.50" y="70.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.27"/><rect x="55.00" y="70.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.41"/><rect x="62.50" y="70.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.56"/><rect x="70.00" y="70.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.68"/><rect x="77.50" y="70.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.73"/><rect x="85.00" y="70.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.69"/><rect x="92.50" y="70.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.58"/><rect x="100.00" y="70.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.44"/><rect x="107.50" y="70.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.30"/><rect x="115.00" y="70.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.19"/><rect x="122.50" y="70.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.12"/><rect x="10.00" y="77.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="17.50" y="77.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="25.00" y="77.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.08"/><rect x="32.50" y="77.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.10"/><rect x="40.00" y="77.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.14"/><rect x="47.50" y="77.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.21"/><rect x="55.00" y="77.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.31"/><rect x="62.50" y="77.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.41"/><rect x="70.00" y="77.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.49"/><rect x="77.50" y="77.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.53"/><rect x="85.00" y="77.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.51"/><rect x="92.50" y="77.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.43"/><rect x="100.00" y="77.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.33"/><rect x="107.50" y="77.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.23"/><rect x="115.00" y="77.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.15"/><rect x="122.50" y="77.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.10"/><rect x="10.00" y="85.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="17.50" y="85.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="25.00" y="85.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="32.50" y="85.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.08"/><rect x="40.00" y="85.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.11"/><rect x="47.50" y="85.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.15"/><rect x="55.00" y="85.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.21"/><rect x="62.50" y="85.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.27"/><rect x="70.00" y="85.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.33"/><rect x="77.50" y="85.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.35"/><rect x="85.00" y="85.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.33"/><rect x="92.50" y="85.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.29"/><rect x="100.00" y="85.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.22"/><rect x="107.50" y="85.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.16"/><rect x="115.00" y="85.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.12"/><rect x="122.50" y="85.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.09"/><rect x="10.00" y="92.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="17.50" y="92.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="25.00" y="92.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="32.50" y="92.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="40.00" y="92.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.09"/><rect x="47.50" y="92.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.11"/><rect x="55.00" y="92.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.14"/><rect x="62.50" y="92.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.18"/><rect x="70.00" y="92.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.20"/><rect x="77.50" y="92.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.22"/><rect x="85.00" y="92.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.21"/><rect x="92.50" y="92.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.18"/><rect x="100.00" y="92.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.15"/><rect x="107.50" y="92.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.12"/><rect x="115.00" y="92.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.09"/><rect x="122.50" y="92.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="10.00" y="100.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="17.50" y="100.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="25.00" y="100.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="32.50" y="100.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="40.00" y="100.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="47.50" y="100.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.08"/><rect x="55.00" y="100.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.10"/><rect x="62.50" y="100.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.11"/><rect x="70.00" y="100.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.13"/><rect x="77.50" y="100.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.13"/><rect x="85.00" y="100.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.13"/><rect x="92.50" y="100.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.12"/><rect x="100.00" y="100.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.10"/><rect x="107.50" y="100.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.09"/><rect x="115.00" y="100.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="122.50" y="100.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="10.00" y="107.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="17.50" y="107.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="25.00" y="107.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="32.50" y="107.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="40.00" y="107.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="47.50" y="107.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="55.00" y="107.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.08"/><rect x="62.50" y="107.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.08"/><rect x="70.00" y="107.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.09"/><rect x="77.50" y="107.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.09"/><rect x="85.00" y="107.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.09"/><rect x="92.50" y="107.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.08"/><rect x="100.00" y="107.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.08"/><rect x="107.50" y="107.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="115.00" y="107.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="122.50" y="107.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="10.00" y="115.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="17.50" y="115.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="25.00" y="115.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="32.50" y="115.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="40.00" y="115.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="47.50" y="115.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="55.00" y="115.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="62.50" y="115.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="70.00" y="115.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="77.50" y="115.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="85.00" y="115.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="92.50" y="115.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="100.00" y="115.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.07"/><rect x="107.50" y="115.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="115.00" y="115.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="122.50" y="115.00" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="10.00" y="122.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="17.50" y="122.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="25.00" y="122.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="32.50" y="122.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="40.00" y="122.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="47.50" y="122.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="55.00" y="122.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="62.50" y="122.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="70.00" y="122.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="77.50" y="122.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="85.00" y="122.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="92.50" y="122.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="100.00" y="122.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="107.50" y="122.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="115.00" y="122.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/><rect x="122.50" y="122.50" width="6.90" height="6.90" fill="#E8B963" fill-opacity="0.06"/></svg></div>
+          <h3>Finer models</h3>
+          <p>A series of progressively finer models, working down toward 1&times;1&nbsp;m, precise enough to site individual boreholes.</p>
+        </li>
+        <li class="rm2-step">
+          <span class="rm2-node" aria-hidden="true"></span>
+          <span class="rm2-when">Then</span>
+          <div class="rm2-art"><svg viewBox="0 0 140 140" aria-hidden="true"><rect x="10" y="10" width="120" height="120" fill="rgba(232,185,99,.04)"/><path d="M10 44 q30 -6 60 0 t60 2" fill="none" stroke="rgba(168,178,192,.35)" stroke-width="1"/><path d="M10 66 q30 -3 60 0 t60 1" fill="none" stroke="rgba(168,178,192,.35)" stroke-width="1"/><path d="M10 88 q30 0 60 0 t60 0" fill="none" stroke="rgba(168,178,192,.35)" stroke-width="1"/><path d="M10 110 q30 3 60 0 t60 -1" fill="none" stroke="rgba(168,178,192,.35)" stroke-width="1"/><ellipse cx="70" cy="98" rx="24" ry="9" fill="#E8B963" fill-opacity=".35"/><line x1="70" y1="18" x2="70" y2="98" stroke="#6FB5E0" stroke-width="2"/><line x1="65" y1="30" x2="75" y2="30" stroke="#6FB5E0" stroke-width="1"/><line x1="65" y1="40" x2="75" y2="40" stroke="#6FB5E0" stroke-width="1"/><line x1="65" y1="50" x2="75" y2="50" stroke="#6FB5E0" stroke-width="1"/><line x1="65" y1="60" x2="75" y2="60" stroke="#6FB5E0" stroke-width="1"/><line x1="65" y1="70" x2="75" y2="70" stroke="#6FB5E0" stroke-width="1"/><line x1="65" y1="80" x2="75" y2="80" stroke="#6FB5E0" stroke-width="1"/><line x1="65" y1="90" x2="75" y2="90" stroke="#6FB5E0" stroke-width="1"/><path d="M62 10 L78 10 L74 18 L66 18 Z" fill="#6FB5E0"/><circle cx="70" cy="98" r="3.5" fill="#E8B963"/></svg></div>
+          <h3>Field testing</h3>
+          <p>Checking predictions against real drilling and sampling, and feeding the results back until the model is accurate enough to sell.</p>
+        </li>
+        <li class="rm2-step">
+          <span class="rm2-node" aria-hidden="true"></span>
+          <span class="rm2-when">Then</span>
+          <div class="rm2-art"><svg viewBox="0 0 140 140" aria-hidden="true"><rect x="10" y="18" width="120" height="104" fill="rgba(14,22,32,.9)" stroke="rgba(232,185,99,.55)"/><line x1="10" y1="30" x2="130" y2="30" stroke="rgba(232,185,99,.35)"/><circle cx="17" cy="24" r="1.8" fill="rgba(232,185,99,.6)"/><circle cx="23" cy="24" r="1.8" fill="rgba(232,185,99,.4)"/><rect x="16.00" y="38.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.08"/><rect x="25.00" y="38.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.11"/><rect x="34.00" y="38.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.17"/><rect x="43.00" y="38.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.23"/><rect x="52.00" y="38.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.25"/><rect x="61.00" y="38.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.22"/><rect x="70.00" y="38.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.15"/><rect x="79.00" y="38.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.10"/><rect x="16.00" y="47.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.10"/><rect x="25.00" y="47.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.17"/><rect x="34.00" y="47.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.31"/><rect x="43.00" y="47.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.45"/><rect x="52.00" y="47.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.50"/><rect x="61.00" y="47.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.42"/><rect x="70.00" y="47.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.28"/><rect x="79.00" y="47.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.15"/><rect x="16.00" y="56.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.12"/><rect x="25.00" y="56.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.25"/><rect x="34.00" y="56.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.47"/><rect x="43.00" y="56.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.71"/><rect x="52.00" y="56.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.80"/><rect x="61.00" y="56.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.67"/><rect x="70.00" y="56.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.42"/><rect x="79.00" y="56.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.22"/><rect x="16.00" y="65.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.14"/><rect x="25.00" y="65.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.29"/><rect x="34.00" y="65.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.56"/><rect x="43.00" y="65.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.85"/><rect x="52.00" y="65.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.96"/><rect x="61.00" y="65.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.80"/><rect x="70.00" y="65.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.50"/><rect x="79.00" y="65.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.25"/><rect x="16.00" y="74.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.13"/><rect x="25.00" y="74.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.26"/><rect x="34.00" y="74.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.50"/><rect x="43.00" y="74.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.75"/><rect x="52.00" y="74.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.85"/><rect x="61.00" y="74.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.71"/><rect x="70.00" y="74.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.45"/><rect x="79.00" y="74.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.23"/><rect x="16.00" y="83.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.10"/><rect x="25.00" y="83.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.19"/><rect x="34.00" y="83.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.34"/><rect x="43.00" y="83.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.50"/><rect x="52.00" y="83.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.56"/><rect x="61.00" y="83.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.47"/><rect x="70.00" y="83.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.31"/><rect x="79.00" y="83.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.17"/><rect x="16.00" y="92.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.08"/><rect x="25.00" y="92.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.12"/><rect x="34.00" y="92.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.19"/><rect x="43.00" y="92.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.26"/><rect x="52.00" y="92.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.29"/><rect x="61.00" y="92.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.25"/><rect x="70.00" y="92.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.17"/><rect x="79.00" y="92.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.11"/><rect x="16.00" y="101.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.07"/><rect x="25.00" y="101.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.08"/><rect x="34.00" y="101.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.10"/><rect x="43.00" y="101.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.13"/><rect x="52.00" y="101.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.14"/><rect x="61.00" y="101.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.12"/><rect x="70.00" y="101.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.10"/><rect x="79.00" y="101.00" width="8.00" height="8.00" fill="#E8B963" fill-opacity="0.08"/><rect x="94" y="40" width="30" height="6" fill="#E8B963" fill-opacity="0.85"/><rect x="94" y="52" width="24" height="6" fill="#E8B963" fill-opacity="0.67"/><rect x="94" y="64" width="19" height="6" fill="#E8B963" fill-opacity="0.49"/><rect x="94" y="76" width="14" height="6" fill="#E8B963" fill-opacity="0.31"/><rect x="94" y="94" width="30" height="20" fill="none" stroke="#6FB5E0" stroke-opacity=".6"/><path d="M98 110 l7 -8 l6 5 l9 -9" fill="none" stroke="#6FB5E0" stroke-width="1.2"/></svg></div>
+          <h3>Software platform</h3>
+          <p>Geologist teams import their survey data and get ranked drill targets, a heat map, a 3D view of the target area and other geoanalysis tools.</p>
+        </li>
+        <li class="rm2-step">
+          <span class="rm2-node" aria-hidden="true"></span>
+          <span class="rm2-when">Later</span>
+          <div class="rm2-art"><svg viewBox="0 0 140 140" aria-hidden="true"><rect x="12" y="28" width="36" height="40" fill="#E8B963" fill-opacity="0.9" stroke="#E8B963" stroke-opacity="1"/><text x="30" y="53" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" fill="#0E141B">Li</text><rect x="52" y="28" width="36" height="40" fill="none" fill-opacity="0" stroke="#E8B963" stroke-opacity="0.35"/><text x="70" y="53" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" fill="rgba(232,185,99,.55)">Cu</text><rect x="92" y="28" width="36" height="40" fill="none" fill-opacity="0" stroke="#E8B963" stroke-opacity="0.35"/><text x="110" y="53" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" fill="rgba(232,185,99,.55)">Ni</text><rect x="12" y="72" width="36" height="40" fill="none" fill-opacity="0" stroke="#E8B963" stroke-opacity="0.35"/><text x="30" y="97" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" fill="rgba(232,185,99,.55)">Co</text><rect x="52" y="72" width="36" height="40" fill="none" fill-opacity="0" stroke="#E8B963" stroke-opacity="0.35"/><text x="70" y="97" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" fill="rgba(232,185,99,.55)">Au</text><rect x="92" y="72" width="36" height="40" fill="none" fill-opacity="0" stroke="#E8B963" stroke-opacity="0.35"/><text x="110" y="97" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700" fill="rgba(232,185,99,.55)">REE</text></svg></div>
+          <h3>Other minerals</h3>
+          <p>Once lithium is proven, the same method is applied to other minerals that mining companies explore for.</p>
+        </li>
+      </ol>
 
       <div class="xr-reveal xr-d2" style="text-align:center;margin-top:48px;">
         <a href="<?php echo esc_url( home_url( '/investors/' ) ); ?>" class="xr-btn xr-btn-ghost">See the roadmap <span class="xr-arrow">→</span></a>
