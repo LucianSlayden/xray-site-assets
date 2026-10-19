@@ -5493,3 +5493,52 @@ body.page-id-298 {
   .iv-tiers           { grid-template-columns: 1fr; }
   .iv-traction-inner  { grid-template-columns: 1fr; }
 }
+/* ────────────────────────────────────────── CONTACT FORMS ─────────────── */
+/* Shared by the Learn More and Investors forms (inc/contact-form.php). */
+.xr-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.lm-notice { padding: 14px 16px; margin-bottom: 22px; border-radius: 2px; font-size: 14.5px; line-height: 1.6; }
+.lm-notice-ok { background: rgba(80,200,120,0.10); border: 1px solid rgba(80,200,120,0.45); color: var(--xr-text); }
+.lm-notice-err { background: rgba(232,99,99,0.10); border: 1px solid rgba(232,99,99,0.45); color: var(--xr-text); }
+
+/* ────────────────────────────────────────── INVESTORS FIXES ───────────── */
+/* Dividers had width:100% plus side margins, pushing the page 128px wider
+   than the window (sideways scroll). */
+.iv-divider { width: auto; }
+
+/* The recall gauge is a half circle; an older rule rotated it 90°. */
+#iv-gauge-arc { transform: none; }
+
+/* Roadmap: an older #iv-timeline rule shrank the left gutter, so the icons
+   sat outside the content column and the line ran through the text. The
+   line now runs through the middle of the icons. */
+#iv-timeline { padding-left: 132px; }
+#iv-timeline .iv-tl-line { left: 49px; top: 40px; bottom: 40px; }
+#iv-timeline .iv-tl-icon { left: -132px; z-index: 1; background: #0E141B; }
+@media (max-width: 720px) {
+  #iv-timeline { padding-left: 0; }
+  #iv-timeline .iv-tl-icon { left: 0; }
+}
+
+/* Business model cards: one heading style for all three. */
+.iv-tier-n, .iv-tier-n.text {
+  font-family: var(--xr-font-display); font-weight: 700;
+  font-size: clamp(22px, 2.1vw, 30px); line-height: 1.15;
+  letter-spacing: -0.02em; color: var(--xr-text); margin-bottom: 16px;
+}
+.iv-tier { display: flex; flex-direction: column; }
+
+/* Founder photos inside gold hexagons. */
+.iv-founder { padding: 36px 16px 30px; }
+.iv-founder-hex {
+  width: 132px; height: 152px; border: 0; padding: 3px; box-sizing: border-box;
+  background: var(--xr-gold); margin: 0 auto 20px;
+}
+.iv-founder.sky .iv-founder-hex { background: var(--xr-sky); }
+.iv-founder-hex img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+}
+.iv-founder-name { font-size: 16px; }
+.iv-founder-role { font-size: 10.5px; line-height: 1.5; }
+.iv-founder.sky .iv-founder-role { color: var(--xr-sky); }
+@media (max-width: 560px) { .iv-founder-hex { width: 104px; height: 120px; } }

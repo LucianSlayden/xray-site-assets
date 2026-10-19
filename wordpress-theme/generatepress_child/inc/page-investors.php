@@ -75,10 +75,10 @@ body { background: #060c12 !important; }
       </h1>
 
       <p class="iv-subhead" id="iv-sub">
-        X-Ray Geoanalytics uses machine learning to find mineral deposits for junior explorers, starting with lithium in the Great Basin and expanding to the minerals our customers already search for alongside it: nickel, cobalt, gold, and silver.
+        X-Ray Geoanalytics uses machine learning to find mineral deposits for mining companies, starting with lithium in the Great Basin and expanding to the minerals our customers already search for alongside it: nickel, cobalt, gold, and silver.
       </p>
 
-      <a href="mailto:lucian@xraygeoanalytics.com" class="iv-hero-cta" id="iv-cta">
+      <a href="#iv-contact" class="iv-hero-cta" id="iv-cta">
         Request investor access
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
@@ -98,7 +98,7 @@ body { background: #060c12 !important; }
         </div>
         <div class="iv-stat-item">
           <div class="iv-stat-n sky">4</div>
-          <div class="iv-stat-label">Co-founders, equal ownership</div>
+          <div class="iv-stat-label">Co-founders</div>
         </div>
       </div>
     </div>
@@ -178,12 +178,12 @@ body { background: #060c12 !important; }
             The moat is our <em>data and proprietary featuresets</em>. We collected decades of cluttered geological data, cleaned and sorted it, and designed features in-house that indicate lithium mineralization. The same raw data would be useless to most AI models, and it would be costly and slow for competitors to replicate.
           </p>
           <p style="color:var(--xr-text-2);font-size:17px;line-height:1.85;margin:0 0 28px;">
-            Next comes <strong style="color:var(--xr-text);">customer discovery</strong> with junior explorers, finer-resolution models built on borehole data, and field validation against real boreholes drilled by mining companies.
+            The models are <strong style="color:var(--xr-text);">not commercially viable yet</strong>. We are raising funding to develop them down to <strong style="color:var(--xr-gold);">1x1 m precision</strong>, fine enough to place individual boreholes, alongside customer discovery with mining companies and field validation against real boreholes.
           </p>
           <div class="iv-tags">
             <span class="iv-tag iv-tag-gold">Built · Great Basin Lithium</span>
             <span class="iv-tag iv-tag-sky">Next · Nickel</span>
-            <span class="iv-tag iv-tag-dim">Customer discovery next</span>
+            <span class="iv-tag iv-tag-dim">Goal · 1x1 m precision</span>
           </div>
         </div>
 
@@ -256,24 +256,27 @@ body { background: #060c12 !important; }
     <div class="iv-container">
       <div class="xr-reveal" style="margin-bottom:20px;">
         <div class="iv-section-label">03 · Business Model</div>
-        <h2 class="iv-section-h2" style="max-width:840px;">A SaaS subscription for <strong>junior explorers</strong> in the Great Basin and American Southwest.</h2>
+        <h2 class="iv-section-h2" style="max-width:860px;">A software platform that <strong>mining companies</strong> subscribe to and their geologist teams use.</h2>
+        <p class="iv-section-lead" style="margin-top:16px;">
+          Mining companies buy the subscription. Their geologist teams use the platform for target generation, deciding where to drill. Every new mineral model adds to what the subscription covers.
+        </p>
       </div>
 
       <div class="iv-tiers">
         <div class="iv-tier xr-reveal xr-d1">
-          <div class="iv-tier-label">Model</div>
-          <div class="iv-tier-n text">Subscription</div>
-          <p>Explorers subscribe to the platform and keep access to it and its model updates for as long as their projects run. Pricing will be set through customer discovery.</p>
+          <div class="iv-tier-label">The platform</div>
+          <div class="iv-tier-n">Heat map + 3D view</div>
+          <p>Geologist teams upload their exploration data and get back a prospectivity heat map, a 3D visualization of the target area, and a ranked list of drill targets, all in one place.</p>
         </div>
         <div class="iv-tier sky xr-reveal xr-d2">
-          <div class="iv-tier-label" style="color:var(--xr-sky);">Expansion</div>
-          <div class="iv-tier-n" style="color:var(--xr-sky);">New models</div>
-          <p>Explorers already search for nickel, cobalt, gold, and silver alongside lithium. Each new commodity model expands what we can offer, and opens a path to larger mining companies across the US.</p>
+          <div class="iv-tier-label" style="color:var(--xr-sky);">Customers</div>
+          <div class="iv-tier-n" style="color:var(--xr-sky);">Mining companies</div>
+          <p>We start with companies targeting lithium in the Great Basin, then companies there targeting multiple commodities, then mining companies across the US as new models for nickel, cobalt, gold and silver come online.</p>
         </div>
         <div class="iv-tier xr-reveal xr-d3">
           <div class="iv-tier-label">Defensibility</div>
-          <div class="iv-tier-n text">Compounding</div>
-          <p>In-house featuresets and decades of cleaned data are hard to replicate. Each customer's data is compartmentalized and never used to train anyone else's model, so explorers can trust us with it.</p>
+          <div class="iv-tier-n">Compounding data</div>
+          <p>In-house featuresets and decades of cleaned data are hard to replicate. Each customer's data is compartmentalized and never used to train anyone else's model, so mining companies can trust us with it.</p>
         </div>
       </div>
 
@@ -318,36 +321,34 @@ body { background: #060c12 !important; }
           <p class="iv-tl-p">Our lithium model covers the Great Basin at 1x1 km cells with 95% recall and 80% precision. Next is two rounds of customer interviews: first to validate the problem and how explorers decide where to drill today, then to learn what they want in the software.</p>
         </div>
 
-        <!-- 2: Western US Cu & REE -->
+        <!-- 2: Nickel, field validation, grants -->
         <div class="iv-tl-step dev">
           <div class="iv-tl-icon" aria-hidden="true">
             <svg viewBox="0 0 130 100">
-              <defs>
-                <linearGradient id="cuGradIv" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%"  stop-color="#E8B963"/>
-                  <stop offset="50%" stop-color="#C77A3D"/>
-                  <stop offset="100%" stop-color="#6FB5E0"/>
-                </linearGradient>
-              </defs>
-              <path d="M0 60 L12 50 L20 56 L30 44 L42 52 L52 38 L62 46 L72 32 L82 42 L92 36 L102 44 L114 38 L122 46 L130 42 L130 100 L0 100 Z"
-                    fill="rgba(14,20,27,0.85)" stroke="rgba(111,181,224,0.6)" stroke-width="1.2" stroke-linejoin="round"/>
-              <path d="M14 80 Q40 70 60 78 T118 72" fill="none" stroke="url(#cuGradIv)" stroke-width="2.2" stroke-linecap="round"/>
-              <circle cx="36" cy="76" r="2.6" fill="#E8B963"/>
-              <circle cx="68" cy="78" r="3"   fill="#C77A3D"/>
-              <circle cx="98" cy="74" r="2.4" fill="#6FB5E0"/>
+              <!-- Nickel tile -->
               <g font-family="JetBrains Mono,monospace" font-weight="700">
-                <rect x="14" y="10" width="22" height="20" rx="1" fill="rgba(232,185,99,0.12)" stroke="#E8B963" stroke-width="0.9"/>
-                <text x="25" y="23" text-anchor="middle" fill="#E8B963" font-size="10">Ni</text>
-                <rect x="50" y="10" width="26" height="20" rx="1" fill="rgba(111,181,224,0.1)" stroke="#6FB5E0" stroke-width="0.9"/>
-                <text x="63" y="23" text-anchor="middle" fill="#6FB5E0" font-size="9.5">Li</text>
-                <rect x="90" y="10" width="22" height="20" rx="1" fill="rgba(232,185,99,0.06)" stroke="rgba(232,185,99,0.45)" stroke-width="0.8"/>
-                <text x="101" y="23" text-anchor="middle" fill="rgba(232,185,99,0.85)" font-size="10">Co</text>
+                <rect x="4" y="22" width="34" height="38" rx="2" fill="rgba(111,181,224,0.1)" stroke="#6FB5E0" stroke-width="1.2"/>
+                <text x="8" y="32" fill="rgba(111,181,224,0.8)" font-size="7">28</text>
+                <text x="21" y="51" text-anchor="middle" fill="#6FB5E0" font-size="15">Ni</text>
               </g>
+              <!-- Field validation: drill into ground, hitting the target -->
+              <path d="M44 56 H86" stroke="rgba(232,185,99,0.55)" stroke-width="1.2"/>
+              <path d="M44 62 H86 M44 70 H86 M44 78 H86" stroke="rgba(232,185,99,0.18)" stroke-width="1"/>
+              <path d="M58 56 L65 22 L72 56" fill="none" stroke="#A8B2C0" stroke-width="1.4" stroke-linejoin="round"/>
+              <path d="M61 40 H69" stroke="#A8B2C0" stroke-width="1.2"/>
+              <path d="M65 56 V82" stroke="#E8B963" stroke-width="2" stroke-dasharray="3 2"/>
+              <circle cx="65" cy="86" r="5" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+              <path d="M62.3 86 l2 2 l3.6 -4" fill="none" stroke="#4ade80" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Federal grant: government building -->
+              <path d="M94 34 L110 24 L126 34 Z" fill="rgba(232,185,99,0.08)" stroke="#E8B963" stroke-width="1.2" stroke-linejoin="round"/>
+              <path d="M97 38 V54 M103 38 V54 M110 38 V54 M117 38 V54 M123 38 V54" stroke="#E8B963" stroke-width="1.6"/>
+              <path d="M94 36 H126 M93 57 H127 M91 61 H129" stroke="#E8B963" stroke-width="1.2"/>
+              <text x="110" y="74" text-anchor="middle" font-family="JetBrains Mono,monospace" font-weight="700" fill="rgba(232,185,99,0.85)" font-size="8">SBIR</text>
             </svg>
           </div>
           <div class="iv-tl-meta">Next · Within a year</div>
           <h3 class="iv-tl-h3">Nickel, Field Validation &amp; Federal Grants</h3>
-          <p class="iv-tl-p">A nickel model, a metal our customers already target alongside lithium. Then field validation, comparing predictions to real boreholes, and applications for SBIR and STTR grants to fund software development and validation.</p>
+          <p class="iv-tl-p">A nickel model, a metal our customers already target alongside lithium. Development toward 1x1 m precision for individual boreholes, field validation comparing predictions to real boreholes, and applications for SBIR and STTR grants to fund the work.</p>
         </div>
 
         <!-- 3: Global -->
@@ -404,31 +405,29 @@ body { background: #060c12 !important; }
     <div class="iv-container">
       <div class="xr-reveal" style="margin-bottom:12px;">
         <div class="iv-section-label">05 · Team</div>
-        <h2 class="iv-section-h2">Four co-founders with equal ownership and every discipline needed to build and sell the technology.</h2>
+        <h2 class="iv-section-h2">Four co-founders with every discipline needed to build and sell the technology.</h2>
       </div>
 
       <div class="iv-founders" id="iv-founders">
         <div class="iv-founder">
-          <div class="iv-founder-hex"><span class="iv-founder-initials">LS</span></div>
+          <div class="iv-founder-hex"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/founder-lucian.webp' ); ?>" alt="Lucian Slayden" width="320" height="320" loading="lazy"></div>
           <div class="iv-founder-name">Lucian Slayden</div>
-          <div class="iv-founder-role">CEO</div>
+          <div class="iv-founder-role">Chief Executive Officer</div>
         </div>
         <div class="iv-founder">
-          <div class="iv-founder-hex"><span class="iv-founder-initials">EL</span></div>
+          <div class="iv-founder-hex"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/founder-ethan.webp' ); ?>" alt="Ethan Lopez" width="320" height="320" loading="lazy"></div>
           <div class="iv-founder-name">Ethan Lopez</div>
-          <div class="iv-founder-role">CTO</div>
+          <div class="iv-founder-role">Chief Technical Officer</div>
         </div>
         <div class="iv-founder sky">
-          <div class="iv-founder-hex" style="border-color:#6FB5E0;">
-            <span class="iv-founder-initials" style="color:#6FB5E0;">JH</span>
-          </div>
+          <div class="iv-founder-hex"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/founder-jack.webp' ); ?>" alt="Jack Hilbert" width="320" height="320" loading="lazy"></div>
           <div class="iv-founder-name">Jack Hilbert</div>
-          <div class="iv-founder-role" style="color:#6FB5E0;">CDO</div>
+          <div class="iv-founder-role">Chief Data Officer</div>
         </div>
         <div class="iv-founder">
-          <div class="iv-founder-hex"><span class="iv-founder-initials">NL</span></div>
-          <div class="iv-founder-name">Nick Lopez</div>
-          <div class="iv-founder-role">CLO</div>
+          <div class="iv-founder-hex"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/founder-nick.webp' ); ?>" alt="Nick Lopez, J.D." width="320" height="320" loading="lazy"></div>
+          <div class="iv-founder-name">Nick Lopez, J.D.</div>
+          <div class="iv-founder-role">Chief Legal Officer</div>
         </div>
       </div>
     </div>
@@ -437,7 +436,7 @@ body { background: #060c12 !important; }
   <div class="iv-divider"></div>
 
   <!-- ═══════════════════════ 06 CONTACT ══════════════════════════════ -->
-  <section class="iv-section iv-contact-sec">
+  <section class="iv-section iv-contact-sec" id="iv-contact">
     <div class="iv-contact-photo" aria-hidden="true"></div>
     <div class="iv-container">
       <div class="iv-contact-inner">
@@ -456,7 +455,13 @@ body { background: #060c12 !important; }
           </div>
         </div>
 
-        <form class="iv-form xr-reveal xr-d1" action="mailto:lucian@xraygeoanalytics.com" method="post" enctype="text/plain">
+        <form class="iv-form xr-reveal xr-d1" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" method="post">
+          <input type="hidden" name="action" value="xray_contact">
+          <input type="hidden" name="source" value="investors">
+          <input type="hidden" name="interest" value="Investor">
+          <?php wp_nonce_field( 'xray_contact', 'xray_contact_nonce', false ); ?>
+          <div class="xr-hp" aria-hidden="true"><label for="iv-website">Website</label><input type="text" id="iv-website" name="website" tabindex="-1" autocomplete="off"></div>
+          <?php echo xray_contact_notice(); ?>
           <div class="iv-form-grid">
             <div class="iv-form-row">
               <label for="iv-name">Name</label>
@@ -464,7 +469,7 @@ body { background: #060c12 !important; }
             </div>
             <div class="iv-form-row">
               <label for="iv-firm">Firm</label>
-              <input type="text" id="iv-firm" name="firm" placeholder="Fund / institution">
+              <input type="text" id="iv-firm" name="company" placeholder="Fund / institution">
             </div>
           </div>
           <div class="iv-form-row">
