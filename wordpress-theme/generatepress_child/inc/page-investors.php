@@ -108,7 +108,6 @@ body { background: #060c12 !important; }
 
   </section>
 
-  <div class="iv-divider"></div>
 
   <!-- ═══════════════════════ 01 OPPORTUNITY ══════════════════════════ -->
   <section class="iv-section iv-opp">
@@ -158,7 +157,6 @@ body { background: #060c12 !important; }
     </div>
   </section>
 
-  <div class="iv-divider"></div>
 
   <!-- ═══════════════════════ 02 TRACTION ═════════════════════════════ -->
   <section class="iv-section iv-traction">
@@ -243,7 +241,6 @@ body { background: #060c12 !important; }
     </div>
   </section>
 
-  <div class="iv-divider"></div>
 
   <!-- ════════════════════ 03 BUSINESS MODEL ══════════════════════════ -->
   <section class="iv-section iv-biz">
@@ -280,7 +277,6 @@ body { background: #060c12 !important; }
     </div>
   </section>
 
-  <div class="iv-divider"></div>
 
   <!-- ═══════════════════════ 04 ROADMAP ══════════════════════════════ -->
   <section class="iv-section iv-road">
@@ -392,7 +388,6 @@ body { background: #060c12 !important; }
     </div>
   </section>
 
-  <div class="iv-divider"></div>
 
   <!-- ═══════════════════════ 05 TEAM ═════════════════════════════════ -->
   <section class="iv-section iv-team-sec">
@@ -427,7 +422,6 @@ body { background: #060c12 !important; }
     </div>
   </section>
 
-  <div class="iv-divider"></div>
 
   <!-- ═══════════════════════ 06 CONTACT ══════════════════════════════ -->
   <section class="iv-section iv-contact-sec" id="iv-contact">
