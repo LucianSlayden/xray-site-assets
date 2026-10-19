@@ -250,39 +250,71 @@ add_action( 'generate_before_content', function() {
     </div>
   </section>
 
-  <!-- ═══════════════ PROOF / NEVADA ═══════════════ -->
-  <section class="pdt-proof-sec">
+  <!-- ═══════════════ PROOF: GREAT BASIN PROTOTYPE ═══════════════ -->
+  <section class="pdt-proof-sec pdt-proof2">
     <div class="xr-container">
       <div class="pdt-proof-intro xr-reveal">
         <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>Proof of Concept</span>
-        <h2>The Great Basin<br>lithium model.</h2>
-        <p>Our first model predicts lithium deposits across the whole Great Basin region of the United States at 1x1 km cells. It builds on an earlier Nevada model that proved the approach.</p>
+        <h2>The Great Basin<br>lithium prototype.</h2>
+        <p>Our first model scores every 1x1 km cell across the Great Basin region of the United States for lithium. It is a prototype and the base for the finer models we are building, but its early results show the approach works.</p>
       </div>
 
-      <div class="pdt-proof-grid">
-        <div class="pdt-proof-stat">
-          <div class="pdt-proof-stat-eyebrow">Recall · known deposits</div>
-          <div class="pdt-proof-stat-num">95%</div>
-          <div class="pdt-proof-stat-label">Out of every 100 known lithium deposits in the Great Basin, the model finds 95 of them on average.</div>
-        </div>
-        <div class="pdt-proof-stat">
-          <div class="pdt-proof-stat-eyebrow">Precision</div>
-          <div class="pdt-proof-stat-num sky">80%</div>
-          <div class="pdt-proof-stat-label">Roughly 80% of the model's predictions are lithium deposits.</div>
-        </div>
-        <div class="pdt-proof-stat">
-          <div class="pdt-proof-stat-eyebrow">Earlier Nevada model</div>
-          <div class="pdt-proof-stat-num">69%</div>
-          <div class="pdt-proof-stat-label">Of deposits recovered in the top 10% of ranked ground, across 19,000 grid cells at 5x5 km.</div>
+      <div class="pp-grid">
+        <figure class="pp-map xr-reveal">
+          <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/model-run-heatmap.webp?ver=' . filemtime( get_stylesheet_directory() . '/assets/img/model-run-heatmap.webp' ) ); ?>" alt="Prospectivity heat map from a recent X-Ray model run, with the highest-scoring cells in gold" width="1168" height="1128" loading="lazy">
+          <figcaption>
+            <span>Heat map from a recent model run</span>
+            <span class="pp-legend"><em>Low</em><i></i><em>High</em></span>
+          </figcaption>
+          <p class="pp-map-note">Each cell is 1x1 km. Gold cells are where the model sees the strongest signs of lithium, and they are where a geologist would look first.</p>
+        </figure>
+
+        <div class="pp-metrics">
+          <div class="pp-metric xr-reveal xr-d1" id="pp-recall">
+            <div class="pp-metric-top">
+              <div>
+                <div class="pp-eyebrow">Recall · known deposits</div>
+                <div class="pp-num">95%</div>
+              </div>
+              <div class="pp-hexgrid pp-hexgrid-100" aria-hidden="true"><i class="on" style="--d:0ms"></i><i class="on" style="--d:35ms"></i><i class="on" style="--d:70ms"></i><i class="on" style="--d:105ms"></i><i class="on" style="--d:140ms"></i><i class="on" style="--d:175ms"></i><i class="on" style="--d:210ms"></i><i class="on" style="--d:245ms"></i><i class="on" style="--d:280ms"></i><i class="on" style="--d:315ms"></i><i class="on" style="--d:35ms"></i><i class="on" style="--d:70ms"></i><i class="on" style="--d:105ms"></i><i class="on" style="--d:140ms"></i><i class="on" style="--d:175ms"></i><i class="on" style="--d:210ms"></i><i class="on" style="--d:245ms"></i><i class="on" style="--d:280ms"></i><i class="on" style="--d:315ms"></i><i class="on" style="--d:350ms"></i><i class="on" style="--d:70ms"></i><i class="on" style="--d:105ms"></i><i class="on" style="--d:140ms"></i><i class="on" style="--d:175ms"></i><i class="on" style="--d:210ms"></i><i class="on" style="--d:245ms"></i><i class="on" style="--d:280ms"></i><i class="on" style="--d:315ms"></i><i class="on" style="--d:350ms"></i><i class="on" style="--d:385ms"></i><i class="on" style="--d:105ms"></i><i class="on" style="--d:140ms"></i><i class="on" style="--d:175ms"></i><i class="on" style="--d:210ms"></i><i class="on" style="--d:245ms"></i><i class="on" style="--d:280ms"></i><i class="on" style="--d:315ms"></i><i class="on" style="--d:350ms"></i><i class="on" style="--d:385ms"></i><i class="on" style="--d:420ms"></i><i class="on" style="--d:140ms"></i><i class="on" style="--d:175ms"></i><i class="on" style="--d:210ms"></i><i class="on" style="--d:245ms"></i><i class="on" style="--d:280ms"></i><i class="on" style="--d:315ms"></i><i class="on" style="--d:350ms"></i><i class="on" style="--d:385ms"></i><i class="on" style="--d:420ms"></i><i class="on" style="--d:455ms"></i><i class="on" style="--d:175ms"></i><i class="on" style="--d:210ms"></i><i class="on" style="--d:245ms"></i><i class="on" style="--d:280ms"></i><i class="on" style="--d:315ms"></i><i class="on" style="--d:350ms"></i><i class="on" style="--d:385ms"></i><i class="on" style="--d:420ms"></i><i class="on" style="--d:455ms"></i><i class="on" style="--d:490ms"></i><i class="on" style="--d:210ms"></i><i class="on" style="--d:245ms"></i><i class="on" style="--d:280ms"></i><i class="on" style="--d:315ms"></i><i class="on" style="--d:350ms"></i><i class="on" style="--d:385ms"></i><i class="on" style="--d:420ms"></i><i class="on" style="--d:455ms"></i><i class="on" style="--d:490ms"></i><i class="on" style="--d:525ms"></i><i class="on" style="--d:245ms"></i><i class="on" style="--d:280ms"></i><i class="on" style="--d:315ms"></i><i class="on" style="--d:350ms"></i><i class="on" style="--d:385ms"></i><i class="on" style="--d:420ms"></i><i class="on" style="--d:455ms"></i><i class="on" style="--d:490ms"></i><i class="on" style="--d:525ms"></i><i class="on" style="--d:560ms"></i><i class="on" style="--d:280ms"></i><i class="on" style="--d:315ms"></i><i class="on" style="--d:350ms"></i><i class="on" style="--d:385ms"></i><i class="on" style="--d:420ms"></i><i class="on" style="--d:455ms"></i><i class="on" style="--d:490ms"></i><i class="on" style="--d:525ms"></i><i class="on" style="--d:560ms"></i><i class="on" style="--d:595ms"></i><i class="on" style="--d:315ms"></i><i class="on" style="--d:350ms"></i><i class="on" style="--d:385ms"></i><i class="on" style="--d:420ms"></i><i class="on" style="--d:455ms"></i><i class="" style="--d:490ms"></i><i class="" style="--d:525ms"></i><i class="" style="--d:560ms"></i><i class="" style="--d:595ms"></i><i class="" style="--d:630ms"></i></div>
+            </div>
+            <p><strong>It rarely misses known lithium.</strong> Out of every 100 known deposits in the Great Basin, the model flags 95 of them on average, so very little proven ground slips through.</p>
+          </div>
+
+          <div class="pp-metric sky xr-reveal xr-d2" id="pp-precision">
+            <div class="pp-metric-top">
+              <div>
+                <div class="pp-eyebrow">Precision</div>
+                <div class="pp-num">80%</div>
+              </div>
+              <div class="pp-hexgrid pp-hexgrid-10" aria-hidden="true"><i class="on" style="--d:0ms"></i><i class="on" style="--d:90ms"></i><i class="on" style="--d:180ms"></i><i class="on" style="--d:270ms"></i><i class="on" style="--d:360ms"></i><i class="on" style="--d:450ms"></i><i class="on" style="--d:540ms"></i><i class="on" style="--d:630ms"></i><i class="" style="--d:720ms"></i><i class="" style="--d:810ms"></i></div>
+            </div>
+            <p><strong>Most of its calls are real.</strong> About 8 in every 10 cells it flags hold lithium, so a team spends less time chasing false leads.</p>
+          </div>
         </div>
       </div>
 
-      <div class="pdt-proof-quote xr-reveal" style="margin-top:2px;">
-        <blockquote>Trained on labels from known mine sites, geochemistry and mining-claim data. Checked with spatial block cross-validation to account for spatial autocorrelation, plus repeated stratified k-fold and leave-one-out cross-validation.</blockquote>
-        <cite>Model validation · X-Ray Geoanalytics</cite>
+      <div class="pp-checks xr-reveal">
+        <div class="pp-checks-head">How we checked it</div>
+        <div class="pp-checks-row">
+          <div class="pp-check"><span>01</span><strong>Trained on what's known</strong><small>Labels come from known mine sites, geochemistry and mining-claim data, combined with our cleaned geological datasets.</small></div>
+          <div class="pp-check"><span>02</span><strong>Tested on unseen ground</strong><small>Spatial block cross-validation holds out whole areas of the map, so the model can't score well just by memorising neighbouring cells.</small></div>
+          <div class="pp-check"><span>03</span><strong>Stress-tested</strong><small>Repeated stratified k-fold and leave-one-out cross-validation check that the results hold across many different splits of the data.</small></div>
+        </div>
+        <p class="pp-checks-note">Measured at 1x1 km against known deposits. Finer models and field testing against real boreholes come next.</p>
       </div>
     </div>
   </section>
+  <script>
+  (function () {
+    var els = document.querySelectorAll('.pp-hexgrid');
+    if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('is-in'); }); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
+    }, { threshold: 0.35 });
+    els.forEach(function (e) { io.observe(e); });
+  })();
+  </script>
 
   <!-- ═══════════════ STATUS BOARD ═══════════════ -->
   <section class="pdt-status-sec">

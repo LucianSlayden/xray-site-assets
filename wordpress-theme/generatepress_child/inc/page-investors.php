@@ -170,7 +170,7 @@ body { background: #060c12 !important; }
       <div class="iv-traction-inner">
         <div class="xr-reveal xr-d1">
           <p style="color:var(--xr-text-2);font-size:17px;line-height:1.85;margin:0 0 22px;">
-            We have <strong style="color:var(--xr-text);">built a lithium model</strong> that covers the entire Great Basin at 1x1 km cells. It reaches <strong style="color:var(--xr-gold);">95% recall</strong>: out of every 100 known deposits, it finds 95 on average. Its 80% precision means roughly 80% of its predictions are lithium deposits. An earlier Nevada model, built on 19,000 grid cells at 5x5 km, recovered 69% of deposits in the top 10% of ranked ground.
+            We have <strong style="color:var(--xr-text);">a prototype lithium model</strong> that covers the entire Great Basin at 1x1 km cells. It reaches <strong style="color:var(--xr-gold);">95% recall</strong>: out of every 100 known deposits, it finds 95 on average. Its 80% precision means roughly 80% of its predictions are lithium deposits.
           </p>
           <p style="color:var(--xr-text-2);font-size:17px;line-height:1.85;margin:0 0 22px;">
             The moat is our <em>data and proprietary featuresets</em>. We collected decades of cluttered geological data, cleaned and sorted it, and designed features in-house that indicate lithium mineralization. The same raw data would be useless to most AI models, and it would be costly and slow for competitors to replicate.

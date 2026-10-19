@@ -5643,3 +5643,59 @@ body.page-id-298 { animation: none; }
 }
 @media (max-width: 640px) { .iv-heatmap { width: 110vw; right: -40vw; top: 40%; opacity: .22; animation: none; } }
 @media (prefers-reduced-motion: reduce) { .iv-heatmap, .iv-heatmap img { animation: none; } }
+
+/* Product proof of concept: heat map + visual recall and precision. */
+.pp-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 28px; align-items: stretch; margin-top: 8px; }
+@media (max-width: 1000px) { .pp-grid { grid-template-columns: 1fr; } }
+.pp-map {
+  margin: 0; padding: 28px; border: 1px solid rgba(111,181,224,.22); border-radius: 2px;
+  background: radial-gradient(ellipse at 40% 45%, rgba(232,185,99,.07), transparent 60%), rgba(10,16,23,.85);
+}
+.pp-map img { display: block; width: 100%; max-width: 560px; height: auto; margin: 0 auto; filter: drop-shadow(0 0 26px rgba(232,185,99,.18)); }
+.pp-map figcaption {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin-top: 18px;
+  font-family: var(--xr-font-mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--xr-text-muted);
+}
+.pp-legend { display: inline-flex; align-items: center; gap: 8px; }
+.pp-legend em { font-style: normal; }
+.pp-legend i { width: 80px; height: 6px; border-radius: 1px; background: linear-gradient(90deg, #12243A, #6FB5E0 45%, #E8B963 75%, #FFECBE); }
+.pp-map-note { margin: 12px 0 0; color: var(--xr-text-2); font-size: 14px; line-height: 1.7; }
+
+.pp-metrics { display: grid; gap: 28px; }
+.pp-metric {
+  padding: 30px 30px 28px; border: 1px solid rgba(232,185,99,.28); border-radius: 2px;
+  background: linear-gradient(135deg, rgba(232,185,99,.08), rgba(14,20,27,.9) 55%);
+}
+.pp-metric.sky { border-color: rgba(111,181,224,.3); background: linear-gradient(135deg, rgba(111,181,224,.08), rgba(14,20,27,.9) 55%); }
+.pp-metric-top { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 18px; }
+.pp-eyebrow { font-family: var(--xr-font-mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--xr-text-muted); }
+.pp-num { font-family: var(--xr-font-mono); font-weight: 800; font-size: clamp(54px, 6vw, 80px); line-height: 1; color: var(--xr-gold); margin-top: 8px; text-shadow: 0 0 28px rgba(232,185,99,.35); }
+.pp-metric.sky .pp-num { color: var(--xr-sky); text-shadow: 0 0 28px rgba(111,181,224,.35); }
+.pp-metric p { margin: 0; color: var(--xr-text-2); font-size: 15px; line-height: 1.75; }
+.pp-metric p strong { color: var(--xr-text); }
+
+.pp-hexgrid { display: grid; gap: 3px; flex-shrink: 0; }
+.pp-hexgrid-100 { grid-template-columns: repeat(10, 14px); }
+.pp-hexgrid-10 { grid-template-columns: repeat(5, 26px); gap: 6px; }
+.pp-hexgrid i {
+  display: block; aspect-ratio: 0.866; background: rgba(255,255,255,.07);
+  clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+  transition: background .5s ease var(--d), transform .5s ease var(--d);
+}
+.pp-hexgrid.is-in i.on { background: var(--xr-gold); }
+.pp-metric.sky .pp-hexgrid.is-in i.on { background: var(--xr-sky); }
+.pp-hexgrid.is-in i:not(.on) { background: rgba(255,255,255,.12); }
+@media (max-width: 560px) {
+  .pp-metric-top { flex-direction: column; align-items: flex-start; }
+  .pp-hexgrid-100 { grid-template-columns: repeat(10, 12px); }
+}
+@media (prefers-reduced-motion: reduce) { .pp-hexgrid i { transition: none; } }
+
+.pp-checks { margin-top: 28px; padding: 30px; border: 1px solid rgba(255,255,255,.07); border-left: 3px solid var(--xr-gold); background: rgba(14,20,27,.75); border-radius: 2px; }
+.pp-checks-head { font-family: var(--xr-font-mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--xr-gold); margin-bottom: 22px; }
+.pp-checks-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+@media (max-width: 860px) { .pp-checks-row { grid-template-columns: 1fr; gap: 20px; } }
+.pp-check span { display: block; font-family: var(--xr-font-mono); font-size: 11px; color: var(--xr-gold); margin-bottom: 8px; }
+.pp-check strong { display: block; color: var(--xr-text); font-size: 16px; margin-bottom: 6px; }
+.pp-check small { display: block; color: var(--xr-text-2); font-size: 14px; line-height: 1.7; }
+.pp-checks-note { margin: 24px 0 0; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.06); color: var(--xr-text-muted); font-size: 13.5px; }
