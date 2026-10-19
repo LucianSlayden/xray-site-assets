@@ -479,35 +479,41 @@ add_action( 'generate_before_content', function() {
     <div class="xr-container">
       <div class="xr-reveal" style="text-align:center;margin-bottom:48px;max-width:780px;margin-left:auto;margin-right:auto;">
         <h2>Software economics. <span style="color:var(--xr-gold);">Not</span> consulting economics.</h2>
-        <p style="color:var(--xr-text-2);font-size:16px;line-height:1.7;margin:14px 0 0;">Three dimensions where X-Ray fundamentally outperforms the traditional consultant + GIS workflow.</p>
+        <p style="color:var(--xr-text-2);font-size:16px;line-height:1.7;margin:14px 0 0;">How X-Ray compares with a traditional consultant and GIS study.</p>
       </div>
 
-      <!-- vs. comparison: three cards, traditional workflow above, X-Ray below -->
-      <div class="vs2-grid xr-reveal xr-d1">
-        <article class="vs2-card">
-          <div class="vs2-head">
-            <span class="vs2-num">01</span>
-            <h3>Time to ranked targets</h3>
+      <!-- Comparison table: traditional study vs X-Ray -->
+      <div class="cmp2 xr-reveal xr-d1" role="table" aria-label="Consultant and GIS study compared with X-Ray">
+        <div class="cmp2-row cmp2-headrow" role="row">
+          <div class="cmp2-k" role="columnheader"></div>
+          <div class="cmp2-old" role="columnheader">Consultant + GIS study</div>
+          <div class="cmp2-new" role="columnheader"><?php echo xray_logo_img(); ?></div>
+        </div>
+          <div class="cmp2-row" role="row">
+            <div class="cmp2-k" role="rowheader">Time to ranked targets</div>
+            <div class="cmp2-old" role="cell"><span class="cmp2-m">Consultant + GIS</span>Months for each project area</div>
+            <div class="cmp2-new" role="cell"><span class="cmp2-m">X-Ray</span>Days, across a whole region</div>
           </div>
-          <div class="vs2-row vs2-old"><span>Traditional</span><p>Months of consultant and GIS work for each project area.</p></div>
-          <div class="vs2-row vs2-new"><span>X-Ray</span><p>The model scores every cell across a whole region in one run.</p></div>
-        </article>
-        <article class="vs2-card">
-          <div class="vs2-head">
-            <span class="vs2-num">02</span>
-            <h3>Improves over time</h3>
+          <div class="cmp2-row" role="row">
+            <div class="cmp2-k" role="rowheader">Data considered</div>
+            <div class="cmp2-old" role="cell"><span class="cmp2-m">Consultant + GIS</span>What a team can review by hand</div>
+            <div class="cmp2-new" role="cell"><span class="cmp2-m">X-Ray</span>Every survey layer, in every cell</div>
           </div>
-          <div class="vs2-row vs2-old"><span>Traditional</span><p>A static report that is out of date once drilling starts.</p></div>
-          <div class="vs2-row vs2-new"><span>X-Ray</span><p>Each new drill result can feed back in and sharpen the next ranking.</p></div>
-        </article>
-        <article class="vs2-card">
-          <div class="vs2-head">
-            <span class="vs2-num">03</span>
-            <h3>Geoscience bottleneck</h3>
+          <div class="cmp2-row" role="row">
+            <div class="cmp2-k" role="rowheader">What you receive</div>
+            <div class="cmp2-old" role="cell"><span class="cmp2-m">Consultant + GIS</span>A static report</div>
+            <div class="cmp2-new" role="cell"><span class="cmp2-m">X-Ray</span>Ranked targets, a heat map and a 3D view</div>
           </div>
-          <div class="vs2-row vs2-old"><span>Traditional</span><p>Limited by how much data a team can review by hand.</p></div>
-          <div class="vs2-row vs2-new"><span>X-Ray</span><p>Weighs more data than any team can, so geologists focus on the best targets.</p></div>
-        </article>
+          <div class="cmp2-row" role="row">
+            <div class="cmp2-k" role="rowheader">After drilling starts</div>
+            <div class="cmp2-old" role="cell"><span class="cmp2-m">Consultant + GIS</span>The report goes out of date</div>
+            <div class="cmp2-new" role="cell"><span class="cmp2-m">X-Ray</span>New results feed back into the ranking</div>
+          </div>
+          <div class="cmp2-row" role="row">
+            <div class="cmp2-k" role="rowheader">How you pay</div>
+            <div class="cmp2-old" role="cell"><span class="cmp2-m">Consultant + GIS</span>A new study for every project</div>
+            <div class="cmp2-new" role="cell"><span class="cmp2-m">X-Ray</span>One software subscription</div>
+          </div>
       </div>
 
       <div class="xr-reveal" style="text-align:center;margin-top:40px;">

@@ -5725,27 +5725,6 @@ body.page-id-298 { animation: none; }
 .iv-hexpie { animation: none; }
 .iv-heatmap-title { white-space: nowrap; }
 
-/* Home "Software economics" comparison: three cards, old way above, X-Ray below. */
-.vs2-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1120px; margin: 0 auto; }
-@media (max-width: 900px) { .vs2-grid { grid-template-columns: 1fr; max-width: 560px; } }
-.vs2-card {
-  position: relative; padding: 28px 26px 26px; border-radius: 2px;
-  background: rgba(14,20,27,.82); border: 1px solid rgba(232,185,99,.2);
-  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
-  transition: border-color .25s, transform .25s;
-}
-.vs2-card:hover { border-color: rgba(232,185,99,.45); transform: translateY(-3px); }
-.vs2-head { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
-.vs2-head h3 { margin: 0; font-size: 17px; line-height: 1.3; }
-.vs2-row span {
-  display: block; margin-bottom: 6px; font-family: var(--xr-font-mono); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase;
-}
-.vs2-row p { margin: 0; font-size: 15px; line-height: 1.65; }
-.vs2-old span { color: var(--xr-text-muted); }
-.vs2-old p { color: var(--xr-text-muted); }
-.vs2-new { padding: 14px 16px; background: rgba(232,185,99,.07); border-left: 2px solid var(--xr-gold); }
-.vs2-new span { color: var(--xr-gold); }
-.vs2-new p { color: var(--xr-text); }
 
 /* ── Home proof: lift panel (replaces the old accuracy dial) ── */
 .lift-panel {
@@ -5808,9 +5787,6 @@ body.page-id-298 { animation: none; }
 @media (prefers-reduced-motion: reduce) { .lift-fill { transition: none; } }
 
 
-/* vs2: numbered heads instead of icons*/
-.vs2-num { font: 700 13px/1 "JetBrains Mono", monospace; color: var(--xr-gold); letter-spacing: .08em; padding: 7px 8px; border: 1px solid rgba(232,185,99,.35); }
-.vs2-new { margin-top: 18px; }
 .proof-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
 @media (max-width: 900px) { .proof-grid { grid-template-columns: 1fr; gap: 44px; } }
 
@@ -5877,4 +5853,34 @@ body.page-id-298 { animation: none; }
    0.87em of the headline size = last line box minus the descender overhang. */
 @media (min-width: 981px) {
   .lottery-diagram { margin-top: calc(20px - 0.87 * clamp(40px, 5.4vw, 80px)); }
+}
+
+/* ── Home: consultant study vs X-Ray comparison table ── */
+.cmp2 {
+  max-width: 1040px; margin: 0 auto;
+  background: rgba(8,13,20,.84); border: 1px solid rgba(255,255,255,.08);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  box-shadow: 0 40px 80px -40px rgba(0,0,0,.7);
+}
+.cmp2-row { display: grid; grid-template-columns: 1fr 1.2fr 1.3fr; border-top: 1px solid rgba(255,255,255,.07); }
+.cmp2-row:first-child { border-top: 0; }
+.cmp2-row > div { padding: 22px 28px; font-size: 16px; line-height: 1.5; }
+.cmp2-k { color: var(--xr-text); font-weight: 600; }
+.cmp2-old { color: var(--xr-text-2); }
+.cmp2-new { color: var(--xr-text); background: rgba(232,185,99,.07); border-left: 1px solid rgba(232,185,99,.3); }
+.cmp2-headrow > div { padding-top: 26px; padding-bottom: 20px; font: 600 11px/1.3 "JetBrains Mono", monospace; letter-spacing: .14em; text-transform: uppercase; color: rgba(168,178,192,.8); align-self: stretch; display: flex; align-items: center; }
+.cmp2-headrow .cmp2-new { border-top: 2px solid var(--xr-gold); }
+.cmp2-headrow .xr-brand-logo { height: 32px; width: auto; display: block; }
+.cmp2-row:last-child .cmp2-new { padding-bottom: 26px; }
+.cmp2-m { display: none; }
+@media (max-width: 760px) {
+  .cmp2-row { grid-template-columns: 1fr; }
+  .cmp2-headrow { display: none; }
+  .cmp2-row:nth-child(2) { border-top: 0; }
+  .cmp2-row > div { padding: 6px 20px; }
+  .cmp2-k { padding-top: 20px !important; font-size: 17px; }
+  .cmp2-old, .cmp2-new { border-left: 2px solid transparent; margin: 4px 20px 0; padding: 10px 14px !important; }
+  .cmp2-new { border-left-color: var(--xr-gold); margin-bottom: 20px; }
+  .cmp2-m { display: block; margin-bottom: 4px; font: 600 10px/1.3 "JetBrains Mono", monospace; letter-spacing: .14em; text-transform: uppercase; color: rgba(168,178,192,.75); }
+  .cmp2-new .cmp2-m { color: var(--xr-gold); }
 }
