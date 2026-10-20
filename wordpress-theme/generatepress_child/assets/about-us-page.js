@@ -283,14 +283,17 @@
     setCam(y);
     draw();
   }
-  // On tall screens and narrow tablets the block sits behind body text once
-  // the hero has gone, so it dims to half strength as the hero scrolls away.
+  // On tall screens the block sits behind body text once the hero has gone,
+  // so it dims to half strength as the hero scrolls away.
   var hero = document.getElementById('ab-hero');
   var dimQueued = false;
   function dim() {
     dimQueued = false;
     var o = 1;
-    if (hero && (tall || W <= 880)) {
+    if (!tall && W <= 880) {
+      // Landscape phones: one text column runs over the whole block, so keep it faint.
+      o = 0.3;
+    } else if (hero && tall) {
       var end = hero.offsetTop + hero.offsetHeight;
       var k = (window.scrollY - (end - H)) / (0.7 * H);
       o = 1 - 0.5 * Math.min(1, Math.max(0, k));

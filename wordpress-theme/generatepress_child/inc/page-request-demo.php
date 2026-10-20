@@ -112,23 +112,39 @@ body { background: #0E141B !important; }
     margin-bottom: 8px;
 }
 .demo-form label small { font-size: inherit; text-transform: none; letter-spacing: 0; font-weight: 500; }
-.demo-form input, .demo-form textarea, .demo-form select {
+.demo-form input, .demo-form textarea {
     display: block; width: 100%; padding: 12px 14px; margin: 0;
     background: var(--xr-mid); border: 1px solid rgba(232,185,99,0.22);
     border-radius: 2px; color: var(--xr-text); font-family: var(--xr-font-body);
     font-size: 15px; line-height: 1.4; transition: border-color .18s, background-color .18s, box-shadow .18s;
     box-sizing: border-box;
 }
-/* Inputs and the select share one height and text inset; the select gets a gold chevron. */
-.demo-form input, .demo-form select { height: 46px; padding-top: 0; padding-bottom: 0; }
-.demo-form select {
-    -webkit-appearance: none; appearance: none; padding-right: 42px; cursor: pointer;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23E8B963' stroke-width='1.6'/%3E%3C/svg%3E");
-    background-repeat: no-repeat; background-position: right 16px center; background-size: 12px 8px;
+.demo-form input { height: 46px; padding-top: 0; padding-bottom: 0; }
+/* Dark fields stay dark when the browser autofills them. */
+.demo-form { color-scheme: dark; }
+.demo-form input:-webkit-autofill { -webkit-text-fill-color: var(--xr-text); caret-color: var(--xr-text); box-shadow: 0 0 0 60px var(--xr-mid) inset; }
+.demo-form input:-webkit-autofill:focus { box-shadow: 0 0 0 60px #0E141B inset, 0 0 0 3px rgba(232,185,99,0.1); }
+/* Interest: radio chips, each marked with the site's hex node. */
+.lm-choice { border: 0; padding: 0; min-width: 0; margin-inline: 0; }
+.demo-form .lm-choice legend {
+    padding: 0; margin-bottom: 10px; color: var(--xr-text-muted); font-family: var(--xr-font-mono);
+    font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
 }
-.demo-form select option { background: var(--xr-mid); color: var(--xr-text); }
+.lm-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.demo-form .lm-chips label { position: relative; margin: 0; font: 500 14px/1.3 var(--xr-font-body); letter-spacing: 0; text-transform: none; color: var(--xr-text-2); cursor: pointer; }
+.demo-form .lm-chips input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; padding: 0; opacity: 0; cursor: pointer; }
+.lm-chips span {
+    display: flex; align-items: center; gap: 9px; min-height: 42px; padding: 10px 14px;
+    background: var(--xr-mid); border: 1px solid rgba(232,185,99,0.22); border-radius: 2px;
+    transition: border-color .18s, background-color .18s, color .18s;
+}
+.lm-chips span::before { content: ""; flex: none; width: 9px; height: 10px; background: rgba(241,244,248,0.2); clip-path: polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%); transition: background-color .18s; }
+.demo-form .lm-chips label:hover span { border-color: rgba(232,185,99,0.5); }
+.lm-chips input:checked + span { color: var(--xr-text); border-color: var(--xr-gold); background-color: rgba(232,185,99,0.08); }
+.lm-chips input:checked + span::before { background: var(--xr-gold); }
+.lm-chips input:focus-visible + span { outline: 2px solid var(--xr-gold); outline-offset: 2px; }
 .demo-form ::placeholder { color: #8A96A6; opacity: 1; }
-.demo-form input:focus, .demo-form textarea:focus, .demo-form select:focus {
+.demo-form input:focus, .demo-form textarea:focus {
     outline: none; border-color: var(--xr-gold); background-color: rgba(14,20,27,0.85);
     box-shadow: 0 0 0 3px rgba(232,185,99,0.1);
 }
@@ -137,13 +153,10 @@ body { background: #0E141B !important; }
 .form-row { margin-bottom: 22px; }
 .form-row-last { margin-bottom: 26px; }
 .lm-form-note { color: var(--xr-text-muted); font-size: 12px; text-align: center; margin: 14px 0 0; font-family: var(--xr-font-mono); letter-spacing: 0.02em; line-height: 1.6; text-wrap: balance; }
-@media (max-width: 600px) { .form-grid-2 { grid-template-columns: 1fr; } .demo-form { padding: 32px 24px; } }
-/* Phones: room for the longest choice, "A mining or exploration company". */
-@media (max-width: 420px) {
-    .demo-form { padding: 30px 20px; }
-    .demo-form select { font-size: 14px; padding-right: 34px; background-position: right 13px center; }
-}
-@media (max-width: 370px) { .demo-form select { font-size: 13.5px; } }
+@media (max-width: 600px) { .form-grid-2 { grid-template-columns: 1fr; } .demo-form { padding: 32px 24px; } .lm-chips { display: grid; } }
+@media (max-width: 420px) { .demo-form { padding: 30px 20px; } }
+/* Phones and tablets: 16px text, so iPhone Safari doesn't zoom in when a field is tapped. */
+@media (max-width: 980px) { .demo-form input, .demo-form textarea { font-size: 16px; } }
 
 /* Mission statement between the hero and the footer */
 .lm-mission-sec { position: relative; z-index: 2; background: #0E141B; padding: 140px 0 150px; border-top: 1px solid rgba(232,185,99,0.12); text-align: center; }
@@ -184,7 +197,7 @@ body { background: #0E141B !important; }
     <div class="demo-grid">
       <div class="lm-intro">
         <div class="xr-reveal"><span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>Get in Touch</span></div>
-        <h1 class="xr-reveal xr-d1" style="margin-top:18px;">Learn More<br><span style="color:var(--xr-gold);">About <span class="xr-nobreak">X-Ray</span></span></h1>
+        <h1 class="xr-reveal xr-d1">Learn More<br><span style="color:var(--xr-gold);">About <span class="xr-nobreak">X-Ray</span></span></h1>
         <p class="xr-reveal xr-d2 xr-lede" style="margin-top:14px;max-width:480px;">We're early, and we want to hear from you. Whether you explore for minerals, invest in the space or want to work with us, send us a note and a co-founder will reply directly.</p>
       </div>
 
@@ -256,16 +269,16 @@ body { background: #0E141B !important; }
           <input type="text" id="company" name="company" placeholder="Acme Exploration Inc." autocomplete="organization">
         </div>
 
-        <!-- Full width so the longest choice is never cut off. -->
-        <div class="form-row">
-          <label for="interest">I'm interested as</label>
-          <select id="interest" name="interest">
-            <option value="Mining or exploration company">A mining or exploration company</option>
-            <option value="Investor">An investor</option>
-            <option value="Partner or researcher">A partner or researcher</option>
-            <option value="Other">Something else</option>
-          </select>
-        </div>
+        <!-- Choices as chips: every option is visible and none is ever cut off. -->
+        <fieldset class="form-row lm-choice">
+          <legend>I'm interested as</legend>
+          <div class="lm-chips">
+            <label><input type="radio" name="interest" value="Mining or exploration company" checked><span>A mining or exploration company</span></label>
+            <label><input type="radio" name="interest" value="Investor"><span>An investor</span></label>
+            <label><input type="radio" name="interest" value="Partner or researcher"><span>A partner or researcher</span></label>
+            <label><input type="radio" name="interest" value="Other"><span>Something else</span></label>
+          </div>
+        </fieldset>
 
         <div class="form-row form-row-last">
           <label for="message">Message</label>

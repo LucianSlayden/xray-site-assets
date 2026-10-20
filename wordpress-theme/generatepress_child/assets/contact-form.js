@@ -31,7 +31,8 @@
           FIELDS.forEach(function (name) {
             var el = form.elements[name];
             if (!el || el.type === 'hidden' || !draft[name]) return;
-            if (el.tagName === 'SELECT' || !el.value) el.value = draft[name];
+            // Choices (a select, or a radio group with no tagName) always take the draft.
+            if (el.tagName === 'SELECT' || !el.tagName || !el.value) el.value = draft[name];
           });
         }
       }
