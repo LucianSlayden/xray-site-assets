@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<defs><clipPath id="h"><polygon points="32.00,2.00 57.98,17.00 57.98,47.00 32.00,62.00 6.02,47.00 6.02,17.00"/></clipPath></defs>
+<polygon points="32.00,2.00 57.98,17.00 57.98,47.00 32.00,62.00 6.02,47.00 6.02,17.00" fill="#fff"/>
+<g clip-path="url(#h)" fill="none" stroke="#111" stroke-width="2.6" stroke-linecap="round">
+<path d="M-2 44 C 10 38, 16 50, 28 46 S 46 30, 66 36"/>
+<path d="M-2 54 C 12 48, 22 60, 34 56 S 52 44, 66 48"/>
+<path d="M-2 30 C 6 24, 12 34, 18 30 S 22 16, 34 12"/>
+<circle cx="17" cy="45" r="4.2"/>
+</g>
+<g stroke="#AC1418" stroke-width="3" fill="none">
+<circle cx="40" cy="24" r="8.5"/>
+<path d="M40 11v8M40 29v8M27 24h8M45 24h8" stroke-linecap="round"/>
+</g>
+<circle cx="40" cy="24" r="2.6" fill="#AC1418"/>
+<polygon points="32.00,2.00 57.98,17.00 57.98,47.00 32.00,62.00 6.02,47.00 6.02,17.00" fill="none" stroke="#111" stroke-width="3" stroke-linejoin="round"/>
+</svg>

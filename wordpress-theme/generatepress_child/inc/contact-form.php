@@ -12,27 +12,39 @@ define( 'XRAY_CONTACT_TO', 'lucian@xraygeoanalytics.com' );
 // Pages a form may send the visitor back to, with the anchor of their form.
 function xray_contact_return( $source ) {
 	$pages = array(
-		'learn-more' => array( '/learn-more/', '#contact' ),
-		'investors'  => array( '/investors/', '#iv-contact' ),
+		'learn-more' => array( '/learn-more/', '#contact-form' ),
+		'investors'  => array( '/investors/', '#iv-contact-form' ),
 	);
 	return isset( $pages[ $source ] ) ? $pages[ $source ] : $pages['learn-more'];
 }
 
 // Result message shown above a form after it redirects back with ?sent=.
-function xray_contact_notice() {
-	$sent     = isset( $_GET['sent'] ) ? sanitize_key( wp_unslash( $_GET['sent'] ) ) : '';
+function xray_contact_notice( $source = 'learn-more' ) {
+	$sent  = isset( $_GET['sent'] ) ? sanitize_key( wp_unslash( $_GET['sent'] ) ) : '';
+	$email = '<a href="mailto:info@xraygeoanalytics.com">info@xraygeoanalytics.com</a>';
 	$messages = array(
 		'1'       => array( 'ok', 'Thanks, your message is on its way. We\'ll get back to you soon.' ),
-		'invalid' => array( 'err', 'Please add your name and a valid email (and a message on the Learn More form), then send again.' ),
+		'invalid' => array( 'err', 'investors' === $source ? 'Please add your name and a valid email, then send again.' : 'Please add your name, a valid email and a message, then send again.' ),
 		'expired' => array( 'err', 'The form timed out. Please send it again.' ),
-		'limit'   => array( 'err', 'You\'ve sent several messages already. Please email info@xraygeoanalytics.com instead.' ),
-		'error'   => array( 'err', 'Something went wrong sending your message. Please email info@xraygeoanalytics.com instead.' ),
+		'limit'   => array( 'err', 'You\'ve sent several messages already. Please email ' . $email . ' instead.' ),
+		'error'   => array( 'err', 'Something went wrong sending your message. Please email ' . $email . ' instead.' ),
 	);
 	if ( ! isset( $messages[ $sent ] ) ) {
 		return '';
 	}
-	return '<div class="lm-notice lm-notice-' . esc_attr( $messages[ $sent ][0] ) . '" role="status">' . esc_html( $messages[ $sent ][1] ) . '</div>';
+	list( $kind, $text ) = $messages[ $sent ];
+	$text = wp_kses( $text, array( 'a' => array( 'href' => array() ) ) );
+	return '<div class="lm-notice lm-notice-' . esc_attr( $kind ) . '" role="' . ( 'err' === $kind ? 'alert' : 'status' ) . '" tabindex="-1" data-sent="' . esc_attr( $sent ) . '">' . $text . '</div>';
 }
+
+// A fresh nonce for forms on cached pages: contact-form.js asks for one before
+// sending, so a page served from cache after its nonce has lapsed still works.
+function xray_contact_fresh_nonce() {
+	nocache_headers();
+	wp_send_json( array( 'nonce' => wp_create_nonce( 'xray_contact' ) ) );
+}
+add_action( 'wp_ajax_nopriv_xray_contact_nonce', 'xray_contact_fresh_nonce' );
+add_action( 'wp_ajax_xray_contact_nonce', 'xray_contact_fresh_nonce' );
 
 function xray_contact_handle() {
 	$source = isset( $_POST['source'] ) ? sanitize_key( wp_unslash( $_POST['source'] ) ) : 'learn-more';
@@ -44,8 +56,9 @@ function xray_contact_handle() {
 		exit;
 	}
 
-	// Honeypot: real visitors never see or fill this field.
-	if ( ! empty( $_POST['website'] ) ) {
+	// Honeypot: real visitors never see or fill this field. It used to be
+	// called "website", which browser autofill could fill in for real people.
+	if ( ! empty( $_POST['xr_extra'] ) ) {
 		wp_safe_redirect( add_query_arg( 'sent', '1', $back ) . $anchor );
 		exit;
 	}
@@ -89,7 +102,9 @@ function xray_contact_handle() {
 		. 'Interested as: ' . ( $interest ? $interest : '-' ) . "\n\n"
 		. "Message:\n{$message}\n\n"
 		. 'Sent from the ' . ( 'investors' === $source ? 'Investors' : 'Learn More' ) . " form on xraygeoanalytics.com.\n";
-	$headers = array( 'Reply-To: ' . $name . ' <' . $email . '>' );
+	// wp_mail splits Reply-To on commas, so keep the display name free of address punctuation.
+	$reply_name = trim( str_replace( array( ',', ';', '<', '>', '"' ), ' ', $name ) );
+	$headers    = array( 'Reply-To: ' . ( '' !== $reply_name ? $reply_name . ' ' : '' ) . '<' . $email . '>' );
 
 	$ok = wp_mail( XRAY_CONTACT_TO, $subject, $body, $headers );
 

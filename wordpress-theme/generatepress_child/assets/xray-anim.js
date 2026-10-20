@@ -6,10 +6,13 @@
 
 (function () {
   'use strict';
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ─── 1. REVEAL ON SCROLL ─────────────────────────────────────────────
   const revealEls = document.querySelectorAll('.xr-reveal');
-  if (revealEls.length) {
+  if (revealEls.length && !('IntersectionObserver' in window)) {
+    revealEls.forEach((el) => el.classList.add('in'));
+  } else if (revealEls.length) {
     const obs = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -20,6 +23,8 @@
     }, { threshold: 0.08, rootMargin: '0px 0px -56px 0px' });
     revealEls.forEach((el) => obs.observe(el));
   }
+  // Reveals are wired up; the safety net in global-scripts.php can stand down.
+  window.__xrAnimReady = true;
 
   // ─── 2. NUMERIC COUNTERS ─────────────────────────────────────────────
   function animateCount(el) {
@@ -39,7 +44,8 @@
     }
     requestAnimationFrame(tick);
   }
-  const countEls = document.querySelectorAll('[data-target]');
+  // Reduced motion: keep the final values the server printed.
+  const countEls = reduceMotion || !('IntersectionObserver' in window) ? [] : document.querySelectorAll('[data-target]');
   if (countEls.length) {
     const countObs = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -86,8 +92,31 @@
   const toggle = document.querySelector('.xr-nav-toggle');
   const mobile = document.querySelector('.xr-nav-mobile');
   if (toggle && mobile) {
-    toggle.addEventListener('click', () => mobile.classList.toggle('open'));
-    mobile.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => mobile.classList.remove('open')));
+    const setOpen = (open, returnFocus) => {
+      mobile.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.documentElement.classList.toggle('xr-menu-open', open);
+      if (!open && returnFocus) toggle.focus();
+    };
+    toggle.addEventListener('click', () => setOpen(!mobile.classList.contains('open')));
+    mobile.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('keydown', (e) => {
+      if (!mobile.classList.contains('open')) return;
+      if (e.key === 'Escape') { setOpen(false, true); return; }
+      // Keep Tab inside the open menu (toggle plus its links); the page behind is hidden.
+      if (e.key === 'Tab') {
+        const links = mobile.querySelectorAll('a');
+        const last = links[links.length - 1];
+        if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); toggle.focus(); }
+        else if (e.shiftKey && document.activeElement === toggle) { e.preventDefault(); last.focus(); }
+      }
+    });
+    document.addEventListener('click', (e) => {
+      if (mobile.classList.contains('open') && !mobile.contains(e.target) && !toggle.contains(e.target)) setOpen(false);
+    });
+    const desktop = window.matchMedia('(min-width: 981px)');
+    const onBp = () => { if (desktop.matches) setOpen(false); };
+    if (desktop.addEventListener) desktop.addEventListener('change', onBp); else if (desktop.addListener) desktop.addListener(onBp);
   }
 
   // ─── 6. HEX PROBABILITY GRID (canvas demo) ───────────────────────────
@@ -231,18 +260,25 @@
     if (!strips.length) return;
 
     const PARALLAX_RATE = 0.45;   // bg moves at 45 % of the page scroll
+    const sticky = window.CSS && CSS.supports && CSS.supports('overflow', 'clip');
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches && sticky) return;
 
     function update() {
       strips.forEach((strip) => {
         const bg = strip.querySelector('.parallax-strip-bg');
         if (!bg) return;
         const rect = strip.getBoundingClientRect();
-        // distance the strip has scrolled past the top of the viewport
-        // Clamp to >= 0 — before the strip reaches the top of the viewport
-        // we leave parallax-y at 0 so the bg sits at its declared `top: -20vh`
-        // and visually bridges the previous section. (Otherwise a positive
-        // translateY would push the bg DOWN out of the seam, creating a
-        // dark void band between Solution and Proof.)
+        if (sticky) {
+          // The bg is a viewport-sized sticky layer (xray.css): drift it by
+          // up to ±3% of the viewport across the strip, inside its 8% overscale.
+          const vh = window.innerHeight;
+          const span = Math.max(1, rect.height - vh);
+          const p = Math.min(1, Math.max(0, -rect.top / span));
+          bg.style.setProperty('--parallax-y', ((0.5 - p) * 0.06 * vh).toFixed(1) + 'px');
+          return;
+        }
+        // Older browsers: the bg is a tall absolute layer that moves up at
+        // PARALLAX_RATE once the strip passes the top of the viewport.
         const passed = Math.max(0, -rect.top);
         const offset = passed * PARALLAX_RATE;
         bg.style.setProperty('--parallax-y', -offset.toFixed(1) + 'px');
