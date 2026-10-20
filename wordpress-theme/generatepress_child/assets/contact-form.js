@@ -37,7 +37,33 @@
       }
     }
 
-    form.addEventListener('submit', function () {
+    // Pages can be served from cache after their nonce has lapsed, so fetch a
+    // fresh one before sending. If that fails, send with the page's own.
+    var nonceUrl = form.getAttribute('data-nonce-url');
+    var nonceField = form.elements.xray_contact_nonce;
+    var fresh = null;
+    function refreshNonce() {
+      if (fresh || !nonceUrl || !nonceField || !window.fetch) return fresh;
+      var body = new URLSearchParams();
+      body.append('action', 'xray_contact_nonce');
+      fresh = fetch(nonceUrl, { method: 'POST', body: body, credentials: 'same-origin' })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (data) { if (data && data.nonce) nonceField.value = data.nonce; })
+        .catch(function () {});
+      return fresh;
+    }
+    form.addEventListener('focusin', refreshNonce);
+
+    var sending = false;
+    form.addEventListener('submit', function (e) {
+      if (sending) return;
+      var pending = refreshNonce();
+      if (pending) {
+        e.preventDefault();
+        sending = true;
+        var go = function () { HTMLFormElement.prototype.submit.call(form); };
+        Promise.race([pending, new Promise(function (res) { setTimeout(res, 3000); })]).then(go, go);
+      }
       if (store) {
         var draft = {};
         FIELDS.forEach(function (name) {
@@ -54,6 +80,7 @@
 
     // Coming back with the browser's back button restores a disabled button.
     window.addEventListener('pageshow', function () {
+      sending = false;
       if (button) {
         button.disabled = false;
         button.removeAttribute('aria-busy');

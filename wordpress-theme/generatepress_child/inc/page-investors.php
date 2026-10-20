@@ -387,13 +387,13 @@ body { background: #060c12 !important; }
           </div>
         </div>
 
-        <form class="iv-form xr-reveal xr-d1 xr-contact-form" id="iv-contact-form" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" method="post">
+        <form class="iv-form xr-reveal xr-d1 xr-contact-form" id="iv-contact-form" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" method="post" data-nonce-url="<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>">
           <input type="hidden" name="action" value="xray_contact">
           <input type="hidden" name="source" value="investors">
           <input type="hidden" name="interest" value="Investor">
           <?php wp_nonce_field( 'xray_contact', 'xray_contact_nonce', false ); ?>
-          <div class="xr-hp" aria-hidden="true"><label for="iv-website">Website</label><input type="text" id="iv-website" name="website" tabindex="-1" autocomplete="off"></div>
-          <?php echo xray_contact_notice(); ?>
+          <div class="xr-hp" aria-hidden="true"><label for="iv-extra">Leave this field empty</label><input type="text" id="iv-extra" name="xr_extra" value="" tabindex="-1" autocomplete="off"></div>
+          <?php echo xray_contact_notice( 'investors' ); ?>
           <div class="iv-form-grid">
             <div class="iv-form-row">
               <label for="iv-name">Name</label>
