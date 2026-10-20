@@ -82,19 +82,35 @@
     return out;
   }
   var YAW0 = -0.62;
+  var tall = false;
+  var lede = document.getElementById('ab-lede');
+  var textCol = document.querySelector('.ab-hero-grid > div');
+  // Page-space bottom of the intro, and right edge of the hero's text column.
+  function ledeBottom() { return lede ? lede.getBoundingClientRect().bottom + window.scrollY : 0; }
+  function textRight() { return textCol ? textCol.getBoundingClientRect().right : 0; }
   function resize() {
-    var dpr = Math.min(2, window.devicePixelRatio || 1);
     W = canvas.offsetWidth || window.innerWidth;
     H = canvas.offsetHeight || window.innerHeight;
+    // Small (phone-sized) canvases can afford a 3x backing store; hairlines stay crisp.
+    var dpr = Math.min(W * H < 500000 ? 3 : 2, window.devicePixelRatio || 1);
     canvas.width = Math.round(W * dpr);
     canvas.height = Math.round(H * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     // Fit the block into a target box once per size (at the resting yaw), so
     // the drift and scroll turn it without changing its scale.
-    var wide = W / H > 1.1;
-    // On tall screens the block sits low, under the buttons and snapshot,
-    // so the headline and intro read against a clear background.
-    var box = wide ? [0.40 * W, 0.97 * W, 0.2 * H, 0.9 * H] : [-0.12 * W, 1.12 * W, 0.55 * H, 1.02 * H];
+    tall = W / H <= 1.1;
+    var box;
+    if (tall) {
+      // On tall screens the block sits low, starting below the intro, so the
+      // headline and intro read against a clear background.
+      var top = Math.min(0.78 * H, Math.max(0.5 * H, ledeBottom() + 16));
+      box = [-0.12 * W, 1.12 * W, top, 1.02 * H];
+    } else {
+      // On wide screens it sits right of the text column, clear of the intro.
+      var tr = textRight(), left = 0.40 * W;
+      if (tr < 0.6 * W) left = Math.max(left, tr + 32);
+      box = [left, 0.97 * W, 0.2 * H, 0.9 * H];
+    }
     F = 1; cx = 0; cy = 0; setCam(YAW0);
     var mnx = 1e9, mxx = -1e9, mny = 1e9, mxy = -1e9, xs = [X0, X1], zs = [Z0, Z1], ys = [0.2, BASE];
     for (var a = 0; a < 2; a++) for (var b = 0; b < 2; b++) for (var c = 0; c < 2; c++) {
@@ -121,10 +137,10 @@
     var hz = [];
     for (k = 0; k < 5; k++) hz.push(xs.map(function (x, i) { return clampTop(horizon(k, x, zs[i]), x, zs[i]); }));
     var bounds = [tops].concat(hz).concat([xs.map(function () { return BASE; })]);
-    // unit fills: alluvium, tuff, claystone, Li-clay, basalt
-    var fills = [[GOLD, 0.035], [GREY, 0.03], [SKY, 0.045], [GOLD, 0.13], [GREY, 0.055]];
+    // unit fills: alluvium, tuff, claystone, Li-clay, lower claystone, basalt
+    var fills = [[GOLD, 0.035], [GREY, 0.03], [SKY, 0.045], [GOLD, 0.13], [SKY, 0.03], [GREY, 0.055]];
     var f = front ? 1 : 0.45;
-    for (k = 0; k < 5; k++) {
+    for (k = 0; k < fills.length; k++) {
       ctx.beginPath();
       for (i = 0; i <= n; i++) { proj(xs[i], bounds[k][i], zs[i], p); if (i) ctx.lineTo(p[0], p[1]); else ctx.moveTo(p[0], p[1]); }
       for (i = n; i >= 0; i--) { proj(xs[i], bounds[k + 1][i], zs[i], p); ctx.lineTo(p[0], p[1]); }
@@ -257,18 +273,24 @@
     var max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
     scrollF = Math.min(1, Math.max(0, window.scrollY / max));
   }
-  function frame(t) {
-    setCam(YAW0 + (REDUCED ? 0 : 0.1 * Math.sin(t * 0.00004)) + scrollF * 0.5);
+  // Redraw only when the turn would move the block's corners by a visible
+  // amount: scrolling redraws every frame, the slow idle drift a few times a second.
+  var drawnYaw = null;
+  function frame(t, force) {
+    var y = YAW0 + (REDUCED ? 0 : 0.1 * Math.sin(t * 0.00004)) + scrollF * 0.5;
+    if (!force && drawnYaw !== null && Math.abs(y - drawnYaw) * F * 1.8 < 0.25) return;
+    drawnYaw = y;
+    setCam(y);
     draw();
   }
-  // On phones and narrow tablets the block sits behind body text once the
-  // hero has gone, so it dims to half strength as the hero scrolls away.
+  // On tall screens and narrow tablets the block sits behind body text once
+  // the hero has gone, so it dims to half strength as the hero scrolls away.
   var hero = document.getElementById('ab-hero');
   var dimQueued = false;
   function dim() {
     dimQueued = false;
     var o = 1;
-    if (hero && W < 760) {
+    if (hero && (tall || W <= 880)) {
       var end = hero.offsetTop + hero.offsetHeight;
       var k = (window.scrollY - (end - H)) / (0.7 * H);
       o = 1 - 0.5 * Math.min(1, Math.max(0, k));
@@ -276,16 +298,18 @@
     canvas.style.opacity = o < 1 ? o.toFixed(3) : '';
   }
   function queueDim() { if (!dimQueued) { dimQueued = true; requestAnimationFrame(dim); } }
-  resize(); readScroll(); frame(0); dim();
-  window.addEventListener('resize', function () { resize(); frame(performance.now()); dim(); });
+  function refit() { resize(); frame(performance.now(), true); dim(); }
+  resize(); readScroll(); frame(0, true); dim();
+  window.addEventListener('resize', refit);
+  // The intro's height changes when the web font arrives; refit the block to it.
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(refit);
   window.addEventListener('scroll', queueDim, { passive: true });
   if (REDUCED) return;
   window.addEventListener('scroll', readScroll, { passive: true });
-  var rafId = null, last = 0;
+  var rafId = null;
   function loop(t) {
     rafId = requestAnimationFrame(loop);
-    if (t - last < 32) return;           // ~30 fps is plenty for a slow drift
-    last = t; frame(t);
+    frame(t);
   }
   function start() { if (!rafId) rafId = requestAnimationFrame(loop); }
   document.addEventListener('visibilitychange', function () {
@@ -383,17 +407,25 @@
   });
 
   // Cards fade up; the hover lift uses the separate `translate` property so
-  // it never fights these tweens.
+  // it never fights these tweens. GSAP writes inline `translate: none` (and
+  // rotate/scale) while it animates, so clear those once the cards land.
+  function freeHover(els) {
+    els.forEach(function (el) {
+      el.style.removeProperty('translate');
+      el.style.removeProperty('rotate');
+      el.style.removeProperty('scale');
+    });
+  }
   ScrollTrigger.batch('.ab-prin-card', {
     onEnter: function (batch) {
-      gsap.to(batch, { opacity: 1, y: 0, stagger: 0.09, duration: 0.70, ease: 'power3.out' });
+      gsap.to(batch, { opacity: 1, y: 0, stagger: 0.09, duration: 0.70, ease: 'power3.out', onComplete: function () { freeHover(batch); } });
     },
     start: 'top 86%',
     once: true,
   });
   ScrollTrigger.batch('.ab-nav-card', {
     onEnter: function (batch) {
-      gsap.to(batch, { opacity: 1, y: 0, stagger: 0.10, duration: 0.65, ease: 'power2.out' });
+      gsap.to(batch, { opacity: 1, y: 0, stagger: 0.10, duration: 0.65, ease: 'power2.out', onComplete: function () { freeHover(batch); } });
     },
     start: 'top 88%',
     once: true,
