@@ -38,7 +38,7 @@ add_action( 'generate_before_content', function() {
               <span class="pdt-stat-label">Precision</span>
             </div>
             <div class="pdt-stat-item">
-              <span class="pdt-stat-num">1×1 km</span>
+              <span class="pdt-stat-num">1×1&nbsp;km</span>
               <span class="pdt-stat-label">Prediction cells</span>
             </div>
           </div>
@@ -63,7 +63,7 @@ add_action( 'generate_before_content', function() {
 
           <div class="pdt-gets-block pdt-gets-model">
             <div class="pdt-gets-label"><span>02</span>The model scores</div>
-            <p>Every 1×1 km cell in your area, weighing more factors together than a team can review by hand.</p>
+            <p>Every 1×1&nbsp;km cell in your area, weighing more factors together than a team can review by hand.</p>
           </div>
 
           <div class="pdt-gets-block">
@@ -97,7 +97,7 @@ add_action( 'generate_before_content', function() {
     <div class="xr-container">
       <div class="pdt-cmp-intro xr-reveal">
         <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>The Difference</span>
-        <h2>Old methods.<br>Or X-Ray.</h2>
+        <h2>Old methods.<br>Or <span class="xr-nobreak">X-Ray</span>.</h2>
         <p>Discoveries fell from 202 in 2009 to about 80 in 2023, and the cost of finding new deposits keeps rising. Choosing where to drill is still slow, expensive and mostly unsuccessful. We're building the alternative.</p>
       </div>
       <div class="pdt-cmp-grid xr-reveal">
@@ -174,7 +174,7 @@ add_action( 'generate_before_content', function() {
       <div class="pdt-arch-intro xr-reveal">
         <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>How It Works</span>
         <h2>Your data. Our models.<br>Ranked drill targets.</h2>
-        <p>The X-Ray platform is being built for geoscientist teams at mining companies. Your team imports its survey data, and the model outputs ranked drill targets with a 3D visualization, a heat map and other geoanalysis tools. Keep adding drill data as you go to make quick, informed decisions on where to drill next.</p>
+        <p>The <span class="xr-nobreak">X-Ray</span> platform is being built for geoscientist teams at mining companies. Your team imports its survey data, and the model outputs ranked drill targets with a 3D visualization, a heat map and other geoanalysis tools. Keep adding drill data as you go to make quick, informed decisions on where to drill next.</p>
       </div>
 
       <ol class="pa2 xr-reveal">
@@ -740,7 +740,7 @@ add_action( 'generate_before_content', function() {
       <div class="pdt-proof-intro xr-reveal">
         <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>Proof of Concept</span>
         <h2>The Great Basin<br>lithium prototype.</h2>
-        <p>Our first model scores every 1×1 km cell across the Great Basin region of the United States for lithium. It is a prototype and the base for the finer models we are building, but its early results show the approach works.</p>
+        <p>Our first model scores every 1×1&nbsp;km cell across the Great Basin region of the United States for lithium. It is a prototype and the base for the finer models we are building, but its early results show the approach works.</p>
       </div>
 
       <div class="pp-grid">
@@ -750,7 +750,7 @@ add_action( 'generate_before_content', function() {
             <span>Heat map from a recent model run</span>
             <span class="pp-legend"><em>Low</em><i></i><em>High</em></span>
           </figcaption>
-          <p class="pp-map-note">Each cell is 1×1 km; the faint lines are a coarser reference grid. Gold cells are where the model sees the strongest signs of lithium, and they are where a geologist would look first.</p>
+          <p class="pp-map-note">Each cell is 1×1&nbsp;km; the faint lines are a coarser reference grid. Gold cells are where the model sees the strongest signs of lithium, and they are where a geologist would look first.</p>
         </figure>
 
         <div class="pp-metrics">
@@ -785,7 +785,7 @@ add_action( 'generate_before_content', function() {
           <div class="pp-check"><span>02</span><strong>Tested on unseen ground</strong><small>Spatial block cross-validation holds out whole areas of the map, so the model can't score well just by memorising neighbouring cells.</small></div>
           <div class="pp-check"><span>03</span><strong>Stress-tested</strong><small>Repeated stratified k-fold and leave-one-out cross-validation check that the results hold across many different splits of the data.</small></div>
         </div>
-        <p class="pp-checks-note">Measured at 1×1 km against known deposits. Finer models and field testing against real boreholes come next.</p>
+        <p class="pp-checks-note">Measured at 1×1&nbsp;km against known deposits. Finer models and field testing against real boreholes come next.</p>
       </div>
     </div>
   </section>
@@ -806,7 +806,7 @@ add_action( 'generate_before_content', function() {
       <div class="pdt-status-intro xr-reveal">
         <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>Development Status</span>
         <h2>Where we are today.</h2>
-        <p>We are pre-launch. Our Great Basin lithium model is a prototype that predicts to within 1×1 km, and mining companies need 1×1 m to place a borehole. We are using the prototype to build a series of finer models that will get there.</p>
+        <p>We are pre-launch. Our Great Basin lithium model is a prototype that predicts to within 1×1&nbsp;km, and mining companies need 1×1&nbsp;m to place a borehole. We are using the prototype to build a series of finer models that will get there.</p>
       </div>
 
       <ol class="ps2 xr-reveal">
@@ -875,7 +875,7 @@ add_action( 'generate_before_content', function() {
       <span class="xr-reveal xr-eyebrow" style="justify-content:center;margin-bottom:18px;"><span class="xr-eyebrow-hex"></span>Get Started</span>
       <h2 class="xr-reveal pdt-cta-h">Know where to drill<br>before you spend a <span class="gold">dollar.</span></h2>
       <p class="xr-reveal xr-d2">We're building toward drill targets precise enough for a single borehole. Get in touch to follow our progress or help shape the platform.</p>
-      <div class="xr-reveal xr-d3" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <div class="xr-reveal xr-d3 xr-btn-row">
         <a href="<?php echo esc_url( home_url( '/learn-more/' ) ); ?>" class="xr-btn xr-btn-gold">Learn More</a>
         <a href="mailto:info@xraygeoanalytics.com" class="xr-btn xr-btn-outline">Email us directly <span class="xr-arrow">→</span></a>
       </div>

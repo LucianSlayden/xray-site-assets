@@ -85,7 +85,7 @@ add_action( 'generate_before_content', function() {
           <h2 class="xr-hero-bullet-head">A compounding<br> advantage</h2>
           <span class="xr-hero-bullet-hit" aria-hidden="true"></span>
           <div class="xr-hero-bullet-body" role="tooltip">
-            Every drill result you feed back makes your model sharper. <strong>The longer you use X-Ray, the more accurate it becomes.</strong>
+            Every drill result you feed back makes your model sharper. <strong>The longer you use <span class="xr-nobreak">X-Ray</span>, the more accurate it becomes.</strong>
           </div>
         </div>
 
@@ -803,7 +803,7 @@ add_action( 'generate_before_content', function() {
         <dl class="lift-facts">
           <div><dt>19,000</dt><dd>grid cells</dd></div>
           <div><dt>5</dt><dd>model ensemble</dd></div>
-          <div><dt>1&times;1 km</dt><dd>current resolution</dd></div>
+          <div><dt>1&times;1&nbsp;km</dt><dd>current resolution</dd></div>
         </dl>
       </div>
     </div>
@@ -869,7 +869,7 @@ add_action( 'generate_before_content', function() {
     <div class="xr-container">
       <div class="xr-reveal" style="text-align:center;margin-bottom:48px;max-width:780px;margin-left:auto;margin-right:auto;">
         <h2>Software economics. <span style="color:var(--xr-gold);">Not</span> consulting economics.</h2>
-        <p style="color:var(--xr-text-2);font-size:16px;line-height:1.7;margin:14px 0 0;">How X-Ray compares with a traditional consultant and GIS study.</p>
+        <p style="color:var(--xr-text-2);font-size:16px;line-height:1.7;margin:14px 0 0;">How <span class="xr-nobreak">X-Ray</span> compares with a traditional consultant and GIS study.</p>
       </div>
 
       <!-- Comparison table: traditional study vs X-Ray -->
@@ -920,7 +920,7 @@ add_action( 'generate_before_content', function() {
       <p class="xr-reveal xr-d2" style="color:var(--xr-text-2);font-size:18px;line-height:1.75;margin:0 auto 44px;max-width:560px;">
         Get on the list now. The Nevada lithium model is in active development — first pilot exploration teams onboarding when it launches.
       </p>
-      <div class="xr-reveal xr-d3" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <div class="xr-reveal xr-d3 xr-btn-row">
         <a href="<?php echo esc_url( home_url( '/learn-more/' ) ); ?>" class="xr-btn xr-btn-gold" style="font-size:16px;padding:16px 36px;">Learn More</a>
         <a href="<?php echo esc_url( home_url( '/product/' ) ); ?>" class="xr-btn xr-btn-outline" style="font-size:16px;padding:16px 36px;">See the Product <span class="xr-arrow">→</span></a>
       </div>

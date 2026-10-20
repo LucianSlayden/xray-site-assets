@@ -1,12 +1,16 @@
 /* X-Ray Geoanalytics — About Us Page
-   Canvas 1: 3D floating hex field (#ab-canvas, fixed full-viewport)
-   Canvas 2: Drifting data particles (#ab-mission-canvas, hidden via CSS)
-   Canvas 3: Animated hex-grid tessellation (#ab-prin-canvas, hidden via CSS)
-   GSAP:     hero timeline + scroll reveals + principle/nav card batches
+   Canvas: see-through geological block model (#ab-canvas, fixed full-viewport)
+   GSAP:   hero entrance + scroll reveals + principle/nav card batches
    Enqueue with dependency: ['gsap-st']
 */
 
-/* ══ 3D FLOATING HEX FIELD ══════════════════════════════════════════════ */
+/* ══ BACKGROUND: SEE-THROUGH GEOLOGICAL BLOCK MODEL (#ab-canvas) ═══════════
+   A Basin and Range style block: terrain with contour lines, strata on the
+   cut faces (alluvium, tuff, claystone, the lithium clay, basalt), a
+   west-dipping normal fault that drops the hanging wall, and drill holes
+   that light up gold where they cut the lithium clay. Everything is fixed
+   geometry (no randomness). The camera drifts slowly and turns a little
+   as the page scrolls. Reduced motion draws one still frame. */
 (function () {
   'use strict';
   var canvas = document.getElementById('ab-canvas');
@@ -14,277 +18,280 @@
   var ctx = canvas.getContext('2d');
   if (!ctx) return;
   var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var GOLD = '232,185,99', SKY = '111,181,224', GREY = '168,178,192', RED = '217,114,95';
 
-  var W, H, CX, CY, FOV;
-  function resize() {
-    // Backing store at screen density (capped at 2) so thin lines stay sharp.
-    var dpr = Math.min(2, window.devicePixelRatio || 1);
-    W   = canvas.offsetWidth  || window.innerWidth;
-    H   = canvas.offsetHeight || window.innerHeight;
-    canvas.width  = Math.round(W * dpr);
-    canvas.height = Math.round(H * dpr);
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    CX  = W * 0.5;
-    CY  = H * 0.5;
-    FOV = Math.max(W, H) * 0.52;
+  // ── Model ────────────────────────────────────────────────────────────
+  var X0 = -1.5, X1 = 1.5, Z0 = -1, Z1 = 1, BASE = -0.95;
+  var NX = 36, NZ = 24;
+  function terrain(x, z) {
+    // two north-south ranges with a basin between them, plus low relief
+    return 0.13 * Math.exp(-Math.pow((x - 0.8) / 0.34, 2)) * (0.85 + 0.15 * Math.cos(2.1 * z + 0.4)) +
+           0.10 * Math.exp(-Math.pow((x + 1.0) / 0.3, 2)) * (0.8 + 0.2 * Math.sin(1.7 * z + 1.1)) +
+           0.025 * Math.sin(5.1 * x + 1.9 * z + 0.6) + 0.018 * Math.cos(7.3 * z - 2.2 * x) + 0.02;
   }
-  resize();
-  window.addEventListener('resize', function () { resize(); if (REDUCED) tick(0); });
+  // contacts, top to bottom: tuff, claystone, Li-clay top, Li-clay base, basalt
+  var THROW = 0.085;
+  function faultX(y, z) { return 0.22 + 0.42 * y + 0.06 * z; }      // dips west: hanging wall is x < faultX
+  function horizon(k, x, z) {
+    var fold = 0.045 * Math.sin(1.6 * x + 0.3) + 0.03 * Math.cos(1.25 * z + 0.5) + 0.03 * x;
+    var depth = [-0.13, -0.27, -0.43, -0.52, -0.66][k];
+    var y = depth + fold;
+    if (x < faultX(y, z)) y -= THROW;
+    return y;
+  }
+  function clampTop(y, x, z) { var t = terrain(x, z); return y > t ? t : y; }
 
-  function rotXYZ(v, rx, ry, rz) {
-    var x = v[0], y = v[1], z = v[2], ny, nz, nx;
-    ny = y * Math.cos(rx) - z * Math.sin(rx); nz = y * Math.sin(rx) + z * Math.cos(rx); y = ny; z = nz;
-    nx = x * Math.cos(ry) + z * Math.sin(ry); nz = -x * Math.sin(ry) + z * Math.cos(ry); x = nx; z = nz;
-    nx = x * Math.cos(rz) - y * Math.sin(rz); ny = x * Math.sin(rz) + y * Math.cos(rz);
-    return [nx, ny, z];
-  }
-  function proj(v, cx, cy) {
-    var d = v[2] + 68;
-    if (d < 1) return null;
-    var s = FOV / d;
-    return [cx + v[0] * s, cy - v[1] * s, d];
-  }
-
-  function makePrism(r, h) {
-    var verts = [], edges = [];
-    for (var i = 0; i < 6; i++) {
-      var a = Math.PI / 3 * i + Math.PI / 6;
-      verts.push([r * Math.cos(a),  h * 0.5, r * Math.sin(a)]);
-      verts.push([r * Math.cos(a), -h * 0.5, r * Math.sin(a)]);
-    }
-    for (var i = 0; i < 6; i++) {
-      edges.push([i * 2,     ((i + 1) % 6) * 2]);
-      edges.push([i * 2 + 1, ((i + 1) % 6) * 2 + 1]);
-      edges.push([i * 2,     i * 2 + 1]);
-    }
-    return { verts: verts, edges: edges };
-  }
-  function makeRing(r) {
-    var verts = [], edges = [];
-    for (var i = 0; i < 6; i++) {
-      var a = Math.PI / 3 * i + Math.PI / 6;
-      verts.push([r * Math.cos(a), 0, r * Math.sin(a)]);
-      edges.push([i, (i + 1) % 6]);
-    }
-    return { verts: verts, edges: edges };
-  }
-
-  var GOLD = '#E8B963', BLUE = '#6FB5E0';
-  var shapes = [];
-  function rnd(a, b) { return a + Math.random() * (b - a); }
-
-  for (var i = 0; i < 18; i++) {
-    shapes.push({
-      geo: makePrism(rnd(1.2, 4.8), 0.14),
-      pos: [rnd(-26, 26), rnd(-20, 20), rnd(-46, -5)],
-      rot: [rnd(0, Math.PI * 2), rnd(0, Math.PI * 2), rnd(0, Math.PI * 2)],
-      rv:  [rnd(-4e-4, 4e-4), rnd(-6e-4, 6e-4), rnd(-3e-4, 3e-4)],
-      driftY: rnd(0, Math.PI * 2), driftS: rnd(0.28, 0.62), driftA: rnd(1.2, 2.8),
-      color: Math.random() > 0.32 ? GOLD : BLUE,
-      alpha: rnd(0.42, 0.85),
-    });
-  }
-  for (var i = 0; i < 12; i++) {
-    shapes.push({
-      geo: makePrism(rnd(0.26, 0.78), rnd(3.5, 9.0)),
-      pos: [rnd(-26, 26), rnd(-20, 20), rnd(-48, -8)],
-      rot: [rnd(0, Math.PI * 2), rnd(0, Math.PI * 2), rnd(0, Math.PI * 2)],
-      rv:  [rnd(-5e-4, 5e-4), rnd(-7e-4, 7e-4), rnd(-4e-4, 4e-4)],
-      driftY: rnd(0, Math.PI * 2), driftS: rnd(0.20, 0.50), driftA: rnd(0.6, 1.8),
-      color: Math.random() > 0.50 ? GOLD : BLUE,
-      alpha: rnd(0.32, 0.72),
-    });
-  }
-  for (var i = 0; i < 12; i++) {
-    shapes.push({
-      geo: makeRing(rnd(2.6, 8.0)),
-      pos: [rnd(-26, 26), rnd(-20, 20), rnd(-48, -8)],
-      rot: [rnd(0, Math.PI * 2), rnd(0, Math.PI * 2), rnd(0, Math.PI * 2)],
-      rv:  [rnd(-3e-4, 3e-4), rnd(-5e-4, 5e-4), rnd(-2e-4, 2e-4)],
-      driftY: rnd(0, Math.PI * 2), driftS: rnd(0.18, 0.44), driftA: rnd(1.0, 2.4),
-      color: Math.random() > 0.40 ? GOLD : BLUE,
-      alpha: rnd(0.32, 0.78),
-    });
-  }
-
-  function drawShape(s, t, cx, cy) {
-    var dy  = Math.sin(s.driftY + t * s.driftS) * s.driftA;
-    var geo = s.geo, rot = s.rot, pos = s.pos;
-    var pts = new Array(geo.verts.length);
-    var sumD = 0, cnt = 0;
-    for (var i = 0; i < geo.verts.length; i++) {
-      var r = rotXYZ(geo.verts[i], rot[0], rot[1], rot[2]);
-      var p = proj([r[0] + pos[0], r[1] + pos[1] + dy, r[2] + pos[2]], cx, cy);
-      pts[i] = p;
-      if (p) { sumD += p[2]; cnt++; }
-    }
-    if (!cnt) return;
-    var avgD  = sumD / cnt;
-    var fog   = avgD < 40 ? 1.0 : Math.max(0, 1 - (avgD - 40) / 50);
-    var alpha = s.alpha * fog;
-    if (alpha < 0.02) return;
-    var lw = Math.max(0.5, Math.min(2.2, FOV / avgD * 0.014));
-    ctx.save();
-    ctx.strokeStyle  = s.color;
-    ctx.globalAlpha  = alpha;
-    ctx.lineWidth    = lw;
-    ctx.lineCap      = 'round';
-    for (var e = 0; e < geo.edges.length; e++) {
-      var a = pts[geo.edges[e][0]], b = pts[geo.edges[e][1]];
-      if (!a || !b) continue;
-      ctx.beginPath();
-      ctx.moveTo(a[0], a[1]);
-      ctx.lineTo(b[0], b[1]);
-      ctx.stroke();
-    }
-    ctx.restore();
-  }
-
-  var t = 0, lastTS = 0;
-  function tick(ts) {
-    var dt = Math.min((ts - lastTS) / 1000, 0.05);
-    lastTS = ts;
-    ctx.clearRect(0, 0, W, H);
-    var cx = CX + (REDUCED ? 0 : Math.sin(t * 0.021) * 22);
-    var cy = CY + (REDUCED ? 0 : Math.cos(t * 0.014) * 14);
-    if (!REDUCED) {
-      t += dt;
-      for (var i = 0; i < shapes.length; i++) {
-        var s = shapes[i];
-        s.rot[0] += s.rv[0];
-        s.rot[1] += s.rv[1];
-        s.rot[2] += s.rv[2];
+  // contour lines on the terrain (marching squares, computed once)
+  var contours = [];
+  (function () {
+    var lv = [0.0, 0.03, 0.06, 0.09, 0.12, 0.15];
+    var dx = (X1 - X0) / NX, dz = (Z1 - Z0) / NZ;
+    function P(i, j) { return terrain(X0 + i * dx, Z0 + j * dz); }
+    function lerp(a, b, va, vb, l) { var t = (l - va) / (vb - va); return a + (b - a) * t; }
+    for (var li = 0; li < lv.length; li++) {
+      var l = lv[li];
+      for (var i = 0; i < NX; i++) for (var j = 0; j < NZ; j++) {
+        var x = X0 + i * dx, z = Z0 + j * dz;
+        var a = P(i, j), b = P(i + 1, j), c = P(i + 1, j + 1), d = P(i, j + 1);
+        var pts = [];
+        if ((a < l) !== (b < l)) pts.push([lerp(x, x + dx, a, b, l), z]);
+        if ((b < l) !== (c < l)) pts.push([x + dx, lerp(z, z + dz, b, c, l)]);
+        if ((c < l) !== (d < l)) pts.push([lerp(x, x + dx, d, c, l), z + dz]);
+        if ((d < l) !== (a < l)) pts.push([x, lerp(z, z + dz, a, d, l)]);
+        if (pts.length === 2) contours.push([pts[0][0], l, pts[0][1], pts[1][0], l, pts[1][1]]);
+        else if (pts.length === 4) {
+          contours.push([pts[0][0], l, pts[0][1], pts[1][0], l, pts[1][1]]);
+          contours.push([pts[2][0], l, pts[2][1], pts[3][0], l, pts[3][1]]);
+        }
       }
     }
-    var sorted = shapes.slice().sort(function (a, b) { return a.pos[2] - b.pos[2]; });
-    for (var i = 0; i < sorted.length; i++) drawShape(sorted[i], t, cx, cy);
+  }());
+
+  var HOLES = [[-1.12, 0.38], [-0.74, -0.42], [-0.38, 0.6], [-0.02, -0.08], [0.36, 0.58],
+               [0.62, -0.5], [0.98, 0.22], [1.22, -0.26], [-0.98, -0.78], [0.18, 0.3], [-0.55, 0.05]];
+
+  // ── Camera ───────────────────────────────────────────────────────────
+  var p = [0, 0, 0], q = [0, 0, 0];
+  var W, H, cx, cy, F, D = 9, yaw = -0.5, pitch = 0.44, cyaw, syaw, cp, sp;
+  function setCam(y) { yaw = y; cyaw = Math.cos(yaw); syaw = Math.sin(yaw); cp = Math.cos(pitch); sp = Math.sin(pitch); }
+  function proj(x, y, z, out) {
+    var xr = x * cyaw - z * syaw, zr = x * syaw + z * cyaw;
+    var yr = y * cp - zr * sp, zz = y * sp + zr * cp;
+    var s = F / (D - zz);
+    out[0] = cx + xr * s; out[1] = cy - yr * s; out[2] = zz;
+    return out;
   }
-  tick(0);
-  // Reduced motion: one still frame. Otherwise animate, paused while the tab is hidden.
+  var YAW0 = -0.62;
+  function resize() {
+    var dpr = Math.min(2, window.devicePixelRatio || 1);
+    W = canvas.offsetWidth || window.innerWidth;
+    H = canvas.offsetHeight || window.innerHeight;
+    canvas.width = Math.round(W * dpr);
+    canvas.height = Math.round(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    // Fit the block into a target box once per size (at the resting yaw), so
+    // the drift and scroll turn it without changing its scale.
+    var wide = W / H > 1.1;
+    // On tall screens the block sits low, under the buttons and snapshot,
+    // so the headline and intro read against a clear background.
+    var box = wide ? [0.40 * W, 0.97 * W, 0.2 * H, 0.9 * H] : [-0.12 * W, 1.12 * W, 0.55 * H, 1.02 * H];
+    F = 1; cx = 0; cy = 0; setCam(YAW0);
+    var mnx = 1e9, mxx = -1e9, mny = 1e9, mxy = -1e9, xs = [X0, X1], zs = [Z0, Z1], ys = [0.2, BASE];
+    for (var a = 0; a < 2; a++) for (var b = 0; b < 2; b++) for (var c = 0; c < 2; c++) {
+      proj(xs[a], ys[c], zs[b], p);
+      mnx = Math.min(mnx, p[0]); mxx = Math.max(mxx, p[0]); mny = Math.min(mny, p[1]); mxy = Math.max(mxy, p[1]);
+    }
+    F = Math.min((box[1] - box[0]) / (mxx - mnx), (box[3] - box[2]) / (mxy - mny));
+    cx = (box[0] + box[1]) / 2 - F * (mnx + mxx) / 2;
+    cy = (box[2] + box[3]) / 2 - F * (mny + mxy) / 2;
+  }
+
+  // ── Drawing helpers ──────────────────────────────────────────────────
+  function line3(path, ax, ay, az, bx, by, bz) {
+    proj(ax, ay, az, p); path.moveTo(p[0], p[1]);
+    proj(bx, by, bz, q); path.lineTo(q[0], q[1]);
+  }
+  function stroke(rgb, a, w) { ctx.strokeStyle = 'rgba(' + rgb + ',' + a + ')'; ctx.lineWidth = w; ctx.stroke(); }
+
+  // A vertical face along an edge: from (ax,az) to (bx,bz), n samples.
+  function face(ax, az, bx, bz, front) {
+    var n = 48, i, k, xs = [], zs = [];
+    for (i = 0; i <= n; i++) { xs.push(ax + (bx - ax) * i / n); zs.push(az + (bz - az) * i / n); }
+    var tops = xs.map(function (x, i) { return terrain(x, zs[i]); });
+    var hz = [];
+    for (k = 0; k < 5; k++) hz.push(xs.map(function (x, i) { return clampTop(horizon(k, x, zs[i]), x, zs[i]); }));
+    var bounds = [tops].concat(hz).concat([xs.map(function () { return BASE; })]);
+    // unit fills: alluvium, tuff, claystone, Li-clay, basalt
+    var fills = [[GOLD, 0.035], [GREY, 0.03], [SKY, 0.045], [GOLD, 0.13], [GREY, 0.055]];
+    var f = front ? 1 : 0.45;
+    for (k = 0; k < 5; k++) {
+      ctx.beginPath();
+      for (i = 0; i <= n; i++) { proj(xs[i], bounds[k][i], zs[i], p); if (i) ctx.lineTo(p[0], p[1]); else ctx.moveTo(p[0], p[1]); }
+      for (i = n; i >= 0; i--) { proj(xs[i], bounds[k + 1][i], zs[i], p); ctx.lineTo(p[0], p[1]); }
+      ctx.closePath();
+      ctx.fillStyle = 'rgba(' + fills[k][0] + ',' + (fills[k][1] * f) + ')';
+      ctx.fill();
+    }
+    for (k = 0; k < bounds.length; k++) {
+      ctx.beginPath();
+      for (i = 0; i <= n; i++) { proj(xs[i], bounds[k][i], zs[i], p); if (i) ctx.lineTo(p[0], p[1]); else ctx.moveTo(p[0], p[1]); }
+      var li = k === 3 || k === 4;
+      stroke(k === 0 ? SKY : (li ? GOLD : GREY), (k === 0 ? 0.5 : (li ? 0.45 : 0.22)) * f, k === 0 ? 1 : 0.8);
+    }
+    // fault trace on this face
+    ctx.beginPath();
+    var started = false;
+    for (var s = 0; s <= 40; s++) {
+      var y = BASE + (0.25 - BASE) * s / 40;
+      // find the point on this edge where x = faultX(y, z)
+      for (i = 0; i < n; i++) {
+        var g0 = xs[i] - faultX(y, zs[i]), g1 = xs[i + 1] - faultX(y, zs[i + 1]);
+        if ((g0 < 0) !== (g1 < 0)) {
+          var t = g0 / (g0 - g1), fx = xs[i] + (xs[i + 1] - xs[i]) * t, fz = zs[i] + (zs[i + 1] - zs[i]) * t;
+          if (y > terrain(fx, fz)) break;
+          proj(fx, y, fz, p);
+          if (started) ctx.lineTo(p[0], p[1]); else { ctx.moveTo(p[0], p[1]); started = true; }
+          break;
+        }
+      }
+    }
+    stroke(RED, 0.5 * f, 1);
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    var i, j, x, z, path;
+    var dx = (X1 - X0) / NX, dz = (Z1 - Z0) / NZ;
+
+    // faces: back faces faint first, then the ones facing the camera
+    var faces = [
+      [X0, Z1, X1, Z1, [0, 0, 1]], [X1, Z1, X1, Z0, [1, 0, 0]],
+      [X1, Z0, X0, Z0, [0, 0, -1]], [X0, Z0, X0, Z1, [-1, 0, 0]]
+    ];
+    var vis = faces.map(function (fc) {
+      var n = fc[4], zr = n[0] * syaw + n[2] * cyaw;     // normal's depth component after yaw
+      return zr * cp > 0.02;
+    });
+    for (i = 0; i < 4; i++) if (!vis[i]) face(faces[i][0], faces[i][1], faces[i][2], faces[i][3], false);
+
+    // lithium clay surface seen through the block
+    ctx.beginPath();
+    for (j = 0; j <= NZ; j += 2) {
+      z = Z0 + j * dz;
+      for (i = 0; i <= NX; i++) {
+        x = X0 + i * dx;
+        proj(x, clampTop(horizon(2, x, z), x, z), z, p);
+        if (i) ctx.lineTo(p[0], p[1]); else ctx.moveTo(p[0], p[1]);
+      }
+    }
+    for (i = 0; i <= NX; i += 3) {
+      x = X0 + i * dx;
+      for (j = 0; j <= NZ; j++) {
+        z = Z0 + j * dz;
+        proj(x, clampTop(horizon(2, x, z), x, z), z, p);
+        if (j) ctx.lineTo(p[0], p[1]); else ctx.moveTo(p[0], p[1]);
+      }
+    }
+    stroke(GOLD, 0.12, 0.7);
+
+    // terrain wireframe
+    ctx.beginPath();
+    for (j = 0; j <= NZ; j++) {
+      z = Z0 + j * dz;
+      for (i = 0; i <= NX; i++) { x = X0 + i * dx; proj(x, terrain(x, z), z, p); if (i) ctx.lineTo(p[0], p[1]); else ctx.moveTo(p[0], p[1]); }
+    }
+    for (i = 0; i <= NX; i++) {
+      x = X0 + i * dx;
+      for (j = 0; j <= NZ; j++) { z = Z0 + j * dz; proj(x, terrain(x, z), z, p); if (j) ctx.lineTo(p[0], p[1]); else ctx.moveTo(p[0], p[1]); }
+    }
+    stroke(GREY, 0.1, 0.6);
+
+    // contours
+    ctx.beginPath();
+    for (i = 0; i < contours.length; i++) { var c = contours[i]; line3(ctx, c[0], c[1], c[2], c[3], c[4], c[5]); }
+    stroke(GOLD, 0.4, 0.8);
+
+    // fault trace on the terrain
+    ctx.beginPath();
+    for (j = 0; j <= NZ; j++) {
+      z = Z0 + j * dz;
+      var fy = 0.05, fxp = faultX(fy, z);
+      for (var it = 0; it < 6; it++) { fy = terrain(fxp, z); fxp = faultX(fy, z); }
+      proj(fxp, terrain(fxp, z), z, p);
+      if (j) ctx.lineTo(p[0], p[1]); else ctx.moveTo(p[0], p[1]);
+    }
+    stroke(RED, 0.5, 1.1);
+
+    // drill holes, gold where they cut the lithium clay
+    for (i = 0; i < HOLES.length; i++) {
+      x = HOLES[i][0]; z = HOLES[i][1];
+      var top = terrain(x, z), liT = horizon(2, x, z), liB = horizon(3, x, z), end = horizon(4, x, z) - 0.07;
+      ctx.beginPath(); line3(ctx, x, top, z, x, end, z); stroke(SKY, 0.55, 1);
+      ctx.beginPath();
+      for (var yy = top - 0.04; yy > end; yy -= 0.04) {
+        proj(x, yy, z, p); ctx.moveTo(p[0] - 2.2, p[1]); ctx.lineTo(p[0] + 2.2, p[1]);
+      }
+      stroke(SKY, 0.35, 0.7);
+      ctx.beginPath(); line3(ctx, x, liT, z, x, liB, z); stroke(GOLD, 0.9, 2.4);
+      proj(x, top, z, p);
+      ctx.beginPath(); ctx.arc(p[0], p[1], 2.2, 0, 6.2832);
+      ctx.fillStyle = 'rgba(' + SKY + ',0.85)'; ctx.fill();
+    }
+
+    for (i = 0; i < 4; i++) if (vis[i]) face(faces[i][0], faces[i][1], faces[i][2], faces[i][3], true);
+
+    // block edges: corners and base
+    ctx.beginPath();
+    var corners = [[X0, Z0], [X1, Z0], [X1, Z1], [X0, Z1]];
+    for (i = 0; i < 4; i++) {
+      var a = corners[i], b = corners[(i + 1) % 4];
+      line3(ctx, a[0], terrain(a[0], a[1]), a[1], a[0], BASE, a[1]);
+      line3(ctx, a[0], BASE, a[1], b[0], BASE, b[1]);
+    }
+    stroke(SKY, 0.4, 1);
+  }
+
+  // ── Loop ─────────────────────────────────────────────────────────────
+  var scrollF = 0;
+  function readScroll() {
+    var max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    scrollF = Math.min(1, Math.max(0, window.scrollY / max));
+  }
+  function frame(t) {
+    setCam(YAW0 + (REDUCED ? 0 : 0.1 * Math.sin(t * 0.00004)) + scrollF * 0.5);
+    draw();
+  }
+  // On phones and narrow tablets the block sits behind body text once the
+  // hero has gone, so it dims to half strength as the hero scrolls away.
+  var hero = document.getElementById('ab-hero');
+  var dimQueued = false;
+  function dim() {
+    dimQueued = false;
+    var o = 1;
+    if (hero && W < 760) {
+      var end = hero.offsetTop + hero.offsetHeight;
+      var k = (window.scrollY - (end - H)) / (0.7 * H);
+      o = 1 - 0.5 * Math.min(1, Math.max(0, k));
+    }
+    canvas.style.opacity = o < 1 ? o.toFixed(3) : '';
+  }
+  function queueDim() { if (!dimQueued) { dimQueued = true; requestAnimationFrame(dim); } }
+  resize(); readScroll(); frame(0); dim();
+  window.addEventListener('resize', function () { resize(); frame(performance.now()); dim(); });
+  window.addEventListener('scroll', queueDim, { passive: true });
   if (REDUCED) return;
-  var rafId = null;
-  function loop(ts) { rafId = requestAnimationFrame(loop); tick(ts); }
-  function start() { if (!rafId) { lastTS = performance.now(); rafId = requestAnimationFrame(loop); } }
+  window.addEventListener('scroll', readScroll, { passive: true });
+  var rafId = null, last = 0;
+  function loop(t) {
+    rafId = requestAnimationFrame(loop);
+    if (t - last < 32) return;           // ~30 fps is plenty for a slow drift
+    last = t; frame(t);
+  }
+  function start() { if (!rafId) rafId = requestAnimationFrame(loop); }
   document.addEventListener('visibilitychange', function () {
     if (document.hidden) { cancelAnimationFrame(rafId); rafId = null; } else start();
   });
   start();
-}());
-
-/* ══ MISSION CANVAS — Drifting data particles ═══════════════════════════ */
-(function () {
-  var canvas = document.getElementById('ab-mission-canvas');
-  if (!canvas || getComputedStyle(canvas).display === 'none') return; // hidden in page CSS
-  var ctx = canvas.getContext('2d');
-  var W, H;
-  var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (REDUCED) return;
-
-  var N = 68, particles = [];
-  function makeParticle(startRandom) {
-    return {
-      x: Math.random() * (W || 1),
-      y: startRandom ? Math.random() * (H || 1) : (H || 1) + 6,
-      vy: -(0.18 + Math.random() * 0.44),
-      vx: (Math.random() - 0.5) * 0.10,
-      r:  0.7 + Math.random() * 1.7,
-      alpha: 0.06 + Math.random() * 0.18,
-      gold: Math.random() > 0.38,
-    };
-  }
-  function init() {
-    W = canvas.width  = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-    particles = [];
-    for (var i = 0; i < N; i++) particles.push(makeParticle(true));
-  }
-  init();
-  window.addEventListener('resize', init);
-
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    for (var i = 0; i < N; i++) {
-      var p = particles[i];
-      p.x += p.vx; p.y += p.vy;
-      if (p.y < -6) particles[i] = makeParticle(false);
-      if (p.x < -4) p.x = W + 4;
-      if (p.x > W + 4) p.x = -4;
-      var col = p.gold ? '232,185,99' : '111,181,224';
-      ctx.fillStyle = 'rgba(' + col + ',' + p.alpha + ')';
-      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill();
-    }
-    for (var i = 0; i < N; i++) {
-      for (var j = i + 1; j < N; j++) {
-        var dx = particles[i].x - particles[j].x;
-        var dy = particles[i].y - particles[j].y;
-        var dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 75) {
-          var alpha = (1 - dist / 75) * 0.055;
-          ctx.strokeStyle = 'rgba(232,185,99,' + alpha.toFixed(4) + ')';
-          ctx.lineWidth = 0.35;
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.stroke();
-        }
-      }
-    }
-    requestAnimationFrame(draw);
-  }
-  draw();
-}());
-
-/* ══ PRINCIPLES CANVAS — Animated hex-grid tessellation ════════════════ */
-(function () {
-  var canvas = document.getElementById('ab-prin-canvas');
-  if (!canvas || getComputedStyle(canvas).display === 'none') return; // hidden in page CSS
-  var ctx = canvas.getContext('2d');
-  var W, H, t = 0;
-  var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function resize() {
-    W = canvas.width  = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-  }
-  resize();
-  window.addEventListener('resize', resize);
-
-  function hexPath(cx, cy, r) {
-    ctx.beginPath();
-    for (var i = 0; i < 6; i++) {
-      var angle = (i * 60 - 90) * Math.PI / 180;
-      var x = cx + r * Math.cos(angle);
-      var y = cy + r * Math.sin(angle);
-      if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
-    }
-    ctx.closePath();
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    var r    = 30;
-    var colW = r * Math.sqrt(3);
-    var rowH = r * 1.5;
-    var cols = Math.ceil(W / colW) + 2;
-    var rows = Math.ceil(H / rowH) + 2;
-    for (var row = -1; row < rows; row++) {
-      for (var col = -1; col < cols; col++) {
-        var cx    = col * colW + (row % 2 === 0 ? 0 : colW * 0.5);
-        var cy    = row * rowH;
-        var phase = col * 0.28 + row * 0.55 + t;
-        var alpha = 0.022 + Math.sin(phase) * 0.014 + 0.014;
-        var isAlt = (Math.abs(col + row) % 3 === 0);
-        var col32 = isAlt ? '111,181,224' : '232,185,99';
-        hexPath(cx, cy, r - 1.5);
-        ctx.strokeStyle = 'rgba(' + col32 + ',' + Math.max(0, alpha).toFixed(4) + ')';
-        ctx.lineWidth = 0.5;
-        ctx.stroke();
-      }
-    }
-    if (!REDUCED) t += 0.0035;
-    requestAnimationFrame(draw);
-  }
-  draw();
 }());
 
 /* ══ GSAP ANIMATIONS ════════════════════════════════════════════════════ */
@@ -294,38 +301,89 @@
   // Reduced motion, or GSAP failed to load: show everything at rest.
   if (prefersReduced || !window.gsap || !window.ScrollTrigger) {
     document.querySelectorAll(
-      '#ab-eyebrow,#ab-lede,#ab-ctas,#ab-snapshot,.ab-hw-inner,' +
-      '.ab-section-eyebrow,.ab-section-h2,.ab-section-p,' +
-      '.ab-prin-card,.ab-nav-card'
+      '.ab-h1,#ab-lede,#ab-ctas,#ab-snapshot,' +
+      '.ab-section-h2,.ab-section-p,.ab-prin-card,.ab-nav-card'
     ).forEach(function (el) {
       el.style.opacity   = '1';
       el.style.transform = 'none';
     });
+    window.__xrPageReady = true;
     return;
   }
   gsap.registerPlugin(ScrollTrigger);
 
-  var heroTl = gsap.timeline({ delay: 0.15 });
-  heroTl
-    .to('#ab-eyebrow',  { opacity: 1, y: 0, duration: 0.55, ease: 'power2.out' })
-    .to('.ab-hw-inner', { y: '0%',    duration: 1.0,  ease: 'power4.out', stagger: 0.10 }, '-=0.25')
-    .to('#ab-lede',     { opacity: 1, y: 0, duration: 0.70, ease: 'power2.out' }, '-=0.55')
-    .to('#ab-ctas',     { opacity: 1, y: 0, duration: 0.60, ease: 'power2.out' }, '-=0.50')
-    .to('#ab-snapshot', { opacity: 1, y: 0, duration: 0.75, ease: 'power2.out' }, '-=0.55');
-
-  function revealOnScroll(selectors) {
-    selectors.forEach(function (sel) {
-      gsap.utils.toArray(sel).forEach(function (el) {
-        gsap.to(el, {
-          opacity: 1, y: 0, duration: 0.70, ease: 'power2.out',
-          scrollTrigger: { trigger: el, start: 'top 88%', once: true },
+  // Headline: wrap each rendered line in a mask and slide the lines up, then
+  // put the original markup back so the heading reflows normally on resize.
+  function splitLines(h) {
+    var original = h.innerHTML, words = [], space = false;
+    (function walk(node, cls) {
+      Array.prototype.slice.call(node.childNodes).forEach(function (n) {
+        if (n.nodeType === 1) { walk(n, n.className || cls); return; }
+        if (n.nodeType !== 3) return;
+        var frag = document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach(function (part) {
+          if (!part) return;
+          frag.appendChild(document.createTextNode(part));
+          if (/^\s+$/.test(part)) { space = true; return; }
+          var s = document.createElement('span');
+          s.textContent = part;
+          frag.replaceChild(s, frag.lastChild);
+          words.push({ el: s, cls: cls, space: space });
+          space = false;
         });
+        n.parentNode.replaceChild(frag, n);
       });
+    }(h, ''));
+    var lines = [], top = null;
+    words.forEach(function (w) {
+      var t = w.el.offsetTop;
+      if (top === null || Math.abs(t - top) > 4) { lines.push([]); top = t; }
+      lines[lines.length - 1].push(w);
     });
+    h.innerHTML = '';
+    var inners = lines.map(function (ws) {
+      var mask = document.createElement('span'), inner = document.createElement('span');
+      mask.className = 'ab-hl';
+      ws.forEach(function (w, i) {
+        if (i && w.space) inner.appendChild(document.createTextNode(' '));
+        var t = document.createElement('span');
+        if (w.cls) t.className = w.cls;
+        t.textContent = w.el.textContent;
+        inner.appendChild(t);
+      });
+      mask.appendChild(inner);
+      h.appendChild(mask);
+      return inner;
+    });
+    return { inners: inners, restore: function () { h.innerHTML = original; } };
   }
-  revealOnScroll(['.ab-section-eyebrow', '.ab-section-h2', '.ab-section-p']);
 
-  gsap.set('.ab-prin-card', { opacity: 0, y: 28 });
+  var h1 = document.querySelector('.ab-h1');
+  var started = false;
+  function hero() {
+    if (started) return;
+    started = true;
+    var split = h1 ? splitLines(h1) : null;
+    var tl = gsap.timeline({ delay: 0.05, onComplete: function () { if (split) split.restore(); } });
+    if (split) tl.from(split.inners, { yPercent: 110, duration: 0.9, ease: 'power4.out', stagger: 0.08 }, 0);
+    if (h1) gsap.set(h1, { opacity: 1 });
+    tl.to('#ab-lede',     { opacity: 1, y: 0, duration: 0.70, ease: 'power2.out' }, 0.35)
+      .to('#ab-snapshot', { opacity: 1, y: 0, duration: 0.75, ease: 'power2.out' }, 0.45)
+      .to('#ab-ctas',     { opacity: 1, y: 0, duration: 0.60, ease: 'power2.out' }, 0.5);
+  }
+  // Measure the headline's lines with the web font in place (but don't wait long for it).
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(hero);
+  setTimeout(hero, 600);
+
+  gsap.utils.toArray('.ab-section-h2, .ab-section-p').forEach(function (el) {
+    gsap.to(el, {
+      opacity: 1, y: 0, duration: 0.70, ease: 'power2.out',
+      scrollTrigger: { trigger: el, start: 'top 88%', once: true },
+    });
+  });
+
+  // Cards fade up; the hover lift uses the separate `translate` property so
+  // it never fights these tweens.
   ScrollTrigger.batch('.ab-prin-card', {
     onEnter: function (batch) {
       gsap.to(batch, { opacity: 1, y: 0, stagger: 0.09, duration: 0.70, ease: 'power3.out' });
@@ -333,8 +391,6 @@
     start: 'top 86%',
     once: true,
   });
-
-  gsap.set('.ab-nav-card', { opacity: 0, y: 22 });
   ScrollTrigger.batch('.ab-nav-card', {
     onEnter: function (batch) {
       gsap.to(batch, { opacity: 1, y: 0, stagger: 0.10, duration: 0.65, ease: 'power2.out' });
@@ -343,11 +399,10 @@
     once: true,
   });
 
-  gsap.utils.toArray('.ab-info-box').forEach(function (el, i) {
+  gsap.utils.toArray('.ab-info-box, .ab-odds').forEach(function (el) {
     gsap.from(el, {
-      opacity: 0, x: -28, duration: 0.70, ease: 'power2.out',
+      opacity: 0, y: 18, duration: 0.70, ease: 'power2.out',
       scrollTrigger: { trigger: el, start: 'top 88%', once: true },
-      delay: i * 0.12,
     });
   });
 
@@ -358,4 +413,6 @@
       delay: i * 0.08,
     });
   });
+
+  window.__xrPageReady = true;
 }());

@@ -121,7 +121,7 @@ body { background: #0E141B !important; }
     <div class="demo-grid">
       <div>
         <div class="xr-reveal"><span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>Get in Touch</span></div>
-        <h1 class="xr-reveal xr-d1" style="margin-top:18px;">Learn More<br><span style="color:var(--xr-gold);">About X-Ray</span></h1>
+        <h1 class="xr-reveal xr-d1" style="margin-top:18px;">Learn More<br><span style="color:var(--xr-gold);">About <span class="xr-nobreak">X-Ray</span></span></h1>
         <p class="xr-reveal xr-d2 xr-lede" style="margin-top:14px;max-width:480px;">We're early, and we want to hear from you. Whether you explore for minerals, invest in the space or want to work with us, send us a note and a co-founder will reply directly.</p>
 
         <div class="xr-reveal xr-d3 step-list" style="margin-top:42px;margin-bottom:36px;">
@@ -153,7 +153,7 @@ body { background: #0E141B !important; }
             <span class="xr-pulse-dot"></span>
             <div class="xr-eyebrow" style="margin:0;">Current Status</div>
           </div>
-          <p style="color:var(--xr-text-2);font-size:14.5px;line-height:1.7;margin:0;">Our Great Basin lithium model is a prototype that reaches 95% recall and 80% precision at 1×1 km cells. Next on our roadmap: customer discovery with mining companies, finer models, and field validation against real boreholes.</p>
+          <p style="color:var(--xr-text-2);font-size:14.5px;line-height:1.7;margin:0;">Our Great Basin lithium model is a prototype that reaches 95% recall and 80% precision at 1×1&nbsp;km cells. Next on our roadmap: customer discovery with mining companies, finer models, and field validation against real boreholes.</p>
         </div>
       </div>
 

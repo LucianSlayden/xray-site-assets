@@ -61,6 +61,7 @@
       bullets.style.removeProperty('visibility');
       bullets.style.removeProperty('opacity');
       if (window.gsap) gsap.set(content, { clearProps: 'transform,opacity,visibility' });
+      window.__xrHeroReady = true;
     };
 
     if (!window.gsap) { staticHero('GSAP missing'); return; }
@@ -463,6 +464,7 @@
     });
 
     window.__xrHero = { get state() { return state; }, get held() { return held; }, position };
+    window.__xrHeroReady = true;
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });

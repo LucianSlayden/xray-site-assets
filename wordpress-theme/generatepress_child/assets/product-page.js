@@ -222,6 +222,7 @@
     document.querySelectorAll('.pdt-lede,.pdt-cta-row,.pdt-hero-stats,.pdt-output-panel,#pdt-op').forEach(function (el) { el.style.opacity = '1'; el.style.transform = 'none'; });
     document.querySelectorAll('.pdt-arch-card,.pdt-proof-stat,.pdt-proof-quote,.pdt-status-row').forEach(function (el) { el.style.opacity = '1'; el.style.transform = 'none'; });
     document.querySelectorAll('.pdt-op-bar-fill[data-w]').forEach(function (el) { el.style.width = el.dataset.w + '%'; });
+    window.__xrPageReady = true;
     return;
   }
 
@@ -249,4 +250,5 @@
   ScrollTrigger.batch('.pdt-status-row', { start: 'top 88%', onEnter: function (b) { gsap.to(b, { opacity: 1, x: 0, stagger: 0.10, duration: 0.65, ease: 'power2.out' }); } });
   // .xr-reveal elements are revealed by xray-anim.js (CSS transition); a GSAP
   // tween on the same properties made the two fight, so it was removed.
+  window.__xrPageReady = true;
 }());

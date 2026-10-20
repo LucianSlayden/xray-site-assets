@@ -25,7 +25,16 @@ document.documentElement.classList.add('xr-js');
 window.addEventListener('load', function () {
   setTimeout(function () {
     var needGsap = document.querySelector('script[src*="gsap.min.js"]');
-    if (window.__xrAnimReady && (!needGsap || window.gsap)) return;
+    // Pages whose own script reveals content report in with __xrPageReady.
+    var needPage = document.querySelector('script[src*="about-us-page.js"], script[src*="product-page.js"]');
+    // The Home hero lists its labels under the headline if its script never ran.
+    var hero = document.querySelector('.xr-hero');
+    if (hero && !window.__xrHeroReady) {
+      hero.classList.add('is-static');
+      var heroBullets = hero.querySelector('.xr-hero-bullets');
+      if (heroBullets) heroBullets.classList.add('in');
+    }
+    if (window.__xrAnimReady && (!needGsap || window.gsap) && (!needPage || window.__xrPageReady)) return;
     document.documentElement.classList.add('xr-fallback');
     document.querySelectorAll('main *, .site-content *, article *').forEach(function (el) {
       if (el.closest('.xr-nav-mobile, .xr-hero-bullet-body, [role="tooltip"], [aria-hidden="true"]')) return;

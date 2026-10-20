@@ -163,7 +163,7 @@
   })();
 
   /* ── 2. GSAP HERO REVEAL + SCROLL TRIGGERS ─────────────────────────── */
-  if (typeof gsap !== 'undefined') {
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
 
     if (!reducedMotion) {

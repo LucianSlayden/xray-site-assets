@@ -116,7 +116,7 @@ body { background: #060c12 !important; }
         <div class="iv-section-label">01 · The Opportunity</div>
         <h2 class="iv-section-h2" style="max-width:860px;">A <strong>$2.5B/year</strong> target-generation market, and discoveries are falling.</h2>
         <p class="iv-section-lead" style="margin-top:16px;margin-bottom:0;">
-          New mineral discoveries fell from a peak of 202 in 2009 to roughly 80 in 2023, while lithium demand is projected to grow 2.5x from 2024 to 2030. Explorers spend $30,000 to $90,000 a year per project on target generation, and at the high end only one in 200 drill projects leads to a new mine site discovery. Target generation, deciding where to drill, is the slice X-Ray serves.
+          New mineral discoveries fell from a peak of 202 in 2009 to roughly 80 in 2023, while lithium demand is projected to grow 2.5x from 2024 to 2030. Explorers spend $30,000 to $90,000 a year per project on target generation, and at the high end only one in 200 drill projects leads to a new mine site discovery. Target generation, deciding where to drill, is the slice <span class="xr-nobreak">X-Ray</span> serves.
         </p>
       </div>
 
@@ -152,7 +152,7 @@ body { background: #060c12 !important; }
 
       <div class="iv-insight xr-reveal xr-d2">
         <div class="iv-insight-pin" aria-hidden="true"></div>
-        <p>The biggest question in mining is <strong>where to dig</strong>. Explorers already spend heavily on target generation, which leaves room for a software subscription to grow as X-Ray builds credibility in the industry.</p>
+        <p>The biggest question in mining is <strong>where to dig</strong>. Explorers already spend heavily on target generation, which leaves room for a software subscription to grow as <span class="xr-nobreak">X-Ray</span> builds credibility in the industry.</p>
       </div>
     </div>
   </section>
@@ -169,18 +169,18 @@ body { background: #060c12 !important; }
       <div class="iv-traction-inner">
         <div class="xr-reveal xr-d1">
           <p style="color:var(--xr-text-2);font-size:17px;line-height:1.85;margin:0 0 22px;">
-            We have <strong style="color:var(--xr-text);">a prototype lithium model</strong> that covers the entire Great Basin at 1×1 km cells. It reaches <strong style="color:var(--xr-gold);">95% recall</strong>: out of every 100 known deposits, it finds 95 on average. Its 80% precision means roughly 80% of its predictions are lithium deposits.
+            We have <strong style="color:var(--xr-text);">a prototype lithium model</strong> that covers the entire Great Basin at 1×1&nbsp;km cells. It reaches <strong style="color:var(--xr-gold);">95% recall</strong>: out of every 100 known deposits, it finds 95 on average. Its 80% precision means roughly 80% of its predictions are lithium deposits.
           </p>
           <p style="color:var(--xr-text-2);font-size:17px;line-height:1.85;margin:0 0 22px;">
             The moat is our <em>data and proprietary featuresets</em>. We collected decades of cluttered geological data, cleaned and sorted it, and designed features in-house that indicate lithium mineralization. The same raw data would be useless to most AI models, and it would be costly and slow for competitors to replicate.
           </p>
           <p style="color:var(--xr-text-2);font-size:17px;line-height:1.85;margin:0 0 28px;">
-            The models are <strong style="color:var(--xr-text);">not commercially viable yet</strong>. We are raising funding to develop them down to <strong style="color:var(--xr-gold);">1×1 m precision</strong>, fine enough to place individual boreholes, alongside customer discovery with mining companies and field validation against real boreholes.
+            The models are <strong style="color:var(--xr-text);">not commercially viable yet</strong>. We are raising funding to develop them down to <strong style="color:var(--xr-gold);">1×1&nbsp;m precision</strong>, fine enough to place individual boreholes, alongside customer discovery with mining companies and field validation against real boreholes.
           </p>
           <div class="iv-tags">
             <span class="iv-tag iv-tag-gold">Prototype · Great Basin Lithium</span>
             <span class="iv-tag iv-tag-sky">Next · Finer models</span>
-            <span class="iv-tag iv-tag-dim">Goal · 1×1 m precision</span>
+            <span class="iv-tag iv-tag-dim">Goal · 1×1&nbsp;m precision</span>
           </div>
         </div>
 
@@ -298,14 +298,14 @@ body { background: #060c12 !important; }
           <div class="iv-tl-icon" aria-hidden="true"><?php echo xray_roadmap_art( 'prototype' ); ?></div>
           <div class="iv-tl-meta">Now · Prototype · Customer discovery</div>
           <h3 class="iv-tl-h3">Great Basin Lithium</h3>
-          <p class="iv-tl-p">Our lithium model covers the Great Basin at 1×1 km cells with 95% recall and 80% precision. Next is two rounds of customer interviews: first to validate the problem and how explorers decide where to drill today, then to learn what they want in the software.</p>
+          <p class="iv-tl-p">Our lithium model covers the Great Basin at 1×1&nbsp;km cells with 95% recall and 80% precision. Next is two rounds of customer interviews: first to validate the problem and how explorers decide where to drill today, then to learn what they want in the software.</p>
         </div>
 
         <div class="iv-tl-step dev">
           <div class="iv-tl-icon" aria-hidden="true"><?php echo xray_roadmap_art( 'finer' ); ?></div>
           <div class="iv-tl-meta">Next · Within a year</div>
           <h3 class="iv-tl-h3">Finer Models &amp; Federal Grants</h3>
-          <p class="iv-tl-p">Development toward 1×1 m precision for individual boreholes, and applications for SBIR and STTR grants to fund the work.</p>
+          <p class="iv-tl-p">Development toward 1×1&nbsp;m precision for individual boreholes, and applications for SBIR and STTR grants to fund the work.</p>
         </div>
 
         <div class="iv-tl-step dev">
@@ -318,7 +318,7 @@ body { background: #060c12 !important; }
         <div class="iv-tl-step long">
           <div class="iv-tl-icon" aria-hidden="true"><?php echo xray_roadmap_art( 'platform' ); ?></div>
           <div class="iv-tl-meta">Then · Software platform</div>
-          <h3 class="iv-tl-h3">The X-Ray Platform</h3>
+          <h3 class="iv-tl-h3">The <span class="xr-nobreak">X-Ray</span> Platform</h3>
           <p class="iv-tl-p">The software mining companies will use: their geologist teams import survey data and get ranked drill targets, a heat map, a 3D view of the target area and other geoanalysis tools.</p>
         </div>
 
@@ -335,7 +335,7 @@ body { background: #060c12 !important; }
 
 
   <!-- ═══════════════════════ 05 TEAM ═════════════════════════════════ -->
-  <section class="iv-section iv-team-sec">
+  <section class="iv-section iv-team-sec" id="iv-team">
     <div class="iv-container">
       <div class="xr-reveal" style="margin-bottom:12px;">
         <div class="iv-section-label">05 · Team</div>
