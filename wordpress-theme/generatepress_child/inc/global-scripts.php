@@ -26,7 +26,7 @@ window.addEventListener('load', function () {
   setTimeout(function () {
     var needGsap = document.querySelector('script[src*="gsap.min.js"]');
     // Pages whose own script reveals content report in with __xrPageReady.
-    var needPage = document.querySelector('script[src*="about-us-page.js"], script[src*="product-page.js"]');
+    var needPage = document.querySelector('script[src*="about-us-page.js"], script[src*="product-page.js"], script[src*="investors-page.js"]');
     // The Home hero lists its labels under the headline if its script never ran.
     var hero = document.querySelector('.xr-hero');
     if (hero && !window.__xrHeroReady) {
