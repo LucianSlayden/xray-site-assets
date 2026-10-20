@@ -801,7 +801,9 @@ body:has(.xr-hero, #pdt-bg-canvas, #iv-page-canvas, #ab-canvas)::after { display
 .xr-hero-hexmark { display: none; }
 
 @media (max-width: 980px) {
-  .xr-hero-pin { background: #000; }
+  /* Small viewport units: the pinned hero fits the screen with the browser toolbars showing. */
+  .xr-hero { min-height: calc(100svh + 300px); }
+  .xr-hero-pin { background: #000; height: calc(100svh - var(--xr-nav-h)); }
   .xr-hero-content-inner { padding: 0 28px; }
   .xr-hero-text { max-width: 100%; }
   /* The full frame sits as a 16:9 band at the bottom of the pinned hero;
@@ -860,7 +862,9 @@ body:has(.xr-hero, #pdt-bg-canvas, #iv-page-canvas, #ab-canvas)::after { display
 
   :is(.xr-hero.is-static, html:not(.xr-js) .xr-hero) .xr-hero-pin { min-height: 0; justify-content: flex-start; }
   :is(.xr-hero.is-static, html:not(.xr-js) .xr-hero) .xr-hero-video { position: relative; inset: auto; width: 100%; }
-  :is(.xr-hero.is-static, html:not(.xr-js) .xr-hero) .xr-hero-content { bottom: auto; padding: 40px 0 24px; }
+  :is(.xr-hero.is-static, html:not(.xr-js) .xr-hero) .xr-hero-content { bottom: auto; padding: 40px 0 28px; order: -1; }
+  /* Scrolling layout: headline first, then the video frame, then the labels; no fades over the frame. */
+  :is(.xr-hero.is-static, html:not(.xr-js) .xr-hero) :is(.xr-hero-fade, .xr-hero-fade-v) { display: none; }
   :is(.xr-hero.is-static, html:not(.xr-js) .xr-hero) .xr-hero-bullets { position: relative; inset: auto; display: flex; padding: 28px 22px 48px; }
 }
 @media (max-width: 980px) and (orientation: landscape) and (max-height: 520px) {

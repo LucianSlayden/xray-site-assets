@@ -71,6 +71,23 @@
       return;
     }
 
+    // Phones and tablets put the headline (then the label list) above a 16:9
+    // video band. On short screens (an iPhone with its toolbars, an SE) they
+    // don't fit, so use the scrolling layout instead of cutting them off.
+    // A few pixels of slack cover the web font swapping in after this check.
+    if (window.matchMedia && window.matchMedia('(max-width: 980px)').matches) {
+      const box = (el) => { const cs = getComputedStyle(el); return el.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom); };
+      const inner = content.firstElementChild;
+      const items = bullets.querySelectorAll('.xr-hero-bullet');
+      let labels = 0;
+      items.forEach((el) => { labels += el.offsetHeight; });
+      labels += (parseFloat(getComputedStyle(bullets).rowGap) || 0) * Math.max(0, items.length - 1);
+      if ((inner && inner.offsetHeight > box(content) - 12) || labels > box(bullets) - 12) {
+        staticHero('screen too short for the pinned intro');
+        return;
+      }
+    }
+
     // Always start a visit at the top so the animation begins from frame 0.
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 
