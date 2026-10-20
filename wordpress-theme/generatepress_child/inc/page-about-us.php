@@ -83,6 +83,9 @@ body { background: #060c12 !important; }
 .ab-hl > span { display: block; }
 #ab-lede { color: #A8B2C0; font-size: 17px; line-height: 1.8; margin: 20px 0 34px; max-width: 520px; }
 #ab-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+/* The outline button sits over the block model on phones: give it a backing so lines don't run through the label. */
+#ab-ctas .xr-btn-outline { background: rgba(6,12,18,0.72); }
+#ab-ctas .xr-btn-outline:hover { background: rgba(28,27,22,0.85); }
 
 /* Snapshot card */
 .ab-snap-card {
