@@ -93,7 +93,7 @@ add_action( 'generate_before_content', function() {
   </section>
 
   <!-- ═══════════════ COMPARISON ═══════════════ -->
-  <section class="pdt-cmp-sec">
+  <section class="pdt-cmp-sec" id="compare">
     <div class="xr-container">
       <div class="pdt-cmp-intro xr-reveal">
         <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>The Difference</span>
@@ -324,9 +324,11 @@ add_action( 'generate_before_content', function() {
 <circle cx="81.0" cy="27.0" r="1.8" fill="#F1F4F8"/>
 <circle cx="81.0" cy="73.0" r="1.8" fill="#F1F4F8"/>
 <circle cx="81.0" cy="119.0" r="1.8" fill="#F1F4F8"/>
-<path d="M85.0 73.0 H141" stroke="#F1F4F8" stroke-opacity=".6" stroke-width="1"/>
-<path d="M138 70.0 L142 73.0 L138 76.0" fill="none" stroke="#F1F4F8" stroke-opacity=".6" stroke-width="1"/>
-<rect x="146" y="59.0" width="16" height="8" fill="#8C7A4E"/>
+<path d="M84 27H128L136 63H143" fill="none" stroke="#A88456" stroke-width="1" stroke-linejoin="round"/>
+<path d="M84 73H143" fill="none" stroke="#6FB5E0" stroke-width="1"/>
+<path d="M84 119H128L136 83H143" fill="none" stroke="#E8B963" stroke-width="1" stroke-linejoin="round"/>
+<path d="M140.2 60.6L143.4 63 140.2 65.4M140.2 70.6L143.4 73 140.2 75.4M140.2 80.6L143.4 83 140.2 85.4" fill="none" stroke="#F1F4F8" stroke-opacity=".75" stroke-width=".9"/>
+<rect x="146" y="59.0" width="16" height="8" fill="#A88456"/>
 <rect x="146" y="69.0" width="16" height="8" fill="#6FB5E0"/>
 <rect x="146" y="79.0" width="16" height="8" fill="#E8B963"/>
 <path d="M165 59.0 h2 v28 h-2" fill="none" stroke="#F1F4F8" stroke-opacity=".5" stroke-width=".8"/>
@@ -508,7 +510,7 @@ add_action( 'generate_before_content', function() {
 <rect x="121.90" y="58.71" width="5.90" height="5.39" fill="#6FB5E0" fill-opacity="0.64"/>
 <rect x="101.40" y="39.75" width="26.80" height="24.75" fill="url(#trHatchP)"/>
 <rect x="99.90" y="38.25" width="29.80" height="27.75" fill="none" stroke="#6FB5E0" stroke-width="1.3" stroke-dasharray="3 2"/>
-<text x="114.80" y="35.75" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6" font-weight="700" letter-spacing=".8" fill="#6FB5E0">TEST</text>
+<rect x="101.3" y="30.6" width="27" height="10" fill="#0B121A" stroke="#6FB5E0" stroke-width=".7"/><text x="114.80" y="38.1" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.2" font-weight="700" letter-spacing=".6" fill="#6FB5E0">TEST</text>
 <rect x="131.60" y="40.15" width="5.90" height="5.39" fill="#E8B963" fill-opacity="0.34"/>
 <rect x="138.30" y="40.15" width="5.90" height="5.39" fill="#E8B963" fill-opacity="0.24"/>
 <rect x="145.00" y="40.15" width="5.90" height="5.39" fill="#E8B963" fill-opacity="0.15"/>

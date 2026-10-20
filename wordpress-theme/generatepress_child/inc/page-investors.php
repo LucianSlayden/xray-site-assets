@@ -278,7 +278,7 @@ body { background: #060c12 !important; }
 
 
   <!-- ═══════════════════════ 04 ROADMAP ══════════════════════════════ -->
-  <section class="iv-section iv-road">
+  <section class="iv-section iv-road" id="roadmap">
     <div class="iv-container">
       <div class="xr-reveal" style="margin-bottom:16px;">
         <div class="iv-section-label">04 · Roadmap</div>

@@ -342,14 +342,16 @@ add_action( 'generate_before_content', function() {
 <circle cx="81.0" cy="27.0" r="1.8" fill="#F1F4F8"/>
 <circle cx="81.0" cy="73.0" r="1.8" fill="#F1F4F8"/>
 <circle cx="81.0" cy="119.0" r="1.8" fill="#F1F4F8"/>
-<path d="M85.0 73.0 H141" stroke="#F1F4F8" stroke-opacity=".6" stroke-width="1"/>
-<path d="M138 70.0 L142 73.0 L138 76.0" fill="none" stroke="#F1F4F8" stroke-opacity=".6" stroke-width="1"/>
-<rect x="146" y="59.0" width="16" height="8" fill="#8C7A4E"/>
+<path d="M84 27H128L136 63H143" fill="none" stroke="#A88456" stroke-width="1" stroke-linejoin="round"/>
+<path d="M84 73H143" fill="none" stroke="#6FB5E0" stroke-width="1"/>
+<path d="M84 119H128L136 83H143" fill="none" stroke="#E8B963" stroke-width="1" stroke-linejoin="round"/>
+<path d="M140.2 60.6L143.4 63 140.2 65.4M140.2 70.6L143.4 73 140.2 75.4M140.2 80.6L143.4 83 140.2 85.4" fill="none" stroke="#F1F4F8" stroke-opacity=".75" stroke-width=".9"/>
+<rect x="146" y="59.0" width="16" height="8" fill="#A88456"/>
 <rect x="146" y="69.0" width="16" height="8" fill="#6FB5E0"/>
 <rect x="146" y="79.0" width="16" height="8" fill="#E8B963"/>
 <path d="M165 59.0 h2 v28 h-2" fill="none" stroke="#F1F4F8" stroke-opacity=".5" stroke-width=".8"/>
 </svg>
-            <figcaption><span>Remote sensing</span><span>Geophysics</span><span>Geochemistry</span></figcaption>
+            <figcaption><span class="k-rs">Remote sensing</span><span class="k-gp">Geophysics</span><span class="k-gc">Geochemistry</span></figcaption>
           </figure>
           <p>Geochemistry, geophysics, remote sensing and other surveys are cleaned and aligned to one grid, so every cell carries the same set of features.</p>
         </li>
@@ -527,7 +529,7 @@ add_action( 'generate_before_content', function() {
 <rect x="121.90" y="58.71" width="5.90" height="5.39" fill="#6FB5E0" fill-opacity="0.64"/>
 <rect x="101.40" y="39.75" width="26.80" height="24.75" fill="url(#trHatch)"/>
 <rect x="99.90" y="38.25" width="29.80" height="27.75" fill="none" stroke="#6FB5E0" stroke-width="1.3" stroke-dasharray="3 2"/>
-<text x="114.80" y="35.75" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6" font-weight="700" letter-spacing=".8" fill="#6FB5E0">TEST</text>
+<rect x="101.3" y="30.6" width="27" height="10" fill="#0B121A" stroke="#6FB5E0" stroke-width=".7"/><text x="114.80" y="38.1" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.2" font-weight="700" letter-spacing=".6" fill="#6FB5E0">TEST</text>
 <rect x="131.60" y="40.15" width="5.90" height="5.39" fill="#E8B963" fill-opacity="0.34"/>
 <rect x="138.30" y="40.15" width="5.90" height="5.39" fill="#E8B963" fill-opacity="0.24"/>
 <rect x="145.00" y="40.15" width="5.90" height="5.39" fill="#E8B963" fill-opacity="0.15"/>
@@ -740,7 +742,11 @@ add_action( 'generate_before_content', function() {
         <li class="pipe2-step">
           <div class="pipe2-head"><span class="pipe2-num">03</span><h3>Predict</h3></div>
           <figure class="pipe2-art pipe2-art-map">
-            <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/model-run-heatmap.webp?ver=' . filemtime( get_stylesheet_directory() . '/assets/img/model-run-heatmap.webp' ) ); ?>" alt="Lithium prospectivity map from a recent model run across the Great Basin" loading="lazy" width="1168" height="1128">
+            <div class="pipe2-map"><div class="pipe2-map-in">
+              <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/model-run-heatmap.webp?ver=' . filemtime( get_stylesheet_directory() . '/assets/img/model-run-heatmap.webp' ) ); ?>" alt="Lithium prospectivity map from a recent model run across the Great Basin, with its three largest high-scoring areas circled" loading="lazy" width="1168" height="1128">
+              <?php // Rings sit on the three largest clusters of high-scoring cells in this model run, sized to each cluster, numbered by size. ?>
+              <span class="pipe2-tgts" aria-hidden="true"><span class="pipe2-tgt" style="--x:23.1%;--y:61.2%;--s:14%"><b>01</b></span><span class="pipe2-tgt" style="--x:43.1%;--y:57%;--s:7.5%"><b>02</b></span><span class="pipe2-tgt" style="--x:26.7%;--y:33.7%;--s:6.5%"><b>03</b></span></span>
+            </div></div>
             <figcaption><span>Low</span><i aria-hidden="true"></i><span>High</span></figcaption>
           </figure>
           <p>Every cell gets a prospectivity score. The highest-ranked ground is then analysed further to narrow the search to the strongest drill targets.</p>
@@ -857,7 +863,7 @@ add_action( 'generate_before_content', function() {
       </ol>
 
       <div class="xr-reveal xr-d2" style="text-align:center;margin-top:48px;">
-        <a href="<?php echo esc_url( home_url( '/investors/' ) ); ?>" class="xr-btn xr-btn-ghost">See the roadmap <span class="xr-arrow" aria-hidden="true">→</span></a>
+        <a href="<?php echo esc_url( home_url( '/investors/#roadmap' ) ); ?>" class="xr-btn xr-btn-ghost">See the roadmap <span class="xr-arrow" aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
@@ -907,7 +913,7 @@ add_action( 'generate_before_content', function() {
       </div>
 
       <div class="xr-reveal" style="text-align:center;margin-top:40px;">
-        <a href="<?php echo esc_url( home_url( '/product/' ) ); ?>" class="xr-btn xr-btn-ghost">See how we compare <span class="xr-arrow" aria-hidden="true">→</span></a>
+        <a href="<?php echo esc_url( home_url( '/product/#compare' ) ); ?>" class="xr-btn xr-btn-ghost">See how we compare <span class="xr-arrow" aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>

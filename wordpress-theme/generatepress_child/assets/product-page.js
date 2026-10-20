@@ -1,6 +1,6 @@
 /* X-Ray Geoanalytics — Product Page
-   Canvas: Three-Layer Geological Scanner + GSAP scroll animations
-   Enqueue with dependency: ['gsap-st']
+   Canvas: Three-Layer Geological Scanner + GSAP hero entrance
+   Enqueue with dependency: ['gsap']
 */
 
 /* ══ Three-Layer Geological Scanner ════════════════════════════════════ */
@@ -217,16 +217,12 @@
 /* ══ GSAP animations ════════════════════════════════════════════════════ */
 (function () {
   // Reduced motion, or GSAP failed to load: show everything at rest.
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !window.gsap || !window.ScrollTrigger) {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !window.gsap) {
     document.querySelectorAll('.pdt-hw-inner').forEach(function (el) { el.style.transform = 'translateY(0)'; });
     document.querySelectorAll('.pdt-lede,.pdt-cta-row,.pdt-hero-stats,.pdt-output-panel,#pdt-op').forEach(function (el) { el.style.opacity = '1'; el.style.transform = 'none'; });
-    document.querySelectorAll('.pdt-arch-card,.pdt-proof-stat,.pdt-proof-quote,.pdt-status-row').forEach(function (el) { el.style.opacity = '1'; el.style.transform = 'none'; });
-    document.querySelectorAll('.pdt-op-bar-fill[data-w]').forEach(function (el) { el.style.width = el.dataset.w + '%'; });
     window.__xrPageReady = true;
     return;
   }
-
-  gsap.registerPlugin(ScrollTrigger);
 
   var tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
   tl.from('.pdt-eyebrow-wrap .xr-eyebrow', { y: 22, opacity: 0, duration: 0.6 })
@@ -236,19 +232,7 @@
     .to('.pdt-hero-stats',  { opacity: 1, y: 0, duration: 0.6,  ease: 'power2.out' }, '-=0.45')
     .to('#pdt-op',          { opacity: 1, y: 0, duration: 0.9,  ease: 'power2.out' }, '-=0.55');
 
-  tl.add(function () {
-    document.querySelectorAll('.pdt-op-bar-fill[data-w]').forEach(function (el, i) {
-      setTimeout(function () { el.style.width = el.dataset.w + '%'; }, i * 120 + 200);
-    });
-  });
-
-  ScrollTrigger.batch('.pdt-arch-card',  { start: 'top 86%', onEnter: function (b) { gsap.to(b, { opacity: 1, y: 0, stagger: 0.15, duration: 0.70, ease: 'power2.out' }); } });
-  ScrollTrigger.batch('.pdt-proof-stat', { start: 'top 88%', onEnter: function (b) { gsap.to(b, { opacity: 1, y: 0, stagger: 0.12, duration: 0.68, ease: 'power2.out' }); } });
-  if (document.querySelector('.pdt-proof-quote')) {
-    ScrollTrigger.create({ trigger: '.pdt-proof-quote', start: 'top 88%', onEnter: function () { gsap.to('.pdt-proof-quote', { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }); } });
-  }
-  ScrollTrigger.batch('.pdt-status-row', { start: 'top 88%', onEnter: function (b) { gsap.to(b, { opacity: 1, x: 0, stagger: 0.10, duration: 0.65, ease: 'power2.out' }); } });
-  // .xr-reveal elements are revealed by xray-anim.js (CSS transition); a GSAP
+  // Sections below the hero (.xr-reveal) are revealed by xray-anim.js (CSS transition); a GSAP
   // tween on the same properties made the two fight, so it was removed.
   window.__xrPageReady = true;
 }());
