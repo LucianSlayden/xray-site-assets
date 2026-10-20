@@ -60,7 +60,7 @@ body { background: #0E141B !important; }
 .step-item .desc  { color: var(--xr-text-2); font-size: 14.5px; line-height: 1.7; }
 
 .status-block {
-    padding: 24px 28px; background: var(--xr-card);
+    padding: 24px 28px; background: rgba(22,29,39,0.94);
     border: 1px solid rgba(232,185,99,0.28); border-radius: 2px;
     position: relative; overflow: hidden;
 }
@@ -177,20 +177,20 @@ body { background: #0E141B !important; }
           </div>
         </div>
 
-        <div class="form-grid-2">
-          <div>
-            <label for="company">Company <span style="text-transform:none;letter-spacing:0;">(optional)</span></label>
-            <input type="text" id="company" name="company" placeholder="Acme Exploration Inc." autocomplete="organization">
-          </div>
-          <div>
-            <label for="interest">I'm interested as</label>
-            <select id="interest" name="interest">
-              <option value="Mining or exploration company">A mining or exploration company</option>
-              <option value="Investor">An investor</option>
-              <option value="Partner or researcher">A partner or researcher</option>
-              <option value="Other">Something else</option>
-            </select>
-          </div>
+        <div class="form-row">
+          <label for="company">Company <span style="text-transform:none;letter-spacing:0;">(optional)</span></label>
+          <input type="text" id="company" name="company" placeholder="Acme Exploration Inc." autocomplete="organization">
+        </div>
+
+        <!-- Full width so the longest choice is never cut off. -->
+        <div class="form-row">
+          <label for="interest">I'm interested as</label>
+          <select id="interest" name="interest">
+            <option value="Mining or exploration company">A mining or exploration company</option>
+            <option value="Investor">An investor</option>
+            <option value="Partner or researcher">A partner or researcher</option>
+            <option value="Other">Something else</option>
+          </select>
         </div>
 
         <div class="form-row">

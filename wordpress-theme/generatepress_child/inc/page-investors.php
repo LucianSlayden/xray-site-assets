@@ -232,7 +232,7 @@ body { background: #060c12 !important; }
             <div class="iv-stack-arrow">↑ Validation ↑</div>
             <div class="iv-stack-row">
               <span class="iv-stack-idx">05</span>
-              <div class="iv-stack-lbl">Cross-validated<small>Spatial block · Repeated stratified k-fold · Leave-one-out</small></div>
+              <div class="iv-stack-lbl">Cross-validated<small>Spatial block · Repeated stratified <span class="xr-nobreak">k-fold</span> · <span class="xr-nobreak">Leave-one-out</span></small></div>
               <span class="iv-stack-v">3 methods</span>
             </div>
           </div>
