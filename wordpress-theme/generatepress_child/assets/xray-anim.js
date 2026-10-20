@@ -6,11 +6,13 @@
 
 (function () {
   'use strict';
-  window.__xrAnimReady = true;
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ─── 1. REVEAL ON SCROLL ─────────────────────────────────────────────
   const revealEls = document.querySelectorAll('.xr-reveal');
-  if (revealEls.length) {
+  if (revealEls.length && !('IntersectionObserver' in window)) {
+    revealEls.forEach((el) => el.classList.add('in'));
+  } else if (revealEls.length) {
     const obs = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -21,6 +23,8 @@
     }, { threshold: 0.08, rootMargin: '0px 0px -56px 0px' });
     revealEls.forEach((el) => obs.observe(el));
   }
+  // Reveals are wired up; the safety net in global-scripts.php can stand down.
+  window.__xrAnimReady = true;
 
   // ─── 2. NUMERIC COUNTERS ─────────────────────────────────────────────
   function animateCount(el) {
@@ -40,7 +44,8 @@
     }
     requestAnimationFrame(tick);
   }
-  const countEls = document.querySelectorAll('[data-target]');
+  // Reduced motion: keep the final values the server printed.
+  const countEls = reduceMotion || !('IntersectionObserver' in window) ? [] : document.querySelectorAll('[data-target]');
   if (countEls.length) {
     const countObs = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -96,7 +101,15 @@
     toggle.addEventListener('click', () => setOpen(!mobile.classList.contains('open')));
     mobile.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && mobile.classList.contains('open')) setOpen(false, true);
+      if (!mobile.classList.contains('open')) return;
+      if (e.key === 'Escape') { setOpen(false, true); return; }
+      // Keep Tab inside the open menu (toggle plus its links); the page behind is hidden.
+      if (e.key === 'Tab') {
+        const links = mobile.querySelectorAll('a');
+        const last = links[links.length - 1];
+        if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); toggle.focus(); }
+        else if (e.shiftKey && document.activeElement === toggle) { e.preventDefault(); last.focus(); }
+      }
     });
     document.addEventListener('click', (e) => {
       if (mobile.classList.contains('open') && !mobile.contains(e.target) && !toggle.contains(e.target)) setOpen(false);

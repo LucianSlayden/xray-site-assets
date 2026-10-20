@@ -187,8 +187,9 @@ a { color: inherit; text-decoration: none; }
 .xr-btn-gold:hover { background: #f0c878; transform: translateY(-2px); box-shadow: 0 10px 32px rgba(232,185,99,0.32), 0 2px 8px rgba(0,0,0,0.4); }
 .xr-btn-gold:active { transform: translateY(0); }
 .xr-btn-gold:focus-visible { outline: 2px solid #f0c878; outline-offset: 3px; }
-.xr-btn-outline { background: transparent; color: var(--xr-gold); border: 1px solid rgba(232,185,99,0.45); }
-.xr-btn-outline:hover { border-color: var(--xr-gold); background: rgba(232,185,99,0.07); transform: translateY(-2px); }
+/* A dark fill, so animated backgrounds (Product waves, About block model) never run through the label. */
+.xr-btn-outline { background: rgba(11,17,24,0.72); color: var(--xr-gold); border: 1px solid rgba(232,185,99,0.45); }
+.xr-btn-outline:hover { border-color: var(--xr-gold); background: linear-gradient(rgba(232,185,99,0.07), rgba(232,185,99,0.07)), rgba(11,17,24,0.82); transform: translateY(-2px); }
 .xr-btn-outline:focus-visible { outline: 2px solid var(--xr-gold); outline-offset: 3px; }
 /* The gold button gets the same 1px border box as the outline one, so a
    pair always lines up at the same height. (The nav button keeps its own
@@ -220,16 +221,6 @@ a { color: inherit; text-decoration: none; }
 .xr-brand { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
 .xr-brand img { height: 44px; width: auto; }
 .xr-brand img.xr-brand-logo { height: 50px; }
-.xr-brand-wordmark {
-  font-family: var(--xr-font-mono);
-  font-weight: 600;
-  font-size: 17px;
-  letter-spacing: 0.04em;
-  color: var(--xr-text);
-  white-space: nowrap;
-  text-transform: none;
-}
-.xr-brand-wordmark .accent { color: var(--xr-gold); }
 
 .xr-nav-list { display: flex; align-items: center; gap: 32px; }
 .xr-nav-link, .xr-nav-btn {
@@ -239,34 +230,6 @@ a { color: inherit; text-decoration: none; }
   transition: color .18s var(--xr-ease);
 }
 .xr-nav-link:hover, .xr-nav-btn:hover { color: var(--xr-gold); }
-.xr-nav-chev { width: 12px; height: 12px; stroke: currentColor; stroke-width: 2.5; fill: none; margin-top: 2px; transition: transform .18s var(--xr-ease); }
-.xr-nav-item { position: relative; padding: 12px 0; }
-.xr-nav-item:hover .xr-nav-chev { transform: rotate(180deg); }
-.xr-nav-drop {
-  position: absolute; top: calc(100% + 8px); left: -16px;
-  min-width: 220px; padding: 8px 0;
-  background: rgba(22, 29, 39, 0.96);
-  border: 1px solid rgba(232,185,99,0.22);
-  border-radius: 3px;
-  backdrop-filter: blur(16px);
-  box-shadow: 0 24px 64px rgba(0,0,0,0.6), 0 4px 16px rgba(0,0,0,0.3);
-  opacity: 0; visibility: hidden; transform: translateY(-6px);
-  transition: opacity .18s var(--xr-ease), visibility .18s var(--xr-ease), transform .18s var(--xr-ease);
-}
-.xr-nav-item:hover .xr-nav-drop,
-.xr-nav-item:focus-within .xr-nav-drop { opacity: 1; visibility: visible; transform: translateY(0); }
-.xr-nav-drop a {
-  display: flex; align-items: center; gap: 10px;
-  padding: 12px 20px; font-size: 14.5px; color: var(--xr-text-2);
-  transition: color .14s var(--xr-ease), background .14s var(--xr-ease);
-}
-.xr-nav-drop a::before {
-  content: ''; width: 6px; height: 7px; background: rgba(232,185,99,0.4);
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  flex-shrink: 0; transition: background .14s var(--xr-ease);
-}
-.xr-nav-drop a:hover { color: var(--xr-gold); background: rgba(232,185,99,0.06); }
-.xr-nav-drop a:hover::before { background: var(--xr-gold); }
 
 .xr-nav-cta { padding: 11px 22px; font-size: 14.5px; }
 
@@ -277,7 +240,6 @@ a { color: inherit; text-decoration: none; }
 .xr-nav-link:focus-visible { outline: 2px solid var(--xr-gold); outline-offset: 5px; border-radius: 2px; }
 .xr-nav-list .xr-nav-cta.is-current { background: #f0c878; box-shadow: inset 0 -2px 0 rgba(14,20,27,0.35); }
 .xr-nav-list .xr-nav-cta { padding: 14px 28px 12px; font-size: 17px; } /* 1px low: label baseline level with the links */
-.xr-nav-mobile a { font-size: 19px; }
 
 /* Mobile nav toggle — hidden on desktop, surfaced via media query */
 .xr-nav-toggle { display: none; }
@@ -287,11 +249,11 @@ a { color: inherit; text-decoration: none; }
   background: rgba(14,20,27,0.98);
   backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(232,185,99,0.2);
-  padding: 24px; flex-direction: column; gap: 14px;
+  padding: 24px 28px; flex-direction: column; gap: 14px;
   z-index: 99;
 }
 .xr-nav-mobile a, .xr-nav-mobile button {
-  color: var(--xr-text); font-size: 17px; text-align: left;
+  color: var(--xr-text); font-size: 19px; text-align: left;
   padding: 10px 0; border: none; background: none;
   border-bottom: 1px solid rgba(232,185,99,0.1);
 }
@@ -300,7 +262,6 @@ a { color: inherit; text-decoration: none; }
   :root { --xr-nav-h: 68px; }
   .xr-brand img { height: 36px; }
   .xr-brand img.xr-brand-logo { height: 42px; }
-  .xr-brand-wordmark { font-size: 14px; }
   .xr-nav-list { display: none; }
   .xr-nav-toggle {
     display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;
@@ -320,7 +281,10 @@ a { color: inherit; text-decoration: none; }
     justify-content: center; margin-top: 10px; padding: 14px 24px; border-bottom: 0;
     background: var(--xr-gold); color: var(--xr-void); font-weight: 700; text-align: center;
   }
+  .xr-nav-mobile a.xr-btn-gold { max-width: 420px; }
   html.xr-menu-open, html.xr-menu-open body { overflow: hidden; }
+  /* Without JavaScript the menu button can't open anything; the footer carries the links. */
+  html:not(.xr-js) .xr-nav-toggle { display: none; }
 }
 
 /* ────────────────────────────────────────── TOPOGRAPHIC BACKGROUND ─────── */
@@ -924,10 +888,19 @@ body:has(.xr-hero, #pdt-bg-canvas, #iv-page-canvas, #ab-canvas)::after { display
   padding: 72px 0 36px;
   overflow: hidden;
   border-top: 1px solid rgba(232,185,99,0.18);
-  /* Same 4K file as the Home parallax and Learn More hero, so it is usually already cached. */
+  /* Home uses the same 4K file as its parallax strip (already cached); elsewhere the
+     2560 copy is plenty for a painting shown at 3-12% strength. */
   /* Lighter top gradient — the mountain reads through so there's
      visual continuity from the parallax section. Heavier toward the
      bottom so the directory text stays sharp. */
+  /* Other pages end on dark sections, so the painting fades in from a dark
+     top instead of starting as a lighter band with a hard edge. */
+  background:
+    linear-gradient(180deg, rgba(14,20,27,0.97) 0%, rgba(14,20,27,0.88) 55%, rgba(14,20,27,0.95) 100%),
+    url("img/bg-landscape-2560.webp") center bottom / cover no-repeat,
+    var(--xr-deep);
+}
+body.home .xr-footer {
   background:
     linear-gradient(180deg, rgba(14,20,27,0.78) 0%, rgba(14,20,27,0.92) 55%, rgba(14,20,27,0.98) 100%),
     url("img/bg-landscape-4k.webp") center bottom / cover no-repeat,
@@ -936,14 +909,6 @@ body:has(.xr-hero, #pdt-bg-canvas, #iv-page-canvas, #ab-canvas)::after { display
 .xr-footer::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
   background: linear-gradient(90deg, transparent, rgba(232,185,99,0.4), transparent);
-}
-.xr-footer-strip {
-  position: absolute; top: 0; left: 0; right: 0; height: 6px;
-  background-image:
-    linear-gradient(to right, rgba(14,20,27,0.95), transparent 12%, transparent 88%, rgba(14,20,27,0.95)),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 6'%3E%3Cpath d='M0 3 Q60 1 120 3 T240 3 T360 3 T480 3 T600 3 T720 3 T800 3' fill='none' stroke='%23E8B963' stroke-opacity='0.45' stroke-width='1'/%3E%3C/svg%3E");
-  background-size: cover, 800px 6px;
-  opacity: 0.7;
 }
 .xr-footer-inner {
   max-width: var(--xr-max-w); margin: 0 auto; padding: 0 28px;
@@ -966,7 +931,7 @@ body:has(.xr-hero, #pdt-bg-canvas, #iv-page-canvas, #ab-canvas)::after { display
   color: var(--xr-text-2); font-size: 15px; line-height: 1.75;
   margin: 0 0 22px; max-width: 320px;
 }
-.xr-footer-contact { display: flex; flex-direction: column; gap: 10px; }
+.xr-footer-contact { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
 .xr-footer-contact a {
   color: var(--xr-text-2);
   font-family: var(--xr-font-mono);
@@ -976,7 +941,6 @@ body:has(.xr-hero, #pdt-bg-canvas, #iv-page-canvas, #ab-canvas)::after { display
   transition: color .15s var(--xr-ease);
 }
 .xr-footer-contact a:hover { color: var(--xr-gold); }
-.xr-footer-contact a svg { width: 14px; height: 14px; stroke: currentColor; stroke-width: 1.6; fill: none; flex-shrink: 0; }
 
 .xr-footer h3, .xr-footer h4 {
   font-family: var(--xr-font-mono); color: var(--xr-gold);
@@ -997,9 +961,10 @@ body:has(.xr-hero, #pdt-bg-canvas, #iv-page-canvas, #ab-canvas)::after { display
   padding-top: 28px;
   border-top: 1px solid rgba(232,185,99,0.12);
 }
-/* Equal-growing side texts keep the icons on the page centre line when
-   there is room, and never wrap the copyright line when there isn't. */
-.xr-footer-bottom > p { flex: 1 1 0; min-width: max-content; }
+/* Wide screens: equal side columns keep the icons on the page centre line. */
+@media (min-width: 981px) {
+  .xr-footer-bottom { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); }
+}
 .xr-footer-bottom > p:last-child { text-align: right; }
 /* Use --xr-text-2 (rather than the more-muted --xr-text-muted) so 13.5 px
    small text still clears WCAG AA 4.5:1 against the --xr-void background. */
@@ -1022,7 +987,6 @@ body:has(.xr-hero, #pdt-bg-canvas, #iv-page-canvas, #ab-canvas)::after { display
   .xr-footer-grid, .xr-footer-grid.xr-footer-grid-slim { grid-template-columns: 1fr 1fr; gap: 36px; }
   .xr-footer-grid-slim > div:first-child { grid-column: 1 / -1; }
   .xr-footer-bottom { flex-direction: column; align-items: flex-start; }
-  .xr-footer-bottom > p { flex: none; min-width: 0; }
   .xr-footer-bottom > p:last-child { text-align: left; }
 }
 @media (max-width: 560px) {
@@ -1867,6 +1831,9 @@ body:has(.xr-hero, #pdt-bg-canvas, #iv-page-canvas, #ab-canvas)::after { display
       transition:color .18s, border-color .18s;
     }
     .pdt-op-view-all:hover { color:#fff; border-color:rgba(255,255,255,.4); }
+    /* A 44px tap area around the small link, without moving its underline. */
+    .pdt-op-view-all { position:relative; }
+    .pdt-op-view-all::after { content:''; position:absolute; inset:-13px -8px; }
 
     /* ─── Comparison Section ─────────────────────────────── */
     .pdt-cmp-sec {
@@ -1935,7 +1902,7 @@ body:has(.xr-hero, #pdt-bg-canvas, #iv-page-canvas, #ab-canvas)::after { display
     .pdt-cmp-label {
       font-family:var(--xr-font-mono); font-size:10.5px;
       letter-spacing:.12em; text-transform:uppercase;
-      color:var(--xr-text-muted); flex-shrink:0; min-width:100px;
+      color:#8A96A6; flex-shrink:0; min-width:100px; /* 4.9:1 on the --xr-mid table */
     }
     .pdt-cmp-val {
       font-family:var(--xr-font-display); font-weight:700;

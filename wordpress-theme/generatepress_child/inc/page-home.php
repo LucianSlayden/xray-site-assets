@@ -43,7 +43,7 @@ add_action( 'generate_before_content', function() {
 
             <div class="xr-hero-cta">
               <a href="<?php echo esc_url( home_url( '/learn-more/' ) ); ?>" class="xr-btn xr-btn-gold">Learn More</a>
-              <a href="<?php echo esc_url( home_url( '/product/' ) ); ?>" class="xr-btn xr-btn-outline">See the Product <span class="xr-arrow">→</span></a>
+              <a href="<?php echo esc_url( home_url( '/product/' ) ); ?>" class="xr-btn xr-btn-outline">See the Product <span class="xr-arrow" aria-hidden="true">→</span></a>
             </div>
           </div>
         </div>
@@ -769,7 +769,7 @@ add_action( 'generate_before_content', function() {
         <p style="color:var(--xr-text-2);font-size:17px;line-height:1.8;margin:0 0 18px;">Our Nevada lithium prospectivity model recovers <strong style="color:var(--xr-text);">39%</strong> of known deposits in the <strong style="color:var(--xr-text);">top 1%</strong> of ranked ground, which is 39x more effective than a uniform search. The model is trained on deposit and geochemistry/geophysics data across 19,000 grid cells, validated under spatial cross-validation, and built on a five-model ensemble.</p>
         <p style="color:var(--xr-text-2);font-size:17px;line-height:1.8;margin:0 0 32px;">We work with clients in <strong style="color:var(--xr-text);">two ways:</strong> annual platform subscription services and individual project engagement. Annual platform access is best for active exploration programs running ongoing target work, while individual project terms are tailored to fit the engagement.</p>
 
-        <a href="<?php echo esc_url( home_url( '/product/' ) ); ?>" class="xr-btn xr-btn-outline">Explore the Product <span class="xr-arrow">→</span></a>
+        <a href="<?php echo esc_url( home_url( '/product/' ) ); ?>" class="xr-btn xr-btn-outline">Explore the Product <span class="xr-arrow" aria-hidden="true">→</span></a>
       </div>
 
       <!-- Lift panel: how many known deposits the top 1% of ranked ground recovers,
@@ -857,7 +857,7 @@ add_action( 'generate_before_content', function() {
       </ol>
 
       <div class="xr-reveal xr-d2" style="text-align:center;margin-top:48px;">
-        <a href="<?php echo esc_url( home_url( '/investors/' ) ); ?>" class="xr-btn xr-btn-ghost">See the roadmap <span class="xr-arrow">→</span></a>
+        <a href="<?php echo esc_url( home_url( '/investors/' ) ); ?>" class="xr-btn xr-btn-ghost">See the roadmap <span class="xr-arrow" aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
@@ -907,7 +907,7 @@ add_action( 'generate_before_content', function() {
       </div>
 
       <div class="xr-reveal" style="text-align:center;margin-top:40px;">
-        <a href="<?php echo esc_url( home_url( '/product/' ) ); ?>" class="xr-btn xr-btn-ghost">See how we compare <span class="xr-arrow">→</span></a>
+        <a href="<?php echo esc_url( home_url( '/product/' ) ); ?>" class="xr-btn xr-btn-ghost">See how we compare <span class="xr-arrow" aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
@@ -922,7 +922,7 @@ add_action( 'generate_before_content', function() {
       </p>
       <div class="xr-reveal xr-d3 xr-btn-row">
         <a href="<?php echo esc_url( home_url( '/learn-more/' ) ); ?>" class="xr-btn xr-btn-gold" style="font-size:16px;padding:16px 36px;">Learn More</a>
-        <a href="<?php echo esc_url( home_url( '/product/' ) ); ?>" class="xr-btn xr-btn-outline" style="font-size:16px;padding:16px 36px;">See the Product <span class="xr-arrow">→</span></a>
+        <a href="<?php echo esc_url( home_url( '/product/' ) ); ?>" class="xr-btn xr-btn-outline" style="font-size:16px;padding:16px 36px;">See the Product <span class="xr-arrow" aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>

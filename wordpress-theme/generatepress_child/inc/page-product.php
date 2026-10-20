@@ -26,7 +26,7 @@ add_action( 'generate_before_content', function() {
           <p class="pdt-lede">New mineral discoveries have fallen from 202 in 2009 to about 80 in 2023, because most of the easy deposits have already been found. Our machine learning models process more data and weigh more factors than any human can. They are trained on geochemistry, structural, lithology, geophysics, geothermal and topography data, and checked with spatial block cross-validation. Once the platform is built, your geologists will upload their exploration data and get back a prospectivity heat map and a ranked list of drill targets. Your data is only used for your own predictions. It is never used to train anyone else's model.</p>
           <div class="pdt-cta-row">
             <a href="<?php echo esc_url( home_url( '/learn-more/' ) ); ?>" class="xr-btn xr-btn-gold">Learn More</a>
-            <a href="#pdt-how" class="xr-btn xr-btn-outline">How It Works <span class="xr-arrow">→</span></a>
+            <a href="#pdt-how" class="xr-btn xr-btn-outline">How It Works <span class="xr-arrow" aria-hidden="true">→</span></a>
           </div>
           <div class="pdt-hero-stats">
             <div class="pdt-stat-item">
@@ -864,7 +864,7 @@ add_action( 'generate_before_content', function() {
           <li><span class="ph2-n">02</span><strong>The model scores your ground</strong><p>It weighs your data together with our cleaned geological datasets.</p></li>
           <li><span class="ph2-n">03</span><strong>Review ranked drill targets</strong><p>Explore them on a 3D visualization and heat map, with other geoanalysis tools.</p></li>
         </ol>
-        <div class="ph2-cta"><a href="<?php echo esc_url( home_url( '/learn-more/' ) ); ?>" class="xr-btn xr-btn-outline">Follow our progress <span class="xr-arrow">→</span></a></div>
+        <div class="ph2-cta"><a href="<?php echo esc_url( home_url( '/learn-more/' ) ); ?>" class="xr-btn xr-btn-outline">Follow our progress <span class="xr-arrow" aria-hidden="true">→</span></a></div>
       </div>
     </div>
   </section>
@@ -877,7 +877,7 @@ add_action( 'generate_before_content', function() {
       <p class="xr-reveal xr-d2">We're building toward drill targets precise enough for a single borehole. Get in touch to follow our progress or help shape the platform.</p>
       <div class="xr-reveal xr-d3 xr-btn-row">
         <a href="<?php echo esc_url( home_url( '/learn-more/' ) ); ?>" class="xr-btn xr-btn-gold">Learn More</a>
-        <a href="mailto:info@xraygeoanalytics.com" class="xr-btn xr-btn-outline">Email us directly <span class="xr-arrow">→</span></a>
+        <a href="mailto:info@xraygeoanalytics.com" class="xr-btn xr-btn-outline">Email us directly <span class="xr-arrow" aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>

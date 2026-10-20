@@ -445,9 +445,11 @@
     }, { passive: true });
 
     // Tabbing to a link below while the page is held at the top: skip the
-    // intro so the focused element can scroll into view.
+    // intro so the focused element can scroll into view. Focus in the fixed
+    // header (logo, links, the phone menu button) stays on screen, so it
+    // leaves the intro alone.
     document.addEventListener('focusin', (e) => {
-      if (!held || hero.contains(e.target)) return;
+      if (!held || hero.contains(e.target) || (e.target.closest && e.target.closest('.xr-nav'))) return;
       log('focus left the hero, skipping intro');
       ++token;
       stopStepping();

@@ -17,7 +17,7 @@ function xray_page_meta() {
 			'How X-Ray will work: your geologist team imports its survey data and gets ranked drill targets, a prospectivity heat map and a 3D view of the target area, built on our Great Basin lithium prototype.',
 		),
 		'investors'  => array(
-			'Investors',
+			'Investors · X-Ray Geoanalytics',
 			'X-Ray Geoanalytics uses machine learning to find mineral deposits for mining companies, starting with lithium in the Great Basin. The market, our prototype, the roadmap and the team.',
 		),
 		'about-us'   => array(
@@ -25,7 +25,7 @@ function xray_page_meta() {
 			'X-Ray Geoanalytics finds mineral deposits for mining companies using machine learning. Our models process more data and consider more factors than any human can.',
 		),
 		'learn-more' => array(
-			'Learn More',
+			'Learn More About X-Ray',
 			'We\'re early, and we want to hear from you. Whether you explore for minerals, invest in the space or want to work with us, send us a note and a co-founder will reply directly.',
 		),
 	);

@@ -15,7 +15,8 @@ wp_register_script(
     // One GSAP version site-wide. Learn More has no GSAP animation.
     if ( ! is_page( array( 'learn-more', 'request-demo' ) ) ) {
         wp_enqueue_script( 'gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js', array(), '3.12.7', true );
-        wp_enqueue_script( 'gsap-st', 'https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js', array('gsap'), '3.12.7', true );
+        // ScrollTrigger loads only where a page script lists it as a dependency (not Home).
+        wp_register_script( 'gsap-st', 'https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js', array('gsap'), '3.12.7', true );
     }
     // Page scripts are served from the theme (not jsDelivr @main) so a deploy takes effect at once.
     if ( is_page(254) ) {

@@ -55,15 +55,14 @@ function xray_site_nav() {
 function xray_site_footer() {
 	$links = xray_site_links();
 	?>
-<footer class="xr-footer">
-  <div class="xr-footer-strip"></div>
+<footer class="xr-footer" role="contentinfo">
   <div class="xr-footer-inner">
     <div class="xr-footer-grid xr-footer-grid-slim">
       <div>
         <div class="xr-footer-brand"><?php echo xray_logo_img(); ?></div>
         <p class="xr-footer-tagline">X-Ray finds mineral deposits for mining companies using machine learning, saving them time and money by offering more accurate predictions than human analysis. We began with lithium in the Great Basin and will expand to new minerals in the future.</p>
         <div class="xr-footer-contact">
-          <a href="mailto:info@xraygeoanalytics.com"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M4 6l8 7 8-7"/></svg>info@xraygeoanalytics.com</a>
+          <a href="mailto:info@xraygeoanalytics.com">info@xraygeoanalytics.com</a>
         </div>
       </div>
 
@@ -94,9 +93,6 @@ function xray_site_footer() {
         </a>
         <a href="https://x.com/xraygeoanalytic" aria-label="X" target="_blank" rel="noopener">
           <svg class="xr-brand-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
-        </a>
-        <a href="mailto:info@xraygeoanalytics.com" aria-label="Email">
-          <svg class="xr-brand-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M3.6 4h16.8A2.6 2.6 0 0 1 23 6.6v.35l-11 6.9L1 6.95V6.6A2.6 2.6 0 0 1 3.6 4Z"/><path d="M1 9.3l10.36 6.5a1.2 1.2 0 0 0 1.28 0L23 9.3v8.1a2.6 2.6 0 0 1-2.6 2.6H3.6A2.6 2.6 0 0 1 1 17.4Z"/></svg>
         </a>
       </div>
       <p>xraygeoanalytics.com</p>

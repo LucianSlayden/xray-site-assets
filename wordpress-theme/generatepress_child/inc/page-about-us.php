@@ -305,7 +305,7 @@ body { background: #060c12 !important; }
       </p>
       <div id="ab-ctas">
         <a href="<?php echo esc_url( home_url( '/learn-more/' ) ); ?>" class="xr-btn xr-btn-gold">Learn More</a>
-        <a href="<?php echo esc_url( home_url( '/investors/#iv-team' ) ); ?>" class="xr-btn xr-btn-outline">Meet the Team <span class="xr-arrow">→</span></a>
+        <a href="<?php echo esc_url( home_url( '/investors/#iv-team' ) ); ?>" class="xr-btn xr-btn-outline">Meet the Team <span class="xr-arrow" aria-hidden="true">→</span></a>
       </div>
     </div>
     <div id="ab-snapshot">
@@ -483,7 +483,7 @@ body { background: #060c12 !important; }
       <p class="ab-section-p ab-cta-p">If your mining company explores in the Great Basin or American Southwest, we want to hear how you decide where to drill. We're starting customer discovery interviews and looking for pilot customers.</p>
       <div class="ab-section-p ab-cta-btns">
         <a href="<?php echo esc_url( home_url( '/learn-more/' ) ); ?>" class="xr-btn xr-btn-gold">Learn More</a>
-        <a href="mailto:info@xraygeoanalytics.com" class="xr-btn xr-btn-outline">Email us directly <span class="xr-arrow">→</span></a>
+        <a href="mailto:info@xraygeoanalytics.com" class="xr-btn xr-btn-outline">Email us directly <span class="xr-arrow" aria-hidden="true">→</span></a>
       </div>
     </div>
   </div>
