@@ -238,6 +238,31 @@
     }
     stroke(RED, 0.5, 1.1);
 
+    // strike and dip symbol on the fault trace (map convention: long tick along
+    // strike, short tick toward the dip direction). Values come from faultX():
+    // strike N03°E (z is north), dip 67° toward the west.
+    (function () {
+      var zc = 0.15, fy2 = 0.05, fx2 = faultX(fy2, zc);
+      for (var it2 = 0; it2 < 6; it2++) { fy2 = terrain(fx2, zc); fx2 = faultX(fy2, zc); }
+      var sx = 0.06 / Math.sqrt(1 + 0.0036), sz = 1 / Math.sqrt(1 + 0.0036), L = 0.2, D = 0.11;
+      var q = [0, 0], r = [0, 0], o = [0, 0];
+      var ax = fx2 - sx * L, az = zc - sz * L, bx = fx2 + sx * L, bz = zc + sz * L;
+      var dxp = fx2 - D, dzp = zc - 0.06 * D;
+      ctx.beginPath();
+      line3(ctx, ax, terrain(ax, az) + 0.004, az, bx, terrain(bx, bz) + 0.004, bz);
+      line3(ctx, fx2, terrain(fx2, zc) + 0.004, zc, dxp, terrain(dxp, dzp) + 0.004, dzp);
+      stroke(RED, 0.95, 1.6);
+      proj(fx2, terrain(fx2, zc), zc, o); proj(dxp, terrain(dxp, dzp), dzp, r); proj(bx, terrain(bx, bz), bz, q);
+      var lx = o[0] - 150, ly = o[1] - 54;
+      ctx.beginPath(); ctx.moveTo(o[0], o[1]); ctx.lineTo(lx + 108, ly + 20);
+      stroke(RED, 0.5, 0.8);
+      ctx.font = '12px ui-monospace, SFMono-Regular, Menlo, monospace';
+      ctx.fillStyle = 'rgba(244,196,184,0.95)';
+      ctx.fillText('FAULT', lx, ly - 12);
+      ctx.fillText('Strike N03\u00B0E', lx, ly + 2);
+      ctx.fillText('Dip 67\u00B0 W', lx, ly + 16);
+    })();
+
     // drill holes, gold where they cut the lithium clay
     for (i = 0; i < HOLES.length; i++) {
       x = HOLES[i][0]; z = HOLES[i][1];
