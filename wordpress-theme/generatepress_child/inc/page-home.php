@@ -913,7 +913,7 @@ add_action( 'generate_before_content', function() {
       </div>
 
       <div class="xr-reveal" style="text-align:center;margin-top:40px;">
-        <a href="<?php echo esc_url( home_url( '/product/#compare' ) ); ?>" class="xr-btn xr-btn-ghost">See how we compare <span class="xr-arrow" aria-hidden="true">→</span></a>
+        <a href="<?php echo esc_url( home_url( '/product/#pdt-how' ) ); ?>" class="xr-btn xr-btn-ghost">See how it works <span class="xr-arrow" aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>

@@ -28,140 +28,6 @@ add_action( 'generate_before_content', function() {
             <a href="<?php echo esc_url( home_url( '/learn-more/' ) ); ?>" class="xr-btn xr-btn-gold">Learn More</a>
             <a href="#pdt-how" class="xr-btn xr-btn-outline">How It Works <span class="xr-arrow" aria-hidden="true">→</span></a>
           </div>
-          <div class="pdt-hero-stats">
-            <div class="pdt-stat-item">
-              <span class="pdt-stat-num">95%</span>
-              <span class="pdt-stat-label">Recall · Great Basin lithium</span>
-            </div>
-            <div class="pdt-stat-item">
-              <span class="pdt-stat-num sky">80%</span>
-              <span class="pdt-stat-label">Precision</span>
-            </div>
-            <div class="pdt-stat-item">
-              <span class="pdt-stat-num">1×1&nbsp;km</span>
-              <span class="pdt-stat-label">Prediction cells</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: what the customer's team gets -->
-        <div class="pdt-output-panel pdt-gets" id="pdt-op">
-          <div class="pdt-op-header">
-            <div class="pdt-op-header-left">
-              <div class="pdt-op-run">What your geologist team will get</div>
-              <div class="pdt-op-meta">From your exploration data to a drill decision</div>
-            </div>
-          </div>
-
-          <div class="pdt-gets-block">
-            <div class="pdt-gets-label"><span>01</span>You upload</div>
-            <div class="pdt-gets-chips">
-              <span>Geochemistry</span><span>Structure</span><span>Lithology</span>
-              <span>Geophysics</span><span>Geothermal</span><span>Topography</span>
-            </div>
-          </div>
-
-          <div class="pdt-gets-block pdt-gets-model">
-            <div class="pdt-gets-label"><span>02</span>The model scores</div>
-            <p>Every 1×1&nbsp;km cell in your area, weighing more factors together than a team can review by hand.</p>
-          </div>
-
-          <div class="pdt-gets-block">
-            <div class="pdt-gets-label"><span>03</span>You get</div>
-            <div class="pdt-gets-item">
-              <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="4.3" y="4.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.08"/><rect x="9.3" y="4.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.08"/><rect x="14.3" y="4.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.08"/><rect x="19.3" y="4.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.1"/><rect x="24.3" y="4.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.14"/><rect x="29.3" y="4.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.17"/><rect x="34.3" y="4.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.16"/><rect x="39.3" y="4.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.11"/><rect x="4.3" y="9.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.09"/><rect x="9.3" y="9.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.08"/><rect x="14.3" y="9.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.11"/><rect x="19.3" y="9.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.22"/><rect x="24.3" y="9.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.41"/><rect x="29.3" y="9.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.44"/><rect x="34.3" y="9.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.26"/><rect x="39.3" y="9.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.16"/><rect x="4.3" y="14.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.1"/><rect x="9.3" y="14.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.1"/><rect x="14.3" y="14.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.16"/><rect x="19.3" y="14.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.36"/><rect x="24.3" y="14.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.76"/><rect x="29.3" y="14.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.86"/><rect x="34.3" y="14.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.5"/><rect x="39.3" y="14.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.2"/><rect x="4.3" y="19.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.11"/><rect x="9.3" y="19.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.09"/><rect x="14.3" y="19.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.18"/><rect x="19.3" y="19.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.39"/><rect x="24.3" y="19.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.72"/><rect x="29.3" y="19.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.75"/><rect x="34.3" y="19.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.44"/><rect x="39.3" y="19.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.14"/><rect x="4.3" y="24.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.18"/><rect x="9.3" y="24.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.29"/><rect x="14.3" y="24.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.29"/><rect x="19.3" y="24.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.26"/><rect x="24.3" y="24.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.4"/><rect x="29.3" y="24.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.39"/><rect x="34.3" y="24.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.27"/><rect x="39.3" y="24.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.14"/><rect x="4.3" y="29.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.23"/><rect x="9.3" y="29.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.48"/><rect x="14.3" y="29.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.47"/><rect x="19.3" y="29.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.23"/><rect x="24.3" y="29.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.13"/><rect x="29.3" y="29.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.13"/><rect x="34.3" y="29.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.13"/><rect x="39.3" y="29.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.08"/><rect x="4.3" y="34.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.16"/><rect x="9.3" y="34.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.4"/><rect x="14.3" y="34.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.35"/><rect x="19.3" y="34.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.18"/><rect x="24.3" y="34.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.1"/><rect x="29.3" y="34.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.08"/><rect x="34.3" y="34.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.11"/><rect x="39.3" y="34.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.08"/><rect x="4.3" y="39.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.11"/><rect x="9.3" y="39.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.14"/><rect x="14.3" y="39.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.17"/><rect x="19.3" y="39.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.09"/><rect x="24.3" y="39.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.08"/><rect x="29.3" y="39.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.09"/><rect x="34.3" y="39.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.08"/><rect x="39.3" y="39.3" width="4.4" height="4.4" fill="#E8B963" fill-opacity="0.08"/><rect x="29" y="14" width="5" height="5" fill="none" stroke="#FFE3A8" stroke-width=".9"/><path d="M4 46h10M4 44.5v3M14 44.5v3" stroke="#F1F4F8" stroke-opacity=".6" stroke-width=".6"/></svg>
-              <div><strong>Prospectivity heat map</strong><small>See where the whole area is most likely to host a deposit, and which ground is not worth holding.</small></div>
-            </div>
-            <div class="pdt-gets-item">
-              <svg viewBox="0 0 48 48" aria-hidden="true"><polygon points="6,19.12 9,19.17 12,18.81 15,18.17 18,17.47 21,16.95 24,16.8 27,17.07 30,17.66 30,24.79 27,24.14 24,23.44 21,22.94 18,22.81 15,23.09 12,23.69 9,24.4 6,24.97" fill="#A88456"/><polygon points="30,17.66 42,9.66 42,16.79 30,24.79" fill="#A88456" fill-opacity=".7"/><polygon points="6,24.97 9,24.4 12,23.69 15,23.09 18,22.81 21,22.94 24,23.44 27,24.14 30,24.79 30,31.19 27,31.08 24,30.59 21,29.9 18,29.24 15,28.85 12,28.86 9,29.27 6,29.93" fill="#B5653E"/><polygon points="30,24.79 42,16.79 42,23.19 30,31.19" fill="#B5653E" fill-opacity=".7"/><polygon points="6,29.93 9,29.27 12,28.86 15,28.85 18,29.24 21,29.9 24,30.59 27,31.08 30,31.19 30,36.49 27,37.03 24,37.2 21,36.95 18,36.37 15,35.66 12,35.07 9,34.8 6,34.95" fill="#6F7A4E"/><polygon points="30,31.19 42,23.19 42,28.49 30,36.49" fill="#6F7A4E" fill-opacity=".7"/><polygon points="6,34.95 9,34.8 12,35.07 15,35.66 18,36.37 21,36.95 24,37.2 27,37.03 30,36.49 30,42 27,42 24,42 21,42 18,42 15,42 12,42 9,42 6,42" fill="#46536A"/><polygon points="30,36.49 42,28.49 42,34 30,42" fill="#46536A" fill-opacity=".7"/><polygon points="6,19.12 30,17.66 42,9.66 18,11.12" fill="#5E7A55"/><ellipse cx="23" cy="13.5" rx="5" ry="2" fill="#E8B963" fill-opacity=".9"/><path d="M23 13.5V36" stroke="#F1F4F8" stroke-width=".8" stroke-dasharray="1.6 1"/><ellipse cx="22" cy="37.5" rx="4.5" ry="1.8" fill="#E8B963"/><polyline points="6,42 30,42 42,34" fill="none" stroke="#F1F4F8" stroke-opacity=".35" stroke-width=".5"/></svg>
-              <div><strong>3D view of the target area</strong><small>Review the geology under each target with your team before committing a rig.</small></div>
-            </div>
-            <div class="pdt-gets-item">
-              <svg viewBox="0 0 48 48" aria-hidden="true"><polygon points="10.77,8.6 8,10.2 5.23,8.6 5.23,5.4 8,3.8 10.77,5.4" fill="#E8B963" fill-opacity="1"/><rect x="14" y="5.5" width="30" height="3" fill="#E8B963" fill-opacity="1"/><rect x="14" y="5.5" width="30" height="3" fill="none" stroke="#F1F4F8" stroke-opacity=".12" stroke-width=".5"/><polygon points="10.77,17 8,18.6 5.23,17 5.23,13.8 8,12.2 10.77,13.8" fill="#E8B963" fill-opacity="0.65"/><rect x="14" y="13.9" width="23.4" height="3" fill="#E8B963" fill-opacity="0.65"/><rect x="14" y="13.9" width="30" height="3" fill="none" stroke="#F1F4F8" stroke-opacity=".12" stroke-width=".5"/><polygon points="10.77,25.4 8,27 5.23,25.4 5.23,22.2 8,20.6 10.77,22.2" fill="#E8B963" fill-opacity="0.55"/><rect x="14" y="22.3" width="18" height="3" fill="#E8B963" fill-opacity="0.55"/><rect x="14" y="22.3" width="30" height="3" fill="none" stroke="#F1F4F8" stroke-opacity=".12" stroke-width=".5"/><polygon points="10.77,33.8 8,35.4 5.23,33.8 5.23,30.6 8,29 10.77,30.6" fill="#6FB5E0" fill-opacity="0.45"/><rect x="14" y="30.7" width="13.5" height="3" fill="#6FB5E0" fill-opacity="0.45"/><rect x="14" y="30.7" width="30" height="3" fill="none" stroke="#F1F4F8" stroke-opacity=".12" stroke-width=".5"/><polygon points="10.77,42.2 8,43.8 5.23,42.2 5.23,39 8,37.4 10.77,39" fill="#6FB5E0" fill-opacity="0.35"/><rect x="14" y="39.1" width="9.6" height="3" fill="#6FB5E0" fill-opacity="0.35"/><rect x="14" y="39.1" width="30" height="3" fill="none" stroke="#F1F4F8" stroke-opacity=".12" stroke-width=".5"/></svg>
-              <div><strong>Ranked drill targets</strong><small>Know which holes to drill first, so the drilling budget goes to the best odds.</small></div>
-            </div>
-          </div>
-
-          <div class="pdt-op-footer">
-            <span class="pdt-op-footer-txt">Your data only trains your own predictions</span>
-            <a href="#pdt-how" class="pdt-op-view-all">How it works →</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════ COMPARISON ═══════════════ -->
-  <section class="pdt-cmp-sec" id="compare">
-    <div class="xr-container">
-      <div class="pdt-cmp-intro xr-reveal">
-        <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>The Difference</span>
-        <h2>Old methods.<br>Or <span class="xr-nobreak">X-Ray</span>.</h2>
-        <p>Discoveries fell from 202 in 2009 to about 80 in 2023, and the cost of finding new deposits keeps rising. Choosing where to drill is still slow, expensive and mostly unsuccessful. We're building the alternative.</p>
-      </div>
-      <div class="pdt-cmp-grid xr-reveal">
-
-        <!-- Traditional column -->
-        <div class="pdt-cmp-col">
-          <div class="pdt-cmp-head">
-            <span class="pdt-cmp-head-title">Traditional Exploration</span>
-          </div>
-          <div class="pdt-cmp-row">
-            <span class="pdt-cmp-label">Success rate</span>
-            <span class="pdt-cmp-val">About 1 in 200 drill projects, ~20 boreholes each</span>
-          </div>
-          <div class="pdt-cmp-row">
-            <span class="pdt-cmp-label">Target generation</span>
-            <span class="pdt-cmp-val">$30K – $90K per project, per year</span>
-          </div>
-          <div class="pdt-cmp-row">
-            <span class="pdt-cmp-label">Drilling</span>
-            <span class="pdt-cmp-val">Up to $500K per site</span>
-          </div>
-          <div class="pdt-cmp-row">
-            <span class="pdt-cmp-label">Method</span>
-            <span class="pdt-cmp-val">Geologists, GIS and prospectivity studies</span>
-          </div>
-          <div class="pdt-cmp-row">
-            <span class="pdt-cmp-label">Targets tested</span>
-            <span class="pdt-cmp-val">Can run to several thousand before a discovery</span>
-          </div>
-          <div class="pdt-cmp-row">
-            <span class="pdt-cmp-label">Data processed</span>
-            <span class="pdt-cmp-val">As much as a team can review by hand</span>
-          </div>
-        </div>
-
-        <!-- X-Ray column -->
-        <div class="pdt-cmp-col gold-col">
-          <div class="pdt-cmp-head">
-            <span class="pdt-cmp-head-logo"><?php echo xray_logo_img(); ?></span>
-          </div>
-          <div class="pdt-cmp-row">
-            <span class="pdt-cmp-label">Success rate</span>
-            <span class="pdt-cmp-val">Prototype: 95% recall, 80% precision</span>
-          </div>
-          <div class="pdt-cmp-row">
-            <span class="pdt-cmp-label">Target generation</span>
-            <span class="pdt-cmp-val">Software subscription</span>
-          </div>
-          <div class="pdt-cmp-row">
-            <span class="pdt-cmp-label">Drilling</span>
-            <span class="pdt-cmp-val">Fewer holes drilled before a discovery</span>
-          </div>
-          <div class="pdt-cmp-row">
-            <span class="pdt-cmp-label">Method</span>
-            <span class="pdt-cmp-val">Machine learning on cleaned geological data</span>
-          </div>
-          <div class="pdt-cmp-row">
-            <span class="pdt-cmp-label">Targets tested</span>
-            <span class="pdt-cmp-val">A ranked list shows where to drill first</span>
-          </div>
-          <div class="pdt-cmp-row">
-            <span class="pdt-cmp-label">Data processed</span>
-            <span class="pdt-cmp-val">More data and factors than any team can weigh</span>
-          </div>
         </div>
 
       </div>
@@ -335,7 +201,6 @@ add_action( 'generate_before_content', function() {
 </svg></figure>
           <h3>Upload your exploration data</h3>
           <p>Securely upload the exploration data your team has already collected. It is combined with our own dataset: decades of cluttered public geological data that we have cleaned and sorted so a model can learn from it.</p>
-          <ul class="pa2-chips"><li>Geochemistry</li><li>Structural &amp; lithology</li><li>Geophysics, geothermal &amp; topography</li><li>Your survey and drill data</li></ul>
         </li>
         <li class="pa2-step">
           <div class="pa2-top"><span class="pa2-num">02</span><span class="pa2-kind">Training</span></div>
@@ -718,7 +583,6 @@ add_action( 'generate_before_content', function() {
 </svg></figure>
           <h3>Models built for one mineral, one region</h3>
           <p>An ensemble of XGBoost and LightGBM models scores your ground using our proprietary featuresets: in-house lists of the geological features that indicate lithium mineralization. Each customer's model is kept separate.</p>
-          <ul class="pa2-chips"><li>Your data used only for you</li><li>XGBoost + LightGBM ensemble</li><li>Proprietary featuresets</li><li>Spatial block cross-validation</li></ul>
         </li>
         <li class="pa2-step">
           <div class="pa2-top"><span class="pa2-num">03</span><span class="pa2-kind">Output</span></div>
@@ -730,7 +594,6 @@ add_action( 'generate_before_content', function() {
           </figure>
           <h3>Ranked targets, ready to review</h3>
           <p>You get a prospectivity heat map of your area of interest and a ranked list of drill targets. A 3D view and analysis tools help your geologists narrow down where to drill.</p>
-          <ul class="pa2-chips"><li>Prospectivity heat map</li><li>Ranked drill targets</li><li>3D view of the target area</li><li>Geoanalysis tools</li></ul>
         </li>
       </ol>
     </div>
@@ -778,16 +641,6 @@ add_action( 'generate_before_content', function() {
             <p><strong>Most of its calls are real.</strong> About 8 in every 10 cells it flags hold lithium, so a team spends less time chasing false leads.</p>
           </div>
         </div>
-      </div>
-
-      <div class="pp-checks xr-reveal">
-        <div class="pp-checks-head">How we checked it</div>
-        <div class="pp-checks-row">
-          <div class="pp-check"><span>01</span><strong>Trained on what's known</strong><small>Labels come from known mine sites, geochemistry and mining-claim data, combined with our cleaned geological datasets.</small></div>
-          <div class="pp-check"><span>02</span><strong>Tested on unseen ground</strong><small>Spatial block cross-validation holds out whole areas of the map, so the model can't score well just by memorising neighbouring cells.</small></div>
-          <div class="pp-check"><span>03</span><strong>Stress-tested</strong><small>Repeated stratified k-fold and leave-one-out cross-validation check that the results hold across many different splits of the data.</small></div>
-        </div>
-        <p class="pp-checks-note">Measured at 1×1&nbsp;km against known deposits. Finer models and field testing against real boreholes come next.</p>
       </div>
     </div>
   </section>
@@ -858,16 +711,6 @@ add_action( 'generate_before_content', function() {
           </div>
         </li>
       </ol>
-
-      <div class="ph2 xr-reveal">
-        <div class="ph2-head">How it will work</div>
-        <ol class="ph2-steps">
-          <li><span class="ph2-n">01</span><strong>Import survey data</strong><p>Your geoscientist team brings in the survey and drill data it already has.</p></li>
-          <li><span class="ph2-n">02</span><strong>The model scores your ground</strong><p>It weighs your data together with our cleaned geological datasets.</p></li>
-          <li><span class="ph2-n">03</span><strong>Review ranked drill targets</strong><p>Explore them on a 3D visualization and heat map, with other geoanalysis tools.</p></li>
-        </ol>
-        <div class="ph2-cta"><a href="<?php echo esc_url( home_url( '/learn-more/' ) ); ?>" class="xr-btn xr-btn-outline">Follow our progress <span class="xr-arrow" aria-hidden="true">→</span></a></div>
-      </div>
     </div>
   </section>
 

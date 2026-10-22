@@ -1649,12 +1649,12 @@ body.home .xr-footer {
 
     .pdt-hero-grid {
       position:relative; z-index:3;
-      display:grid; grid-template-columns:1fr 1fr;
+      display:grid; grid-template-columns:minmax(0,1fr);
       align-items:center; gap:64px;
     }
     @media(max-width:1024px){ .pdt-hero-grid { grid-template-columns:1fr; gap:48px; } }
 
-    .pdt-hero-left { max-width:560px; }
+    .pdt-hero-left { max-width:640px; }
     .pdt-eyebrow-wrap { overflow:hidden; margin-bottom:24px; }
 
     .pdt-hero-left h1 {
