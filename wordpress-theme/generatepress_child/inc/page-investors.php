@@ -85,24 +85,6 @@ body { background: #060c12 !important; }
         <a href="#iv-contact" class="xr-btn xr-btn-gold">Request investor materials <span class="xr-arrow" aria-hidden="true">→</span></a>
       </div>
 
-      <div class="iv-stat-strip" id="iv-stats">
-        <div class="iv-stat-item">
-          <div class="iv-stat-n">$2.5B</div>
-          <div class="iv-stat-label">Global annual target generation spend</div>
-        </div>
-        <div class="iv-stat-item">
-          <div class="iv-stat-n sky">95%</div>
-          <div class="iv-stat-label">Recall, Great Basin lithium</div>
-        </div>
-        <div class="iv-stat-item">
-          <div class="iv-stat-n">80%</div>
-          <div class="iv-stat-label">Precision, Great Basin lithium</div>
-        </div>
-        <div class="iv-stat-item">
-          <div class="iv-stat-n sky">4</div>
-          <div class="iv-stat-label"><span class="xr-nobreak">Co-founders</span></div>
-        </div>
-      </div>
     </div>
 
   </section>
@@ -176,11 +158,6 @@ body { background: #060c12 !important; }
           <p style="color:var(--xr-text-2);font-size:17px;line-height:1.85;margin:0 0 28px;">
             The models are <strong style="color:var(--xr-text);">not commercially viable yet</strong>. We are raising funding to develop them down to <strong style="color:var(--xr-gold);">1×1&nbsp;m precision</strong>, fine enough to place individual boreholes, alongside customer discovery with mining companies and field validation against real boreholes.
           </p>
-          <div class="iv-tags">
-            <span class="iv-tag iv-tag-gold">Prototype · Great Basin Lithium</span>
-            <span class="iv-tag iv-tag-sky">Next · Finer models</span>
-            <span class="iv-tag iv-tag-dim">Goal · 1×1&nbsp;m precision</span>
-          </div>
         </div>
 
         <div class="xr-reveal xr-d2">
@@ -202,38 +179,6 @@ body { background: #060c12 !important; }
                     fill="#808C9C" text-anchor="middle" letter-spacing="2">RECALL</text>
             </svg>
             <p class="iv-gauge-sub">Great Basin lithium model · 80% precision</p>
-          </div>
-
-          <div class="iv-stack">
-            <div class="iv-stack-row">
-              <span class="iv-stack-idx">01</span>
-              <div class="iv-stack-lbl">Known deposits<small>Labels from mine sites, geochemistry and mining claims</small></div>
-              <span class="iv-stack-v">Labels</span>
-            </div>
-            <div class="iv-stack-arrow" aria-hidden="true"></div>
-            <div class="iv-stack-row">
-              <span class="iv-stack-idx">02</span>
-              <div class="iv-stack-lbl">Six data layers<small>Geochem · Structural · Lithology · Geophys · Geothermal · Topo</small></div>
-              <span class="iv-stack-v">6 src</span>
-            </div>
-            <div class="iv-stack-arrow" aria-hidden="true"></div>
-            <div class="iv-stack-row sky">
-              <span class="iv-stack-idx">03</span>
-              <div class="iv-stack-lbl">Ensemble model<small>XGBoost + LightGBM · Feature selection</small></div>
-              <span class="iv-stack-v">XGB+LGBM</span>
-            </div>
-            <div class="iv-stack-arrow" aria-hidden="true"></div>
-            <div class="iv-stack-row green">
-              <span class="iv-stack-idx">04</span>
-              <div class="iv-stack-lbl">Ranked drill targets<small>Prospectivity heat map · 3D visualization</small></div>
-              <span class="iv-stack-v">95% recall</span>
-            </div>
-            <div class="iv-stack-arrow up">Validation</div>
-            <div class="iv-stack-row">
-              <span class="iv-stack-idx">05</span>
-              <div class="iv-stack-lbl">Cross-validated<small>Spatial block · Repeated stratified <span class="xr-nobreak">k-fold</span> · <span class="xr-nobreak">Leave-one-out</span></small></div>
-              <span class="iv-stack-v">3 methods</span>
-            </div>
           </div>
         </div>
       </div>
@@ -268,10 +213,6 @@ body { background: #060c12 !important; }
           <div class="iv-tier-n">Compounding data</div>
           <p>In-house featuresets and decades of cleaned data are hard to replicate. Each customer's data is compartmentalized and never used to train anyone else's model, so mining companies can trust us with it.</p>
         </div>
-      </div>
-
-      <div class="iv-quote xr-reveal xr-d1">
-        Fewer holes drilled before a discovery means <strong>less time and money spent</strong> on every project.
       </div>
     </div>
   </section>
@@ -413,7 +354,6 @@ body { background: #060c12 !important; }
             <textarea id="iv-msg" name="message" placeholder="Stage focus, sector interest, anything specific."></textarea>
           </div>
           <div class="iv-form-foot">
-            <span class="iv-form-note">Goes directly to our CEO.</span>
             <button type="submit" class="xr-btn xr-btn-gold">Request Investor Materials <span class="xr-arrow" aria-hidden="true">→</span></button>
           </div>
         </form>
