@@ -4880,12 +4880,9 @@ body.page-id-298 { animation: none; }
 @media (min-width: 901px) and (max-width: 1180px) { .pipe2 { gap: 18px; } .pipe2-art figcaption { letter-spacing: .04em; padding: 8px 9px 10px; } }
 @media (max-width: 420px) { .pipe2-art figcaption { font-size: 9px; letter-spacing: .04em; padding: 8px 8px 10px; } }
 
-/* Home problem section: raise the stats panel beside the headline's last line,
-   so it sits 56px below the "lottery" line, the same as the 56px gap beside the lede.
-   0.87em of the headline size = last line box minus the descender overhang. */
-@media (min-width: 981px) {
-  .lottery-diagram { margin-top: calc(20px - 0.87 * clamp(40px, 5.4vw, 80px)); }
-}
+/* Home problem section: the stats panel starts level with the lede, below the
+   headline. Raising it beside the headline's last line ran it into "in mining."
+   on wide screens, where that line reaches past the lede column. */
 
 /* ── Home: consultant study vs X-Ray comparison table ── */
 .cmp2 {
