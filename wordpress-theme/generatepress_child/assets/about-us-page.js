@@ -328,7 +328,7 @@
   // Reduced motion, or GSAP failed to load: show everything at rest.
   if (prefersReduced || !window.gsap || !window.ScrollTrigger) {
     document.querySelectorAll(
-      '.ab-h1,#ab-lede,#ab-ctas,#ab-snapshot,' +
+      '.ab-h1,#ab-lede,#ab-ctas,' +
       '.ab-section-h2,.ab-section-p,.ab-prin-card,.ab-nav-card'
     ).forEach(function (el) {
       el.style.opacity   = '1';
@@ -395,7 +395,6 @@
     if (split) tl.from(split.inners, { yPercent: 110, duration: 0.9, ease: 'power4.out', stagger: 0.08 }, 0);
     if (h1) gsap.set(h1, { opacity: 1 });
     tl.to('#ab-lede',     { opacity: 1, y: 0, duration: 0.70, ease: 'power2.out' }, 0.35)
-      .to('#ab-snapshot', { opacity: 1, y: 0, duration: 0.75, ease: 'power2.out' }, 0.45)
       .to('#ab-ctas',     { opacity: 1, y: 0, duration: 0.60, ease: 'power2.out' }, 0.5);
   }
   // Measure the headline's lines with the web font in place (but don't wait long for it).
@@ -438,14 +437,6 @@
     gsap.from(el, {
       opacity: 0, y: 18, duration: 0.70, ease: 'power2.out',
       scrollTrigger: { trigger: el, start: 'top 88%', once: true },
-    });
-  });
-
-  gsap.utils.toArray('.ab-discipline-row').forEach(function (el, i) {
-    gsap.from(el, {
-      opacity: 0, y: 10, duration: 0.50, ease: 'power2.out',
-      scrollTrigger: { trigger: el, start: 'top 90%', once: true },
-      delay: i * 0.08,
     });
   });
 
