@@ -219,7 +219,7 @@
   // Reduced motion, or GSAP failed to load: show everything at rest.
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !window.gsap) {
     document.querySelectorAll('.pdt-hw-inner').forEach(function (el) { el.style.transform = 'translateY(0)'; });
-    document.querySelectorAll('.pdt-lede,.pdt-cta-row,.pdt-hero-stats,.pdt-output-panel,#pdt-op').forEach(function (el) { el.style.opacity = '1'; el.style.transform = 'none'; });
+    document.querySelectorAll('.pdt-lede,.pdt-cta-row').forEach(function (el) { el.style.opacity = '1'; el.style.transform = 'none'; });
     window.__xrPageReady = true;
     return;
   }
@@ -228,9 +228,7 @@
   tl.from('.pdt-eyebrow-wrap .xr-eyebrow', { y: 22, opacity: 0, duration: 0.6 })
     .to('.pdt-hw-inner',    { y: '0%', duration: 0.72, stagger: 0.065, ease: 'power3.out' }, '-=0.4')
     .to('.pdt-lede',        { opacity: 1, y: 0, duration: 0.7,  ease: 'power2.out' }, '-=0.35')
-    .to('.pdt-cta-row',     { opacity: 1, y: 0, duration: 0.6,  ease: 'power2.out' }, '-=0.5')
-    .to('.pdt-hero-stats',  { opacity: 1, y: 0, duration: 0.6,  ease: 'power2.out' }, '-=0.45')
-    .to('#pdt-op',          { opacity: 1, y: 0, duration: 0.9,  ease: 'power2.out' }, '-=0.55');
+    .to('.pdt-cta-row',     { opacity: 1, y: 0, duration: 0.6,  ease: 'power2.out' }, '-=0.5');
 
   // Sections below the hero (.xr-reveal) are revealed by xray-anim.js (CSS transition); a GSAP
   // tween on the same properties made the two fight, so it was removed.
