@@ -240,7 +240,7 @@
 
     // strike and dip symbol on the fault trace (map convention: long tick along
     // strike, short tick toward the dip direction). Values come from faultX():
-    // strike N03°E (z is north), dip 67° toward the west.
+    // strike 003°NE (z is north), dip 67° toward the west.
     (function () {
       var zc = 0.15, fy2 = 0.05, fx2 = faultX(fy2, zc);
       for (var it2 = 0; it2 < 6; it2++) { fy2 = terrain(fx2, zc); fx2 = faultX(fy2, zc); }
@@ -259,7 +259,7 @@
       ctx.font = '12px ui-monospace, SFMono-Regular, Menlo, monospace';
       ctx.fillStyle = 'rgba(244,196,184,0.95)';
       ctx.fillText('FAULT', lx, ly - 12);
-      ctx.fillText('Strike N03\u00B0E', lx, ly + 2);
+      ctx.fillText('Strike 003\u00B0NE', lx, ly + 2);
       ctx.fillText('Dip 67\u00B0 W', lx, ly + 16);
     })();
 
