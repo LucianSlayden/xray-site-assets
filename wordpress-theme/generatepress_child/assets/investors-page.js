@@ -27,13 +27,11 @@
       gsap.set('.iv-hw-inner',    { y: '110%' });
       gsap.set('#iv-sub',         { opacity: 0, y: 20 });
       gsap.set('#iv-cta',         { opacity: 0, y: 16 });
-      gsap.set('#iv-stats',       { opacity: 0, y: 24 });
 
       gsap.timeline({ delay: 0.15 })
         .to('.iv-hw-inner',  { y: '0%', duration: 1.0, ease: 'power4.out', stagger: 0.07 })
         .to('#iv-sub',       { opacity: 1, y: 0, duration: 0.7,  ease: 'power2.out' }, '-=0.55')
-        .to('#iv-cta',       { opacity: 1, y: 0, duration: 0.55, ease: 'power2.out' }, '-=0.50')
-        .to('#iv-stats',     { opacity: 1, y: 0, duration: 0.6,  ease: 'power2.out' }, '-=0.40');
+        .to('#iv-cta',       { opacity: 1, y: 0, duration: 0.55, ease: 'power2.out' }, '-=0.50');
 
       gsap.set('.iv-tier', { opacity: 0, y: 40 });
       ScrollTrigger.batch('.iv-tier', {
@@ -77,33 +75,6 @@
         },
       });
 
-      gsap.set('.iv-stack-row', { opacity: 0, x: -28 });
-      ScrollTrigger.batch('.iv-stack-row', {
-        start: 'top 90%',
-        onEnter: function (batch) {
-          gsap.to(batch, { opacity: 1, x: 0, duration: 0.6, ease: 'power3.out', stagger: 0.1, overwrite: true });
-        },
-      });
-      gsap.set('.iv-stack-arrow', { opacity: 0 });
-      ScrollTrigger.batch('.iv-stack-arrow', {
-        start: 'top 92%',
-        onEnter: function (batch) {
-          gsap.to(batch, { opacity: 1, duration: 0.35, ease: 'power1.out', stagger: 0.1, overwrite: true });
-        },
-      });
-
-      gsap.set('.iv-tag', { opacity: 0, y: 10 });
-      ScrollTrigger.batch('.iv-tags', {
-        start: 'top 92%',
-        onEnter: function (els) {
-          els.forEach(function (wrap) {
-            gsap.to(wrap.querySelectorAll('.iv-tag'), {
-              opacity: 1, y: 0, duration: 0.45, ease: 'power2.out', stagger: 0.08, overwrite: true,
-            });
-          });
-        },
-      });
-
       gsap.set('.iv-form-row', { opacity: 0, y: 16 });
       ScrollTrigger.batch('.iv-form-row', {
         start: 'top 94%',
@@ -129,21 +100,6 @@
       fill.style.width = fill.getAttribute('data-target-w') + '%';
     });
   }
-
-  /* Hero shade: fades from solid at the top to clear at the stat strip. */
-  (function ivHeroShade() {
-    var shade = document.querySelector('.iv-hero-fog-edges');
-    var strip = document.getElementById('iv-stats') || document.querySelector('.iv-stat-strip');
-    var hero = document.querySelector('.iv-hero');
-    if (!shade || !strip || !hero) return;
-    function fit() {
-      var top = strip.getBoundingClientRect().top - hero.getBoundingClientRect().top;
-      shade.style.height = Math.max(0, Math.round(top)) + 'px';
-    }
-    fit();
-    window.addEventListener('resize', fit);
-    window.addEventListener('load', fit);
-  })();
 
   /* ── 3. PAGE CONTOURS ───────────────────────────────────────────────── */
   /* Drifting topographic contour lines behind the whole page. A light pool
