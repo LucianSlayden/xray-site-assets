@@ -60,7 +60,7 @@ add_action( 'generate_before_content', function() {
           <h2 class="xr-hero-bullet-head">Validated<br> accuracy</h2>
           <span class="xr-hero-bullet-hit" aria-hidden="true"></span>
           <div class="xr-hero-bullet-body" role="tooltip">
-            Our <strong>Nevada lithium model</strong> recovers 39% of deposits in the top 1% of ranked ground.
+            Current models achieve a 95% recall and 80% precision when tested on Lithium in the Great Basin region of the United States.
           </div>
         </div>
 
