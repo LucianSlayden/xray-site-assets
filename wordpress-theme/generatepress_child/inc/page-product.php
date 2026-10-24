@@ -200,7 +200,7 @@ add_action( 'generate_before_content', function() {
 <path d="M165 59.0 h2 v28 h-2" fill="none" stroke="#F1F4F8" stroke-opacity=".5" stroke-width=".8"/>
 </svg></figure>
           <h3>Upload your exploration data</h3>
-          <p>Securely upload the exploration data your team has already collected. It is combined with our own dataset: decades of cluttered public geological data that we have cleaned and sorted so a model can learn from it.</p>
+          <p>Upload all of your relevant exploration data for your projects and visualize it on a 3D map.</p>
         </li>
         <li class="pa2-step">
           <div class="pa2-top"><span class="pa2-num">02</span><span class="pa2-kind">Training</span></div>
@@ -582,7 +582,7 @@ add_action( 'generate_before_content', function() {
 <line x1="12" y1="123" x2="158" y2="123" stroke="#F1F4F8" stroke-opacity=".3" stroke-width=".6"/>
 </svg></figure>
           <h3>Models built for one mineral, one region</h3>
-          <p>An ensemble of XGBoost and LightGBM models scores your ground using our proprietary featuresets: in-house lists of the geological features that indicate lithium mineralization. Each customer's model is kept separate.</p>
+          <p>Our models, specifically designed to find whatever commodity you&rsquo;re searching for, will be trained on your data as well as our proprietary survey data we collected.</p>
         </li>
         <li class="pa2-step">
           <div class="pa2-top"><span class="pa2-num">03</span><span class="pa2-kind">Output</span></div>
@@ -593,7 +593,7 @@ add_action( 'generate_before_content', function() {
             <ol class="pa2-rank" aria-hidden="true"><li><b>T-01</b><i style="--w:92%"></i></li><li><b>T-02</b><i style="--w:81%"></i></li><li><b>T-03</b><i style="--w:74%"></i></li><li><b>T-04</b><i style="--w:63%"></i></li><li><b>T-05</b><i style="--w:55%"></i></li></ol>
           </figure>
           <h3>Ranked targets, ready to review</h3>
-          <p>You get a prospectivity heat map of your area of interest and a ranked list of drill targets. A 3D view and analysis tools help your geologists narrow down where to drill.</p>
+          <p>A detailed prospectivity report for your project that outlines a list of potential drill targets and other factors, all visualized on a 3D map.</p>
         </li>
       </ol>
     </div>
