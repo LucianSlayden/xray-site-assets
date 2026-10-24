@@ -829,7 +829,7 @@ add_action( 'generate_before_content', function() {
           <span class="rm2-when">Now</span>
           <div class="rm2-art"><?php echo xray_roadmap_art( 'prototype' ); ?></div>
           <h3>Prototype model</h3>
-          <p>A first lithium model for the Great Basin. It ranks ground at 1&times;1&nbsp;km, which proves the method but is too coarse to sell.</p>
+          <p>A finished prototype built to predict Lithium in the Great Basin.</p>
         </li>
         <li class="rm2-step is-next">
           <span class="rm2-node" aria-hidden="true"></span>
