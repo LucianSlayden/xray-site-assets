@@ -76,7 +76,7 @@ add_action( 'generate_before_content', function() {
           <h2 class="xr-hero-bullet-head">Software<br> subscription</h2>
           <span class="xr-hero-bullet-hit" aria-hidden="true"></span>
           <div class="xr-hero-bullet-body" role="tooltip">
-            X-Ray is offered as a <strong>software subscription</strong>, so your team keeps access to the platform and its model updates instead of paying for one-off consulting studies. Plans will be announced as the lithium model launches.
+            A tiered subscription allows customers flexibility to match their investment to the scale of their operations.
           </div>
         </div>
 
