@@ -125,7 +125,7 @@ add_action( 'generate_before_content', function() {
             Every year, mining companies pour billions of dollars into exploration, with most projects leading to <em>nothing</em>.
           </p>
           <p class="problem-kicker">
-            The bottleneck isn't capital. It's knowing where to drill.
+            The bottleneck isn't capital, it's knowing where to strike gold.
           </p>
         </div>
 
