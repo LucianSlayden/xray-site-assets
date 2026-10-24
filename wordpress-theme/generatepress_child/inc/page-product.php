@@ -39,8 +39,8 @@ add_action( 'generate_before_content', function() {
     <div class="xr-container">
       <div class="pdt-arch-intro xr-reveal">
         <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>How It Works</span>
-        <h2>Your data. Our models.<br>Ranked drill targets.</h2>
-        <p>The <span class="xr-nobreak">X-Ray</span> platform is being built for geoscientist teams at mining companies. Your team imports its survey data, and the model outputs ranked drill targets with a 3D visualization, a heat map and other geoanalysis tools. Keep adding drill data as you go to make quick, informed decisions on where to drill next.</p>
+        <h2>One Platform</h2>
+        <p>The <span class="xr-nobreak">X-Ray</span> platform is built for geoscientists working at mining companies. It can do all the functions of a normal GIS and modelling software but uses AI and deep learning to make powerful predictions for new mineral deposits.</p>
       </div>
 
       <ol class="pa2 xr-reveal">
