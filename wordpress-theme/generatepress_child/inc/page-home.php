@@ -84,7 +84,7 @@ add_action( 'generate_before_content', function() {
           <h2 class="xr-hero-bullet-head">A compounding<br> advantage</h2>
           <span class="xr-hero-bullet-hit" aria-hidden="true"></span>
           <div class="xr-hero-bullet-body" role="tooltip">
-            Every drill result you feed back makes your model sharper. <strong>The longer you use <span class="xr-nobreak">X-Ray</span>, the more accurate it becomes.</strong>
+            New data is fed back into the model as it is collected, creating better predictions.
           </div>
         </div>
 
