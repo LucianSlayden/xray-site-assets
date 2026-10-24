@@ -114,7 +114,7 @@ add_action( 'generate_before_content', function() {
     <div class="xr-container problem-narrative">
 
       <h2 class="xr-reveal problem-headline">
-        Exploration is the most expensive <span class="accent">lottery</span> in mining.
+        Mining is the riskiest gamble <span class="accent">ever</span>.
       </h2>
 
       <!-- Lead-in: two short paragraphs next to the diagram on the left.
