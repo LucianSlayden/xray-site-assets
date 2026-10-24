@@ -857,7 +857,7 @@ add_action( 'generate_before_content', function() {
           <span class="rm2-when">Later</span>
           <div class="rm2-art"><?php echo xray_roadmap_art( 'minerals' ); ?></div>
           <h3>Other minerals</h3>
-          <p>Once lithium is proven, the same method is applied to other minerals that mining companies explore for.</p>
+          <p>Models to predict other critical minerals such as cobalt and nickel.</p>
         </li>
       </ol>
 
