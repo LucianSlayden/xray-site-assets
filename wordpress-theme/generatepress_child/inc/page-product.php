@@ -39,7 +39,7 @@ add_action( 'generate_before_content', function() {
     <div class="xr-container">
       <div class="pdt-arch-intro xr-reveal">
         <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>How It Works</span>
-        <h2>One Platform</h2>
+        <h2>One Platform.</h2>
         <p>The <span class="xr-nobreak">X-Ray</span> platform is built for geoscientists working at mining companies. It can do all the functions of a normal GIS and modelling software but uses AI and deep learning to make powerful predictions for new mineral deposits.</p>
       </div>
 
