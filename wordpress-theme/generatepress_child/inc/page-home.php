@@ -352,7 +352,7 @@ add_action( 'generate_before_content', function() {
 </svg>
             <figcaption><span class="k-rs">Remote sensing</span><span class="k-gp">Geophysics</span><span class="k-gc">Geochemistry</span></figcaption>
           </figure>
-          <p>Geochemistry, geophysics, remote sensing and other surveys are cleaned and aligned to one grid, so every cell carries the same set of features.</p>
+          <p>Exploration data, such as drilling and remote sensing data, is uploaded and formatted so the models can read it.</p>
         </li>
         <li class="pipe2-step">
           <div class="pipe2-head"><span class="pipe2-num">02</span><h3>Train</h3></div>
@@ -736,7 +736,7 @@ add_action( 'generate_before_content', function() {
 </svg>
             <figcaption><span class="k-gold">Known deposit</span><span class="k-train">Training</span><span class="k-sky">Held-out test</span></figcaption>
           </figure>
-          <p>The model learns from confirmed deposits and their geology. Whole blocks of ground are held out during testing (spatial cross-validation), so it is scored on areas it has never seen.</p>
+          <p>Models are trained on exploration data as well as proprietary data collected by our own team and then validated against labels derived from previous projects.</p>
         </li>
         <li class="pipe2-step">
           <div class="pipe2-head"><span class="pipe2-num">03</span><h3>Predict</h3></div>
@@ -748,7 +748,7 @@ add_action( 'generate_before_content', function() {
             </div></div>
             <figcaption><span>Low</span><i aria-hidden="true"></i><span>High</span></figcaption>
           </figure>
-          <p>Every cell gets a prospectivity score. The highest-ranked ground is then analysed further to narrow the search to the strongest drill targets.</p>
+          <p>The model will be able to tell the customer exactly where to drill, down to the exact coordinates and depth.</p>
         </li>
       </ol>
 
