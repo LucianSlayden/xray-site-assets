@@ -37,8 +37,7 @@ add_action( 'generate_before_content', function() {
             </h1>
 
             <p class="xr-hero-sub">
-              An advanced machine learning model that uses geochemistry, geophysics, and remote sensing data to create ranked drill targets and prospectivity reports.
-              What takes a consultant team months, we'll do in days.
+              An AI driven platform that turns exploration data into accurate predictions that help mining companies figure out where to drill in search of new mineral deposits.
             </p>
 
             <div class="xr-hero-cta">
