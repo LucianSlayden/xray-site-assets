@@ -770,8 +770,8 @@ add_action( 'generate_before_content', function() {
 
     <div class="xr-container proof-grid">
       <div class="xr-reveal">
-        <h2 style="margin:0 0 22px;"><span style="color:var(--xr-gold);">Validated metrics</span> on Nevada lithium.</h2>
-        <p style="color:var(--xr-text-2);font-size:17px;line-height:1.8;margin:0 0 18px;">Our Nevada lithium prospectivity model recovers <strong style="color:var(--xr-text);">39%</strong> of known deposits in the <strong style="color:var(--xr-text);">top 1%</strong> of ranked ground, which is 39x more effective than a uniform search. The model is trained on deposit and geochemistry/geophysics data across 19,000 grid cells, validated under spatial cross-validation, and built on a five-model ensemble.</p>
+        <h2 style="margin:0 0 22px;"><span style="color:var(--xr-gold);">Validated metrics</span> on the Great Basin.</h2>
+        <p style="color:var(--xr-text-2);font-size:17px;line-height:1.8;margin:0 0 18px;">Our current lithium model has a <strong style="color:var(--xr-text);">95% recall</strong> with <strong style="color:var(--xr-text);">80% precision</strong>, meaning that, on average, out of every 100 lithium deposits it will predict 95 of them, and 80% of its predictions are lithium.</p>
         <p style="color:var(--xr-text-2);font-size:17px;line-height:1.8;margin:0 0 32px;">We work with clients in <strong style="color:var(--xr-text);">two ways:</strong> annual platform subscription services and individual project engagement. Annual platform access is best for active exploration programs running ongoing target work, while individual project terms are tailored to fit the engagement.</p>
 
         <a href="<?php echo esc_url( home_url( '/product/' ) ); ?>" class="xr-btn xr-btn-outline">Explore the Product <span class="xr-arrow" aria-hidden="true">→</span></a>
