@@ -68,7 +68,7 @@ add_action( 'generate_before_content', function() {
           <h2 class="xr-hero-bullet-head">From months<br> to days</h2>
           <span class="xr-hero-bullet-hit" aria-hidden="true"></span>
           <div class="xr-hero-bullet-body" role="tooltip">
-            Upload data on a <strong>Monday</strong> and by the end of the work week have a complete list of ranked drill targets ready for your geologists.
+            Quicker turnaround times compared to consultants mean mining companies can accelerate the timelines of their projects, making new discoveries faster.
           </div>
         </div>
 
