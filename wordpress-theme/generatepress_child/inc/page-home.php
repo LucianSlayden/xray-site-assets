@@ -171,7 +171,7 @@ add_action( 'generate_before_content', function() {
               <div class="ld-label">Project Success Rate</div>
               <div class="ld-num xr-num" data-target="0.5" data-suffix="%">0.5%</div>
               <div class="ld-context">Success rate of greenfield exploration projects.</div>
-              <div class="ld-source">Diaz et al., 2026 &middot; Springer</div>
+              <div class="ld-source">Kreuzer &amp; Etheridge, 2010 &middot; AIG News</div>
             </div>
           </div>
         </figure>
