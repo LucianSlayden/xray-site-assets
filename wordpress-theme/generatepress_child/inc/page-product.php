@@ -605,7 +605,7 @@ add_action( 'generate_before_content', function() {
       <div class="pdt-proof-intro xr-reveal">
         <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>Proof of Concept</span>
         <h2>The Great Basin<br>lithium prototype.</h2>
-        <p>Our first model scores every 1×1&nbsp;km cell across the Great Basin region of the United States for lithium. It is a prototype and the base for the finer models we are building, but its early results show the approach works.</p>
+        <p>A preliminary model designed to predict new lithium deposits in the great basin region.</p>
       </div>
 
       <div class="pp-grid">
