@@ -122,7 +122,7 @@ add_action( 'generate_before_content', function() {
       <div class="problem-lead-row xr-reveal xr-d1">
         <div class="problem-lede">
           <p>
-            Every year, mining companies pour billions of dollars into exploration, with most drill holes leading to <em>nothing</em>.
+            Every year, mining companies pour billions of dollars into exploration, with most projects leading to <em>nothing</em>.
           </p>
           <p class="problem-kicker">
             The bottleneck isn't capital. It's knowing where to drill.
