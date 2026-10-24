@@ -189,7 +189,7 @@ add_action( 'generate_before_content', function() {
     <div class="xr-container">
       <div class="xr-reveal" style="margin-bottom:56px;max-width:780px;">
         <h2 style="margin:0 0 18px;">X-Ray Geoanalytics has a <span style="color:var(--xr-gold);">new solution</span></h2>
-        <p style="color:var(--xr-text-2);font-size:18px;line-height:1.75;margin:0;">X-Ray fuses your geological data through a machine learning pipeline and returns a prospectivity map to assist with drilling, helping mining companies narrow down their areas of interest for greenfield and minesite exploration.</p>
+        <p style="color:var(--xr-text-2);font-size:18px;line-height:1.75;margin:0;">A new, innovative platform that will transform the way exploration is being done. Powered by AI, new models are being developed to help geologists peer deeper into our planet.</p>
       </div>
 
       <!-- Pipeline: each step shows what the data looks like at that stage. -->
