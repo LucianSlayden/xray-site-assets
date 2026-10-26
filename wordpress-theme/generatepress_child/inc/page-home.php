@@ -775,37 +775,36 @@ add_action( 'generate_before_content', function() {
         <a href="<?php echo esc_url( home_url( '/product/' ) ); ?>" class="xr-btn xr-btn-outline">Explore the Product <span class="xr-arrow" aria-hidden="true">→</span></a>
       </div>
 
-      <!-- Lift panel: how many known deposits the top 1% of ranked ground recovers,
-           against a uniform (unranked) search of the same area. -->
+      <!-- Metrics panel: recall and precision of the current Great Basin lithium model. -->
       <div class="xr-reveal xr-d2 lift-panel">
         <div class="lift-head">
-          <span class="lift-tag">Nevada lithium prototype</span>
-          <span class="lift-tag lift-tag-dim">Spatial cross-validation</span>
+          <span class="lift-tag">Great Basin lithium model</span>
+          <span class="lift-tag lift-tag-dim">Recall &amp; precision</span>
         </div>
 
         <div class="lift-big">
-          <span class="lift-num">39<span>&times;</span></span>
-          <p>more known deposits found in the <strong>top 1%</strong> of ranked ground than a uniform search of the same area.</p>
+          <span class="lift-num">95<span>%</span></span>
+          <p>of known lithium deposits are found by the model, and <strong>80%</strong> of the ground it flags is lithium.</p>
         </div>
 
         <div class="lift-compare">
-          <div class="lift-compare-title">Known deposits recovered by searching 1% of the ground</div>
-          <div class="lift-row lift-row-old">
-            <span class="lift-label">Uniform search</span>
-            <span class="lift-track"><span class="lift-fill" style="--w:1%"></span></span>
-            <span class="lift-val">1%</span>
+          <div class="lift-compare-title">Out of every 100 lithium deposits</div>
+          <div class="lift-row lift-row-new">
+            <span class="lift-label">Recall</span>
+            <span class="lift-track"><span class="lift-fill" style="--w:95%"></span></span>
+            <span class="lift-val">95%</span>
           </div>
           <div class="lift-row lift-row-new">
-            <span class="lift-label">X-Ray ranking</span>
-            <span class="lift-track"><span class="lift-fill" style="--w:39%"></span></span>
-            <span class="lift-val">39%</span>
+            <span class="lift-label">Precision</span>
+            <span class="lift-track"><span class="lift-fill" style="--w:80%"></span></span>
+            <span class="lift-val">80%</span>
           </div>
           <div class="lift-scale" aria-hidden="true"><span class="lift-axis"><span style="--x:0%">0%</span><span style="--x:25%">25%</span><span style="--x:50%">50%</span><span style="--x:75%">75%</span><span style="--x:100%">100%</span></span></div>
         </div>
 
         <dl class="lift-facts">
-          <div><dt>19,000</dt><dd>grid cells</dd></div>
-          <div><dt>5</dt><dd>model ensemble</dd></div>
+          <div><dt>95 / 100</dt><dd>deposits found</dd></div>
+          <div><dt>80 / 100</dt><dd>predictions correct</dd></div>
           <div><dt>1&times;1&nbsp;km</dt><dd>current resolution</dd></div>
         </dl>
       </div>
