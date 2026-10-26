@@ -259,7 +259,6 @@ body { background: #060c12 !important; }
       </p>
       <div id="ab-ctas">
         <a href="<?php echo esc_url( home_url( '/learn-more/' ) ); ?>" class="xr-btn xr-btn-gold">Learn More</a>
-        <a href="<?php echo esc_url( home_url( '/investors/#iv-team' ) ); ?>" class="xr-btn xr-btn-outline">Meet the Team <span class="xr-arrow" aria-hidden="true">→</span></a>
       </div>
     </div>
   </div>
