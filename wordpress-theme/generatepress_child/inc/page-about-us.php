@@ -293,7 +293,7 @@ body { background: #060c12 !important; }
   <div class="ab-prin-inner xr-container">
     <div class="ab-prin-head">
       <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>What We Stand For</span>
-      <h2 class="ab-section-h2 ab-prin-h2">Principles that shape how we build.</h2>
+      <h2 class="ab-section-h2 ab-prin-h2">Principles that shape our platform.</h2>
     </div>
     <div class="ab-prin-grid">
       <div class="ab-prin-card">
