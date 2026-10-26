@@ -878,32 +878,32 @@ add_action( 'generate_before_content', function() {
       <div class="cmp2 xr-reveal xr-d1" role="table" aria-label="Consultant and GIS study compared with X-Ray">
         <div class="cmp2-row cmp2-headrow" role="row">
           <div class="cmp2-k" role="columnheader"></div>
-          <div class="cmp2-old" role="columnheader">Consultant + GIS study</div>
+          <div class="cmp2-old" role="columnheader">Traditional Software</div>
           <div class="cmp2-new" role="columnheader"><?php echo xray_logo_img(); ?></div>
         </div>
           <div class="cmp2-row" role="row">
             <div class="cmp2-k" role="rowheader">Time to ranked targets</div>
-            <div class="cmp2-old" role="cell"><span class="cmp2-m">Consultant + GIS</span>Months for each project area</div>
+            <div class="cmp2-old" role="cell"><span class="cmp2-m">Traditional Software</span>Months for each project area</div>
             <div class="cmp2-new" role="cell"><span class="cmp2-m">X-Ray</span>Days, across a whole region</div>
           </div>
           <div class="cmp2-row" role="row">
             <div class="cmp2-k" role="rowheader">Data considered</div>
-            <div class="cmp2-old" role="cell"><span class="cmp2-m">Consultant + GIS</span>What a team can review by hand</div>
+            <div class="cmp2-old" role="cell"><span class="cmp2-m">Traditional Software</span>What a team can review by hand</div>
             <div class="cmp2-new" role="cell"><span class="cmp2-m">X-Ray</span>Every survey layer, in every cell</div>
           </div>
           <div class="cmp2-row" role="row">
             <div class="cmp2-k" role="rowheader">What you receive</div>
-            <div class="cmp2-old" role="cell"><span class="cmp2-m">Consultant + GIS</span>A static report</div>
+            <div class="cmp2-old" role="cell"><span class="cmp2-m">Traditional Software</span>A static report</div>
             <div class="cmp2-new" role="cell"><span class="cmp2-m">X-Ray</span>Ranked targets, a heat map and a 3D view</div>
           </div>
           <div class="cmp2-row" role="row">
             <div class="cmp2-k" role="rowheader">After drilling starts</div>
-            <div class="cmp2-old" role="cell"><span class="cmp2-m">Consultant + GIS</span>The report goes out of date</div>
+            <div class="cmp2-old" role="cell"><span class="cmp2-m">Traditional Software</span>The report goes out of date</div>
             <div class="cmp2-new" role="cell"><span class="cmp2-m">X-Ray</span>New results feed back into the ranking</div>
           </div>
           <div class="cmp2-row" role="row">
             <div class="cmp2-k" role="rowheader">How you pay</div>
-            <div class="cmp2-old" role="cell"><span class="cmp2-m">Consultant + GIS</span>A new study for every project</div>
+            <div class="cmp2-old" role="cell"><span class="cmp2-m">Traditional Software</span>A new study for every project</div>
             <div class="cmp2-new" role="cell"><span class="cmp2-m">X-Ray</span>One software subscription</div>
           </div>
       </div>
