@@ -871,7 +871,7 @@ add_action( 'generate_before_content', function() {
     <div class="xr-container">
       <div class="xr-reveal" style="text-align:center;margin-bottom:48px;max-width:780px;margin-left:auto;margin-right:auto;">
         <h2>Software economics. <span style="color:var(--xr-gold);">Not</span> consulting economics.</h2>
-        <p style="color:var(--xr-text-2);font-size:16px;line-height:1.7;margin:14px 0 0;">How <span class="xr-nobreak">X-Ray</span> compares with a traditional consultant and GIS study.</p>
+        <p style="color:var(--xr-text-2);font-size:16px;line-height:1.7;margin:14px 0 0;">How <span class="xr-nobreak">X-Ray</span> compares with traditional software.</p>
       </div>
 
       <!-- Comparison table: traditional study vs X-Ray -->
