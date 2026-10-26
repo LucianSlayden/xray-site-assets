@@ -661,7 +661,7 @@ add_action( 'generate_before_content', function() {
       <div class="pdt-status-intro xr-reveal">
         <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>Development Status</span>
         <h2>Where we are today.</h2>
-        <p>We are pre-launch. Our Great Basin lithium model is a prototype that predicts to within 1×1&nbsp;km, and mining companies need 1×1&nbsp;m to place a borehole. We are using the prototype to build a series of finer models that will get there.</p>
+        <p>Our lithium model can predict to within 1&nbsp;km<sup>2</sup> cells, but customers will need over 1000x finer predictions for the platform to be viable. Finer models are already in production.</p>
       </div>
 
       <ol class="ps2 xr-reveal">
