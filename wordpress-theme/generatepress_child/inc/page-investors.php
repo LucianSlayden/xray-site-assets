@@ -64,10 +64,9 @@ body { background: #060c12 !important; }
     </figure>
 
     <div class="iv-hero-inner">
-      <h1 class="iv-headline" id="iv-headline" aria-label="The data layer for the next era of resource discovery.">
+      <h1 class="iv-headline" id="iv-headline" aria-label="The platform for the next era of resource discovery.">
         <span class="iv-hw"><span class="iv-hw-inner">The</span></span>
-        <span class="iv-hw"><span class="iv-hw-inner">data</span></span>
-        <span class="iv-hw"><span class="iv-hw-inner">layer</span></span>
+        <span class="iv-hw"><span class="iv-hw-inner">platform</span></span>
         <span class="iv-hw"><span class="iv-hw-inner">for</span></span>
         <span class="iv-hw"><span class="iv-hw-inner">the</span></span>
         <span class="iv-hw"><span class="iv-hw-inner">next</span></span>
@@ -78,7 +77,7 @@ body { background: #060c12 !important; }
       </h1>
 
       <p class="iv-subhead" id="iv-sub">
-        X-Ray Geoanalytics uses machine learning to find mineral deposits for mining companies, starting with lithium in the Great Basin and expanding to the minerals mining companies already search for alongside it: nickel, cobalt, gold, and silver.
+        X-Ray Geoanalytics uses AI to find new mineral deposits. In an age that is defined by an increasing bottleneck in resource discovery paired with a reliance on imports for critical resources, maintaining domestic production of vital minerals such as lithium is essential to secure the United States position as a world power.
       </p>
 
       <div class="iv-hero-cta" id="iv-cta">

@@ -4862,7 +4862,7 @@ body.page-id-298 { animation: none; }
    caption ends just above the stat strip and the right edge meets the content
    gutter, so the label no longer sits tight under the menu bar on laptops. */
 @media (min-width: 1101px) {
-  .iv-heatmap { top: calc(50% - 16px); right: max(28px, calc(50vw - 612px)); width: min(32vw, 456px); }
+  .iv-heatmap { top: calc(50% + 40px); right: max(28px, calc(50vw - 612px)); width: min(32vw, 456px, 58vh); }
   .iv-heatmap figcaption { padding: 0; }
   .iv-heatmap-legend i { width: 64px; }
 }
