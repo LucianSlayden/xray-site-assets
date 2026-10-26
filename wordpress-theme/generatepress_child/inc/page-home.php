@@ -918,10 +918,7 @@ add_action( 'generate_before_content', function() {
   <section class="xr-section cta-sec">
 
     <div class="xr-container" style="max-width:760px;text-align:center;">
-      <h2 class="xr-reveal xr-d1" style="margin:0 0 22px;">Know where to drill before you spend a dollar.</h2>
-      <p class="xr-reveal xr-d2" style="color:var(--xr-text-2);font-size:18px;line-height:1.75;margin:0 auto 44px;max-width:560px;">
-        Get on the list now. The Nevada lithium model is in active development — first pilot exploration teams onboarding when it launches.
-      </p>
+      <h2 class="xr-reveal xr-d1" style="margin:0 0 40px;">Know where to drill before you spend a dollar.</h2>
       <div class="xr-reveal xr-d3 xr-btn-row">
         <a href="<?php echo esc_url( home_url( '/learn-more/' ) ); ?>" class="xr-btn xr-btn-gold" style="font-size:16px;padding:16px 36px;">Learn More</a>
         <a href="<?php echo esc_url( home_url( '/product/' ) ); ?>" class="xr-btn xr-btn-outline" style="font-size:16px;padding:16px 36px;">See the Product <span class="xr-arrow" aria-hidden="true">→</span></a>
