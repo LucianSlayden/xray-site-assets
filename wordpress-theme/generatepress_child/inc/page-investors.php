@@ -192,7 +192,7 @@ body { background: #060c12 !important; }
         <div class="iv-section-label">03 · Business Model</div>
         <h2 class="iv-section-h2" style="max-width:860px;">An <strong>all in one</strong> software platform.</h2>
         <p class="iv-section-lead" style="margin-top:16px;">
-          Mining companies buy the subscription. Their geologist teams use the platform for target generation, deciding where to drill. Every new mineral model adds to what the subscription covers.
+          A platform designed for geologists to assist with all stages of exploration.
         </p>
       </div>
 
