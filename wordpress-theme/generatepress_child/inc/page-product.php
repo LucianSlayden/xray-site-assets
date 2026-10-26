@@ -671,7 +671,7 @@ add_action( 'generate_before_content', function() {
           <div class="ps2-art" aria-hidden="true"><?php echo xray_roadmap_art( 'prototype' ); ?></div>
           <div class="ps2-body">
             <div class="ps2-head"><h3>Great Basin lithium prototype</h3><span class="ps2-pill">Prototype</span></div>
-            <p>Our first model predicts lithium across the Great Basin, but only to within 1&times;1&nbsp;km cells. It is not finished and not precise enough for mining companies to use yet. It is the base the finer models build on.</p>
+            <p>Our first model to predict lithium across the Great Basin. It is intended as a base to launch all future models from.</p>
           </div>
         </li>
         <li class="ps2-item is-active">
