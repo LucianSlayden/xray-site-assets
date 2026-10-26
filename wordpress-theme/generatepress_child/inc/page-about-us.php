@@ -255,7 +255,7 @@ body { background: #060c12 !important; }
       <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>About X-Ray Geoanalytics</span>
       <h1 class="ab-h1">We're building the world's most accurate <span class="gold">mineral exploration engine</span>.</h1>
       <p id="ab-lede">
-        X-Ray Geoanalytics finds mineral deposits for mining companies using machine learning. Our models process more data and consider more factors than any human can, so explorers spend less time and money drilling in the wrong places. We started with lithium in the Great Basin.
+        By applying AI to mineral exploration <span class="xr-nobreak">X-Ray</span> Geoanalytics is paving the way for a new era of mining. Our models are more accurate than traditional exploration methods, vastly increasing customers&rsquo; ROI on their mining projects.
       </p>
       <div id="ab-ctas">
         <a href="<?php echo esc_url( home_url( '/learn-more/' ) ); ?>" class="xr-btn xr-btn-gold">Learn More</a>
