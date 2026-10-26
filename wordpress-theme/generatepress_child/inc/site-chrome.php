@@ -60,7 +60,7 @@ function xray_site_footer() {
     <div class="xr-footer-grid xr-footer-grid-slim">
       <div>
         <div class="xr-footer-brand"><?php echo xray_logo_img(); ?></div>
-        <p class="xr-footer-tagline">X-Ray finds mineral deposits for mining companies using machine learning, saving them time and money by offering more accurate predictions than human analysis. We began with lithium in the Great Basin and will expand to new minerals in the future.</p>
+        <p class="xr-footer-tagline">An AI driven platform that turns exploration data into accurate predictions that help mining companies figure out where to drill in search of new mineral deposits.</p>
         <div class="xr-footer-contact">
           <a href="mailto:info@xraygeoanalytics.com">info@xraygeoanalytics.com</a>
         </div>
