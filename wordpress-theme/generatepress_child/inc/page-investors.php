@@ -190,7 +190,7 @@ body { background: #060c12 !important; }
     <div class="iv-container">
       <div class="xr-reveal" style="margin-bottom:20px;">
         <div class="iv-section-label">03 · Business Model</div>
-        <h2 class="iv-section-h2" style="max-width:860px;">A software platform that <strong>mining companies</strong> subscribe to and their geologist teams use.</h2>
+        <h2 class="iv-section-h2" style="max-width:860px;">An <strong>all in one</strong> software platform.</h2>
         <p class="iv-section-lead" style="margin-top:16px;">
           Mining companies buy the subscription. Their geologist teams use the platform for target generation, deciding where to drill. Every new mineral model adds to what the subscription covers.
         </p>
