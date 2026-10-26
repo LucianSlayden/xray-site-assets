@@ -270,7 +270,7 @@ body { background: #060c12 !important; }
     <div class="ab-mission-grid">
       <div>
         <span class="xr-eyebrow"><span class="xr-eyebrow-hex"></span>Our Mission</span>
-        <h2 class="ab-section-h2 ab-mission-h2">Make the right drill site obvious before anyone puts a bit in the ground.</h2>
+        <h2 class="ab-section-h2 ab-mission-h2">Our company vision</h2>
         <p class="ab-section-p ab-mission-p">Mineral exploration is one of the most capital-intensive and failure-prone parts of mining. Explorers spend $30,000 to $90,000 a year per project on target generation and as much as $500,000 to get equipment to a site and drill. At the high end, only one in every 200 drill projects, each averaging about 20 boreholes, leads to a new mine site discovery.</p>
         <p class="ab-section-p ab-mission-p">Meanwhile, new discoveries have fallen from a peak of 202 in 2009 to roughly 80 in 2023, while lithium demand is projected to grow 2.5x from 2024 to 2030. Our models rank ground by how likely it is to host a deposit, so explorers can drill fewer holes before they make a discovery.</p>
         <figure class="ab-odds">
