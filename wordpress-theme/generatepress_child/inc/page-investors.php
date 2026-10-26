@@ -132,7 +132,7 @@ body { background: #060c12 !important; }
 
       <div class="iv-insight xr-reveal xr-d2">
         <div class="iv-insight-pin" aria-hidden="true"></div>
-        <p>The biggest question in mining is <strong>where to dig</strong>. Explorers already spend heavily on target generation, which leaves room for a software subscription to grow as <span class="xr-nobreak">X-Ray</span> builds credibility in the industry.</p>
+        <p>The biggest question in mining today is <strong>where to dig</strong>. Capital isn&rsquo;t the problem, it&rsquo;s knowing where to strike gold.</p>
       </div>
     </div>
   </section>
