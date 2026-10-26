@@ -752,7 +752,6 @@ add_action( 'generate_before_content', function() {
         </li>
       </ol>
 
-      <p class="xr-reveal pipe2-close">The surveys already exist. The advantage is reading all of them together, before the first hole is drilled.</p>
     </div>
   </section>
 
