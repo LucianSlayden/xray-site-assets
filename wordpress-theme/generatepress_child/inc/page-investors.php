@@ -96,7 +96,7 @@ body { background: #060c12 !important; }
         <div class="iv-section-label">01 · The Opportunity</div>
         <h2 class="iv-section-h2" style="max-width:860px;">A <strong>$2.5B/year</strong> <span class="xr-nobreak">target-generation</span> market, and discoveries are falling.</h2>
         <p class="iv-section-lead" style="margin-top:16px;margin-bottom:0;">
-          New mineral discoveries fell from a peak of 202 in 2009 to roughly 80 in 2023, while lithium demand is projected to grow 2.5x from 2024 to 2030. Explorers spend $30,000 to $90,000 a year per project on target generation, and at the high end only one in 200 drill projects leads to a new mine site discovery. Target generation, deciding where to drill, is the slice <span class="xr-nobreak">X-Ray</span> serves.
+          New mineral discoveries are falling every year, with an over 60% decrease from 2009 to 2023 in new discoveries. At the same time, lithium demand is expected to grow 2.5x by 2030. With project success rates at under half a percent, this leaves the vital question of whether the United States can keep up its domestic production of critical minerals to meet this demand.
         </p>
       </div>
 
