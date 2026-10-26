@@ -5016,3 +5016,19 @@ body.page-id-298 { animation: none; }
 }
 /* Investors hero stats: an even 2 x 2 grid on tablets and phones instead of wrapping 1 + 1 + 2. */
 
+
+/* Typed text stays light on the dark form fields. GeneratePress gives
+   input[type=...]:focus and textarea:focus a dark text color, which beat
+   the form rules above while a visitor was typing. */
+body .demo-form input, body .demo-form textarea,
+body .demo-form input:focus, body .demo-form textarea:focus,
+body .iv-form input, body .iv-form textarea,
+body .iv-form input:focus, body .iv-form textarea:focus,
+body input.nu-input, body input.nu-input:focus {
+  color: var(--xr-text);
+  -webkit-text-fill-color: var(--xr-text);
+  caret-color: var(--xr-text);
+}
+body .demo-form input::placeholder, body .demo-form textarea::placeholder,
+body .iv-form input::placeholder, body .iv-form textarea::placeholder,
+body input.nu-input::placeholder { -webkit-text-fill-color: currentColor; }
